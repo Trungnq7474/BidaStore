@@ -173,7 +173,7 @@ async function loadBest() {
             <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
                     <div class="kk">
                         <div class="pro">
-                            <img src="${product.image}" alt="Ảnh">
+                            <img src="images/${product.image}" alt="Ảnh">
 
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
