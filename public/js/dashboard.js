@@ -152,7 +152,7 @@ fetch('/gettopproduct')
                 <tr>
                     <td>${index + 1}</td>
                     <td>
-                        <img src="${item.image}" alt="Ảnh">
+                        <img src="images/${item.image}" alt="Ảnh">
                     </td>
                     <td class="namee">${item.product_name}</td>
                     <td>${item.da_ban}</td>

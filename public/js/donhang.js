@@ -201,7 +201,7 @@ document.addEventListener('click', async function(e) {
             productList.innerHTML +=`
                     <div class="product-item">
                         <div class="product-info">
-                            <img src="${item.image}" alt="Ảnh" class="product-img">
+                            <img src="images/${item.image}" alt="Ảnh" class="product-img">
                             <div class="product-detail">
                                 <h3 class="product-name">${item.product_name}</h3>
                                 <h4 class="product-qty">Số lượng: x${item.quantity}</h4>
