@@ -8,6 +8,19 @@ const orderList = document.querySelector('.order-list');
 
 let orders = [];
 
+function getImageUrl(image) {
+    if (!image) return "";
+
+    if (image.startsWith("http://") || image.startsWith("https://")) {
+        return image;
+    }
+
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+
+    return `/images/${image}`;
+}
+
 fetch('/getmyorder')
     .then(res => res.json())
     .then(data => {
@@ -50,7 +63,7 @@ async function showOrders(data) {
         items.slice(0,2).forEach(item => {
             product +=`
                 <div class="top">
-                    <img class="im" src="images/${item.image}" alt="Ảnh">
+                    <img class="im" src="${getImageUrl(item.image)}" alt="Ảnh">
                     
                     <div class="tl">
                         <div class="info">
@@ -201,7 +214,7 @@ document.addEventListener('click', async function(e) {
             productList.innerHTML +=`
                     <div class="product-item">
                         <div class="product-info">
-                            <img src="images/${item.image}" alt="Ảnh" class="product-img">
+                            <img src="${getImageUrl(item.image)}" alt="Ảnh" class="product-img">
                             <div class="product-detail">
                                 <h3 class="product-name">${item.product_name}</h3>
                                 <h4 class="product-qty">Số lượng: x${item.quantity}</h4>

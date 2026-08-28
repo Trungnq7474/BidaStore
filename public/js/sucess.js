@@ -1,5 +1,18 @@
 window.onload = async function() {
 
+    function getImageUrl(image) {
+        if (!image) return "";
+
+        if (image.startsWith("http://") || image.startsWith("https://")) {
+            return image;
+        }
+
+        image = image.replace(/^\/+/, "");
+        image = image.replace(/^images\//, "");
+
+        return `/images/${image}`;
+    }
+
     const order_id = new URLSearchParams(window.location.search).get("order_id");
 
     const res = await fetch(`/getorder/${order_id}`);
@@ -17,7 +30,7 @@ window.onload = async function() {
             <div class="product-list">
                 <div class="product-item">
                     <div class="product-info">
-                        <img src="images/${item.image}" alt="Ảnh" class="product-img">
+                        <img src="${getImageUrl(item.image)}" alt="Ảnh" class="product-img">
                         <div class="product-detail">
                             <h3 class="product-name">${item.product_name}</h3>
                             <h4 class="product-qty">Số lượng: x${item.quantity}</h4>
