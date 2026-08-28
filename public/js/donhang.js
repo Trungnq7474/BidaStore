@@ -50,7 +50,7 @@ async function showOrders(data) {
         items.slice(0,2).forEach(item => {
             product +=`
                 <div class="top">
-                    <img class="im" src="${item.image}" alt="Ảnh">
+                    <img class="im" src="images/${item.image}" alt="Ảnh">
                     
                     <div class="tl">
                         <div class="info">
