@@ -1,3 +1,17 @@
+function getImageUrl(image) {
+    if (!image) return "";
+
+    if (image.startsWith("http://") || image.startsWith("https://")) {
+        return image;
+    }
+
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+
+    return `/images/${image}`;
+}
+
+
 fetch('/getreve')
     .then(res => res.json())
     .then(data => {
@@ -152,7 +166,7 @@ fetch('/gettopproduct')
                 <tr>
                     <td>${index + 1}</td>
                     <td>
-                        <img src="images/${item.image}" alt="Ảnh">
+                        <img src="${getImageUrl(item.image)}" alt="Ảnh">
                     </td>
                     <td class="namee">${item.product_name}</td>
                     <td>${item.da_ban}</td>
