@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/lookup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ PHẢN HỒI</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="top">
+            <h1>QUẢN LÝ PHẢN HỒI</h1>
+        </div>
+
+        <div class="table-container">
+
+            <div class="lookUp">
+
+                <div class="search-product"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Tìm Tên, SĐT..."></div>
+                <div class="filter">
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select class="filter-product">
+                        <option value="all">Tất Cả</option>
+                        <option value="chua">Chưa Đọc</option>
+                        <option value="da">Đã Đọc</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách Hàng</th>
+                        <th>Email</th>
+                        <th>SĐT</th>
+                        <th>Nội Dung</th>
+                        <th>Trạng Thái</th>
+                        <th>Ngày Gửi</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>
+                            <a href="http://mail.google.com/mail/?view=cm&fs=1&to=nguyenquangtrung0704@gmail.com" target="_blank" class="email-link">nguyenquangtrung0704@gmail.com</a>
+                        </td>
+                        <td>0352493970</td>
+                        <td>Shop giao hàng nhanh</td>
+                        <td>15/05/2026</td>
+                        <td>
+                            <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                        </td>
+                    </tr> -->
+                    <tbody class="contact-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="confirm-box2">
+    <div class="confirm-content2">
+        <p>Bạn Có Chắc Muốn Hủy Đơn Hàng Này?</p>
+
+        <button class="no2">Không</button>
+        <button class="yes2">Xác Nhận</button>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+
+<script src="../js/feedback.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/lookup.js"></script>
+</body>
+</html>

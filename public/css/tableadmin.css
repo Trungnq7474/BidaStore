@@ -1,0 +1,154 @@
+.table-container{
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 100%;
+    min-height: 200px;
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+table{ 
+    min-width: max-content;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th{
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+table td{
+    font-size: 17px;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table img{
+    width: 180px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 90%);
+}
+
+@media (max-width: 1200px) {
+
+    .table-container {
+        padding: 20px;
+        max-height: 550px;
+    }
+
+    table th {
+        padding: 13px 10px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    table td {
+        padding: 13px 10px;
+        font-size: 15px;
+    }
+
+    table img {
+        width: 150px;
+        height: 100px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .table-container {
+        padding: 16px;
+        border-radius: 15px;
+        max-height: 500px;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    table th {
+        padding: 11px 9px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    table td {
+        padding: 11px 9px;
+        font-size: 14px;
+    }
+
+    table img {
+        width: 120px;
+        height: 80px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .table-container {
+        padding: 12px;
+        border-radius: 13px;
+        max-height: 450px;
+    }
+
+    table {
+        min-width: 720px;
+    }
+
+    table th {
+        padding: 9px 7px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    table td {
+        padding: 9px 7px;
+        font-size: 12px;
+    }
+
+    table img {
+        width: 90px;
+        height: 60px;
+        border-radius: 8px;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .table-container {
+        padding: 10px;
+        border-radius: 12px;
+        max-height: 420px;
+    }
+
+    table {
+        min-width: 680px;
+    }
+
+    table th {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    table td {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    table img {
+        width: 75px;
+        height: 50px;
+        border-radius: 7px;
+    }
+
+}

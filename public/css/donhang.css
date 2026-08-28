@@ -1,0 +1,1296 @@
+main {
+    margin: auto;
+    width: 75%;
+    margin-top: 150px;
+    margin-bottom: 80px;
+    background-color: rgb(159, 255, 223);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #005c37;
+}
+
+.tabs {
+    padding: 10px 20px;
+    background-color: #fff8feb8;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.tab, .tab1, .tab2, .tab3, .tab4 {
+    background: #dbdada;
+    padding: 10px 60px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.tab:hover, .tab1:hover, .tab2:hover, .tab3:hover, .tab4:hover {
+    background: #000000;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.4s ease-in-out;
+}
+
+.tab.active, .tab1.active, .tab2.active, .tab3.active, .tab4.active {
+    background: #000000;
+    color: white;
+}
+
+.order1 {
+    background: white;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.firts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.top {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.other {
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.tl {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+.info p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info h3 {
+    color: #b000a2;
+    width: 350px;
+}
+
+.top img {
+    width: 180px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #dbdada;
+    padding: 10px;
+}
+
+.md {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(84, 0, 103);
+}
+
+.total {
+    color: red;
+    display: flex;
+    justify-content: right;
+}
+.status {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.pending { 
+    color: white; 
+    background-color: orange;
+}
+
+.shipping { 
+    color: white; 
+    background-color: blue;
+}
+
+.done { 
+    color: white; 
+    background-color: green;
+}
+.cancel { 
+    color: white; 
+    background-color: red;
+}
+
+.act {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.xem {
+    font-weight: bold;
+    border: none;
+    background:transparent;
+    color: rgb(84, 84, 84);
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px; 
+    transition: 0.4s ease-in-out;
+}
+
+.huy {
+    background-color: rgb(80, 56, 105);
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    border: none;
+    color: rgb(244, 254, 245);
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.huy:hover {
+    transform: scale(1.05);
+    transition: 0.4s ease-in-out;
+    color: rgb(0, 34, 106);
+    background-color: rgb(97, 216, 224);
+}
+
+.xem:hover {
+    transform: scale(1.05);
+    transition: 0.4s ease-in-out;
+    color: rgb(89, 162, 0);
+}
+
+.invoice-box {
+    text-align: left;
+    border-radius: 14px;
+    padding: 21px;
+    background: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
+    width: 42%;
+    margin-left: 31.5%;
+    margin-top: 2%;
+    animation: showw 0.4s ease-in-out;
+}
+
+@keyframes showw {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.order-status {
+    width: 37%;
+    margin-left: 31.5%;
+    margin-bottom: -5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.status-value {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.status-value.pending {
+    color: white;
+    background: orange;
+}
+
+.status-value.shipping {
+    color: white;
+    background: blue;
+}
+
+.status-value.done {
+    color: white;
+    background: green;
+}
+
+.status-value.cancel {
+    color: white;
+    background: red;
+}
+
+.invoice-title {
+    font-weight: bold;
+    color: #0f4c5c;
+    margin-top: -5px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #d5e7eb;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.invoice-title span {
+    margin: auto;
+    color: #0f4c5c;
+    font-size: 17px;
+    background: #e5f4f6;
+    padding: 9px 19px;
+    border-radius: 20px;
+}
+
+.name,
+.email,
+.phone,
+.address,
+.method,
+.time {
+    color: #0c5c81;
+}
+
+.invoice-row {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.invoice-row .label {
+    color: #64748b;
+}
+
+.invoice-row .tt {
+    font-size: 18px;
+    width: 31px;
+    color: #159a9c;
+}
+
+.invoice-row .value {
+    color: #1e293b;
+    font-weight: 600;
+    text-align: right;
+    max-width: 65%;
+}
+
+.text {
+    color: #dc2626;
+}
+
+.product-list {
+    padding: 11px 0;
+    margin-top: -5px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.product-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.product-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+    background: #94d2bd;
+    border-radius: 10px;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #1e293b;
+    padding: 9px 0;
+    border-top: 1px dashed #b7dfe2;
+    border-bottom: 1px dashed #b7dfe2;
+    margin-bottom: 13px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.product-img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #eef9f8;
+    object-fit: cover;
+    border: 1px solid #b7dfe2;
+}
+
+.product-detail .product-qty {
+    color: #64748b;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #0f4c5c;
+    font-size: 17px;
+}
+
+.invoice-roww {
+    color: #64748b;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #d5e7eb;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.total-row .pricee {
+    color: #e11d48;
+    font-size: 20px;
+}
+
+.total-row .tong {
+    color: #e11d48;
+    font-size: 19px;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.42);
+    z-index: 1000;
+    display: none;
+}
+
+.econ {
+    display: flex;
+    justify-content: right;
+    margin-top: 5px;
+    font-size: 22px;
+    color: #0f4c5c;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+
+    main {
+        width: 88%;
+        box-sizing: border-box;
+    }
+
+    .tabs {
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        flex: 1;
+        min-width: 0;
+        padding: 9px 8px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .order1 {
+        padding: 10px 16px;
+    }
+
+    .top {
+        gap: 25px;
+    }
+
+    .tl {
+        gap: 30px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .info {
+        min-width: 0;
+    }
+
+    .info h3 {
+        width: auto;
+        max-width: 280px;
+        font-size: 17px;
+        overflow-wrap: anywhere;
+    }
+
+    .info p {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .status {
+        font-size: 15px;
+        padding: 8px 14px;
+    }
+
+    .top img {
+        width: 150px;
+        height: 125px;
+        padding: 7px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+    .other {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .total {
+        font-size: 17px;
+    }
+
+    .xem,
+    .huy {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .invoice-box {
+        width: 60%;
+        margin-left: 20%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    main {
+        width: 92%;
+        padding: 12px;
+        margin-top: 120px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .tabs {
+        gap: 6px;
+        padding: 7px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        flex: 1;
+        min-width: 0;
+        padding: 8px 5px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .order1 {
+        padding: 10px 12px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .firts {
+        gap: 8px;
+        margin-top: 7px;
+        margin-bottom: 8px;
+        min-width: 0;
+    }
+
+    .md {
+        min-width: 0;
+        font-size: 12px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .status {
+        flex-shrink: 0;
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 15px;
+        white-space: nowrap;
+    }
+
+    .top {
+        gap: 12px;
+        margin-bottom: 12px;
+        min-width: 0;
+        align-items: flex-start;
+    }
+
+    .top img {
+        width: 100px;
+        height: 82px;
+        padding: 5px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+    .tl {
+        gap: 12px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .info h3 {
+        width: 100%;
+        max-width: none;
+        font-size: 14px;
+        line-height: 1.3;
+        margin: 0 0 5px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .info p {
+        font-size: 12px;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .price {
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .other {
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .total {
+        font-size: 14px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .act {
+        gap: 6px;
+    }
+
+    .xem,
+    .huy {
+        padding: 7px 10px;
+        font-size: 11px;
+        border-radius: 12px;
+    }
+
+    .invoice-box {
+        width: 75%;
+        margin: 40px auto 20px;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 12px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .order-status {
+        width: 70%;
+        margin-left: 15%;
+        font-size: 13px;
+    }
+
+    .status-value {
+        font-size: 14px;
+        padding: 7px 12px;
+        margin-left: 8px;
+    }
+
+    .invoice-title span {
+        font-size: 14px;
+        padding: 7px 13px;
+    }
+
+    .invoice-row {
+        font-size: 13px;
+    }
+
+    .invoice-row .tt {
+        width: 25px;
+        font-size: 15px;
+    }
+
+    .product-img {
+        width: 90px;
+        height: 70px;
+    }
+
+    .product-item {
+        gap: 8px;
+    }
+
+    .product-info {
+        gap: 8px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .product-detail {
+        min-width: 0;
+    }
+
+    .product-name {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .product-detail .product-qty {
+        font-size: 10px;
+        margin-top: 6px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .invoice-roww {
+        font-size: 13px;
+    }
+
+    .total-row .tong {
+        font-size: 14px;
+    }
+
+    .total-row .pricee {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    main {
+        width: calc(100% - 20px);
+        margin-top: 100px;
+        margin-bottom: 35px;
+        padding: 10px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .tabs {
+        width: 100%;
+        gap: 4px;
+        padding: 5px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        flex: 1;
+        min-width: 0;
+        padding: 7px 2px;
+        font-size: 10px;
+        border-radius: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .order1 {
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .firts {
+        gap: 5px;
+        margin-top: 5px;
+        margin-bottom: 6px;
+        align-items: center;
+    }
+
+    .md {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .status {
+        font-size: 9px;
+        padding: 5px 7px;
+        border-radius: 13px;
+    }
+
+    .top {
+        gap: 8px;
+        margin-bottom: 9px;
+    }
+
+    .top img {
+        width: 72px;
+        height: 60px;
+        padding: 3px;
+        border-radius: 8px;
+    }
+
+    .tl {
+        gap: 8px;
+    }
+
+    .info h3 {
+        font-size: 12px;
+        line-height: 1.25;
+        margin-bottom: 4px;
+    }
+
+    .info p {
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .price {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .other {
+        font-size: 10px;
+    }
+
+    .total {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .act {
+        gap: 4px;
+    }
+
+    .xem,
+    .huy {
+        padding: 6px 8px;
+        font-size: 9px;
+        border-radius: 9px;
+    }
+
+    .invoice-box {
+        width: calc(100% - 20px);
+        margin: 35px auto 15px;
+        padding: 12px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .order-status {
+        width: calc(100% - 16px);
+        margin-left: 8px;
+        font-size: 11px;
+        margin-bottom: 0;
+    }
+
+    .status-value {
+        font-size: 11px;
+        padding: 5px 8px;
+        margin-left: 5px;
+        border-radius: 13px;
+    }
+
+    .invoice-title {
+        margin-bottom: 9px;
+        padding-bottom: 8px;
+    }
+
+    .invoice-title span {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .invoice-row {
+        font-size: 10px;
+        line-height: 1.35;
+        margin-bottom: 10px;
+    }
+
+    .invoice-row .tt {
+        width: 20px;
+        font-size: 12px;
+    }
+
+    .invoice-row .value {
+        max-width: 65%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .product-list {
+        max-height: 150px;
+        padding: 7px 0;
+    }
+
+    .product-item {
+        gap: 5px;
+        padding: 6px 0;
+        margin-bottom: 8px;
+    }
+
+    .product-info {
+        gap: 5px;
+    }
+
+    .product-img {
+        width: 52px;
+        height: 43px;
+        border-radius: 6px;
+    }
+
+    .product-name {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    .product-detail .product-qty {
+        font-size: 8px;
+        margin-top: 3px;
+    }
+
+    .product-price {
+        font-size: 9px;
+    }
+
+    .invoice-roww {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    .total-row {
+        gap: 5px;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .total-row .tong {
+        font-size: 11px;
+    }
+
+    .total-row .pricee {
+        font-size: 12px;
+    }
+
+    .econ {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    main {
+        width: calc(100% - 12px);
+        margin-top: 85px;
+        margin-bottom: 25px;
+        padding: 7px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 17px;
+        margin-bottom: 13px;
+    }
+
+    .tabs {
+        gap: 2px;
+        padding: 4px;
+        margin-bottom: 9px;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        padding: 6px 1px;
+        font-size: 9px;
+        border-radius: 7px;
+    }
+
+    .order1 {
+        padding: 7px;
+        margin-bottom: 8px;
+        border-radius: 9px;
+    }
+
+    .firts {
+        gap: 4px;
+        margin-top: 4px;
+        margin-bottom: 5px;
+    }
+
+    .md {
+        font-size: 9px;
+    }
+
+    .status {
+        font-size: 8px;
+        padding: 4px 6px;
+        border-radius: 11px;
+    }
+
+    .top {
+        gap: 6px;
+        margin-bottom: 7px;
+    }
+
+    .top img {
+        width: 62px;
+        height: 52px;
+        padding: 2px;
+    }
+
+    .tl {
+        gap: 6px;
+    }
+
+    .info h3 {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .info p {
+        font-size: 9px;
+    }
+
+    .price {
+        font-size: 9px;
+    }
+
+    .other {
+        font-size: 9px;
+    }
+
+    .total {
+        font-size: 11px;
+    }
+
+    .xem,
+    .huy {
+        padding: 5px 6px;
+        font-size: 8px;
+        border-radius: 8px;
+    }
+
+    .invoice-box {
+        width: calc(100% - 14px);
+        margin: 30px auto 12px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 9px;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .order-status {
+        width: calc(100% - 10px);
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    .status-value {
+        font-size: 9px;
+        padding: 4px 6px;
+        margin-left: 4px;
+    }
+
+    .invoice-title {
+        margin-bottom: 8px;
+        padding-bottom: 7px;
+    }
+
+    .invoice-title span {
+        font-size: 10px;
+        padding: 5px 7px;
+    }
+
+    .invoice-row {
+        font-size: 9px;
+        margin-bottom: 8px;
+    }
+
+    .invoice-row .tt {
+        width: 18px;
+        font-size: 11px;
+    }
+
+    .product-list {
+        max-height: 130px;
+    }
+
+    .product-item {
+        gap: 4px;
+        padding: 5px 0;
+        margin-bottom: 6px;
+    }
+
+    .product-info {
+        gap: 4px;
+    }
+
+    .product-img {
+        width: 46px;
+        height: 38px;
+    }
+
+    .product-name {
+        font-size: 8px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 7px;
+        margin-top: 2px;
+    }
+
+    .product-price {
+        font-size: 8px;
+    }
+
+    .invoice-roww {
+        font-size: 9px;
+    }
+
+    .total-row {
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+
+    .total-row .tong {
+        font-size: 10px;
+    }
+
+    .total-row .pricee {
+        font-size: 11px;
+    }
+
+    .econ {
+        font-size: 17px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    main {
+        width: calc(100% - 8px);
+        margin-top: 75px;
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .tabs {
+        gap: 1px;
+        padding: 3px;
+        margin-bottom: 7px;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        padding: 5px 1px;
+        font-size: 8px;
+    }
+
+    .order1 {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+
+    .firts {
+        gap: 3px;
+    }
+
+    .md {
+        font-size: 8px;
+    }
+
+    .status {
+        font-size: 7px;
+        padding: 3px 5px;
+    }
+
+    .top {
+        gap: 5px;
+    }
+
+    .top img {
+        width: 54px;
+        height: 46px;
+        padding: 2px;
+    }
+
+    .tl {
+        gap: 5px;
+    }
+
+    .info h3 {
+        font-size: 10px;
+    }
+
+    .info p {
+        font-size: 8px;
+    }
+
+    .price {
+        font-size: 8px;
+    }
+
+    .other {
+        font-size: 8px;
+    }
+
+    .total {
+        font-size: 10px;
+    }
+
+    .xem,
+    .huy {
+        padding: 4px 5px;
+        font-size: 7px;
+    }
+
+    .invoice-box {
+        width: calc(100% - 10px);
+        margin: 25px auto 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .order-status {
+        width: calc(100% - 6px);
+        margin-left: 3px;
+        font-size: 9px;
+    }
+
+    .status-value {
+        font-size: 8px;
+        padding: 3px 5px;
+    }
+
+    .invoice-row {
+        font-size: 8px;
+    }
+
+    .invoice-row .tt {
+        width: 17px;
+        font-size: 10px;
+    }
+
+    .product-img {
+        width: 42px;
+        height: 35px;
+    }
+
+    .product-name {
+        font-size: 7px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 6px;
+    }
+
+    .product-price {
+        font-size: 7px;
+    }
+
+    .invoice-roww {
+        font-size: 8px;
+    }
+
+    .total-row .tong {
+        font-size: 9px;
+    }
+
+    .total-row .pricee {
+        font-size: 10px;
+    }
+}
+
+

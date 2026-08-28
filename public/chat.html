@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/logo bida.png">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/thongbao.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <title>THANH TOÁN THÀNH CÔNG</title>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="shop-avatar"></div>
+
+                <div class="shop-info"><h3>SHOP BIDA</h3></div>
+            </div>
+        </div>
+
+
+        <div class="chat-body">
+            <!-- <div class="date"><span>Hôm nay</span></div> -->
+            
+            <div class="messages">
+                <!-- <div class="message shop-message">
+                    <div class="message-avatar"><i class="fa-solid fa-store"></i></div>
+                    <div class="message-content">
+
+                        <div class="message-bubble">Xin chào</div>
+                        <div class="message-bubble">SHOP BIDA xin chào bạn!</div>
+                        <span class="message-time">19:45</span>
+                    </div>
+                </div> -->
+
+
+                <!-- <div class="message user-message">
+                    <div class="message-content">
+                        <div class="message-bubble">Cho mình hỏi bàn bida này còn hàng không ạ?</div>
+                        <span class="message-time">19:47</span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="file-preview"></div>
+
+        <div class="chat-input-area">
+
+            <button class="input-btn file-btn"><i class="fa-solid fa-paperclip"></i></button>
+            <input type="file" class="file-input" hidden multiple>
+            <button class="input-btn emoji-btn"><i class="fa-regular fa-face-smile"></i></button>
+            <emoji-picker class="emoji-picker"></emoji-picker>
+            <div class="input-box"><input type="text" placeholder="Nhập tin nhắn..."></div>
+            <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            
+        </div>
+    </div>
+</section>
+
+<div class="image-modal">
+    <button class="close-image">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <img class="modal-image">
+</div>
+
+<div class="mgs"></div>
+<div id="footer"></div>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script src="js/load.js"></script>
+<script src="js/header.js"></script>
+<script src="js/chat.js"></script>
+
+</body>
+</html>

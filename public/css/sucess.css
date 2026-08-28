@@ -1,0 +1,695 @@
+        section {
+            margin-top: 100px;
+            margin-bottom: 5px;
+        }
+
+        .success-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 15px;
+        }
+
+        .success-card {
+            background: #a4ffe7;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .success-header .icon-box {
+            width: 110px;
+            height: 110px;
+            background: #626262;
+            color: #f2ccff;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+        }
+
+        .success-header h1 {
+            color: #72007f;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .success-header p {
+            color: #848588;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .success-header .emo {
+            color: #009b15;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .invoice-box {
+            text-align: left;
+            border: 1px solid #62ffcd;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+        .invoice-title {
+            font-weight: bold;
+            color: #0062ff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #d4d7d6;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .invoice-title span {
+            margin: auto;
+            color: #009a33;
+            font-size: 18px;
+            background: #c8ffed;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .invoice-row {
+            margin-top: 24px;
+            margin-bottom: 24px;
+            font-size: 17px;
+        }
+
+        .invoice-row .label {
+            color: #636363;
+        }
+
+        .invoice-row .tt {
+            font-size: 20px;
+            width: 35px;
+        }
+
+        .invoice-row .value {
+            color: #1e293b;
+            font-weight: 600;
+            text-align: right;
+            max-width: 65%;
+        }
+
+        .text {
+            color: #6e0000;
+        }
+
+        .produc {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .product-list {
+            margin: 15px 0;
+            padding: 15px 0;
+            border-top: 1px dashed #7b7b7b;
+            border-bottom: 1px dashed #7b7b7b;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .product-img {
+            width: 140px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: #8dffdd;
+        }
+
+        .product-detail .product-qty {
+            color: #64748b;
+            font-weight: bold;
+            margin-top: -7px;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #1e293b;
+            font-size: 20px;
+        }
+
+        .invoice-roww {
+            color: #949393;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .total-row .price {
+            color: #e67e22;
+            font-size: 20px;
+        }
+
+        .total-row .tong {
+            color: #e67e22;
+            font-size: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 25px;
+        }
+
+        .btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        .btn-home {
+            background-color: #5c7cb1;
+            color: #ffffff;
+            transition: 0.4s ease-in-out;
+        }
+
+        .btn-home:hover {
+            background-color: #3b4e7a;
+            transition: 0.4s ease-in-out;
+            transform: scale(1.04);
+        }
+
+        .btn-shop {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+            transition: 0.4s ease-in-out;
+        }
+
+        .btn-shop:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transition: 0.4s ease-in-out;
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 1200px) {
+
+    .success-card {
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    .invoice-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .product-img {
+        width: 120px;
+        height: 90px;
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    section {
+        margin-top: 110px;
+    }
+
+    .success-wrapper {
+        padding: 30px 15px;
+    }
+
+    .success-card {
+        width: 95%;
+        padding: 30px;
+    }
+
+    .success-header h1 {
+        font-size: 24px;
+    }
+
+    .success-header p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .invoice-box {
+        padding: 18px;
+    }
+
+    .invoice-row {
+        font-size: 15px;
+    }
+
+    .invoice-row .value {
+        max-width: 60%;
+    }
+
+    .product-img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-price {
+        font-size: 17px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    section {
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+
+    .success-wrapper {
+        padding: 20px 12px;
+    }
+
+    .success-card {
+        width: 100%;
+        padding: 22px 15px;
+        border-radius: 15px;
+    }
+
+    .success-header .icon-box {
+        width: 85px;
+        height: 85px;
+        font-size: 45px;
+    }
+
+    .success-header h1 {
+        font-size: 21px;
+        margin-top: 20px;
+    }
+
+    .success-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .success-header .emo {
+        font-size: 22px;
+    }
+
+    .invoice-box {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .invoice-title {
+        font-size: 15px;
+    }
+
+    .invoice-title span {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .invoice-row {
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .invoice-row .tt {
+        font-size: 16px;
+        width: 28px;
+    }
+
+    .invoice-row .value {
+        max-width: 55%;
+    }
+
+    .produc {
+        max-height: 250px;
+    }
+
+    .product-item {
+        gap: 10px;
+    }
+
+    .product-info {
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .product-img {
+        width: 80px;
+        height: 65px;
+        flex-shrink: 0;
+    }
+
+    .product-detail {
+        min-width: 0;
+    }
+
+    .product-name {
+        font-size: 14px;
+        margin: 5px 0;
+        word-break: break-word;
+    }
+
+    .product-detail .product-qty {
+        font-size: 12px;
+    }
+
+    .product-price {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .invoice-roww {
+        font-size: 14px;
+    }
+
+    .total-row {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .total-row .price,
+    .total-row .tong {
+        font-size: 16px;
+    }
+
+    .action-buttons {
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    section {
+        margin-top: 90px;
+    }
+
+    .success-wrapper {
+        padding: 15px 10px;
+    }
+
+    .success-card {
+        width: 100%;
+        padding: 18px 10px;
+    }
+
+    .success-header .icon-box {
+        width: 70px;
+        height: 70px;
+        font-size: 36px;
+    }
+
+    .success-header h1 {
+        font-size: 19px;
+    }
+
+    .success-header p {
+        font-size: 13px;
+    }
+
+    .invoice-box {
+        padding: 12px;
+    }
+
+    .invoice-title {
+        font-size: 13px;
+    }
+
+    .invoice-title span {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .invoice-row {
+        font-size: 12px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .invoice-row .tt {
+        font-size: 14px;
+        width: 23px;
+    }
+
+    .product-list {
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+
+    .product-img {
+        width: 65px;
+        height: 55px;
+    }
+
+    .product-info {
+        gap: 7px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 10px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .invoice-roww {
+        font-size: 12px;
+    }
+
+    .total-row {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .total-row .price,
+    .total-row .tong {
+        font-size: 14px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 11px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    section {
+        margin-top: 80px;
+    }
+
+    .success-wrapper {
+        padding: 10px 7px;
+    }
+
+    .success-card {
+        padding: 15px 8px;
+        border-radius: 12px;
+    }
+
+    .success-header .icon-box {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .success-header h1 {
+        font-size: 17px;
+    }
+
+    .success-header p {
+        font-size: 11px;
+    }
+
+    .success-header .emo {
+        font-size: 18px;
+    }
+
+    .invoice-box {
+        padding: 10px;
+    }
+
+    .invoice-title span {
+        font-size: 10px;
+        padding: 6px 9px;
+    }
+
+    .invoice-row {
+        font-size: 11px;
+    }
+
+    .invoice-row .tt {
+        font-size: 12px;
+        width: 20px;
+    }
+
+    .product-img {
+        width: 55px;
+        height: 48px;
+    }
+
+    .product-name {
+        font-size: 11px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 9px;
+    }
+
+    .product-price {
+        font-size: 10px;
+    }
+
+    .invoice-roww {
+        font-size: 10px;
+    }
+
+    .total-row .price,
+    .total-row .tong {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+}
+
+
+@media (max-width: 320px) {
+
+    section {
+        margin-top: 70px;
+    }
+
+    .success-wrapper {
+        padding: 8px 5px;
+    }
+
+    .success-card {
+        padding: 12px 6px;
+    }
+
+    .success-header .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .success-header h1 {
+        font-size: 15px;
+    }
+
+    .success-header p {
+        font-size: 10px;
+    }
+
+    .invoice-box {
+        padding: 8px;
+    }
+
+    .invoice-row {
+        font-size: 10px;
+    }
+
+    .invoice-row .tt {
+        font-size: 11px;
+        width: 18px;
+    }
+
+    .product-img {
+        width: 45px;
+        height: 40px;
+    }
+
+    .product-name {
+        font-size: 10px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 8px;
+    }
+
+    .product-price {
+        font-size: 9px;
+    }
+
+    .invoice-roww {
+        font-size: 9px;
+    }
+
+    .total-row .price,
+    .total-row .tong {
+        font-size: 11px;
+    }
+
+    .btn {
+        font-size: 11px;
+        padding: 9px;
+    }
+
+}

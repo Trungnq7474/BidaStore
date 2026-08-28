@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/logo bida.png">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" href="css/thongbao.css">
+    <title>THANH TOÁN</title>
+</head>
+<body>
+
+<div id="header"></div>
+
+<section class="sp">
+        <div class="shopping">
+            <a href="cart.html"><i class="fa-solid fa-arrow-left"></i> Quay Lại Giỏ Hàng</a>
+            <h2><i class="fa-solid fa-box"></i> SẢN PHẨM</h2>
+            <hr>
+        <div class="tp">
+        <!-- <div class="pr">
+            <div class="imga">
+                <img src="images/lơ taom.png" alt="Ảnh">
+            </div>
+           <div class="prduc">
+                <h4>Cục Lơ TAOM</h4>
+                <h5>450.000 VNĐ</h5>
+           </div>
+           <p>x 1</p>
+        </div>  -->
+        </div>
+       
+    
+            
+            <div class="payment">
+                <p>Đơn Hàng<span class="a"></span></p>
+                <p>Phí Ship<span class="b">30.000 VNĐ</span></p>
+                <p>Tổng Đơn Hàng<span class="c">30.000 VNĐ</span></p>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2><i class="fa-solid fa-credit-card"></i> PHƯƠNG THỨC THANH TOÁN</h2>
+            <div class="method">
+                <button class="cash active"><i class="fa-solid fa-money-bill-wave"></i> Tiền Mặt (COD)</button>
+                <button class="QR"><i class="fa-solid fa-qrcode"></i> Chuyển Khoản</button>
+            </div>
+            <div class="text">
+                <label>Tên</label>
+                <input type="text" class="name" placeholder="Tên Người Nhận..." required>
+                <label>Số Điện Thoại</label>
+                <input type="tel" class="phone" placeholder="Số Điện Thoại..." required>
+                <label>Email</label>
+                <input type="email" class="email" placeholder="Email..." required>
+                <label>Địa Chỉ</label>
+                <input type="text" name="address" class="address" placeholder="Địa Chỉ..." required>
+                <button class="pay"><i class="fa-solid fa-money-check-dollar"></i> Đặt Hàng</button>
+            </div>
+
+            <div class="bank-box">
+
+                <h3>Chọn Ngân Hàng</h3>
+
+                <div class="banks">
+
+                    <button class="bank" data-bank="Vietcombank">
+                        <img src="images/VCB.png" alt="Vietcombank">
+                        <span>Vietcombank</span>
+                    </button>
+
+                    <button class="bank" data-bank="Techcombank">
+                        <img src="images/TECH.png" alt="Techcombank">
+                        <span>Techcombank</span>
+                    </button>
+
+                    <button class="bank" data-bank="MB Bank">
+                        <img src="images/MB.png" alt="MB Bank">
+                        <span>MB Bank</span>
+                    </button>
+
+                    <button class="bank" data-bank="BIDV">
+                        <img src="images/BIDV.png" alt="BIDV">
+                        <span>BIDV</span>
+                    </button>
+
+                    <button class="bank" data-bank="ACB">
+                        <img src="images/ACB.png" alt="ACB">
+                        <span>ACB</span>
+                    </button>
+
+                </div>
+
+                <div class="bank-info">
+
+                    <label>Ngân Hàng</label>
+                    <input type="text" class="bank-name" readonly>
+
+                    <label>Số Tài Khoản</label>
+                    <input type="text" class="bank-account" placeholder="Nhập số tài khoản...">
+
+                    <label>Số Tiền</label>
+                    <input type="text" class="bank-total" readonly>
+
+                </div>
+
+            </div>
+        </div>
+</section>
+
+<div class="mgs"></div>
+
+<div id="footer"></div>
+
+<script src="js/load.js"></script>
+<script src="js/pay.js"></script>
+<script src="js/header.js"></script>
+
+</body>
+</html>

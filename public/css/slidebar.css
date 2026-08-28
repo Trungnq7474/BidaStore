@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+    width: 300px;
+    background: #111827;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px 20px;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.toggle-btn {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar .admin {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    background: #2563eb;
+    transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+    background: #2563eb;
+    transform: translateX(5px);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed h2 {
+    display: none;
+}
+
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+
+.sidebar.collapsed ul li a {
+    justify-content: center;
+    padding: 14px 0;
+}
+
+.sidebar.collapsed ul li a:hover,
+.sidebar.collapsed ul li a.active {
+    transform: none;
+}
+
+.sidebar.collapsed .toggle-btn {
+    text-align: center;
+    padding-right: 0;
+}
+
+.sidebar.collapsed .logout button span {
+    display: none;
+}
+
+.sidebar.collapsed .logout button {
+    padding: 14px 0;
+}
+
+.logout button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #ef4444;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logout button:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.mess-link {
+    position: relative;
+}
+
+.mess-count {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    width: 26px;
+    height: 26px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.person .im {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #ea580c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 20px rgba(176, 132, 0, 0.473);
+    flex-shrink: 0;
+}
+
+.person .im:hover {
+    background: #3730a3;
+    transform: translateY(-3px);
+}
+
+.person i {
+    font-size: 30px;
+    color: rgb(199, 199, 0);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.person i:hover {
+    color: #4f46e5;
+    transform: translateY(-3px);
+}
+
+.person i.active {
+    color: #4f46e5;
+    transform: translateY(-3px);
+}
+
+.notification {
+    position: relative;
+}
+
+.notification-box {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 450px;
+    max-width: 550px;
+    max-height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #f5fffd;
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 0 20px rgba(62, 109, 209, 0.241);
+    z-index: 100;
+    animation: box 0.5s ease-in-out;
+}
+
+.notification-count {
+    position: absolute;
+    top: -15px;
+    right: -12px;
+    background: red;
+    color: white;
+    width: 22px;
+    height: 22px;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes box {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.notification-box h3 {
+    text-align: center;
+    color: #345fee;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #b8d6fb;
+}
+
+.notification-item {
+    padding: 14px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dbeafe;
+    cursor: pointer;
+    background-color: #f0f3ff;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.notification-item p {
+    color: #00659f;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.notification-item:hover {
+    background: #dfedff;
+    transform: translateX(5px);
+}
+
+.notification-item:hover p {
+    color: #002679;
+}
+
+.notification-time {
+    display: block;
+    margin-top: 6px;
+    color: #1352ff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification-item.unread {
+    background-color: #f0f3ff;
+}
+
+.notification-item.read {
+    background-color: #e0e4ee;
+}
+
+.notification-item.read p {
+    color: #667085;
+}
+
+.notification-item.read .notification-time {
+    color: #7b8794;
+}
+
+.no-notification {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 25px 0;
+}
+
+.markxx {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.markxx i {
+    color: #948bff;
+    font-size: 25px;
+    transition: 0.4s ease-in-out;
+}
+
+.markxx i:hover {
+    transform: translateY(-4px);
+    color: #504aff;
+}
+
+
+@media (max-width: 1200px) {
+
+    .sidebar {
+        width: 270px;
+        padding: 22px 17px;
+    }
+
+    .toggle-btn {
+        font-size: 23px;
+        padding-right: 8px;
+        margin-bottom: 18px;
+    }
+
+    .sidebar h2 {
+        font-size: 25px;
+        margin-bottom: 26px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 12px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .logout button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .person {
+        gap: 30px;
+    }
+
+    .person .im {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .person i {
+        font-size: 27px;
+    }
+
+    .notification-box {
+        top: 42px;
+        width: 400px;
+        max-width: calc(100vw - 300px);
+        max-height: 300px;
+        padding: 15px;
+    }
+
+    .notification-item {
+        padding: 11px 15px;
+    }
+
+    .notification-item p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .notification-time {
+        font-size: 12px;
+    }
+
+    .notification-count {
+        width: 20px;
+        height: 20px;
+        font-size: 13px;
+        top: -13px;
+        right: -10px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 230px;
+        padding: 20px 14px;
+    }
+
+    .toggle-btn {
+        font-size: 21px;
+        margin-bottom: 17px;
+    }
+
+    .sidebar h2 {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 9px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+        padding: 10px;
+        gap: 8px;
+        border-radius: 10px;
+    }
+
+    .logout button {
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .mess-count {
+        width: 21px;
+        height: 21px;
+        font-size: 12px;
+        top: -7px;
+        right: 3px;
+    }
+
+    .person {
+        gap: 25px;
+    }
+
+    .person .im {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .person i {
+        font-size: 24px;
+    }
+
+    .notification-box {
+        top: 38px;
+        width: 320px;
+        max-width: calc(100vw - 250px);
+        max-height: 270px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .notification-box h3 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+    .notification-item {
+        padding: 9px 12px;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        border-radius: 8px;
+    }
+
+    .notification-item p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .notification-time {
+        font-size: 10px;
+        margin-top: 4px;
+    }
+
+    .no-notification {
+        font-size: 12px;
+        padding: 18px 0;
+    }
+
+    .notification-count {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+        top: -11px;
+        right: -9px;
+    }
+
+    .markxx i {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 190px;
+        padding: 17px 11px;
+    }
+
+    .toggle-btn {
+        font-size: 19px;
+        margin-bottom: 14px;
+    }
+
+    .sidebar h2 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 7px;
+    }
+
+    .sidebar ul li a {
+        font-size: 12px;
+        padding: 9px;
+        gap: 7px;
+        border-radius: 9px;
+    }
+
+    .logout button {
+        font-size: 12px;
+        padding: 9px;
+        border-radius: 9px;
+    }
+
+    .mess-count {
+        width: 19px;
+        height: 19px;
+        font-size: 11px;
+        top: -6px;
+        right: 2px;
+    }
+
+    .person {
+        gap: 18px;
+        margin-bottom: 7px;
+    }
+
+    .person .im {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .person i {
+        font-size: 20px;
+    }
+
+    .notification-box {
+        top: 34px;
+        right: -5px;
+        width: 280px;
+        max-width: calc(100vw - 205px);
+        max-height: 230px;
+        padding: 9px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .notification-box h3 {
+        font-size: 14px;
+        padding-bottom: 8px;
+    }
+
+    .notification-item {
+        padding: 8px 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 7px;
+    }
+
+    .notification-item p {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .notification-time {
+        font-size: 8px;
+        margin-top: 3px;
+    }
+
+    .no-notification {
+        font-size: 10px;
+        padding: 14px 0;
+    }
+
+    .notification-count {
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+        top: -9px;
+        right: -7px;
+    }
+
+    .markxx i {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .sidebar {
+        width: 160px;
+        padding: 14px 9px;
+    }
+
+    .toggle-btn {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .sidebar h2 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 5px;
+    }
+
+    .sidebar ul li a {
+        font-size: 10px;
+        padding: 8px;
+        gap: 6px;
+        border-radius: 8px;
+    }
+
+    .logout button {
+        font-size: 10px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .mess-count {
+        width: 17px;
+        height: 17px;
+        font-size: 10px;
+        top: -5px;
+        right: 1px;
+    }
+
+    .person {
+        gap: 12px;
+    }
+
+    .person .im {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .person i {
+        font-size: 18px;
+    }
+
+    .notification-box {
+        top: 30px;
+        right: -3px;
+        width: 240px;
+        max-width: calc(100vw - 130px);
+        max-height: 200px;
+        padding: 7px;
+        border-radius: 8px;
+    }
+
+    .notification-box h3 {
+        font-size: 12px;
+        padding-bottom: 6px;
+    }
+
+    .notification-item {
+        padding: 6px 8px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 6px;
+    }
+
+    .notification-item p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .notification-time {
+        font-size: 7px;
+        margin-top: 2px;
+    }
+
+    .no-notification {
+        font-size: 9px;
+        padding: 12px 0;
+    }
+
+    .notification-count {
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+        top: -8px;
+        right: -6px;
+    }
+
+    .markxx i {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 145px;
+        padding: 12px 7px;
+    }
+
+    .toggle-btn {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 15px;
+        margin-bottom: 13px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 4px;
+    }
+
+    .sidebar ul li a {
+        font-size: 9px;
+        padding: 7px;
+        gap: 5px;
+        border-radius: 7px;
+    }
+
+    .logout button {
+        font-size: 9px;
+        padding: 7px;
+        border-radius: 7px;
+    }
+
+    .mess-count {
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+        top: -5px;
+        right: 0;
+    }
+
+    .person {
+        gap: 9px;
+    }
+
+    .person .im {
+        width: 29px;
+        height: 29px;
+        font-size: 11px;
+    }
+
+    .person i {
+        font-size: 16px;
+    }
+
+    .notification-box {
+        top: 27px;
+        right: -2px;
+        width: 210px;
+        max-width: calc(100vw - 115px);
+        max-height: 180px;
+        padding: 6px;
+        border-radius: 7px;
+    }
+
+    .notification-box h3 {
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+
+    .notification-item {
+        padding: 5px 7px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        border-radius: 5px;
+    }
+
+    .notification-item p {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .notification-time {
+        font-size: 6px;
+        margin-top: 2px;
+    }
+
+    .no-notification {
+        font-size: 8px;
+        padding: 10px 0;
+    }
+
+    .notification-count {
+        width: 13px;
+        height: 13px;
+        font-size: 7px;
+        top: -7px;
+        right: -5px;
+    }
+
+    .markxx i {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .sidebar {
+        width: 130px;
+        padding: 10px 6px;
+    }
+
+    .toggle-btn {
+        font-size: 15px;
+        margin-bottom: 9px;
+    }
+
+    .sidebar h2 {
+        font-size: 14px;
+        margin-bottom: 11px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 3px;
+    }
+
+    .sidebar ul li a {
+        font-size: 8px;
+        padding: 6px;
+        gap: 4px;
+        border-radius: 6px;
+    }
+
+    .logout button {
+        font-size: 8px;
+        padding: 6px;
+        border-radius: 6px;
+    }
+
+    .mess-count {
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+        top: -4px;
+    }
+
+    .person {
+        gap: 7px;
+    }
+
+    .person .im {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .person i {
+        font-size: 14px;
+    }
+
+    .notification-box {
+        top: 24px;
+        right: -2px;
+        width: 190px;
+        max-width: calc(100vw - 105px);
+        max-height: 160px;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    .notification-box h3 {
+        font-size: 9px;
+        padding-bottom: 4px;
+    }
+
+    .notification-item {
+        padding: 4px 6px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .notification-item p {
+        font-size: 7px;
+        line-height: 1.2;
+    }
+
+    .notification-time {
+        font-size: 5px;
+        margin-top: 1px;
+    }
+
+    .no-notification {
+        font-size: 7px;
+        padding: 8px 0;
+    }
+
+    .notification-count {
+        width: 12px;
+        height: 12px;
+        font-size: 6px;
+        top: -6px;
+        right: -4px;
+    }
+
+    .markxx i {
+        font-size: 12px;
+    }
+}

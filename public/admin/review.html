@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/review.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/lookup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ ĐÁNH GIÁ & BÌNH LUẬN</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="top">
+            <h1>QUẢN LÝ ĐÁNH GIÁ & BÌNH LUẬN</h1>
+        </div>
+
+        <div class="table-container">
+
+            <div class="lookUp">
+
+                <div class="search-product"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Tìm Khách Hàng, Sản Phẩm..."></div>
+                <div class="filter">
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select class="filter-product">
+                        <option value="all">Tất Cả</option>
+                        <option value="chua">Chưa Phản Hồi</option>
+                        <option value="da">Đã Phản Hồi</option>
+                        <option value="mot">⭐</option>
+                        <option value="hai">⭐⭐</option>
+                        <option value="ba">⭐⭐⭐</option>
+                        <option value="bon">⭐⭐⭐⭐</option>
+                        <option value="nam">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách Hàng</th>
+                        <th>Sản Phẩm</th>
+                        <th>Sao</th>
+                        <th>Nội Dung</th>
+                        <th>Ngày Bình Luận</th>
+                        <th>Shop Phản Hồi</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </td>
+                        <td>Shop giao hàng nhanh</td>
+                        <td>15/05/2026</td>
+                        <td>
+                            <span class="status-new">Chưa phản hồi</span>
+                            <span class="status-done">Đã phản hồi</span>
+                        </td>
+                        <td>
+                            <button class="reply"><i class="fa-solid fa-reply"></i> Phản hồi</button>
+                            <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                        </td>
+                    </tr> -->
+                    <tbody class="comment-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal">
+    <div class="modal-content">
+        <h2>Phản Hồi Bình Luận</h2>
+
+        <p class="user-comment"></p>
+
+        <textarea class="shop-reply" placeholder="Nhập phản hồi..."></textarea>
+
+        <div class="modal-actions">
+            <button class="send-reply">Gửi</button>
+            <button class="close-modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<div class="confirm-box2">
+    <div class="confirm-content2">
+        <p>Bạn Có Chắc Muốn Hủy Đơn Hàng Này?</p>
+
+        <button class="no2">Không</button>
+        <button class="yes2">Xác Nhận</button>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+<script src="../js/review.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/lookup.js"></script>
+</body>
+</html>

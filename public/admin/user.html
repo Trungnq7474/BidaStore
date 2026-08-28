@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/lookup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ NGƯỜI DÙNG</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="top">
+            <h1>QUẢN LÝ NGƯỜI DÙNG</h1>
+        </div>
+
+        <div class="table-container">
+            
+            <div class="lookUp">
+
+                <div class="search-product"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Tìm Khách Hàng, SĐT..."></div>
+                <div class="filter">
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select class="filter-product">
+                        <option value="all">Tất Cả</option>
+                        <option value="customer">customer</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách Hàng</th>
+                        <th>Email</th>
+                        <th>SĐT</th>
+                        <th>Vai Trò</th>
+                        <th>Ngày Đăng Ký</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Nguyễn Văn A</td>
+                    <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=nguyenquangtrung0704@gmail.com" class="email-link" target="_blank">nguyenquangtrung0704@gmail.com</a></td>
+                    <td>0123456789</td>
+                    <td><button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Trần Thị B</td>
+                    <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=tranthib@gmail.com" class="email-link" target="_blank">tranthib@gmail.com</a></td>
+                    <td>0987654321</td>
+                    <td>
+                        <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr> -->
+                <tbody class="user-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="confirm-box2">
+    <div class="confirm-content2">
+        <p>Bạn Có Chắc Muốn Hủy Đơn Hàng Này?</p>
+
+        <button class="no2">Không</button>
+        <button class="yes2">Xác Nhận</button>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+<script src="../js/user.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/lookup.js"></script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+main {
+    width: 85%;
+    margin: 150px auto 80px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    background: #e8f8ff;
+    border: 1px solid #b9e8fa;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(4, 77, 195, 0.422);
+}
+
+main .contact {
+    width: 600px;
+    padding: 10px 20px;
+    background: #c9f1ff;
+    border-radius: 12px;
+    font-weight: bold;
+    border: 1px solid #9edff5;
+}
+
+main .contact h1 {
+    text-align: center;
+    color: #005887;
+    font-size: 29px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+main .contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 24px;
+    padding: 14px 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0062b9;
+    font-size: 17px;
+    line-height: 1.5;
+    border-left: 4px solid #38bdf8;
+}
+
+main .contact p i {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #c1f0ff;
+    color: #003e5f;
+}
+
+main .contact p span {
+    color: #075985;
+    font-weight: bold;
+}
+
+main .contact .icon {
+    display: flex;
+    gap: 12px;
+    margin-top: 45px;
+}
+
+main .contact .icon i {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #f0fbff;
+    color: #0075b0;
+    font-size: 25px;
+    transition: 0.4s ease-in-out;
+}
+
+main .contact .icon i:hover {
+    transform: translateY(-5px);
+    color: #ffffff;
+}
+
+main .contact .icon1:hover {
+    background: #1877f2;
+}
+
+main .contact .icon2:hover {
+    background: #6366f1;
+}
+
+main .contact .icon4:hover {
+    background: #e1306c;
+}
+
+main .contact .icon5:hover {
+    background: #22c55e;
+}
+
+main .info {
+    flex: 1;
+    padding: 40px 45px;
+    box-sizing: border-box;
+    background: #f3fbff;
+    border-radius: 12px;
+}
+
+main .info label {
+    display: block;
+    margin-bottom: 10px;
+    color: #075985;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+main .info input.name,
+main .info input.phone,
+main .info input.email {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin: 0 0 23px;
+    box-sizing: border-box;
+    border: 2px solid #c5eaf8;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #174d61;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+main .info input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+main .info input::placeholder {
+    color: #6b828c;
+}
+
+main .info .mess {
+    width: 100%;
+    height: 200px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    padding: 14px 15px;
+    box-sizing: border-box;
+    border: 2px solid #c5eaf8;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    background: #ffffff;
+    color: #164e63;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+main .info .mess:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+main .info .mess::placeholder {
+    font-weight: bold;
+    color: #328aaa;
+}
+
+main .info button.send {
+    display: block;
+    width: 170px;
+    height: 50px;
+    margin: auto;
+    border: none;
+    border-radius: 8px;
+    background: #7ed8ff;
+    color: #004268;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+main .info button.send:hover {
+    background: #0ea5e9;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.22);
+}
+
+@media (max-width: 1100px) {
+    main {
+        width: 92%;
+    }
+
+    main .contact {
+        width: 48%;
+    }
+
+    main .info {
+        padding: 30px;
+    }
+
+    main .contact p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        width: 92%;
+        margin-top: 110px;
+        flex-direction: column;
+    }
+
+    main .contact,
+    main .info {
+        width: 100%;
+    }
+
+    main .contact h1 {
+        font-size: 25px;
+    }
+
+    main .contact p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+        margin: 90px auto 50px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    main .contact,
+    main .info {
+        width: 100%;
+        padding: 20px;
+    }
+
+    main .contact h1 {
+        font-size: 21px;
+        letter-spacing: 0;
+    }
+
+    main .contact p {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 14px;
+        padding: 11px 9px;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    main .contact p i {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 15px;
+    }
+
+    main .contact p span {
+        flex-shrink: 0;
+        white-space: normal;
+    }
+
+    main .contact .icon {
+        margin-top: 25px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    main .contact .icon i {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    main .info {
+        padding: 25px 20px;
+    }
+
+    main .info label {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    main .info input.name,
+    main .info input.phone,
+    main .info input.email {
+        width: 100%;
+        height: 43px;
+        padding: 0 11px;
+        margin-bottom: 17px;
+        font-size: 13px;
+    }
+
+    main .info .mess {
+        width: 100%;
+        height: 130px;
+        margin-top: -8px;
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    main .info button.send {
+        width: 135px;
+        height: 43px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+        width: 95%;
+        margin: 75px auto 40px;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    main .contact,
+    main .info {
+        width: 100%;
+        padding: 14px;
+    }
+
+    main .contact h1 {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    main .contact p {
+        font-size: 11px;
+        padding: 9px 7px;
+        gap: 6px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    main .contact p i {
+        width: 25px;
+        height: 25px;
+        min-width: 25px;
+        font-size: 12px;
+    }
+
+    main .contact p span {
+        flex-shrink: 0;
+    }
+
+    main .contact .icon {
+        gap: 6px;
+        margin-top: 18px;
+    }
+
+    main .contact .icon i {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    main .info {
+        padding: 18px 15px;
+    }
+
+    main .info label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    main .info input.name,
+    main .info input.phone,
+    main .info input.email {
+        width: 100%;
+        height: 38px;
+        padding: 0 9px;
+        font-size: 11px;
+        margin-bottom: 13px;
+    }
+
+    main .info .mess {
+        width: 100%;
+        height: 110px;
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    main .info button.send {
+        width: 115px;
+        height: 38px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    main {
+        width: 96%;
+        margin-top: 65px;
+        padding: 4px;
+    }
+
+    main .contact,
+    main .info {
+        padding: 11px;
+    }
+
+    main .contact h1 {
+        font-size: 16px;
+    }
+
+    main .contact p {
+        font-size: 10px;
+        padding: 8px 6px;
+        gap: 5px;
+    }
+
+    main .contact p i {
+        width: 23px;
+        height: 23px;
+        min-width: 23px;
+        font-size: 11px;
+    }
+
+    main .contact .icon {
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    main .contact .icon i {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    main .info {
+        padding: 15px 12px;
+    }
+
+    main .info label {
+        font-size: 11px;
+    }
+
+    main .info input.name,
+    main .info input.phone,
+    main .info input.email {
+        height: 35px;
+        font-size: 10px;
+        margin-bottom: 11px;
+    }
+
+    main .info .mess {
+        height: 100px;
+        font-size: 10px;
+    }
+
+    main .info button.send {
+        width: 105px;
+        height: 35px;
+        font-size: 10px;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+main .contact,
+main .info,
+main .contact p,
+main .info input,
+main .info .mess {
+    max-width: 100%;
+}
+
+main .contact p {
+    overflow-wrap: anywhere;
+}
+
+main .contact p span {
+    white-space: normal;
+}

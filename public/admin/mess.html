@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/mess.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESS</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="mess-container">
+
+            <div class="customer-list">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Tìm khách hàng...">
+                </div>
+
+                <div class="customers"></div>
+                <!-- <div class="customer">
+                    <div class="customer-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="customer-info">
+                        <h4>Lê Văn C</h4>
+                        <p>Shop tư vấn giúp em với ạ</p>
+                    </div>
+
+                    <span class="time">17:20</span>
+                </div>  -->
+            </div>
+
+            <div class="chat-admin">
+
+                <div class="admin-chat-header">
+
+                    <div class="customer-avatar"></div>
+
+                    <div><h3></h3></div>
+                </div>
+
+
+                <div class="admin-chat-body">
+                    <!-- <div class="date"><span>Hôm nay</span></div>
+                    <div class="admin-message customer-mess">
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="message-content">
+                            <p>Shop ơi, bàn này còn hàng không?</p>
+                            <span>19:45</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-message shop-mess">
+                        <p>Dạ còn hàng ạ ❤️</p>
+                        <span>19:46</span>
+                    </div> -->
+                </div>
+
+                <div class="admin-file-preview"></div>
+                
+                <div class="admin-input">
+
+                    <button class="admin-file-btn"><i class="fa-solid fa-paperclip"></i></button>
+                    <input type="file" class="admin-file-input" hidden multiple>
+                    <button class="admin-emoji-btn"><i class="fa-regular fa-face-smile"></i></button>
+                    <emoji-picker class="admin-emoji-picker"></emoji-picker>
+                    <input class="admin-message-input" type="text" placeholder="Nhập tin nhắn...">
+                    <button class="send"><i class="fa-solid fa-paper-plane"></i></button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="image-modal">
+
+    <button class="close-image">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <img class="modal-image">
+
+</div>
+
+<div class="mgs2"></div>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/mess.js"></script>
+
+</body>
+</html>

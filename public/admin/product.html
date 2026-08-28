@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/lookup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ SẢN PHẨM</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+       
+
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="top">
+            <h1>QUẢN LÝ SẢN PHẨM</h1>
+        </div>
+    
+        <div class="table-container">
+            <div class="lookUp">
+
+                <button class="add"><i class="fa fa-plus"></i> Thêm Sản Phẩm</button>
+                <div class="search-product"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Tìm Sản Phẩm..."></div>
+
+            </div>
+
+            <div class="form-bg">
+                <div class="addform">
+                    <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                    <h2>Thêm Sản Phẩm Mới</h2>
+                    <label>Sản Phẩm</label>
+                    <input class="inname" type="text" placeholder="Tên Sản Phẩm...">
+                    <label>Giá Tiền</label>
+                    <input class="inprice" type="number" placeholder="Giá...">
+                    <label>Phân Loại</label>
+                    <select class="incate">
+                        <option value="" disabled selected hidden>Chọn Phân Loại</option>
+                        <option value="Bàn Bida">Bàn Bida</option>
+                        <option value="Bóng Bida">Bóng Bida</option>
+                        <option value="Bao Bida">Bao Bida</option>
+                        <option value="Nỉ Bản">Nỉ Bản</option>
+                        <option value="Cơ Bida">Cơ Bida</option>
+                        <option value="Găng Tay">Găng Tay</option>
+                        <option value="Lơ Bida">Lơ Bida</option>
+                        <option value="Khung Xếp">Khung Xếp</option>
+                    </select>
+                    <label>Mô Tả</label>
+                    <textarea class="indescrip" placeholder="Mô Tả..."></textarea>
+                    <label>Hình Ảnh</label>
+                    <input class="inimg" type="file">
+                
+                    <button class="save">Thêm Sản Phẩm</button>
+                </div>
+            </div>
+
+            <div class="edit-bg">
+                <div class="editform">
+                    <span class="econ"><i class="fa-solid fa-circle-xmark"></i></span>
+                    <h2>Sửa Sản Phẩm</h2>
+                    <label>Sản Phẩm</label>
+                    <input class="edname" type="text">
+                    <label>Giá Tiền</label>
+                    <input class="edprice" type="number">
+                    <label>Phân Loại</label>
+                    <select class="edcate">
+                        <option disabled selected>Chọn Phân Loại</option>
+                        <option value="Bàn Bida">Bàn Bida</option>
+                        <option value="Bóng Bida">Bóng Bida</option>
+                        <option value="Bao Bida">Bao Bida</option>
+                        <option value="Nỉ Bản">Nỉ Bản</option>
+                        <option value="Cơ Bida">Cơ Bida</option>
+                        <option value="Găng Tay">Găng Tay</option>
+                        <option value="Lơ Bida">Lơ Bida</option>
+                        <option value="Khung Xếp">Khung Xếp</option>
+                    </select>
+                    <label>Mô Tả</label>
+                    <textarea class="eddescrip"></textarea>
+                    <label>Hình Ảnh</label>
+                    <input class="edimg" type="file">
+                
+                    <button class="update">Cập Nhật Sản Phẩm</button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ảnh</th>
+                        <th>Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Mô Tả</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+
+                <!-- <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="../images/mr sung.png" alt="Ảnh">
+                    </td>
+                    <td>Bàn bida MR-SUNG</td>
+                    <td>80.000.000 VNĐ</td>
+                    <td><del>100.000.000 VNĐ</del></td>
+                    <td style="width: 200px;">Hiện đại, màu xám vân gỗ sang trọng với chân hình chữ V vát cạnh cực kỳ vững chãi.</td>       
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen-to-square"></i> Sửa</button>
+                        <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <img src="../images/rasson.png" alt="Ảnh">
+                    </td>
+                    <td>Bàn bida RASSON</td>
+                    <td>139.000.000 VNĐ</td>
+                    <td><del>155.000.000 VNĐ</del></td>
+                    <td>Hiện đại, màu xám vân gỗ sang trọng với chân hình chữ V vát cạnh cực kỳ vững chãi.</td>   
+                    <td>
+                        <button class="edit"><i class="fa-solid fa-pen-to-square"></i> Sửa</button>
+                        <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr> -->
+                <tbody class="product-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="confirm-box2">
+    <div class="confirm-content2">
+        <p>Bạn Có Chắc Muốn Hủy Đơn Hàng Này?</p>
+
+        <button class="no2">Không</button>
+        <button class="yes2">Xác Nhận</button>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+<script src="../js/product.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/lookup.js"></script>
+</body>
+</html>

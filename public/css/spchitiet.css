@@ -1,0 +1,1111 @@
+section {
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 120px;
+}
+
+.nd {
+    text-align: center;
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.nd h1 {
+    color: red;
+    font-size: 30px;
+}
+
+.nd p {
+    font-size: 30px;
+    color: rgb(128, 242, 217);
+    font-weight: bold;
+}
+
+.nd i {
+    color: rgb(1, 76, 252);
+} 
+
+.pro {
+    display: flex;
+}
+
+.sp .kk {
+    width: 90%;
+    height: auto;
+    padding: 10px 12px;
+    border: 1px solid rgb(5, 249, 143);
+    background-color: rgb(191, 255, 202);
+    border-radius: 20px;
+    margin: auto;
+}
+
+.sp .pro1 {
+    margin-left: 160px;
+}
+.sp .kk img {
+    width: 56%;
+    height: 576px;
+    border-radius: 20px;
+    background-color: rgb(166, 166, 166);
+}
+
+.icon{
+    margin-left: 82px;
+}
+
+.sp .kk .pro1 h2 {
+    text-align: center;
+    margin-left: -120px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    width: 500px;
+    color: rgb(110, 68, 116); 
+}
+
+.sp .kk .pro1 i {
+    font-size: 15px;
+    color: rgb(239, 9, 9);
+}
+
+.sp .kk .pro1 h3 {
+    margin-left: 70px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    color: rgba(53, 64, 0, 0.97);
+}
+
+.sp .god .cart i {
+    font-size: 40px;
+    background-color: rgb(248, 251, 251);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: rgb(129, 130, 73);
+    transition: 0.4s ease-in-out;
+    margin-top: 30px;
+}
+
+.god {
+    display: flex;
+    gap: 70px;
+    margin-left: -15px;
+}
+.sp .god .cart i:hover {
+    background-color: rgb(255, 225, 77);
+    transition: 0.4s ease-in-out;
+    transform: scale(1.05);
+}
+
+button.pay {
+    font-size: 25px;
+    width: 180px;
+    height: 55px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(219, 236, 239);
+    background-color: rgb(62, 0, 89);
+    transition: 0.4s ease-in-out;
+    margin-top: 32px;
+    border: none;
+}
+
+.pay:hover {
+    transition: 0.4s ease-in-out;
+    transform: scale(1.05);
+    color: rgb(0, 31, 37);
+    background-color: rgb(23, 185, 42);
+}
+
+.info {
+    width: 400px;
+}
+
+.info p {
+    margin-left: -110px;
+    font-size: 20px;
+    color: rgb(73, 67, 0);
+    line-height: 35px;
+    height: 260px;
+}
+
+.info h1 {
+    margin-left: 8px;
+    color: rgb(37, 0, 83);
+}
+
+.ud h2 {
+    color: rgb(6, 110, 0);
+    text-align: center;
+    margin-top: 70px;
+}
+
+.ic {
+    font-size: 22px;
+    height: 1px;
+    border: 2px solid rgb(94, 0, 0);
+    width: 150px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.ud p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgb(73, 67, 0);
+    line-height: 30px;
+    margin-left: 250px;
+}
+
+.review-comment-section {
+    width: 100%;
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #b3ffc5;
+    border: 1px solid rgb(5, 249, 143);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.review-comment-section h2 {
+    color: rgb(20, 0, 101);
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.comment-form {
+    background-color: #69ffb9;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.comment-form h3, .comments-list h3 {
+    color: rgb(0, 51, 73);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.rating-input{
+    width: 150px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.rating-input option{
+    font-size: 17px;
+    padding: 10px;
+}
+
+.stars-select i {
+    font-size: 25px;
+    color: rgb(239, 9, 9);
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.2s ease-in-out;
+    
+}
+
+.stars-select i:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    color: #72007d;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.comment-form textarea::placeholder, .comment-form input::placeholder {
+    color: #888;
+    font-weight: bold;
+}
+
+.comment-form input:focus, .comment-form textarea:focus {
+    border-color: rgb(5, 249, 143);
+    outline: none;
+}
+
+.btn-submit-comment {
+    background-color: rgb(0, 178, 86);
+    color: rgb(219, 236, 239);
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.btn-submit-comment:hover {
+    background-color: rgb(23, 185, 42);
+    color: #000;
+    transform: scale(1.03);
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment-item {
+    background-color: #69ffb9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 4px solid rgb(0, 188, 106);
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.userimg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(218, 194, 194);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #176453;
+    font-size: 40px;
+}
+
+.user-name {
+    color: #620000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.user-rating i {
+    color: rgb(239, 9, 9);
+    font-size: 17px;
+}
+
+.comment-date {
+    color: #620000;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.comment-content {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(0, 62, 155);
+    line-height: 1.5;
+}
+
+.shop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-date {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0e005c;
+}
+
+.shop-reply-user {
+    margin-top: 10px;
+    padding: 20px 20px;
+    background: #cafaff;
+    border-left: 4px solid #0088d1;
+    border-radius: 10px;
+}
+
+.shop-reply-user strong {
+    color: #0e005c;
+    font-size: 18px;
+    display: block;
+    margin-top: 7px;
+}
+
+.shop-reply-user p {
+    color: #a70000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1200px) {
+
+    section {
+        margin-top: 120px;
+        margin-bottom: 50px;
+    }
+
+    .sp .kk {
+        width: 92%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .sp .pro1 {
+        margin-left: 50px;
+        min-width: 0;
+    }
+
+    .sp .kk img {
+        width: 52%;
+        height: 500px;
+        object-fit: contain;
+    }
+
+    .sp .kk .pro1 h2 {
+        width: 100%;
+        margin-left: 0;
+        font-size: 24px;
+    }
+
+    .icon {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sp .kk .pro1 h3 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        margin-left: 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .info p {
+        margin-left: 0;
+        height: auto;
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .god {
+        margin-left: 0;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .ud p {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .review-comment-section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    section {
+        margin-top: 110px;
+        margin-bottom: 45px;
+    }
+
+    .sp .kk {
+        width: 94%;
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .pro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sp .kk img {
+        width: 75%;
+        height: 420px;
+        object-fit: contain;
+    }
+
+    .sp .pro1 {
+        width: 90%;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sp .kk .pro1 h2 {
+        width: 100%;
+        margin: 15px 0 10px;
+        font-size: 23px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .icon {
+        margin: 0;
+        text-align: center;
+    }
+
+    .sp .kk .pro1 h3 {
+        margin: 12px 0;
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        margin: 10px 0;
+        font-size: 23px;
+    }
+
+    .info p {
+        margin: 0;
+        height: auto;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    .god {
+        width: 100%;
+        margin: 10px 0 0;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .sp .god .cart i {
+        font-size: 32px;
+        padding: 9px 13px;
+    }
+
+    button.pay {
+        width: 160px;
+        height: 50px;
+        font-size: 21px;
+        margin-top: 28px;
+    }
+
+    .ud h2 {
+        font-size: 22px;
+        margin-top: 50px;
+    }
+
+    .ud p {
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .ic {
+        width: 120px;
+        margin-bottom: 30px;
+    }
+
+    .review-comment-section {
+        padding: 18px;
+    }
+
+    .comment-form {
+        padding: 15px;
+    }
+
+    .comment-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .comment-date {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    section {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+
+    .sp .kk {
+        width: calc(100% - 20px);
+        padding: 12px;
+        border-radius: 15px;
+        box-sizing: border-box;
+    }
+
+    .sp .kk img {
+        width: 85%;
+        height: 330px;
+    }
+
+    .sp .pro1 {
+        width: 100%;
+    }
+
+    .sp .kk .pro1 h2 {
+        font-size: 21px;
+        margin-top: 12px;
+        line-height: 1.3;
+    }
+
+    .sp .kk .pro1 h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 13px;
+    }
+
+    .icon {
+        line-height: 20px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        font-size: 21px;
+        margin-top: 12px;
+    }
+
+    .info p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .god {
+        gap: 18px;
+        align-items: center;
+    }
+
+    .sp .god .cart i {
+        font-size: 28px;
+        padding: 8px 11px;
+        margin-top: 25px;
+    }
+
+    button.pay {
+        width: 145px;
+        height: 46px;
+        font-size: 18px;
+        margin-top: 25px;
+    }
+
+    .ud h2 {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+
+    .ic {
+        width: 100px;
+        margin-bottom: 25px;
+    }
+
+    .ud p {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .review-comment-section {
+        width: 100%;
+        padding: 14px;
+        margin-top: 35px;
+        border-radius: 15px;
+    }
+
+    .review-comment-section h2 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .comment-form {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .comment-form h3,
+    .comments-list h3 {
+        font-size: 16px;
+    }
+
+    .rating-input {
+        width: 135px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .rating-input option {
+        font-size: 14px;
+    }
+
+    .comment-form textarea {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .btn-submit-comment {
+        padding: 9px 18px;
+        font-size: 14px;
+    }
+
+    .comment-item {
+        padding: 12px 14px;
+    }
+
+    .comment-header {
+        gap: 8px;
+    }
+
+    .userimg {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+
+    .user-name {
+        font-size: 14px;
+    }
+
+    .user-rating i {
+        font-size: 14px;
+    }
+
+    .comment-date {
+        font-size: 12px;
+    }
+
+    .comment-content {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .shop-reply-user {
+        padding: 12px;
+    }
+
+    .shop-reply-user strong {
+        font-size: 15px;
+    }
+
+    .shop-reply-user p {
+        font-size: 14px;
+    }
+
+    .reply-date {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    section {
+        margin-top: 90px;
+        margin-bottom: 35px;
+    }
+
+    .sp .kk {
+        width: calc(100% - 14px);
+        padding: 10px;
+        border-radius: 13px;
+    }
+
+    .sp .kk img {
+        width: 100%;
+        height: 260px;
+        border-radius: 13px;
+    }
+
+    .sp .pro1 {
+        width: 100%;
+    }
+
+    .sp .kk .pro1 h2 {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .sp .kk .pro1 h3 {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 11px;
+    }
+
+    .icon {
+        line-height: 16px;
+    }
+
+    .info h1 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .info p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .god {
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .sp .god .cart i {
+        font-size: 24px;
+        padding: 7px 9px;
+        margin-top: 23px;
+        border-radius: 12px;
+    }
+
+    button.pay {
+        width: 125px;
+        height: 42px;
+        font-size: 15px;
+        margin-top: 23px;
+        border-radius: 8px;
+    }
+
+    .ud h2 {
+        font-size: 17px;
+        margin-top: 32px;
+    }
+
+    .ic {
+        width: 80px;
+        border-width: 1px;
+        margin-bottom: 20px;
+    }
+
+    .ud p {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .review-comment-section {
+        padding: 10px;
+        margin-top: 28px;
+        border-radius: 12px;
+    }
+
+    .review-comment-section h2 {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    .comment-form {
+        padding: 10px;
+        margin-bottom: 18px;
+    }
+
+    .comment-form h3,
+    .comments-list h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .rating-input {
+        width: 120px;
+        padding: 7px 8px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .rating-input option {
+        font-size: 12px;
+    }
+
+    .comment-form textarea {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .btn-submit-comment {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .comment-item {
+        padding: 10px 11px;
+        border-left-width: 3px;
+    }
+
+    .comment-header {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .userimg {
+        width: 34px;
+        height: 34px;
+        font-size: 25px;
+    }
+
+    .user-name {
+        font-size: 12px;
+    }
+
+    .user-rating i {
+        font-size: 11px;
+    }
+
+    .comment-date {
+        font-size: 10px;
+    }
+
+    .comment-content {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .shop-reply-user {
+        padding: 9px;
+        border-left-width: 3px;
+    }
+
+    .shop-reply-user strong {
+        font-size: 12px;
+    }
+
+    .shop-reply-user p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .reply-date {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    section {
+        margin-top: 85px;
+        margin-bottom: 30px;
+    }
+
+    .sp .kk {
+        width: calc(100% - 10px);
+        padding: 8px;
+    }
+
+    .sp .kk img {
+        height: 220px;
+    }
+
+    .sp .kk .pro1 h2 {
+        font-size: 16px;
+    }
+
+    .sp .kk .pro1 h3 {
+        font-size: 14px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 10px;
+    }
+
+    .info h1 {
+        font-size: 16px;
+    }
+
+    .info p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .god {
+        gap: 8px;
+    }
+
+    .sp .god .cart i {
+        font-size: 21px;
+        padding: 6px 8px;
+    }
+
+    button.pay {
+        width: 110px;
+        height: 39px;
+        font-size: 13px;
+        margin-top: 22px;
+    }
+
+    .ud h2 {
+        font-size: 15px;
+        margin-top: 28px;
+    }
+
+    .ud p {
+        font-size: 12px;
+        line-height: 19px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .review-comment-section {
+        padding: 8px;
+    }
+
+    .review-comment-section h2 {
+        font-size: 15px;
+    }
+
+    .comment-form {
+        padding: 8px;
+    }
+
+    .comment-form h3,
+    .comments-list h3 {
+        font-size: 13px;
+    }
+
+    .rating-input {
+        width: 110px;
+        font-size: 11px;
+    }
+
+    .comment-form textarea {
+        font-size: 12px;
+    }
+
+    .btn-submit-comment {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+
+    .userimg {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+    }
+
+    .user-name {
+        font-size: 11px;
+    }
+
+    .user-rating i {
+        font-size: 10px;
+    }
+
+    .comment-date {
+        font-size: 9px;
+    }
+
+    .comment-content {
+        font-size: 11px;
+    }
+
+    .shop-reply-user strong,
+    .shop-reply-user p {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    section {
+        margin-top: 80px;
+    }
+
+    .sp .kk {
+        width: calc(100% - 8px);
+        padding: 7px;
+    }
+
+    .sp .kk img {
+        height: 195px;
+    }
+
+    .sp .kk .pro1 h2 {
+        font-size: 15px;
+    }
+
+    .sp .kk .pro1 h3 {
+        font-size: 13px;
+    }
+
+    .info h1 {
+        font-size: 15px;
+    }
+
+    .info p {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .sp .god .cart i {
+        font-size: 19px;
+    }
+
+    button.pay {
+        width: 100px;
+        height: 37px;
+        font-size: 12px;
+    }
+
+    .ud h2 {
+        font-size: 14px;
+    }
+
+    .ud p {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .review-comment-section h2 {
+        font-size: 14px;
+    }
+
+    .comment-content {
+        font-size: 10px;
+    }
+}

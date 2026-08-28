@@ -1,0 +1,829 @@
+body{
+    background: #f4f6f9;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.main{
+    flex: 1;
+    padding: 30px;
+    min-width: 0;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top h1{
+    margin: auto;
+    font-size: 35px;
+    color: #111827;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.add{
+    border: none;
+    font-size: 17px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.add:hover{
+    background: #1d4ed8;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.edit{
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    background: #f59e0b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.delete{
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    transition: 0.3s ease-in-out;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background: #d97706;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+.delete:hover{
+    background: #dc2626;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+.addform h2,
+.editform h2 {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #4268ba;
+    text-transform: uppercase;
+}
+
+.form-bg,
+.edit-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 22, 22, 0.495);
+}
+
+.addform,
+.editform {
+    background-color: #cfffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: auto;
+    width: 500px;
+    display: grid;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgb(81, 76, 76);
+    margin-left: 40%;
+    margin-top: 1%; 
+    animation: showw 0.4s ease-in-out; 
+}
+
+@keyframes showw {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.addform label,
+.editform label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin-left: 4px;
+    color: #2b5694;
+}
+
+.addform input,
+.editform input {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    width: 450px;
+    height: 44px;
+    border: 2px solid #71ffd9;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: #f3f9ff;
+    outline: none;
+    color:#003f6f;
+}
+
+.addform input:focus, 
+.addform textarea:focus,
+.addform .category:focus
+.editform input:focus,
+.editform textarea:focus,
+.editform .category:focus
+ {
+    border: 2px solid #c5c5ff;
+    transition: 0.3s ease-in-out;
+}
+
+.incate,
+.edcate {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    width: 450px;
+    height: 44px;
+    border: 2px solid #71ffd9;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #f3f9ff;
+    outline: none;
+    color:#003f6f;
+}
+
+option {
+    color:#003f6f;
+    font-weight: bold;
+    background-color: #e9efff;
+}
+
+.addform textarea,
+.editform textarea {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 100px;
+    border: 2px solid #71ffd9;
+    font-size: 16px;
+    resize: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: #f3f9ff;
+    outline: none;
+    color:#003f6f;
+}
+
+.addform input::placeholder, 
+.addform textarea::placeholder  {
+    color: #959595;
+}
+
+.save,
+.update {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color:#4197ff;
+    color: #edf9e1;
+    cursor: pointer;
+    height: 45px;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.save:hover,
+.update:hover {
+    transform: scale(1.02);
+    transition: 0.4s ease-in-out;
+    background-color: #367fd7;
+    color: #ffffd0;
+}
+
+.icon,
+.econ {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    font-size: 25px;
+    color: #3d62c5;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+
+    .main {
+        padding: 25px;
+    }
+
+    .top {
+        margin-bottom: 25px;
+    }
+
+    .top h1 {
+        font-size: 32px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .lookUp {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .add {
+        width: auto !important;
+        height: 40px;
+        padding: 10px 15px;
+        margin: 0;
+        font-size: 15px;
+        white-space: nowrap;
+        flex: 0 0 auto;
+        box-sizing: border-box;
+    }
+
+    .search-product {
+        width: 240px !important;
+        max-width: 240px !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        flex: 0 1 240px !important;
+        box-sizing: border-box;
+    }
+
+    .search-product i {
+        font-size: 14px !important;
+    }
+
+    .search-product input {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 100% !important;
+        padding: 8px 10px !important;
+        font-size: 14px !important;
+        box-sizing: border-box;
+    }
+
+    .edit,
+    .delete {
+        font-size: 14px;
+        padding: 7px 10px;
+        margin: 2px;
+        white-space: nowrap;
+    }
+
+    .addform,
+    .editform {
+        width: min(500px, calc(100vw - 40px));
+        max-height: 94vh;
+        margin: 2vh auto;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .addform input,
+    .editform input,
+    .incate,
+    .edcate,
+    .addform textarea,
+    .editform textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .main {
+        padding: 20px;
+    }
+
+    .top {
+        margin-bottom: 20px;
+    }
+
+    .top h1 {
+        font-size: 29px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .lookUp {
+        gap: 12px;
+    }
+
+    .add {
+        height: 37px;
+        padding: 9px 13px;
+        font-size: 14px;
+    }
+
+    .search-product {
+        width: 210px !important;
+        max-width: 210px !important;
+        flex-basis: 210px !important;
+        height: 37px !important;
+    }
+
+    .search-product i {
+        font-size: 13px !important;
+    }
+
+    .search-product input {
+        font-size: 13px !important;
+        padding: 7px 9px !important;
+    }
+
+    .edit,
+    .delete {
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    .addform,
+    .editform {
+        width: min(480px, calc(100vw - 40px));
+        max-height: 94vh;
+        margin: 2vh auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .main {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .top h1 {
+        width: 100%;
+        font-size: 25px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .lookUp {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .add {
+        width: auto !important;
+        height: 34px;
+        max-width: none;
+        padding: 8px 11px;
+        margin: 0;
+        font-size: 13px;
+        white-space: nowrap;
+        flex: 0 1 auto;
+        box-sizing: border-box;
+    }
+
+    .search-product {
+        width: 180px !important;
+        max-width: 180px !important;
+        min-width: 0 !important;
+        height: 34px !important;
+        flex: 0 1 180px !important;
+        box-sizing: border-box;
+    }
+
+    .search-product i {
+        font-size: 12px !important;
+    }
+
+    .search-product input {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 100% !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+        box-sizing: border-box;
+    }
+
+    .edit,
+    .delete {
+        font-size: 12px;
+        padding: 7px 8px;
+        margin: 2px;
+        white-space: nowrap;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 10px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .addform,
+    .editform {
+        width: calc(100vw - 32px);
+        max-width: 460px;
+        max-height: 94vh;
+        margin: 2vh auto;
+        padding: 12px 18px;
+        border-radius: 14px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .addform h2,
+    .editform h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 18px;
+    }
+
+    .addform label,
+    .editform label {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .addform input,
+    .editform input,
+    .incate,
+    .edcate {
+        width: 100%;
+        height: 42px;
+        padding: 9px 10px;
+        font-size: 14px;
+        margin-bottom: 13px;
+        box-sizing: border-box;
+    }
+
+    .addform textarea,
+    .editform textarea {
+        width: 100%;
+        height: 85px;
+        padding: 9px 10px;
+        font-size: 14px;
+        margin-bottom: 13px;
+        box-sizing: border-box;
+    }
+
+    .save,
+    .update {
+        width: 100%;
+        height: 43px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .icon,
+    .econ {
+        font-size: 23px;
+        margin-top: 8px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .main {
+        padding: 12px;
+    }
+
+    .top h1 {
+        font-size: 22px;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .lookUp {
+        gap: 7px;
+    }
+
+    .add {
+        height: 31px;
+        padding: 7px 9px;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .search-product {
+        width: 150px !important;
+        max-width: 150px !important;
+        min-width: 0 !important;
+        flex-basis: 150px !important;
+        height: 31px !important;
+    }
+
+    .search-product i {
+        font-size: 11px !important;
+    }
+
+    .search-product input {
+        font-size: 11px !important;
+        padding: 5px 7px !important;
+    }
+
+    .edit,
+    .delete {
+        font-size: 11px;
+        padding: 6px 7px;
+        margin: 1px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 7px;
+    }
+
+    .addform,
+    .editform {
+        width: calc(100vw - 24px);
+        max-height: 96vh;
+        padding: 10px 14px;
+        margin: 1.5vh auto;
+        border-radius: 12px;
+    }
+
+    .addform h2,
+    .editform h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .addform label,
+    .editform label {
+        font-size: 13px;
+    }
+
+    .addform input,
+    .editform input,
+    .incate,
+    .edcate {
+        height: 40px;
+        font-size: 13px;
+        margin-bottom: 11px;
+    }
+
+    .addform textarea,
+    .editform textarea {
+        height: 75px;
+        font-size: 13px;
+    }
+
+    .save,
+    .update {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .icon,
+    .econ {
+        font-size: 21px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .main {
+        padding: 9px;
+    }
+
+    .top h1 {
+        font-size: 19px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .lookUp {
+        gap: 5px;
+    }
+
+    .add {
+        height: 28px;
+        padding: 6px 8px;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .search-product {
+        width: 120px !important;
+        max-width: 120px !important;
+        min-width: 0 !important;
+        flex-basis: 120px !important;
+        height: 28px !important;
+    }
+
+    .search-product i {
+        font-size: 10px !important;
+    }
+
+    .search-product input {
+        font-size: 10px !important;
+        padding: 4px 6px !important;
+    }
+
+    .edit,
+    .delete {
+        font-size: 10px;
+        padding: 5px 6px;
+        margin: 1px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 5px;
+    }
+
+    .addform,
+    .editform {
+        width: calc(100vw - 18px);
+        max-height: 97vh;
+        padding: 9px 12px;
+        margin: 1vh auto;
+    }
+
+    .addform h2,
+    .editform h2 {
+        font-size: 16px;
+        margin-bottom: 13px;
+    }
+
+    .addform label,
+    .editform label {
+        font-size: 12px;
+    }
+
+    .addform input,
+    .editform input,
+    .incate,
+    .edcate {
+        height: 38px;
+        font-size: 12px;
+        margin-bottom: 9px;
+    }
+
+    .addform textarea,
+    .editform textarea {
+        height: 68px;
+        font-size: 12px;
+    }
+
+    .save,
+    .update {
+        height: 38px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .main {
+        padding: 7px;
+    }
+
+    .top h1 {
+        font-size: 17px;
+        margin-top: 8px;
+        margin-bottom: 13px;
+    }
+
+    .lookUp {
+        gap: 4px;
+    }
+
+    .add {
+        height: 25px;
+        padding: 5px 7px;
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .search-product {
+        width: 105px !important;
+        max-width: 105px !important;
+        min-width: 0 !important;
+        flex-basis: 105px !important;
+        height: 25px !important;
+    }
+
+    .search-product i {
+        font-size: 9px !important;
+    }
+
+    .search-product input {
+        font-size: 9px !important;
+        padding: 3px 5px !important;
+    }
+
+    .edit,
+    .delete {
+        font-size: 9px;
+        padding: 5px;
+        margin: 1px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 4px;
+    }
+
+    .addform,
+    .editform {
+        width: calc(100vw - 14px);
+        max-height: 98vh;
+        padding: 8px 10px;
+    }
+
+    .addform h2,
+    .editform h2 {
+        font-size: 15px;
+    }
+
+    .addform label,
+    .editform label {
+        font-size: 11px;
+    }
+
+    .addform input,
+    .editform input,
+    .incate,
+    .edcate {
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .addform textarea,
+    .editform textarea {
+        height: 62px;
+        font-size: 11px;
+    }
+
+    .save,
+    .update {
+        height: 36px;
+        font-size: 11px;
+    }
+}
+
+

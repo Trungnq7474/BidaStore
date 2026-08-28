@@ -1,0 +1,915 @@
+body{
+    background: #f4f6f9;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.main{
+    flex: 1;
+    padding: 30px;
+    min-width: 0;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top h1{
+    margin: auto;
+    font-size: 35px;
+    color: #111827;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.edit{
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    background: #00c71b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.delete{
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    transition: 0.3s ease-in-out;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background: #d97706;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+.delete:hover{
+    background: #dc2626;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+select {
+    padding: 10px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    background-color: #dffff8;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+option {
+    color: rgb(36, 0, 72);
+    font-weight: bold;
+    background-color: #c2fff2;
+}
+
+select.cho{
+    color: white;
+    background: orange;
+}
+
+select.dang{
+    color: white;
+    background: blue;
+}
+
+select.xong{
+    color: white;
+    background: green;
+}
+
+select.huy{
+    color: white;
+    background: red;
+}
+
+.invoice-box {
+    text-align: left;
+    border-radius: 14px;
+    padding: 20px;
+    background: #f8f7ff;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(12, 12, 12, 0.296);
+    width: 42%;
+    margin-left: 35%;
+    margin-top: 1%;
+    animation: showw 0.5s ease-in-out;
+}
+
+@keyframes showw {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.invoice-title {
+    font-weight: bold;
+    color: #4c1d95;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd6fe;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.invoice-title span {
+    margin: auto;
+    color: #4c1d95;
+    font-size: 18px;
+    background: #ede9fe;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.name, .email, .phone, .address, .method, .time {
+    color: rgb(55, 114, 217);
+}
+
+.invoice-row {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.invoice-row .label {
+    color: #475569;
+}
+
+.invoice-row .tt {
+    font-size: 18px;
+    width: 31px;
+    color: #7c3aed;
+}
+
+.invoice-row .value {
+    color: #1e293b;
+    font-weight: 600;
+    text-align: right;
+    max-width: 65%;
+}
+
+.text {
+    color: #7f1d1d;
+}
+
+.product-list {
+    padding: 15px 0;
+    margin-top: -15px;
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #1e293b;
+    padding: 8px 0;
+    border-top: 1px dashed #a78bfa;
+    border-bottom: 1px dashed #a78bfa;
+    margin-bottom: 15px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-img {
+    width: 140px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #ddd6fe;
+    object-fit: cover;
+    border: 1px solid #c4b5fd;
+}
+
+.product-detail .product-qty {
+    color: #64748b;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #334155;
+    font-size: 20px;
+}
+
+.invoice-roww {
+    color: #64748b;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd6fe;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.total-row .price {
+    color: #dc2626;
+    font-size: 22px;
+}
+
+.total-row .tong {
+    color: #dc2626;
+    font-size: 20px;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 22, 22, 0.495);
+    display: none;
+}
+
+.econ {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    font-size: 25px;
+    color: #3d62c5;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+
+    .main {
+        padding: 25px;
+    }
+
+    .top h1 {
+        font-size: 32px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px 4px;
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+
+    select {
+        font-size: 14px;
+        padding: 8px 10px;
+        border-radius: 12px;
+    }
+
+    .invoice-box {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 18px;
+    }
+
+    .invoice-title span {
+        font-size: 17px;
+        padding: 9px 18px;
+    }
+
+    .invoice-row {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .invoice-row .tt {
+        font-size: 17px;
+        width: 28px;
+    }
+
+    .product-list {
+        max-height: 165px;
+    }
+
+    .product-item {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .product-info {
+        gap: 12px;
+    }
+
+    .product-img {
+        width: 120px;
+        height: 85px;
+    }
+
+    .product-detail .product-qty {
+        margin-top: 10px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .invoice-roww {
+        font-size: 16px;
+    }
+
+    .total-row .tong {
+        font-size: 18px;
+    }
+
+    .total-row .price {
+        font-size: 20px;
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    .main {
+        padding: 20px;
+    }
+
+    .top {
+        margin-bottom: 20px;
+    }
+
+    .top h1 {
+        font-size: 29px;
+        margin-top: 20px;
+        margin-bottom: 22px;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px 3px;
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    select {
+        font-size: 13px;
+        padding: 8px 9px;
+        border-radius: 10px;
+    }
+
+    .invoice-box {
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 17px;
+        border-radius: 13px;
+    }
+
+    .invoice-title {
+        margin-bottom: 13px;
+    }
+
+    .invoice-title span {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .invoice-row {
+        font-size: 14px;
+        margin-bottom: 13px;
+    }
+
+    .invoice-row .tt {
+        font-size: 16px;
+        width: 27px;
+    }
+
+    .product-list {
+        max-height: 160px;
+    }
+
+    .product-item {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .product-info {
+        gap: 10px;
+    }
+
+    .product-img {
+        width: 100px;
+        height: 70px;
+    }
+
+    .product-detail .product-qty {
+        margin-top: 8px;
+    }
+
+    .product-price {
+        font-size: 16px;
+    }
+
+    .invoice-roww {
+        font-size: 15px;
+    }
+
+    .total-row {
+        font-size: 14px;
+    }
+
+    .total-row .tong {
+        font-size: 17px;
+    }
+
+    .total-row .price {
+        font-size: 19px;
+    }
+
+    .econ {
+        font-size: 22px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .main {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .top h1 {
+        width: 100%;
+        font-size: 25px;
+        margin-top: 15px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px 3px;
+        font-size: 12px;
+        padding: 6px 8px;
+        border-radius: 7px;
+    }
+
+    select {
+        font-size: 12px;
+        padding: 7px 8px;
+        border-radius: 9px;
+    }
+
+    .invoice-box {
+        width: calc(100% - 20px);
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        padding: 15px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .invoice-title {
+        margin-top: -5px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .invoice-title span {
+        font-size: 14px;
+        padding: 7px 13px;
+        border-radius: 16px;
+    }
+
+    .invoice-row {
+        font-size: 13px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+    }
+
+    .invoice-row .tt {
+        font-size: 15px;
+        width: 24px;
+    }
+
+    .product-list {
+        padding: 12px 0;
+        margin-top: -8px;
+        max-height: 150px;
+    }
+
+    .product-item {
+        font-size: 12px;
+        padding: 7px 0;
+        margin-bottom: 10px;
+    }
+
+    .product-info {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .product-img {
+        width: 80px;
+        height: 58px;
+        border-radius: 7px;
+        flex-shrink: 0;
+    }
+
+    .product-detail {
+        min-width: 0;
+    }
+
+    .product-detail .product-qty {
+        margin-top: 7px;
+        font-size: 11px;
+    }
+
+    .product-price {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .invoice-roww {
+        font-size: 13px;
+        margin-top: 12px;
+    }
+
+    .total-row {
+        font-size: 12px;
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+
+    .total-row .tong {
+        font-size: 15px;
+    }
+
+    .total-row .price {
+        font-size: 17px;
+    }
+
+    .econ {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .main {
+        padding: 12px;
+    }
+
+    .top h1 {
+        font-size: 22px;
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px 3px;
+        font-size: 11px;
+        padding: 6px 7px;
+    }
+
+    select {
+        font-size: 11px;
+        padding: 6px 7px;
+        border-radius: 8px;
+    }
+
+    .invoice-box {
+        width: 100%;
+        max-width: none;
+        padding: 13px;
+        margin-top: 1%;
+        border-radius: 11px;
+    }
+
+    .invoice-title span {
+        font-size: 13px;
+        padding: 6px 11px;
+    }
+
+    .invoice-row {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .invoice-row .tt {
+        font-size: 14px;
+        width: 22px;
+    }
+
+    .product-list {
+        max-height: 140px;
+        padding: 10px 0;
+    }
+
+    .product-item {
+        font-size: 11px;
+        padding: 6px 0;
+    }
+
+    .product-img {
+        width: 68px;
+        height: 50px;
+    }
+
+    .product-info {
+        gap: 7px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .invoice-roww {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .total-row {
+        font-size: 11px;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .total-row .tong {
+        font-size: 13px;
+    }
+
+    .total-row .price {
+        font-size: 15px;
+    }
+
+    .econ {
+        font-size: 18px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .main {
+        padding: 9px;
+    }
+
+    .top h1 {
+        font-size: 19px;
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px;
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+    select {
+        font-size: 10px;
+        padding: 5px 6px;
+        border-radius: 7px;
+    }
+
+    .invoice-box {
+        padding: 11px;
+        border-radius: 10px;
+    }
+
+    .invoice-title span {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+
+    .invoice-row {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .invoice-row .tt {
+        font-size: 13px;
+        width: 20px;
+    }
+
+    .product-list {
+        max-height: 125px;
+    }
+
+    .product-item {
+        font-size: 10px;
+    }
+
+    .product-img {
+        width: 58px;
+        height: 43px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 9px;
+    }
+
+    .product-price {
+        font-size: 11px;
+    }
+
+    .invoice-roww {
+        font-size: 11px;
+    }
+
+    .total-row {
+        font-size: 10px;
+    }
+
+    .total-row .tong {
+        font-size: 12px;
+    }
+
+    .total-row .price {
+        font-size: 14px;
+    }
+
+    .econ {
+        font-size: 17px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .main {
+        padding: 7px;
+    }
+
+    .top h1 {
+        font-size: 17px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .edit,
+    .delete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        white-space: nowrap;
+        vertical-align: middle;
+        margin: 2px;
+        font-size: 9px;
+        padding: 5px;
+    }
+
+    select {
+        font-size: 9px;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    .invoice-box {
+        padding: 9px;
+        border-radius: 9px;
+    }
+
+    .invoice-title span {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .invoice-row {
+        font-size: 10px;
+        margin-bottom: 7px;
+    }
+
+    .invoice-row .tt {
+        font-size: 12px;
+        width: 18px;
+    }
+
+    .product-list {
+        max-height: 115px;
+    }
+
+    .product-item {
+        font-size: 10px;
+    }
+
+    .product-img {
+        width: 52px;
+        height: 39px;
+    }
+
+    .product-detail .product-qty {
+        font-size: 8px;
+    }
+
+    .product-price {
+        font-size: 10px;
+    }
+
+    .invoice-roww {
+        font-size: 10px;
+    }
+
+    .total-row {
+        font-size: 9px;
+    }
+
+    .total-row .tong {
+        font-size: 11px;
+    }
+
+    .total-row .price {
+        font-size: 13px;
+    }
+
+    .econ {
+        font-size: 16px;
+    }
+
+}

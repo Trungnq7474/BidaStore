@@ -1,0 +1,1211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/màu\ nền.jpg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    flex: 1;
+}
+
+header {
+    background-image: url(../images/hn.jpg);
+    font-weight: bold;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    z-index: 100;
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header .logo img {
+    width: 110px;
+    height: 80px;
+    margin-left: 30px;
+    background: linear-gradient(
+        rgb(249, 1, 1),
+        rgb(16, 204, 135),
+        rgb(246, 206, 3)
+    );
+    padding: 10px;
+    border-radius: 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav {
+    margin: auto;
+    padding-right: 130px;
+    position: relative;
+}
+
+header nav li {
+    position: relative;
+}
+
+header nav li a {
+    text-decoration: none;
+    color: rgba(5, 234, 112, 0.982);
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    font-size: 18px;
+    transition: 0.4s ease-in-out;
+    display: block;
+}
+
+header nav ul li a.active {
+    color: rgb(189, 193, 237);
+    background-color: rgba(255, 3, 3, 0.342);
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: 0.4s ease-in-out;
+}
+
+.dx {
+    display: none;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 10px;
+    right: -50px;
+    width: 170px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2px;
+    border: none;
+    color: rgba(130, 8, 55, 0.982);
+    background-color: rgb(209, 230, 88);
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.dx:hover {
+    color: rgb(0, 2, 73);
+    background-color: rgb(159, 243, 237);
+    transform: scale(1.02);
+    transition: 0.4s ease-in-out;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.527);
+    margin-top: 10px;
+    border-radius: 20px;
+    left: 0;
+    top: 32px;
+}
+
+header nav ul li:hover .dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dropdown li {
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+.dropdown img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header nav li a:hover {
+    color: rgb(189, 193, 237);
+    background-color: rgba(255, 3, 3, 0.342);
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: 0.4s ease-in-out;
+}
+
+.count {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: 2px;
+    background: rgba(0, 214, 100, 0.982);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 17px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.bell-count {
+    position: absolute;
+    top: -10px;
+    right: 2px;
+    background: rgba(0, 214, 100, 0.982);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 17px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.notifications {
+    position: relative;
+}
+
+.notifications-box {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 450px;
+    width: max-content;
+    max-width: 550px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: rgba(240, 255, 225, 0.98);
+    border: 1px solid #F3C5A9;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(191, 132, 101, 0.25);
+    z-index: 9999;
+    animation: box 0.5s ease-in-out;
+}
+
+.notifications-box h3 {
+    text-align: center;
+    color: #B9664F;
+    margin: 0;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #F1CDBA;
+    font-size: 20px;
+}
+
+.notifications-item {
+    padding: 14px 16px;
+    margin-top: 12px;
+    border-bottom: 1px solid #F3D9CA;
+    cursor: pointer;
+    background-color: rgba(255, 214, 193, 0.55);
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.notifications-item p {
+    color: #704B42;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.notifications-item:hover {
+    background: rgba(255, 194, 166, 0.7);
+    transform: translateX(4px);
+}
+
+.notifications-item:hover p {
+    color: #5D382F;
+}
+
+.notifications-time {
+    display: block;
+    margin-top: 8px;
+    color: #B98572;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.notifications-item.unread {
+    background-color: #FFE4D6;
+}
+
+.notifications-item.unread p {
+    color: #663C32;
+    font-weight: bold;
+}
+
+.notifications-item.unread .notifications-time {
+    color: #B8664E;
+}
+
+.notifications-item.read {
+    background-color: #E2D8D3;
+}
+
+.notifications-item.read p {
+    color: #85766F;
+    font-weight: bold;
+}
+
+.notifications-item.read .notifications-time {
+    color: #9D8F89;
+}
+
+.notifications-item:hover {
+    transform: translateX(4px);
+}
+
+.notifications-item.unread:hover {
+    background-color: #FFD5C2;
+}
+
+.notifications-item.read:hover {
+    background-color: #D8CDC7;
+}
+
+.no-notifications {
+    text-align: center;
+    color: #B98270;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 25px 0;
+}
+
+@keyframes box {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mark {
+    font-size: 26px;
+    margin-top: 10px;
+    color: #9c6c60;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+}
+
+.mark:hover {
+    transform: translateY(-4px);
+    transition: 0.4s ease-in-out;
+    color: #044e29;
+}
+
+@media (max-width: 1300px) {
+    header {
+        padding: 8px 15px;
+    }
+
+    header .logo img {
+        width: 90px;
+        height: 68px;
+        margin-left: 5px;
+    }
+
+    header nav {
+        padding-right: 90px;
+    }
+
+    header nav ul {
+        justify-content: space-between;
+    }
+
+    header nav li a {
+        padding: 9px 13px;
+        font-size: 14px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 9px 13px;
+    }
+
+    .dx {
+        right: -60px;
+        width: 110px;
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+        top: -5px;
+        right: -1px;
+    }
+
+    .dropdown {
+        padding: 7px;
+        margin-top: 6px;
+        border-radius: 12px;
+        top: 28px;
+    }
+
+    header nav ul li:hover .dropdown {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dropdown li {
+        width: 170px;
+        margin-bottom: 3px;
+    }
+
+    .dropdown img {
+        width: 28px;
+        height: 28px;
+        margin-right: 6px;
+    }
+
+    .dropdown li a {
+        padding: 6px 8px !important;
+        font-size: 11px !important;
+    }
+
+    .notifications-box {
+        top: 75px;
+        right: 20px;
+        width: 400px;
+        max-width: calc(100vw - 40px);
+        max-height: 300px;
+        padding: 12px;
+        border-radius: 13px;
+    }
+
+    .notifications-box h3 {
+        font-size: 17px;
+        padding-bottom: 10px;
+    }
+
+    .notifications-item {
+        padding: 10px 12px;
+        margin-top: 8px;
+    }
+
+    .notifications-item p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .notifications-time {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .no-notifications {
+        font-size: 13px;
+        padding: 18px 0;
+    }
+
+    .mark {
+        font-size: 22px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 1150px) {
+    header {
+        padding: 7px 10px;
+    }
+
+    header .logo img {
+        width: 78px;
+        height: 60px;
+        margin-left: 0;
+    }
+
+    header nav {
+        padding-right: 75px;
+    }
+
+    header nav ul {
+        justify-content: space-between;
+    }
+
+    header nav li a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 8px 10px;
+    }
+
+    .dx {
+        right: -50px;
+        width: 100px;
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        top: -5px;
+        right: -1px;
+    }
+
+    .dropdown {
+        padding: 6px;
+        margin-top: 5px;
+        border-radius: 11px;
+        top: 26px;
+    }
+
+    .dropdown li {
+        width: 155px;
+        margin-bottom: 2px;
+    }
+
+    .dropdown img {
+        width: 26px;
+        height: 26px;
+        margin-right: 5px;
+    }
+
+    .dropdown li a {
+        padding: 5px 7px !important;
+        font-size: 10px !important;
+    }
+
+    .notifications-box {
+        top: 70px;
+        right: 15px;
+        width: 350px;
+        max-width: calc(100vw - 30px);
+        max-height: 280px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .notifications-box h3 {
+        font-size: 15px;
+        padding-bottom: 8px;
+    }
+
+    .notifications-item {
+        padding: 8px 10px;
+        margin-top: 7px;
+    }
+
+    .notifications-item p {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .notifications-time {
+        font-size: 9px;
+        margin-top: 4px;
+    }
+
+    .no-notifications {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+
+    .mark {
+        font-size: 20px;
+        margin-top: 7px;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        padding: 6px 8px;
+    }
+
+    header .logo img {
+        width: 68px;
+        height: 53px;
+    }
+
+    header nav {
+        padding-right: 65px;
+    }
+
+    header nav li a {
+        padding: 7px 8px;
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 7px 8px;
+    }
+
+    header nav li a i {
+        font-size: 11px;
+    }
+
+    .dx {
+        right: -45px;
+        width: 90px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 14px;
+        height: 14px;
+        font-size: 7px;
+        top: -4px;
+        right: -1px;
+    }
+
+    .dropdown {
+        padding: 5px;
+        margin-top: 4px;
+        border-radius: 10px;
+        top: 24px;
+    }
+
+    .dropdown li {
+        width: 140px;
+        margin-bottom: 2px;
+    }
+
+    .dropdown img {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+
+    .dropdown li a {
+        padding: 5px 6px !important;
+        font-size: 9px !important;
+    }
+
+    .notifications-box {
+        top: 63px;
+        right: 10px;
+        width: 310px;
+        max-width: calc(100vw - 20px);
+        max-height: 260px;
+        padding: 9px;
+        border-radius: 11px;
+    }
+
+    .notifications-box h3 {
+        font-size: 14px;
+        padding-bottom: 7px;
+    }
+
+    .notifications-item {
+        padding: 7px 9px;
+        margin-top: 6px;
+        border-radius: 8px;
+    }
+
+    .notifications-item p {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    .notifications-time {
+        font-size: 8px;
+        margin-top: 3px;
+    }
+
+    .no-notifications {
+        font-size: 11px;
+        padding: 13px 0;
+    }
+
+    .mark {
+        font-size: 18px;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 850px) {
+    header {
+        padding: 6px;
+    }
+
+    header .logo img {
+        width: 60px;
+        height: 48px;
+    }
+
+    header nav {
+        padding-right: 58px;
+    }
+
+    header nav li a {
+        padding: 6px 7px;
+        font-size: 10px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 6px 7px;
+    }
+
+    header nav li a i {
+        font-size: 10px;
+    }
+
+    .dx {
+        right: -40px;
+        width: 82px;
+        font-size: 9px;
+        padding: 5px 3px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 12px;
+        height: 12px;
+        font-size: 6px;
+        top: -3px;
+        right: -1px;
+    }
+
+    .dropdown {
+        padding: 4px;
+        margin-top: 3px;
+        border-radius: 9px;
+        top: 22px;
+    }
+
+    .dropdown li {
+        width: 125px;
+        margin-bottom: 1px;
+    }
+
+    .dropdown img {
+        width: 22px;
+        height: 22px;
+        margin-right: 4px;
+    }
+
+    .dropdown li a {
+        padding: 4px 5px !important;
+        font-size: 8px !important;
+    }
+
+    .notifications-box {
+        top: 58px;
+        right: 8px;
+        width: 280px;
+        max-width: calc(100vw - 16px);
+        max-height: 240px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .notifications-box h3 {
+        font-size: 13px;
+        padding-bottom: 6px;
+    }
+
+    .notifications-item {
+        padding: 6px 8px;
+        margin-top: 5px;
+        border-radius: 7px;
+    }
+
+    .notifications-item p {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .notifications-time {
+        font-size: 7px;
+        margin-top: 3px;
+    }
+
+    .no-notifications {
+        font-size: 10px;
+        padding: 12px 0;
+    }
+
+    .mark {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 5px;
+    }
+
+    header .logo img {
+        width: 52px;
+        height: 42px;
+        padding: 5px;
+    }
+
+    header nav {
+        padding-right: 52px;
+    }
+
+    header nav li a {
+        padding: 5px;
+        font-size: 9px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 5px;
+    }
+
+    header nav li a i {
+        font-size: 9px;
+    }
+
+    .dx {
+        right: -35px;
+        width: 72px;
+        font-size: 8px;
+        padding: 4px 2px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 11px;
+        height: 11px;
+        font-size: 5px;
+        top: -3px;
+        right: -1px;
+        line-height: 11px;
+    }
+
+    .dropdown {
+        padding: 3px;
+        margin-top: 3px;
+        border-radius: 8px;
+        top: 20px;
+    }
+
+    .dropdown li {
+        width: 110px;
+        margin-bottom: 1px;
+    }
+
+    .dropdown img {
+        width: 20px;
+        height: 20px;
+        margin-right: 3px;
+    }
+
+    .dropdown li a {
+        padding: 3px 4px !important;
+        font-size: 7px !important;
+    }
+
+    .notifications-box {
+        top: 52px;
+        right: 6px;
+        width: 250px;
+        max-width: calc(100vw - 12px);
+        max-height: 220px;
+        padding: 7px;
+        border-radius: 9px;
+    }
+
+    .notifications-box h3 {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .notifications-item {
+        padding: 5px 7px;
+        margin-top: 4px;
+        border-radius: 6px;
+    }
+
+    .notifications-item p {
+        font-size: 9px;
+        line-height: 1.25;
+    }
+
+    .notifications-time {
+        font-size: 7px;
+        margin-top: 2px;
+    }
+
+    .no-notifications {
+        font-size: 9px;
+        padding: 10px 0;
+    }
+
+    .mark {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        padding: 4px;
+    }
+
+    header .logo img {
+        width: 45px;
+        height: 36px;
+    }
+
+    header nav {
+        padding-right: 46px;
+    }
+
+    header nav li a {
+        padding: 4px;
+        font-size: 8px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 4px;
+    }
+
+    header nav li a i {
+        font-size: 8px;
+    }
+
+    .dx {
+        right: -30px;
+        width: 65px;
+        font-size: 7px;
+        padding: 3px 2px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 10px;
+        height: 10px;
+        font-size: 4px;
+        top: -2px;
+        right: -1px;
+        line-height: 10px;
+    }
+
+    .dropdown {
+        padding: 2px;
+        margin-top: 2px;
+        border-radius: 7px;
+        top: 18px;
+    }
+
+    .dropdown li {
+        width: 90px;
+        margin-bottom: 0;
+    }
+
+    .dropdown img {
+        width: 17px;
+        height: 17px;
+        margin-right: 2px;
+    }
+
+    .dropdown li a {
+        padding: 2px 3px !important;
+        font-size: 6px !important;
+    }
+
+    .notifications-box {
+        top: 48px;
+        right: 5px;
+        width: 220px;
+        max-width: calc(100vw - 10px);
+        max-height: 200px;
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .notifications-box h3 {
+        font-size: 11px;
+        padding-bottom: 5px;
+    }
+
+    .notifications-item {
+        padding: 5px 6px;
+        margin-top: 4px;
+        border-radius: 6px;
+    }
+
+    .notifications-item p {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .notifications-time {
+        font-size: 6px;
+        margin-top: 2px;
+    }
+
+    .no-notifications {
+        font-size: 8px;
+        padding: 9px 0;
+    }
+
+    .mark {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        padding: 3px;
+    }
+
+    header .logo img {
+        width: 40px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    header nav {
+        padding-right: 40px;
+    }
+
+    header nav li a {
+        padding: 3px;
+        font-size: 7px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 3px;
+    }
+
+    header nav li a i {
+        font-size: 7px;
+    }
+
+    .dx {
+        right: -25px;
+        width: 58px;
+        font-size: 6px;
+        padding: 3px 1px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 9px;
+        height: 9px;
+        font-size: 4px;
+        top: -2px;
+        right: -1px;
+        line-height: 9px;
+    }
+
+    .dropdown {
+        padding: 2px;
+        margin-top: 2px;
+        border-radius: 6px;
+        top: 16px;
+    }
+
+    .dropdown li {
+        width: 80px;
+        margin-bottom: 0;
+    }
+
+    .dropdown img {
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+    }
+
+    .dropdown li a {
+        padding: 2px !important;
+        font-size: 5.5px !important;
+    }
+
+    .notifications-box {
+        top: 43px;
+        right: 4px;
+        width: 190px;
+        max-width: calc(100vw - 8px);
+        max-height: 180px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    .notifications-box h3 {
+        font-size: 10px;
+        padding-bottom: 4px;
+    }
+
+    .notifications-item {
+        padding: 4px 5px;
+        margin-top: 3px;
+        border-radius: 5px;
+    }
+
+    .notifications-item p {
+        font-size: 7px;
+        line-height: 1.2;
+    }
+
+    .notifications-time {
+        font-size: 5px;
+        margin-top: 2px;
+    }
+
+    .no-notifications {
+        font-size: 7px;
+        padding: 8px 0;
+    }
+
+    .mark {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        padding: 2px;
+    }
+
+    header .logo img {
+        width: 36px;
+        height: 29px;
+        padding: 3px;
+    }
+
+    header nav {
+        padding-right: 35px;
+    }
+
+    header nav li a {
+        padding: 2px;
+        font-size: 6px;
+    }
+
+    header nav ul li a.active,
+    header nav li a:hover {
+        padding: 2px;
+    }
+
+    header nav li a i {
+        font-size: 6px;
+    }
+
+    .dx {
+        right: -22px;
+        width: 52px;
+        font-size: 5px;
+        padding: 2px 1px;
+    }
+
+    .cart-count,
+    .bell-count {
+        width: 8px;
+        height: 8px;
+        font-size: 3px;
+        top: -2px;
+        right: -1px;
+        line-height: 8px;
+    }
+
+    .dropdown {
+        padding: 2px;
+        margin-top: 1px;
+        border-radius: 5px;
+        top: 14px;
+    }
+
+    .dropdown li {
+        width: 70px;
+        margin-bottom: 0;
+    }
+
+    .dropdown img {
+        width: 13px;
+        height: 13px;
+        margin-right: 2px;
+    }
+
+    .dropdown li a {
+        padding: 1px 2px !important;
+        font-size: 5px !important;
+    }
+
+    .notifications-box {
+        top: 38px;
+        right: 2px;
+        width: 175px;
+        max-width: calc(100vw - 4px);
+        max-height: 160px;
+        padding: 4px;
+        border-radius: 6px;
+    }
+
+    .notifications-box h3 {
+        font-size: 9px;
+        padding-bottom: 3px;
+    }
+
+    .notifications-item {
+        padding: 3px 4px;
+        margin-top: 3px;
+        border-radius: 4px;
+    }
+
+    .notifications-item p {
+        font-size: 6px;
+        line-height: 1.2;
+    }
+
+    .notifications-time {
+        font-size: 5px;
+        margin-top: 1px;
+    }
+
+    .no-notifications {
+        font-size: 6px;
+        padding: 7px 0;
+    }
+
+    .mark {
+        font-size: 9px;
+        margin-top: 2px;
+    }
+}
+
+
+

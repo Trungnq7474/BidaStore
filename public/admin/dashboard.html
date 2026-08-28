@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div> 
+
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="top">
+            <h1>DASHBOARD</h1>
+        </div>
+
+        <div class="cards">
+            <a href="product.html">
+                <div class="card">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <h3>Sản Phẩm</h3>
+                    <p class="product-count">0</p>
+                </div>
+            </a>
+
+            <a href="order.html">
+                <div class="card">
+                    <i class="fa fa-cart-shopping"></i>
+                    <h3>Đơn Hàng</h3>
+                    <p class="order-count">0</p>
+                </div>
+            </a>
+
+            <a href="review.html">
+                <div class="card">
+                    <i class="fa fa-star"></i>
+                    <h3>Đánh Giá</h3>
+                    <p class="review-count">0</p>
+                </div>
+            </a>
+
+            <a href="feedback.html">
+                <div class="card">
+                    <i class="fa fa-envelope"></i>
+                    <h3>Phản Hồi</h3>
+                    <p class="contact-count">0</p>
+                </div>
+            </a>
+
+        </div>
+
+    
+        <div class="table-container">
+            <h2>Thống Kê Doanh Thu</h2>
+            <canvas class="myChart"></canvas>
+        </div>
+
+        <div class="table-container2">
+            <div class="table-header">
+                <h2>Thống Kê Đơn Hàng</h2>
+                <canvas class="myChart2"></canvas>
+            </div>
+
+
+            <div class="table-container3">
+                <h2>Danh Sách Sản Phẩm Bán Chạy</h2>
+
+            <table>
+                <tr>
+                    <th>Top</th>
+                    <th>Ảnh</th>
+                    <th>Sản Phẩm</th>
+                    <th>Đã Bán</th>
+                    <th>Doanh Thu</th>
+                </tr>
+
+                <!-- <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="../images/mr sung.png" alt="Ảnh">
+                    </td>
+                    <td>Bàn bida MR-SUNG</td>
+                    <td>120</td>
+                    <td>9.600.000.000 VNĐ</td>
+                </tr> -->
+
+                <tbody class="top-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+</body>
+</html>
+
+
+

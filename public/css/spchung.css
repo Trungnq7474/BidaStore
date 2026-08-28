@@ -1,0 +1,546 @@
+.sp {
+    margin-bottom: 40px;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.nd {
+    text-align: center;
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.nd h1 {
+    color: red;
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.nd p {
+    font-size: 30px;
+    color: rgb(128, 242, 217);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.nd i {
+    color: rgb(1, 76, 252);
+}
+
+.sp .tr {
+    text-decoration: none;
+    width: 18%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.sp {
+    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+}
+
+.sp .kk {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(5, 249, 143);
+    background-color: rgb(143, 252, 162);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sp .kk img {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(166, 166, 166);
+    display: block;
+}
+
+.sp .kk:hover {
+    transform: scale(1.04);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 35px rgba(151, 181, 0, 0.57);
+}
+
+.sp .kk .pro1 h5 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+    height: 36px;
+    font-size: 18px;
+    line-height: 18px;
+    color: rgb(110, 68, 116);
+    overflow: hidden;
+}
+
+.sp .kk .pro1 i {
+    font-size: 15px;
+    color: rgb(239, 9, 9);
+}
+
+.sp .kk .pro1 h4 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: rgba(53, 64, 0, 0.97);
+}
+
+.sp .kk .pro .cart i {
+    font-size: 30px;
+    background-color: rgb(248, 251, 251);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: rgb(129, 130, 73);
+    transition: 0.4s ease-in-out;
+}
+
+.sp .kk .pro a i:hover {
+    background-color: rgb(255, 225, 77);
+    transition: 0.4s ease-in-out;
+    transform: scale(1.04);
+}
+
+.mess {
+    margin-top: 180px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(0, 238, 255);
+    line-height: 1.4;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 1400px) {
+    .sp {
+        gap: 25px 2%;
+    }
+
+    .sp .tr {
+        width: 18%;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 17px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 17px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 14px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 27px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .nd {
+        margin-top: 120px;
+        padding: 10px 20px;
+    }
+
+    .nd h1 {
+        font-size: 28px;
+    }
+
+    .nd p {
+        font-size: 27px;
+    }
+
+    .sp {
+        padding: 10px 18px;
+        gap: 22px 2%;
+    }
+
+    .sp .tr {
+        width: 23.5%;
+    }
+
+    .sp .kk {
+        padding: 9px 10px;
+        border-radius: 17px;
+    }
+
+    .sp .kk img {
+        border-radius: 17px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 16px;
+        height: 34px;
+        line-height: 17px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 13px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 25px;
+        padding: 7px 10px;
+    }
+
+    .mess {
+        margin-top: 150px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nd {
+        margin-top: 110px;
+        padding: 10px 18px;
+    }
+
+    .nd h1 {
+        font-size: 26px;
+    }
+
+    .nd p {
+        font-size: 25px;
+    }
+
+    .sp {
+        padding: 10px 16px;
+        gap: 20px 2%;
+    }
+
+    .sp .tr {
+        width: 32%;
+    }
+
+    .sp .kk {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .sp .kk img {
+        border-radius: 14px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 15px;
+        height: 32px;
+        line-height: 16px;
+        margin-top: 11px;
+        margin-bottom: 8px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 12px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 9px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 23px;
+        padding: 6px 9px;
+    }
+
+    .mess {
+        margin-top: 130px;
+        font-size: 27px;
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nd {
+        margin-top: 100px;
+        margin-bottom: 18px;
+        padding: 10px 15px;
+    }
+
+    .nd h1 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .nd p {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .sp {
+        padding: 8px 14px;
+        gap: 16px 12px;
+        letter-spacing: 1px;
+    }
+
+    .sp .tr {
+        width: calc((100% - 12px) / 2);
+    }
+
+    .sp .kk {
+        padding: 7px;
+        border-radius: 14px;
+    }
+
+    .sp .kk img {
+        border-radius: 12px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 13px;
+        height: 30px;
+        line-height: 15px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 10px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 13px;
+        margin-top: 8px;
+        margin-bottom: 7px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 20px;
+        padding: 5px 8px;
+    }
+
+    .mess {
+        margin-top: 110px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        font-size: 23px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .nd {
+        margin-top: 90px;
+        margin-bottom: 15px;
+        padding: 8px 12px;
+    }
+
+    .nd h1 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .nd p {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .sp {
+        padding: 7px 11px;
+        gap: 13px 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .sp .tr {
+        width: calc((100% - 9px) / 2);
+    }
+
+    .sp .kk {
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .sp .kk img {
+        border-radius: 10px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 11px;
+        height: 27px;
+        line-height: 13.5px;
+        margin-top: 7px;
+        margin-bottom: 5px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 9px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 11px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 17px;
+        padding: 4px 6px;
+    }
+
+    .mess {
+        margin-top: 100px;
+        margin-bottom: 20px;
+        padding: 0 12px;
+        font-size: 19px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 400px) {
+    .nd {
+        margin-top: 80px;
+        margin-bottom: 15px;
+        padding: 8px 10px;
+    }
+
+    .nd h1 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .nd p {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .sp {
+        padding: 6px 9px;
+        gap: 10px 7px;
+        letter-spacing: 0;
+    }
+
+    .sp .tr {
+        width: calc((100% - 7px) / 2);
+    }
+
+    .sp .kk {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .sp .kk img {
+        border-radius: 8px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 10px;
+        height: 24px;
+        line-height: 12px;
+        margin-top: 6px;
+        margin-bottom: 4px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 8px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 15px;
+        padding: 3px 5px;
+    }
+
+    .mess {
+        margin-top: 90px;
+        margin-bottom: 18px;
+        padding: 0 10px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 320px) {
+    .nd {
+        margin-top: 75px;
+        margin-bottom: 12px;
+        padding: 7px 8px;
+    }
+
+    .nd h1 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .nd p {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .sp {
+        padding: 5px 7px;
+        gap: 8px 5px;
+    }
+
+    .sp .tr {
+        width: calc((100% - 5px) / 2);
+    }
+
+    .sp .kk {
+        padding: 4px;
+        border-radius: 8px;
+    }
+
+    .sp .kk img {
+        border-radius: 7px;
+    }
+
+    .sp .kk .pro1 h5 {
+        font-size: 9px;
+        height: 21px;
+        line-height: 10.5px;
+        margin-top: 5px;
+        margin-bottom: 3px;
+    }
+
+    .sp .kk .pro1 i {
+        font-size: 7px;
+    }
+
+    .sp .kk .pro1 h4 {
+        font-size: 9px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .sp .kk .pro .cart i {
+        font-size: 13px;
+        padding: 3px 4px;
+    }
+
+    .mess {
+        margin-top: 80px;
+        margin-bottom: 15px;
+        padding: 0 8px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

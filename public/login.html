@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/logo bida.png">
+    <link rel="stylesheet" href="css/registerandlogin.css">
+    <link rel="stylesheet" href="css/thongbao.css">
+    <title>ĐĂNG NHẬP</title>
+</head>
+<body>
+    <form class="dn" action="/login" method="post">
+        <h1>ĐĂNG NHẬP</h1>
+        <input type="text" name="email" placeholder="Nhập email...">
+        <i class="fa-solid fa-envelope"></i>
+        <div class="error email-error"></div>
+
+        <input type="password" class="dnpass" name="password" placeholder="Nhập mật khẩu...">
+        <i class="fa-solid fa-eye eye"></i>
+        <div class="error password-error"></div>
+        
+        <button class="btnn">ĐĂNG NHẬP</button>
+        <p>Bạn chưa có tài khoản ? <a href="register.html">Đăng Kí</a></p>
+    </form>
+
+    <div class="mgs"></div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+.main img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.main-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 150px;
+    text-align: center;
+    transform: translate(29%,37%);
+    background-color: rgba(48, 29, 29, 0.115);
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 350%;
+    color:rgb(15, 255, 255);
+    font-weight: bold;
+}
+
+.chaouser {
+    font-size: 200%;
+    color:rgb(0, 255, 153);
+    font-weight: bold;
+    cursor: default;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 40px;
+    pointer-events: none;
+}
+
+.main-text p {
+    font-size: 200%;
+    color: rgb(78, 211, 252);
+    font-weight: bold; 
+}
+
+.main-text button {
+    font-size: 120%;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    color: rgb(0, 48, 38);
+    background-color: rgb(0, 255, 132);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.main-text button:hover {
+    color: #000000;
+    background-color: rgb(255, 239, 137);
+    transition: 0.4s ease-in-out;
+    padding: 10px 20px;
+    transform: scale(1.1);
+}
+
+.vc {
+    display: flex;
+    justify-content: center;
+}
+
+
+.vt img {
+    width: 80%;
+}
+
+.vt {
+    align-items: center;
+    text-align: center;
+    margin: 30px 40px;
+    width: 180px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: 3px solid rgb(59, 61, 60);
+    background-color: rgb(233, 254, 129);
+    box-shadow: 10px 10px rgba(48, 29, 29, 0.115);
+}
+
+h6 { 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    color: rgb(227, 252, 3);
+    background-color: rgb(5, 169, 46);
+    padding: 8px 8px;
+    border-radius: 10px;
+}
+
+.ok {
+    text-align: center;
+    position: relative;
+}
+
+.ok h1 {
+    color: red;
+    font-size: 30px;
+}
+
+.ok p {
+    font-size: 30px;
+    color: rgb(128, 242, 217);
+    font-weight: bold;
+}
+
+.ok i {
+    color: rgb(1, 76, 252);
+}
+
+.tk {   
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.search {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    width: 150px;
+    border-radius: 15px;
+    color: rgb(46, 0, 185);
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s ease-in-out;
+}
+
+.search:focus {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 0 4px rgba(14, 92, 236, 0.264);
+    outline: none;
+}
+
+.search:hover {
+    width: 250px;
+    transition: 0.4s ease-in-out;
+}
+
+.qt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.nq {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 80%;
+}
+
+
+.nq img {
+    width: 200px;
+    border: 4px solid rgb(221, 255, 0);
+    padding: 10px 20px;
+    background-color:rgb(252, 255, 254);
+    margin: 20px;
+    border-radius: 20px; 
+}
+
+.trai,
+.phai {
+    font-size: 50px;
+    background: none;
+    border: none;
+}
+
+.trai i,
+.phai i {
+    color: rgb(245, 246, 243);
+    transition: 0.4s ease-in-out;
+}
+
+.trai i:hover,
+.phai i:hover {
+    color: rgb(214, 255, 120);
+    scale: 1.1;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.mes {
+    position: fixed;
+    font-size: 70px;
+    top: 600px;
+    left: 1350px;
+    cursor: pointer;
+    color: rgb(69, 118, 255);
+    z-index: 9999;
+    transition: 0.4s ease-in-out;
+}
+
+.mes:hover {
+    transform: translateY(-15px);
+    transition: 0.4s ease-in-out;
+}
+
+.chat-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1200px) {
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 650px;
+        overflow: hidden;
+    }
+
+    .main img {
+        display: block;
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 900px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .main-text h1 {
+        font-size: 280%;
+    }
+
+    .main-text p {
+        font-size: 160%;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 25px 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .vt img {
+        width: 75%;
+        max-width: 120px;
+    }
+
+    h6 {
+        font-size: 10px;
+        padding: 7px 4px;
+    }
+
+    .mes {
+        left: auto;
+        top: auto;
+        right: 25px;
+        bottom: 25px;
+        font-size: 60px;
+    }
+
+    .nq {
+        width: 80%;
+    }
+
+    .nq img {
+        width: 180px;
+        margin: 15px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 580px;
+        overflow: hidden;
+    }
+
+    .main img {
+        display: block;
+        width: 100%;
+        height: 580px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+    }
+
+    .main-text h1 {
+        font-size: 220%;
+    }
+
+    .main-text p {
+        font-size: 140%;
+    }
+
+    .main-text button {
+        font-size: 110%;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 12px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 20px 0;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .vt img {
+        width: 65%;
+        max-width: 100px;
+    }
+
+    h6 {
+        font-size: 9px;
+        padding: 7px 3px;
+        white-space: normal;
+    }
+
+    .ok h1 {
+        font-size: 27px;
+    }
+
+    .ok p {
+        font-size: 25px;
+    }
+
+    .nq {
+        width: 75%;
+    }
+
+    .nq img {
+        width: 160px;
+        margin: 10px;
+        padding: 8px 15px;
+    }
+
+    .trai,
+    .phai {
+        font-size: 42px;
+    }
+
+    .mes {
+        right: 20px;
+        bottom: 20px;
+        font-size: 55px;
+    }
+
+    .chat-count {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .main img {
+        display: block;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .main-text h1 {
+        font-size: 170%;
+        line-height: 1.3;
+        margin: 15px 0;
+    }
+
+    .main-text p {
+        font-size: 110%;
+        line-height: 1.4;
+        margin: 15px 0;
+    }
+
+    .main-text button {
+        font-size: 100%;
+        padding: 9px 16px;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 5px;
+        box-sizing: border-box;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 15px 0;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+
+    .vt img {
+        width: 65%;
+        max-width: 75px;
+    }
+
+    h6 {
+        font-size: 8px;
+        line-height: 1.2;
+        margin-top: 7px;
+        padding: 6px 2px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .ok h1 {
+        font-size: 23px;
+    }
+
+    .ok p {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    .tk {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .search {
+        width: 120px;
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .search:hover {
+        width: 220px;
+        max-width: 100%;
+    }
+
+    .nq {
+        width: 75%;
+    }
+
+    .nq img {
+        width: 140px;
+        margin: 8px;
+        padding: 7px 12px;
+    }
+
+    .trai,
+    .phai {
+        font-size: 35px;
+        flex-shrink: 0;
+    }
+
+    .mes {
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 18px;
+        bottom: 18px;
+        font-size: 48px;
+    }
+
+    .chat-count {
+        width: 23px;
+        height: 23px;
+        font-size: 13px;
+        top: -7px;
+        right: -7px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 420px;
+        min-height: 420px;
+        overflow: hidden;
+    }
+
+    .main img {
+        display: block;
+        width: 100%;
+        height: 420px;
+        min-height: 420px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 25px);
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .main-text h1 {
+        font-size: 125%;
+        line-height: 1.3;
+        margin: 10px 0;
+    }
+
+    .main-text p {
+        font-size: 90%;
+        line-height: 1.4;
+        margin: 10px 0;
+    }
+
+    .main-text button {
+        font-size: 90%;
+        padding: 8px 14px;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 7px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 4px;
+        box-sizing: border-box;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 12px 0;
+        padding: 4px;
+        border-width: 2px;
+        border-radius: 15px;
+        box-sizing: border-box;
+    }
+
+    .vt img {
+        width: 60%;
+        max-width: 60px;
+    }
+
+    h6 {
+        font-size: 6px;
+        line-height: 1.2;
+        padding: 5px 2px;
+        margin-top: 5px;
+        border-radius: 7px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .ok h1 {
+        font-size: 20px;
+    }
+
+    .ok p {
+        font-size: 18px;
+    }
+
+    .tk {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .search {
+        width: 140px;
+        max-width: 100%;
+        font-size: 14px;
+        padding: 7px;
+    }
+
+    .search:hover {
+        width: 190px;
+        max-width: 100%;
+    }
+
+    .qt {
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+        margin-bottom: 40px;
+    }
+
+    .nq {
+        width: calc(100% - 55px);
+    }
+
+    .nq img {
+        width: 120px;
+        margin: 6px;
+        padding: 6px 10px;
+        border-width: 3px;
+        border-radius: 15px;
+    }
+
+    .trai,
+    .phai {
+        font-size: 30px;
+        flex-shrink: 0;
+    }
+
+    .mes {
+        right: 15px;
+        bottom: 15px;
+        font-size: 42px;
+    }
+
+    .chat-count {
+        width: 21px;
+        height: 21px;
+        font-size: 11px;
+        top: -6px;
+        right: -6px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        min-height: 380px;
+        overflow: hidden;
+    }
+
+    .main img {
+        display: block;
+        width: 100%;
+        height: 380px;
+        min-height: 380px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 15px);
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .main-text h1 {
+        font-size: 105%;
+        line-height: 1.3;
+        margin: 8px 0;
+    }
+
+    .main-text p {
+        font-size: 78%;
+        line-height: 1.3;
+        margin: 8px 0;
+    }
+
+    .main-text button {
+        font-size: 80%;
+        padding: 7px 12px;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 3px;
+        box-sizing: border-box;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 10px 0;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .vt img {
+        width: 55%;
+        max-width: 50px;
+    }
+
+    h6 {
+        font-size: 5px;
+        line-height: 1.2;
+        padding: 4px 1px;
+        margin-top: 4px;
+        border-radius: 6px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .ok h1 {
+        font-size: 18px;
+    }
+
+    .ok p {
+        font-size: 16px;
+    }
+
+    .search {
+        width: 100px;
+        font-size: 13px;
+    }
+
+    .search:hover {
+        width: 170px;
+    }
+
+    .nq {
+        width: calc(100% - 48px);
+    }
+
+    .nq img {
+        width: 100px;
+        margin: 5px;
+        padding: 5px 8px;
+    }
+
+    .trai,
+    .phai {
+        font-size: 26px;
+    }
+
+    .mes {
+        right: 12px;
+        bottom: 12px;
+        font-size: 38px;
+    }
+
+    .chat-count {
+        width: 19px;
+        height: 19px;
+        font-size: 10px;
+    }
+}
