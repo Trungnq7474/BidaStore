@@ -4,17 +4,19 @@ fetch('header.html')
 
         document.querySelector('#header').innerHTML = data;
 
-        document.querySelectorAll("nav a").forEach(function (link) {
+      document.querySelectorAll("nav a").forEach(function (link) {
 
-            if (link.getAttribute("href") === "#") {
+            const href = link.getAttribute("href");
+
+            if (!href || href === "#") {
                 return;
             }
 
-            const url = new URL(link.href);
+            const url = new URL(href, window.location.origin);
 
             if (
-                url.pathname === location.pathname &&
-                url.search === location.search
+                url.pathname === window.location.pathname &&
+                url.search === window.location.search
             ) {
                 link.classList.add("active");
             }
