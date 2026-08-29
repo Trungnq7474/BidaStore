@@ -23,8 +23,7 @@
     position: fixed; 
     top: 95px; 
     right: 50px; 
-    width: auto; 
-    max-width: 420px; 
+    width: fit-content; 
     padding: 16px 22px; 
     background: linear-gradient(135deg, #eff6ff, #dbeafe); 
     color: #1d4ed8; 

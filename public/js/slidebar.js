@@ -1,22 +1,17 @@
-setTimeout(function() {
-
-    const menu = document.querySelectorAll(".sidebar ul li a");
-
-    menu.forEach(function(link) {
-
-        if(link.pathname === window.location.pathname) {
-            link.classList.add("active");
-        }
-
-    });
-
-}, 100);
-
-
 fetch('slidebar.html')
     .then(res => res.text())
     .then(data => {
         document.querySelector('#slide').innerHTML = data;
+
+        const menu = document.querySelectorAll(".sidebar ul li a");
+
+        menu.forEach(function(link) {
+
+            if (link.pathname === window.location.pathname) {
+                link.classList.add("active");
+            }
+
+        });
 
         function checkMess() {
 
