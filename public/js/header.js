@@ -1,25 +1,25 @@
-setTimeout(function () {
-    document.querySelectorAll("nav a").forEach(function (link) {
-        if (link.getAttribute("href") === "#") {
-            link.classList.remove("active");
-            return;
-        }
-
-        const url = new URL(link.href);
-
-        link.classList.toggle(
-            "active",
-            url.pathname === location.pathname &&
-            url.search === location.search
-        );
-    });
-}, 100);
-
 fetch('header.html')
     .then(res => res.text())
     .then(async data => {
 
         document.querySelector('#header').innerHTML = data;
+
+        document.querySelectorAll("nav a").forEach(function (link) {
+
+            if (link.getAttribute("href") === "#") {
+                return;
+            }
+
+            const url = new URL(link.href);
+
+            if (
+                url.pathname === location.pathname &&
+                url.search === location.search
+            ) {
+                link.classList.add("active");
+            }
+
+        });
 
         const bell = document.querySelector('.bell');
         const bellCount = document.querySelector('.bell-count');
