@@ -1,12 +1,19 @@
-setTimeout(function(){
-        let menu = document.querySelectorAll("nav ul li a");
-        menu.forEach(function(link){
-        if(link.href === window.location.href){
-            link.classList.add("active");
+setTimeout(function () {
+    document.querySelectorAll("nav a").forEach(function (link) {
+        if (link.getAttribute("href") === "#") {
+            link.classList.remove("active");
+            return;
         }
+
+        const url = new URL(link.href);
+
+        link.classList.toggle(
+            "active",
+            url.pathname === location.pathname &&
+            url.search === location.search
+        );
     });
 }, 100);
-
 
 fetch('header.html')
     .then(res => res.text())

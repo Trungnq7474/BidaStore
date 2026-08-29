@@ -10,6 +10,7 @@ body {
     justify-content: center;
     background: transparent;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 2px solid rgba(177, 217, 15, 0.399);
     box-shadow: 1px 1px 3px 3px rgb(230, 255, 5);
     border-radius: 7px;
@@ -24,6 +25,7 @@ body {
     justify-content: center;
     background: transparent;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 2px solid rgba(177, 217, 15, 0.399);
     box-shadow: 1px 1px 3px 3px rgb(230, 255, 5);
     border-radius: 7px;
@@ -68,11 +70,12 @@ i {
     color: rgb(230, 255, 5);
     font-size: 18px;
     justify-self: end;
-    margin-top: -32px; 
+    margin-top: -32px;
     margin-right: 15px;
 }
 
-.btn, .btnn {
+.btn,
+.btnn {
     font-weight: bolder;
     font-size: 20px;
     border-radius: 20px;
@@ -88,7 +91,8 @@ i {
     transition: 0.4s ease-in-out;
 }
 
-.btn:hover , .btnn:hover {
+.btn:hover,
+.btnn:hover {
     transform: translateY(-5px);
     transition: 0.4s ease-in-out;
     background-color: rgb(216, 255, 44);
@@ -131,6 +135,8 @@ a {
         justify-content: center;
         padding: 30px 20px;
         box-sizing: border-box;
+        background-position: center center;
+        background-size: cover;
     }
 
     .dn,
@@ -139,6 +145,9 @@ a {
         box-sizing: border-box;
         margin: 0;
         padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     input,
@@ -166,14 +175,14 @@ a {
     .btnn {
         font-size: 18px;
     }
-
-
 }
 
 @media (max-width: 600px) {
 
     body {
         padding: 25px 15px;
+        background-position: center center;
+        background-size: cover;
     }
 
     .dn,
@@ -182,6 +191,10 @@ a {
         max-width: 430px;
         padding: 18px 22px;
         border-radius: 10px;
+        background: rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 1px 1px 3px 2px rgb(230, 255, 5);
     }
 
     h1 {
@@ -223,13 +236,14 @@ a {
         line-height: 1.5;
         margin: 12px 0 5px;
     }
-
 }
 
 @media (max-width: 400px) {
 
     body {
         padding: 20px 10px;
+        background-position: center center;
+        background-size: cover;
     }
 
     .dn,
@@ -238,6 +252,9 @@ a {
         max-width: 350px;
         padding: 15px 17px;
         border-radius: 9px;
+        background: rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
     }
 
     h1 {
@@ -281,11 +298,16 @@ a {
 
     body {
         padding: 15px 8px;
+        background-position: center center;
+        background-size: cover;
     }
 
     .dn,
     .dk {
         padding: 13px 13px;
+        background: rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
     }
 
     h1 {

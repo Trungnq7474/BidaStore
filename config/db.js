@@ -5,7 +5,7 @@
 // 'mssql' → tên thư viện
 
 //  Cả dòng =  “lấy thư viện mssql gán vào biến sql”
-
+require("dotenv").config();
 const sql = require('mssql');
 
 const config = {

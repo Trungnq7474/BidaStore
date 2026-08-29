@@ -1,10 +1,15 @@
 setTimeout(function() {
+
     const menu = document.querySelectorAll(".sidebar ul li a");
-    menu.forEach(function(link){
-        if(link.href === window.location.href){
+
+    menu.forEach(function(link) {
+
+        if(link.pathname === window.location.pathname) {
             link.classList.add("active");
         }
-    })
+
+    });
+
 }, 100);
 
 
