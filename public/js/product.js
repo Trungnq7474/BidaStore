@@ -144,7 +144,7 @@ document.querySelector('.update').addEventListener('click', async () => {
     const data = await res.text();
 
     if(data === "ok") {
-        show(`Bạn Đã Cập Nhật Sản Phẩm ${name}Thành Công !`);
+        show(`Bạn Đã Cập Nhật Sản Phẩm ${name} Thành Công !`);
         
         setTimeout(() => {
             location.reload();
