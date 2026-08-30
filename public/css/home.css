@@ -1,23 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.main {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    overflow: hidden;
-}
-
 .main img {
-    display: block;
     width: 100%;
     height: 800px;
     object-fit: cover;
-    object-position: center center;
     filter: brightness(0.5);
 }
 
@@ -25,25 +9,22 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 150px;
     text-align: center;
+    transform: translate(29%,37%);
     background-color: rgba(48, 29, 29, 0.115);
     padding: 10px 20px;
-    width: 80%;
-    max-width: 1000px;
 }
 
 h1 {
     font-size: 350%;
-    color: rgb(15, 255, 255);
+    color:rgb(15, 255, 255);
     font-weight: bold;
 }
 
 .chaouser {
     font-size: 200%;
-    color: rgb(0, 255, 153);
+    color:rgb(0, 255, 153);
     font-weight: bold;
     cursor: default;
     text-transform: uppercase;
@@ -55,7 +36,7 @@ h1 {
 .main-text p {
     font-size: 200%;
     color: rgb(78, 211, 252);
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 .main-text button {
@@ -73,6 +54,7 @@ h1 {
 .main-text button:hover {
     color: #000000;
     background-color: rgb(255, 239, 137);
+    transition: 0.4s ease-in-out;
     padding: 10px 20px;
     transform: scale(1.1);
 }
@@ -81,6 +63,7 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
 
 .vt img {
     width: 80%;
@@ -98,7 +81,7 @@ h1 {
     box-shadow: 10px 10px rgba(48, 29, 29, 0.115);
 }
 
-h6 {
+h6 { 
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-top: 10px;
@@ -128,7 +111,7 @@ h6 {
     color: rgb(1, 76, 252);
 }
 
-.tk {
+.tk {   
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -155,6 +138,7 @@ h6 {
 
 .search:hover {
     width: 250px;
+    transition: 0.4s ease-in-out;
 }
 
 .qt {
@@ -171,13 +155,14 @@ h6 {
     width: 80%;
 }
 
+
 .nq img {
     width: 200px;
     border: 4px solid rgb(221, 255, 0);
     padding: 10px 20px;
-    background-color: rgb(252, 255, 254);
+    background-color:rgb(252, 255, 254);
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 20px; 
 }
 
 .trai,
@@ -196,17 +181,16 @@ h6 {
 .trai i:hover,
 .phai i:hover {
     color: rgb(214, 255, 120);
-    transform: scale(1.1);
+    scale: 1.1;
+    transition: 0.4s ease-in-out;
     cursor: pointer;
 }
 
 .mes {
     position: fixed;
     font-size: 70px;
-    top: auto;
-    left: auto;
-    right: 30px;
-    bottom: 30px;
+    top: 600px;
+    left: 1350px;
     cursor: pointer;
     color: rgb(69, 118, 255);
     z-index: 9999;
@@ -215,6 +199,7 @@ h6 {
 
 .mes:hover {
     transform: translateY(-15px);
+    transition: 0.4s ease-in-out;
 }
 
 .chat-count {
@@ -233,14 +218,130 @@ h6 {
     font-weight: bold;
 }
 
-
-/* =========================
-   MÀN HÌNH TRUNG BÌNH
-   ========================= */
-
-@media (min-width: 769px) and (max-width: 1199px) {
+@media (min-width: 1201px) and (max-width: 1600px) {
 
     .main {
+        position: relative;
+        width: 100%;
+        height: 700px;
+        min-height: 700px;
+        overflow: hidden;
+    }
+
+    .main img {
+        width: 100%;
+        height: 700px;
+        min-height: 700px;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        width: 80%;
+        max-width: 1000px;
+        padding: 15px 20px;
+        transform: translate(-50%, -50%);
+    }
+
+    .main-text h1 {
+        font-size: 280%;
+        line-height: 1.2;
+    }
+
+    .chaouser {
+        font-size: 170%;
+        line-height: 35px;
+    }
+
+    .main-text p {
+        font-size: 160%;
+        line-height: 1.4;
+    }
+
+    .main-text button {
+        font-size: 110%;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 25px 0;
+        padding: 10px;
+    }
+
+    .vt img {
+        width: 75%;
+        max-width: 130px;
+        height: auto;
+    }
+
+    h6 {
+        font-size: 10px;
+        line-height: 1.2;
+        padding: 7px 4px;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .ok h1 {
+        font-size: 28px;
+    }
+
+    .ok p {
+        font-size: 25px;
+    }
+
+    .nq {
+        width: 80%;
+        min-width: 0;
+    }
+
+    .nq img {
+        width: 180px;
+        height: auto;
+        margin: 15px;
+        flex-shrink: 0;
+    }
+
+    .trai,
+    .phai {
+        flex-shrink: 0;
+    }
+
+    .mes {
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 30px;
+        bottom: 30px;
+        font-size: 65px;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .main {
+        position: relative;
         width: 100%;
         height: 650px;
         min-height: 650px;
@@ -253,28 +354,33 @@ h6 {
         min-height: 650px;
         object-fit: cover;
         object-position: center center;
+        display: block;
     }
 
     .main-text {
+        position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
+        right: auto;
+        width: 82%;
         max-width: 900px;
-        padding: 10px 20px;
+        padding: 12px 20px;
+        transform: translate(-50%, -50%);
     }
 
     .main-text h1 {
         font-size: 250%;
+        line-height: 1.2;
     }
 
     .chaouser {
-        font-size: 170%;
+        font-size: 160%;
         line-height: 35px;
     }
 
     .main-text p {
         font-size: 150%;
+        line-height: 1.4;
     }
 
     .main-text button {
@@ -288,67 +394,123 @@ h6 {
         flex-wrap: nowrap;
         justify-content: center;
         align-items: stretch;
-        gap: 12px;
+        gap: 10px;
     }
 
     .vt {
         flex: 1 1 0;
         width: auto;
         min-width: 0;
-        margin: 25px 0;
-        padding: 10px;
+        margin: 20px 0;
+        padding: 9px;
     }
 
     .vt img {
         width: 75%;
-        max-width: 120px;
+        max-width: 115px;
+        height: auto;
     }
 
     h6 {
-        font-size: 10px;
-        padding: 7px 4px;
+        font-size: 9px;
+        line-height: 1.2;
+        padding: 7px 3px;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .ok h1 {
+        font-size: 27px;
+    }
+
+    .ok p {
+        font-size: 24px;
+    }
+
+    .tk {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .search {
+        max-width: 100%;
+    }
+
+    .qt {
+        width: 100%;
+        padding: 0 10px;
     }
 
     .nq {
         width: 80%;
+        min-width: 0;
     }
 
     .nq img {
-        width: 180px;
-        margin: 15px;
+        width: 170px;
+        height: auto;
+        margin: 12px;
+        padding: 8px 15px;
+        flex-shrink: 0;
+    }
+
+    .trai,
+    .phai {
+        font-size: 45px;
+        flex-shrink: 0;
     }
 
     .mes {
+        position: fixed;
+        top: auto;
+        left: auto;
         right: 25px;
         bottom: 25px;
         font-size: 60px;
     }
+
+    .chat-count {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
 }
 
-
-/* =========================
-   MÀN HÌNH 769 - 1000
-   ========================= */
 
 @media (min-width: 769px) and (max-width: 1000px) {
 
     .main {
+        width: 100%;
         height: 580px;
         min-height: 580px;
+        overflow: hidden;
     }
 
     .main img {
+        width: 100%;
         height: 580px;
         min-height: 580px;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
     }
 
     .main-text {
+        top: 50%;
+        left: 50%;
         width: 85%;
+        max-width: 850px;
         padding: 10px 15px;
+        transform: translate(-50%, -50%);
     }
 
     .main-text h1 {
         font-size: 220%;
+        line-height: 1.2;
+        margin: 8px 0;
     }
 
     .chaouser {
@@ -357,57 +519,97 @@ h6 {
     }
 
     .main-text p {
-        font-size: 140%;
+        font-size: 135%;
+        line-height: 1.4;
+        margin: 8px 0;
     }
 
     .main-text button {
-        font-size: 110%;
+        font-size: 105%;
+        padding: 9px 16px;
     }
 
     .vc {
-        padding: 0 12px;
-        gap: 8px;
+        width: 100%;
+        padding: 0 10px;
+        gap: 7px;
     }
 
     .vt {
-        margin: 20px 0;
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 18px 0;
         padding: 8px;
     }
 
     .vt img {
-        width: 65%;
-        max-width: 100px;
+        width: 70%;
+        max-width: 95px;
+        height: auto;
     }
 
     h6 {
-        font-size: 9px;
-        padding: 7px 3px;
+        font-size: 8px;
+        line-height: 1.2;
+        padding: 6px 3px;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 10px;
     }
 
     .ok h1 {
-        font-size: 27px;
+        font-size: 24px;
     }
 
     .ok p {
-        font-size: 25px;
+        font-size: 21px;
+    }
+
+    .tk {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .search {
+        width: 140px;
+        font-size: 17px;
+    }
+
+    .search:hover {
+        width: 220px;
+    }
+
+    .qt {
+        width: 100%;
+        padding: 0 8px;
     }
 
     .nq {
-        width: 75%;
+        width: 76%;
+        min-width: 0;
     }
 
     .nq img {
-        width: 160px;
-        margin: 10px;
-        padding: 8px 15px;
+        width: 150px;
+        height: auto;
+        margin: 9px;
+        padding: 7px 12px;
+        flex-shrink: 0;
     }
 
     .trai,
     .phai {
-        font-size: 42px;
+        font-size: 40px;
+        flex-shrink: 0;
     }
 
     .mes {
+        position: fixed;
+        top: auto;
+        left: auto;
         right: 20px;
         bottom: 20px;
         font-size: 55px;
@@ -416,18 +618,15 @@ h6 {
     .chat-count {
         width: 25px;
         height: 25px;
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
 
-/* =========================
-   ĐIỆN THOẠI / TABLET NHỎ
-   ========================= */
-
 @media (max-width: 768px) {
 
     .main {
+        position: relative;
         width: 100%;
         height: 500px;
         min-height: 500px;
@@ -440,35 +639,39 @@ h6 {
         min-height: 500px;
         object-fit: cover;
         object-position: center center;
+        display: block;
     }
 
     .main-text {
+        position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        right: auto;
         width: 90%;
-        padding: 8px;
+        max-width: 650px;
+        padding: 8px 10px;
+        transform: translate(-50%, -50%);
     }
 
     .main-text h1 {
         font-size: 150%;
         line-height: 1.3;
-        margin: 12px 0;
+        margin: 10px 0;
     }
 
     .chaouser {
-        font-size: 130%;
-        line-height: 30px;
+        font-size: 125%;
+        line-height: 28px;
     }
 
     .main-text p {
         font-size: 100%;
         line-height: 1.4;
-        margin: 12px 0;
+        margin: 10px 0;
     }
 
     .main-text button {
-        font-size: 95%;
+        font-size: 92%;
         padding: 8px 14px;
     }
 
@@ -486,139 +689,6 @@ h6 {
         flex: 1 1 0;
         width: auto;
         min-width: 0;
-        margin: 12px 0;
-        padding: 7px;
-    }
-
-    .vt img {
-        width: 75%;
-        max-width: 85px;
-    }
-
-    h6 {
-        font-size: 8px;
-        line-height: 1.2;
-        margin-top: 6px;
-        padding: 6px 2px;
-        white-space: normal;
-        word-break: break-word;
-    }
-
-    .ok {
-        width: 100%;
-        padding: 0 12px;
-    }
-
-    .ok h1 {
-        font-size: 20px;
-    }
-
-    .ok p {
-        font-size: 19px;
-    }
-
-    .tk {
-        width: 100%;
-        padding: 0 15px;
-    }
-
-    .search {
-        width: 120px;
-        max-width: 100%;
-        font-size: 14px;
-    }
-
-    .search:hover {
-        width: 200px;
-        max-width: 100%;
-    }
-
-    .qt {
-        width: 100%;
-        padding: 0 5px;
-    }
-
-    .nq {
-        width: calc(100% - 55px);
-    }
-
-    .nq img {
-        width: 140px;
-        margin: 7px;
-        padding: 7px 12px;
-    }
-
-    .trai,
-    .phai {
-        font-size: 34px;
-        flex-shrink: 0;
-    }
-
-    .mes {
-        right: 18px;
-        bottom: 18px;
-        font-size: 48px;
-    }
-
-    .chat-count {
-        width: 23px;
-        height: 23px;
-        font-size: 13px;
-        top: -7px;
-        right: -7px;
-    }
-}
-
-
-/* =========================
-   576PX
-   ========================= */
-
-@media (max-width: 576px) {
-
-    .main {
-        height: 420px;
-        min-height: 420px;
-    }
-
-    .main img {
-        height: 420px;
-        min-height: 420px;
-    }
-
-    .main-text {
-        width: calc(100% - 25px);
-        padding: 6px;
-    }
-
-    .main-text h1 {
-        font-size: 115%;
-        line-height: 1.3;
-        margin: 8px 0;
-    }
-
-    .chaouser {
-        font-size: 100%;
-        line-height: 25px;
-    }
-
-    .main-text p {
-        font-size: 85%;
-        line-height: 1.4;
-        margin: 8px 0;
-    }
-
-    .main-text button {
-        font-size: 85%;
-        padding: 7px 12px;
-    }
-
-    .vc {
-        padding: 0 3px;
-        gap: 4px;
-    }
-
-    .vt {
         margin: 10px 0;
         padding: 6px;
         border-width: 2px;
@@ -627,195 +697,414 @@ h6 {
 
     .vt img {
         width: 75%;
-        max-width: 70px;
+        max-width: 80px;
+        height: auto;
     }
 
     h6 {
-        font-size: 6px;
+        font-size: 7px;
         line-height: 1.2;
-        padding: 5px 2px;
         margin-top: 5px;
-        border-radius: 7px;
+        padding: 5px 2px;
+        white-space: normal;
+        word-break: break-word;
     }
 
     .ok {
-        padding: 0 8px;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .ok h1 {
-        font-size: 17px;
+        font-size: 20px;
+        line-height: 1.3;
     }
 
     .ok p {
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.4;
     }
 
     .tk {
+        width: 100%;
+        padding: 0 12px;
         margin-top: 15px;
         margin-bottom: 30px;
-        padding: 0 12px;
     }
 
     .search {
-        width: 130px;
-        font-size: 13px;
+        width: 120px;
+        max-width: 100%;
+        font-size: 14px;
         padding: 7px;
     }
 
     .search:hover {
-        width: 180px;
+        width: 190px;
+        max-width: 100%;
     }
 
     .qt {
+        width: 100%;
         padding: 0 4px;
         margin-bottom: 40px;
     }
 
     .nq {
         width: calc(100% - 50px);
+        min-width: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     .nq img {
-        width: 120px;
+        width: 135px;
+        height: auto;
         margin: 6px;
         padding: 6px 10px;
         border-width: 3px;
-        border-radius: 15px;
+        flex-shrink: 0;
     }
 
     .trai,
     .phai {
-        font-size: 30px;
+        font-size: 32px;
+        flex-shrink: 0;
     }
 
     .mes {
-        right: 15px;
-        bottom: 15px;
-        font-size: 42px;
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 16px;
+        bottom: 16px;
+        font-size: 45px;
     }
 
     .chat-count {
-        width: 21px;
-        height: 21px;
-        font-size: 11px;
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
         top: -6px;
         right: -6px;
     }
 }
 
 
-/* =========================
-   400PX
-   ========================= */
-
-@media (max-width: 400px) {
+@media (max-width: 576px) {
 
     .main {
-        height: 380px;
-        min-height: 380px;
+        width: 100%;
+        height: 430px;
+        min-height: 430px;
+        overflow: hidden;
     }
 
     .main img {
-        height: 380px;
-        min-height: 380px;
+        width: 100%;
+        height: 430px;
+        min-height: 430px;
+        object-fit: cover;
+        object-position: center center;
     }
 
     .main-text {
-        width: calc(100% - 15px);
-        padding: 5px;
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 24px);
+        max-width: none;
+        padding: 6px 7px;
+        transform: translate(-50%, -50%);
     }
 
     .main-text h1 {
-        font-size: 100%;
+        font-size: 115%;
         line-height: 1.3;
         margin: 7px 0;
     }
 
     .chaouser {
+        font-size: 100%;
+        line-height: 24px;
+    }
+
+    .main-text p {
+        font-size: 85%;
+        line-height: 1.35;
+        margin: 7px 0;
+    }
+
+    .main-text button {
+        font-size: 82%;
+        padding: 7px 12px;
+    }
+
+    .vc {
+        width: 100%;
+        padding: 0 3px;
+        gap: 3px;
+    }
+
+    .vt {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 8px 0;
+        padding: 5px;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+
+    .vt img {
+        width: 72%;
+        max-width: 65px;
+        height: auto;
+    }
+
+    h6 {
+        font-size: 6px;
+        line-height: 1.2;
+        padding: 4px 2px;
+        margin-top: 4px;
+        border-radius: 6px;
+        word-break: break-word;
+    }
+
+    .ok {
+        width: 100%;
+        padding: 0 7px;
+    }
+
+    .ok h1 {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+
+    .ok p {
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .tk {
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 12px;
+        margin-bottom: 25px;
+    }
+
+    .search {
+        width: 125px;
+        max-width: 100%;
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .search:hover {
+        width: 175px;
+        max-width: 100%;
+    }
+
+    .qt {
+        width: 100%;
+        padding: 0 3px;
+        margin-bottom: 35px;
+    }
+
+    .nq {
+        width: calc(100% - 42px);
+        min-width: 0;
+    }
+
+    .nq img {
+        width: 115px;
+        height: auto;
+        margin: 5px;
+        padding: 5px 8px;
+        border-width: 3px;
+        border-radius: 14px;
+        flex-shrink: 0;
+    }
+
+    .trai,
+    .phai {
+        font-size: 28px;
+        flex-shrink: 0;
+    }
+
+    .mes {
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 13px;
+        bottom: 13px;
+        font-size: 40px;
+    }
+
+    .chat-count {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        top: -5px;
+        right: -5px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .main {
+        width: 100%;
+        height: 380px;
+        min-height: 380px;
+        overflow: hidden;
+    }
+
+    .main img {
+        width: 100%;
+        height: 380px;
+        min-height: 380px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .main-text {
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 14px);
+        max-width: none;
+        padding: 5px;
+        transform: translate(-50%, -50%);
+    }
+
+    .main-text h1 {
+        font-size: 100%;
+        line-height: 1.25;
+        margin: 6px 0;
+    }
+
+    .chaouser {
         font-size: 88%;
-        line-height: 22px;
+        line-height: 21px;
     }
 
     .main-text p {
         font-size: 75%;
         line-height: 1.3;
-        margin: 7px 0;
+        margin: 6px 0;
     }
 
     .main-text button {
-        font-size: 78%;
+        font-size: 76%;
         padding: 6px 10px;
     }
 
     .vc {
+        width: 100%;
         padding: 0 2px;
-        gap: 3px;
+        gap: 2px;
     }
 
     .vt {
-        margin: 8px 0;
-        padding: 5px;
-        border-radius: 12px;
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 7px 0;
+        padding: 4px;
+        border-width: 2px;
+        border-radius: 10px;
     }
 
     .vt img {
-        width: 75%;
-        max-width: 60px;
+        width: 70%;
+        max-width: 55px;
+        height: auto;
     }
 
     h6 {
         font-size: 5px;
-        line-height: 1.2;
+        line-height: 1.15;
         padding: 4px 1px;
-        margin-top: 4px;
-        border-radius: 6px;
+        margin-top: 3px;
+        border-radius: 5px;
+        word-break: break-word;
     }
 
     .ok {
-        padding: 0 6px;
+        width: 100%;
+        padding: 0 5px;
     }
 
     .ok h1 {
         font-size: 15px;
+        line-height: 1.25;
     }
 
     .ok p {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .tk {
+        width: 100%;
+        padding: 0 7px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
     .search {
-        width: 100px;
-        font-size: 12px;
+        width: 95px;
+        max-width: 100%;
+        font-size: 11px;
+        padding: 6px;
     }
 
     .search:hover {
-        width: 160px;
+        width: 145px;
+        max-width: 100%;
+    }
+
+    .qt {
+        width: 100%;
+        padding: 0 2px;
+        margin-bottom: 25px;
     }
 
     .nq {
-        width: calc(100% - 45px);
+        width: calc(100% - 36px);
+        min-width: 0;
     }
 
     .nq img {
-        width: 100px;
-        margin: 5px;
-        padding: 5px 8px;
+        width: 95px;
+        height: auto;
+        margin: 4px;
+        padding: 4px 7px;
+        border-width: 2px;
+        border-radius: 12px;
+        flex-shrink: 0;
     }
 
     .trai,
     .phai {
-        font-size: 26px;
+        font-size: 24px;
+        flex-shrink: 0;
     }
 
     .mes {
-        right: 12px;
-        bottom: 12px;
-        font-size: 38px;
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 10px;
+        bottom: 10px;
+        font-size: 35px;
     }
 
     .chat-count {
-        width: 19px;
-        height: 19px;
-        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+        top: -5px;
+        right: -5px;
     }
 }
+
