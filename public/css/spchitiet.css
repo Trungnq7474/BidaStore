@@ -558,6 +558,10 @@ button.pay {
         margin-left: 0;
         width: 100%;
     }
+
+    .name {
+        font-size: 18px;
+    }
 }
 
 
@@ -739,6 +743,10 @@ button.pay {
 
     .reply-date {
         font-size: 12px;
+    }
+
+    .name {
+        font-size: 16px;
     }
 }
 
@@ -927,6 +935,10 @@ button.pay {
     .reply-date {
         font-size: 10px;
     }
+
+    .name {
+        font-size: 14px;
+    }
 }
 
 
@@ -1052,6 +1064,10 @@ button.pay {
     .shop-reply-user p {
         font-size: 11px;
     }
+
+    .name {
+        font-size: 13px;
+    }
 }
 
 
@@ -1112,5 +1128,9 @@ button.pay {
 
     .comment-content {
         font-size: 10px;
+    }
+
+    .name {
+        font-size: 12px;
     }
 }
