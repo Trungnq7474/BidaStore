@@ -35,9 +35,15 @@ form.addEventListener('submit', async function(e) {
 
         sai = true;
     }
-    else if (!/^[\p{L}\p{N}_ ]{3,50}$/u.test(username)) {
+    else if (!/^[\p{L}]+(?: [\p{L}]+)+$/u.test(username.trim())) {
         document.querySelector('.username-error').innerText = 
-            "Tên phải từ 3-50 ký tự !";
+            "Vui lòng nhập đầy đủ họ và tên !";
+
+        sai = true;
+    }
+    else if (username.trim().length < 3 || username.trim().length > 50) {
+        document.querySelector('.username-error').innerText = 
+            "Họ và tên phải từ 3-50 ký tự !";
 
         sai = true;
     }

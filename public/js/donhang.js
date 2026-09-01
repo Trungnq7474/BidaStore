@@ -256,7 +256,7 @@ document.addEventListener('click', async function(e) {
                     user_id: user_id,
                     product_name: item.product_name,
                     price: item.price,
-                    image: item.image
+                    image: item.image.replace(/^\/?images\//, "")
                 })
             });
         });
