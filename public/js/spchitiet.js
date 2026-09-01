@@ -145,11 +145,15 @@ async function loadComments() {
     commentList.innerHTML = "";
 
     data.forEach(comment => {
+
+        const n = comment.user_name.trim().split(" ");
+        const avatar = (n.shift()[0] + n.pop()[0]).toUpperCase();
+
         commentList.innerHTML += 
         `
             <div class="comment-item">
                 <div class="comment-header">
-                    <div class="userimg"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="userimg"><span class="name">${avatar}</span></div>
                     <span class="user-name">${comment.user_name}</span>
                     <div class="user-rating">${'<i class="fa-solid fa-star"></i> '.repeat(comment.rating)}</div>
                     <span class="comment-date">${comment.created_at.replace("T", " ").slice(0,16)}</span>

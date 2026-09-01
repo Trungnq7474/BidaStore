@@ -94,6 +94,9 @@ async function showOrders(data) {
                 
                 <div class="act">
                     ${order.status === "cho" ? `<button class="huy" data-id="${order.id}">Hủy Đơn Hàng</button>` : ""}
+
+                    ${order.status === "xong" || order.status === "huy" ? `<button class="mua-lai" data-id="${order.id}">Mua Lại</button>` : ""}
+
                     <button class="xem" data-id="${order.id}">Xem Chi Tiết</button>
                 </div>   
             </div>
@@ -229,6 +232,39 @@ document.addEventListener('click', async function(e) {
 
     }
 });
+
+document.addEventListener('click', async function(e) {
+    if(e.target.closest('.mua-lai')) {
+        const button = e.target.closest('.mua-lai');
+        const id  = button.dataset.id;
+
+        const resuser = await fetch('/get-user');
+        const datauser = await resuser.json();
+
+        const user_id = datauser.user.id;
+
+        const resorder = await fetch(`/getorderitems/${id}`);
+        const items = await resorder.json();
+
+        items.forEach(item => {
+            fetch('/add-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    user_id: user_id,
+                    product_name: item.product_name,
+                    price: item.price,
+                    image: item.image
+                })
+            });
+        });
+
+            window.location.href = "../cart.html";
+    }
+});
+
 
 const econ = document.querySelector('.econ');
 const box = document.querySelector('.box');

@@ -289,12 +289,17 @@ button.pay {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(218, 194, 194);
+    background: #ea580c;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #176453;
-    font-size: 40px;
+    box-shadow: 0px 0px 20px rgba(188, 194, 0, 0.492);
+}
+
+.name {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .user-name {
