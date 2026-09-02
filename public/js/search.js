@@ -68,9 +68,9 @@ fetch('/search?keyword=' + keyword)
 
             const user_id = datauser.user.id;
 
-            try {
-                const res = await fetch('/add-cart', {
+            const res = await fetch('/add-cart', {
                     method: 'POST',
+
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -82,12 +82,21 @@ fetch('/search?keyword=' + keyword)
                         image
                     })
                 });
+
+                const resCart = await fetch(`/get-cart?user_id=${user_id}`);
+                const dataCart = await resCart.json();
+
+                const cartCount = document.querySelector('.cart-count');
+
+                cartCount.innerText = dataCart.length;
+
+                if (dataCart.length > 0) {
+                    cartCount.style.display = "flex";
+                } else {
+                    cartCount.style.display = "none";
+                }
+
                 showmgs(`Đã Thêm Sản Phẩm ${product_name} Vào Giỏ Hàng`);
-            }
-            
-            catch(err) {
-                showmgs("Lỗi Thêm Giỏ Hàng");
-            }
         });
     });
 });

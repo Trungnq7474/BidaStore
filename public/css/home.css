@@ -111,36 +111,6 @@ h6 {
     color: rgb(1, 76, 252);
 }
 
-.tk {   
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-.search {
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8px;
-    width: 150px;
-    border-radius: 15px;
-    color: rgb(46, 0, 185);
-    background-color: rgb(255, 255, 255);
-    transition: 0.4s ease-in-out;
-}
-
-.search:focus {
-    background: rgb(255, 255, 255);
-    box-shadow: 0 0 0 4px rgba(14, 92, 236, 0.264);
-    outline: none;
-}
-
-.search:hover {
-    width: 250px;
-    transition: 0.4s ease-in-out;
-}
-
 .qt {
     display: flex;
     justify-content: center;

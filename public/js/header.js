@@ -4,11 +4,15 @@ fetch('header.html')
 
         document.querySelector('#header').innerHTML = data;
 
-      document.querySelectorAll("nav a").forEach(function (link) {
+        document.querySelectorAll("nav a").forEach(function (link) {
 
             const href = link.getAttribute("href");
 
             if (!href || href === "#") {
+                return;
+            }
+
+            if (link.classList.contains("user-icon")) {
                 return;
             }
 
@@ -22,6 +26,35 @@ fetch('header.html')
             }
 
         });
+
+        const search = document.getElementById("searchInput");
+        const searchIcon = document.querySelector(".search-icon");
+        const searchBox = document.querySelector(".tk");
+
+        if(searchIcon && searchBox && search) {
+            searchIcon.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                if(searchBox.style.display === "block") {
+                    searchBox.style.display = "none";
+                } else {
+                    searchBox.style.display = "block";
+                    search.focus();
+                }
+            });
+
+            search.addEventListener("keydown", function(e) {
+                if(e.key === "Enter") {
+                    const keyword = this.value.trim();
+
+                    if(keyword === "") {
+                        return;
+                    }
+
+                    window.location.href = "search.html?keyword=" + keyword;
+                }
+            });
+        }
 
         const bell = document.querySelector('.bell');
         const bellCount = document.querySelector('.bell-count');

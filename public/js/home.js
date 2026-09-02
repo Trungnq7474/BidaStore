@@ -73,20 +73,6 @@ document.querySelector(".phai").addEventListener("click", () => {
         DanhSach.scrollLeft += SoLuongCuon;
     });
 
-    const search = document.getElementById("searchInput");
-
-    search.addEventListener("keydown", function(e){
-        if(e.key === "Enter") {
-            const keyword = this.value;
-
-            if(keyword === "") {
-                return;
-            }
-
-            window.location.href = "search.html?keyword=" + keyword;
-        }
-    });
-
 const mess = document.querySelector('.mes');
 mess.addEventListener('click', async function(e) {
     e.preventDefault();
@@ -120,7 +106,6 @@ function show(text) {
 async function loadProduct() {
     const res = await fetch('/products');
     const products = await res.json();
-     console.log(products);
 
     products.sort(() => Math.random() - 0.5);
 
