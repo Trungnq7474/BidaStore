@@ -70,7 +70,7 @@ async function loadCart() {
         listcart.innerHTML += 
             `
             <div class="cartt">
-                <img src="/images/${item.image}" alt="Ảnh">
+                <span><img src="/images/${item.image}" alt="Ảnh"></span>
                 <div class="item">
                     <h4>${item.product_name}</h4>
                     <h5>${item.price.toLocaleString('vi-VN')} VNĐ</h5>
