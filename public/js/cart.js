@@ -21,6 +21,7 @@ document.addEventListener('click', async (e) => {
     let product_name = productbox.querySelector("h5").innerText;
     let price = productbox.querySelector("h4").innerText.replace(/\D/g, "");
     let image = productbox.querySelector("img").src;
+    image = image.split("/images/")[1];
 
     const user_id = datauser.user.id;
 
