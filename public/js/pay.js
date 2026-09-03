@@ -14,6 +14,26 @@ let method = "COD";
 let total = 0;
 let product_id = null;
 
+function getImageUrl(image) {
+    if (!image) return "";
+
+    image = String(image).trim();
+
+    // Nếu là link đầy đủ
+    if (image.startsWith("http://") || image.startsWith("https://")) {
+        return image;
+    }
+
+    // Xóa / ở đầu
+    image = image.replace(/^\/+/, "");
+
+    // Xóa images/ nếu đã có
+    image = image.replace(/^images\//, "");
+
+    // Chuẩn hóa về /images/tên-ảnh
+    return `/images/${image}`;
+}
+
 cash.addEventListener('click', () =>{
 
     method = "COD";
@@ -88,7 +108,7 @@ async function loadPay() {
         
         <div class="pr">
             <div class="imga">
-                <img src="images/${dataItem.image}" alt="Ảnh">
+                <img src="${getImageUrl(dataItem.image)}" alt="Ảnh">
             </div>
 
             <div class="prduc">
@@ -122,7 +142,7 @@ async function loadPay() {
 
             <div class="pr">
                 <div class="imga">
-                    <img src="${item.image}" alt="Ảnh">
+                    <img src="${getImageUrl(item.image)}" alt="Ảnh">
                 </div>
 
                 <div class="prduc">

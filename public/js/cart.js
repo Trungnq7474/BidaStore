@@ -20,9 +20,11 @@ document.addEventListener('click', async (e) => {
 
     let product_name = productbox.querySelector("h5").innerText;
     let price = productbox.querySelector("h4").innerText.replace(/\D/g, "");
-    let image = productbox.querySelector("img").src;
-    image = image.split("/images/").pop();
+    let image = productbox.querySelector("img").getAttribute("src");
 
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+    
     const user_id = datauser.user.id;
 
         fetch('/add-cart', {
