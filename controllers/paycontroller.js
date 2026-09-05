@@ -3,17 +3,56 @@ const { sql } = require('../config/db');
 
 //TẠO ĐƠN HÀNG MỚI
 const createOrder = async (req, res) => {
-    const { user_id, name_receive, email, phone, address, method, total, product_id, bank_name, bank_account } = req.body;
-
+    const { user_id, name_receive, email, phone, address, method, total, subtotal, product_id, bank_name, bank_account, voucher_id } = req.body;
+    
     try {
+
+        if(voucher_id) {
+            const result = await sql.query`
+                SELECT * FROm vouchers
+                WHERE id = ${voucher_id}
+            `;
+
+            const voucher = result.recordset[0];
+
+            if(!voucher) {
+                return res.json({ message: "voucher_not_found" });
+            }
+
+            if(voucher.quantity <= 0) {
+                return res.json({ message: "voucher_out" });
+            }
+
+            if(voucher.is_active != 1) {
+                return res.json({ message: "voucher_inactive" });
+            }
+
+            if(subtotal < voucher.min_order) {
+                return res.json({ message: "voucher_min" });
+            }
+
+            const now = new Date();
+
+            if(now < new Date(voucher.start_date) || now > new Date(voucher.end_date)) {
+                return res.json({ message: "voucher_expired" });
+            }
+        }
 
         //TẠO ĐƠN HÀNG
         const result = await sql.query`
-            INSERT INTO orders (user_id, name_receive, email, phone, address, total, method, bank_name, bank_account)
+            INSERT INTO orders (user_id, name_receive, email, phone, address, total, method, bank_name, bank_account,voucher_id)
             OUTPUT INSERTED.id
-            VALUES (${user_id}, ${name_receive}, ${email}, ${phone}, ${address}, ${total}, ${method}, ${bank_name}, ${bank_account})
+            VALUES (${user_id}, ${name_receive}, ${email}, ${phone}, ${address}, ${total}, ${method}, ${bank_name}, ${bank_account}, ${voucher_id})
         `;
         const order_id = result.recordset[0].id;
+
+        if(voucher_id) {
+            await sql.query`
+                UPDATE vouchers
+                SET quantity = quantity - 1
+                WHERE id = ${voucher_id}
+            `;
+        }
 
         await sql.query`
             INSERT INTO notifications (message, type)
@@ -70,9 +109,24 @@ const getOrder = async (req, res) => {
         const order_id = req.params.id;
 
         const result = await sql.query`
-            SELECT * FROM orders WHERE id = ${order_id}
+            SELECT * FROM orders
+            WHERE id = ${order_id}
         `;
-        res.json(result.recordset[0]);
+
+        let voucher = null;
+
+        if(result.recordset[0].voucher_id) {
+            const voucherResult = await sql.query`
+                SELECT * FROM vouchers
+                WHERE id = ${result.recordset[0].voucher_id}
+            `;
+
+            voucher = voucherResult.recordset[0];
+        }
+        res.json({
+            ...result.recordset[0],
+            voucher: voucher
+        });
     }
 
     catch (err) {

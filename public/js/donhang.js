@@ -210,6 +210,35 @@ document.addEventListener('click', async function(e) {
 
         document.querySelector('.time').innerText = order.created_at.replace("T", " ").slice(0, 16);
         document.querySelector('.pricee').innerText = order.total.toLocaleString('vi-VN') + " VNĐ";
+        const voucherRow = document.querySelector('.voucher-row');
+        const voucherCode = document.querySelector('.voucher-code');
+        const voucherDiscount = document.querySelector('.voucher-discount');
+
+        if(order.voucher) {
+            let discount = 0;
+            let productTotal = 0;
+
+            items.forEach(item => {
+                productTotal += item.price * item.quantity;
+            });
+
+            if(order.voucher.type === "percent") {
+                discount = productTotal * order.voucher.value / 100;
+            }
+            
+            else {
+                discount = order.voucher.value;
+            }
+
+            voucherCode.innerText = order.voucher.code;
+            voucherDiscount.innerText = discount.toLocaleString('vi-VN') + " VNĐ";
+
+            voucherRow.style.display = "flex";
+        }
+
+        else {
+            voucherRow.style.display = "none";
+        }
 
         const productList = document.querySelector('.product-list');
         productList.innerHTML = "";

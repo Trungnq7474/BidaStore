@@ -112,7 +112,7 @@ select.huy{
     box-shadow: 0 20px 40px rgba(12, 12, 12, 0.296);
     width: 42%;
     margin-left: 35%;
-    margin-top: 1%;
+    margin-top: 6px;
     animation: showw 0.5s ease-in-out;
 }
 

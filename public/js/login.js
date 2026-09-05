@@ -64,7 +64,7 @@ form.addEventListener('submit', async function(e) {
     }
 
     else if (data === "customer") {
-        show("Bạn Đã Đăng Nhập Thành Công !");
+        show("Bạn Đã Đăng Nhập Khách Hàng Thành Công !");
 
         setTimeout(() => {
             window.location.href = "../index.html";

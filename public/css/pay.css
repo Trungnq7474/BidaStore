@@ -186,11 +186,116 @@ input:focus {
     box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
 }
 
+.voucher {
+    margin-top: 20px;
+    padding: 18px;
+    border: 2px solid #d9e8f5;
+    border-radius: 14px;
+    background: #f8fcff;
+}
+
+.voucher h3 {
+    margin: 0 0 16px;
+    font-size: 18px;
+    color: #0056a6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.voucher h3 i {
+    color: #0072c6;
+    font-size: 21px;
+}
+
+.voucher-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.voucher-item {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 16px;
+    border: 2px solid #7affff;
+    border-radius: 12px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.voucher-item:hover {
+    border: 2px solid #0072c6;
+    box-shadow: 0 3px 10px rgba(0, 102, 204, 0.08);
+    background: #fafdff;
+    transition: 0.4s ease-in-out;
+    transform: scale(1.01);
+}
+
+.voucher-item.selected {
+    border: 2px solid #0072c6;
+    background: #f0f8ff;
+}
+
+.voucher-code {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0066b3;
+    white-space: nowrap;
+}
+
+.voucher-code i {
+    font-size: 19px;
+}
+
+.voucher-info {
+    min-width: 0;
+}
+
+.voucher-min {
+    margin-bottom: 6px;
+}
+
+.min {
+    color: #8c2385;
+    font-size: 14px;
+}
+
+.voucher-date {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    color: #7a8793;
+    font-size: 12px;
+}
+
+.voucher-date p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.voucher-discount {
+    padding: 7px 11px;
+    border-radius: 7px;
+    background: #d3e8ff;
+    color: #4c0087;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
 .pay {
     margin-top: 30px;
     width: 100%;
     padding: 15px;
-    background: #3e464e;
+    background: #3e4e4d;
     color: white;
     border: none;
     border-radius: 8px;
@@ -315,461 +420,722 @@ input:focus {
     font-weight: bold;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { 
+    section { 
+        padding: 0 20px; 
+        box-sizing: border-box; 
+    } 
 
-    section {
-        padding: 0 20px;
-        box-sizing: border-box;
+    .shopping, .info { 
+        width: 50%; 
+        box-sizing: border-box; 
+    } 
+
+    .pr { 
+        width: 100%; 
+        box-sizing: border-box; 
+        gap: 20px; 
+    } 
+
+    .prduc { 
+        width: auto; 
+        flex: 1; 
+        min-width: 0; 
     }
 
-    .shopping,
-    .info {
-        width: 50%;
-        box-sizing: border-box;
+
+    .voucher h3 {
+        font-size: 18px;
+        margin-bottom: 14px;
     }
 
-    .pr {
-        width: 100%;
-        box-sizing: border-box;
-        gap: 20px;
-    }
-
-    .prduc {
-        width: auto;
-        flex: 1;
-        min-width: 0;
-    }
-
-}
-
-
-@media (max-width: 992px) {
-
-    section {
-        padding: 0 20px;
-    }
-
-    .shopping,
-    .info {
-        width: 50%;
-        padding: 25px;
-    }
-
-    .pr {
-        padding: 10px;
-        gap: 15px;
-    }
-
-    .pr img {
-        width: 90px;
-        height: 80px;
-    }
-
-    .prduc {
-        width: auto;
-        flex: 1;
-    }
-
-    .pr h4 {
-        font-size: 15px;
-    }
-
-    .pr h5 {
-        font-size: 14px;
-    }
-
-    .pr p {
-        font-size: 14px;
-    }
-
-    .method {
-        gap: 10px;
-    }
-
-    .method button {
-        font-size: 15px;
-        padding: 10px 5px;
-    }
-
-    .bank {
-        padding: 8px;
-        gap: 5px;
-    }
-
-    .bank img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .bank span {
-        font-size: 13px;
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    section {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-
-    .shopping,
-    .info {
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 15px;
-    }
-
-    .shopping {
-        border-right: none;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .info {
-        margin-top: 15px;
-    }
-
-    .shopping h2,
-    .info h2 {
-        font-size: 21px;
-    }
-
-    .tp {
-        height: 220px;
-    }
-
-    .pr {
-        width: 100%;
-        padding: 10px;
+    .voucher-item {
+        grid-template-columns: 100px minmax(0, 1fr) auto;
         gap: 12px;
-        box-sizing: border-box;
+        padding: 12px;
     }
 
-    .pr img {
-        width: 80px;
-        height: 70px;
+    .voucher-code {
+        font-size: 14px;
     }
 
-    .prduc {
-        flex: 1;
-        width: auto;
+    .voucher-code i {
+        font-size: 17px;
+    }
+
+    .voucher-info {
         min-width: 0;
     }
 
-    .pr h4 {
-        font-size: 14px;
-        margin: 5px 0;
+    .voucher-min {
+        margin-top: 2px;
+        margin-bottom: 2px;
     }
 
-    .pr h5 {
+    .min {
         font-size: 13px;
-        margin: 5px 0;
     }
 
-    .pr p {
-        font-size: 13px;
+    .voucher-date {
+        gap: 2px 10px;
+        font-size: 11px;
+    }
+
+    .voucher-date p {
         white-space: nowrap;
     }
 
-    .payment {
-        padding: 15px;
+    .voucher-discount {
+        font-size: 13px;
+        padding: 6px 9px;
+    }
+} 
+
+
+@media (max-width: 992px) { 
+    section { 
+        padding: 0 20px; 
+    } 
+
+    .shopping, .info { 
+        width: 50%; 
+        padding: 25px; 
+    } 
+
+    .pr { 
+        padding: 10px; 
+        gap: 15px; 
+    } 
+
+    .pr img { 
+        width: 90px; 
+        height: 80px; 
+    } 
+
+    .prduc { 
+        width: auto; 
+        flex: 1; 
+    } 
+
+    .pr h4 { 
+        font-size: 15px; 
+    } 
+
+    .pr h5 { 
+        font-size: 14px; 
+    } 
+
+    .pr p { 
+        font-size: 14px; 
+    } 
+
+    .method { 
+        gap: 10px; 
+    } 
+
+    .method button { 
+        font-size: 15px; 
+        padding: 10px 5px; 
+    } 
+
+    .bank { 
+        padding: 8px; 
+        gap: 5px; 
+    } 
+
+    .bank img { 
+        width: 60px; 
+        height: 60px; 
+    } 
+
+    .bank span { 
+        font-size: 13px; 
     }
 
-    .payment p {
-        font-size: 15px;
-    }
 
-    .payment p:last-child {
+    .voucher h3 {
         font-size: 18px;
+        margin-bottom: 13px;
     }
 
-    .method {
-        flex-direction: column;
+    .voucher-item {
+        grid-template-columns: 90px minmax(0, 1fr) auto;
         gap: 10px;
+        padding: 11px;
     }
 
-    .method button {
-        width: 100%;
+    .voucher-code {
+        font-size: 13px;
+    }
+
+    .voucher-code i {
         font-size: 16px;
     }
 
-    .text input {
-        font-size: 15px;
+    .voucher-info {
+        min-width: 0;
     }
 
-    .pay {
-        font-size: 18px;
+    .voucher-min {
+        margin-top: 1px;
+        margin-bottom: 2px;
     }
 
-    .bank-box {
-        padding: 15px;
-    }
-
-    .banks {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-
-    .bank {
-        height: 70px;
-        padding: 5px;
-    }
-
-    .bank img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .bank span {
+    .min {
         font-size: 12px;
     }
 
-    .bank-info input {
-        box-sizing: border-box;
-        font-size: 15px;
+    .voucher-date {
+        gap: 2px 7px;
+        font-size: 10px;
     }
 
-}
-
-
-@media (max-width: 576px) {
-
-    section {
-        padding: 0 10px;
-        margin-top: 110px;
+    .voucher-date p {
+        white-space: nowrap;
     }
 
-    .shopping,
-    .info {
-        padding: 18px;
-    }
-
-    .shopping h2,
-    .info h2 {
-        font-size: 18px;
-    }
-
-    .shopping a {
-        font-size: 14px;
-    }
-
-    .tp {
-        height: 200px;
-    }
-
-    .pr {
-        gap: 8px;
-        padding: 8px;
-    }
-
-    .pr img {
-        width: 65px;
-        height: 60px;
-    }
-
-    .pr h4 {
+    .voucher-discount {
         font-size: 12px;
+        padding: 6px 8px;
+    }
+} 
+
+
+@media (max-width: 768px) { 
+    section { 
+        display: flex; 
+        flex-direction: column; 
+        width: 100%; 
+        padding: 0 15px; 
+        box-sizing: border-box; 
+    } 
+
+    .shopping, .info { 
+        width: 100%; 
+        box-sizing: border-box; 
+        border-radius: 15px; 
+    } 
+
+    .shopping { 
+        border-right: none; 
+        border-bottom: 1px solid #dee2e6; 
+    } 
+
+    .info { 
+        margin-top: 15px; 
+    } 
+
+    .shopping h2, .info h2 { 
+        font-size: 21px; 
+    } 
+
+    .tp { 
+        height: 220px; 
+    } 
+
+    .pr { 
+        width: 100%; 
+        padding: 10px; 
+        gap: 12px; 
+        box-sizing: border-box; 
+    } 
+
+    .pr img { 
+        width: 80px; 
+        height: 70px; 
+    } 
+
+    .prduc { 
+        flex: 1; 
+        width: auto; 
+        min-width: 0; 
+    } 
+
+    .pr h4 { 
+        font-size: 14px; 
+        margin: 5px 0; 
+    } 
+
+    .pr h5 { 
+        font-size: 13px; 
+        margin: 5px 0; 
+    } 
+
+    .pr p { 
+        font-size: 13px; 
+        white-space: nowrap; 
+    } 
+
+    .payment { 
+        padding: 15px; 
+    } 
+
+    .payment p { 
+        font-size: 15px; 
+    } 
+
+    .payment p:last-child { 
+        font-size: 18px; 
+    } 
+
+    .method { 
+        flex-direction: column; 
+        gap: 10px; 
+    } 
+
+    .method button { 
+        width: 100%; 
+        font-size: 16px; 
+    } 
+
+    .text input { 
+        font-size: 15px; 
+    } 
+
+    .pay { 
+        font-size: 18px; 
+    } 
+
+    .bank-box { 
+        padding: 15px; 
+    } 
+
+    .banks { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 8px; 
+    } 
+
+    .bank { 
+        height: 70px; 
+        padding: 5px; 
+    } 
+
+    .bank img { 
+        width: 50px; 
+        height: 50px; 
+    } 
+
+    .bank span { 
+        font-size: 12px; 
+    } 
+
+    .bank-info input { 
+        box-sizing: border-box; 
+        font-size: 15px; 
     }
 
-    .pr h5 {
-        font-size: 11px;
-    }
 
-    .pr p {
-        font-size: 11px;
-    }
-
-    .payment {
-        padding: 12px;
-    }
-
-    .payment p {
-        font-size: 13px;
+    .voucher h3 {
+        font-size: 18px;
         margin-bottom: 12px;
     }
 
-    .payment p:last-child {
-        font-size: 16px;
-    }
-
-    .text label,
-    .bank-info label {
-        font-size: 13px;
-    }
-
-    .text input,
-    .bank-info input {
+    .voucher-item {
+        grid-template-columns: 85px minmax(0, 1fr) auto;
+        gap: 8px;
         padding: 10px;
-        font-size: 14px;
     }
 
-    .pay {
-        padding: 12px;
-        font-size: 16px;
+    .voucher-code {
+        font-size: 12px;
+        gap: 4px;
+        min-width: 0;
     }
 
-    .pay i {
-        font-size: 22px;
+    .voucher-code i {
+        font-size: 15px;
+        flex-shrink: 0;
     }
 
-    .bank-box {
-        padding: 12px;
+    .voucher-info {
+        min-width: 0;
     }
 
-    .bank-box h3 {
-        font-size: 16px;
+    .voucher-min {
+        margin-top: 1px;
+        margin-bottom: 1px;
     }
 
-    .bank {
-        height: 60px;
+    .min {
+        font-size: 11px;
+    }
+
+    .voucher-date {
+        gap: 2px 6px;
+        font-size: 9px;
+    }
+
+    .voucher-date p {
+        white-space: nowrap;
+    }
+
+    .voucher-discount {
+        font-size: 10px;
+        padding: 6px 7px;
+    }
+} 
+
+
+@media (max-width: 576px) { 
+    section { 
+        padding: 0 10px; 
+        margin-top: 110px; 
+    } 
+
+    .shopping, .info { 
+        padding: 18px; 
+    } 
+
+    .shopping h2, .info h2 { 
+        font-size: 18px; 
+    } 
+
+    .shopping a { 
+        font-size: 14px; 
+    } 
+
+    .tp { 
+        height: 200px; 
+    } 
+
+    .pr { 
+        gap: 8px; 
+        padding: 8px; 
+    } 
+
+    .pr img { 
+        width: 65px; 
+        height: 60px; 
+    } 
+
+    .pr h4 { 
+        font-size: 12px; 
+    } 
+
+    .pr h5 { 
+        font-size: 11px; 
+    } 
+
+    .pr p { 
+        font-size: 11px; 
+    } 
+
+    .payment { 
+        padding: 12px; 
+    } 
+
+    .payment p { 
+        font-size: 13px; 
+        margin-bottom: 12px; 
+    } 
+
+    .payment p:last-child { 
+        font-size: 16px; 
+    } 
+
+    .text label, .bank-info label { 
+        font-size: 13px; 
+    } 
+
+    .text input, .bank-info input { 
+        padding: 10px; 
+        font-size: 14px; 
+    } 
+
+    .pay { 
+        padding: 12px; 
+        font-size: 16px; 
+    } 
+
+    .pay i { 
+        font-size: 22px; 
+    } 
+
+    .bank-box { 
+        padding: 12px; 
+    } 
+
+    .bank-box h3 { 
+        font-size: 16px; 
+    } 
+
+    .bank { 
+        height: 60px; 
+        gap: 3px; 
+    } 
+
+    .bank img { 
+        width: 40px; 
+        height: 40px; 
+    } 
+
+    .bank span { 
+        font-size: 10px; 
+    }
+
+
+    .voucher h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .voucher-item {
+        grid-template-columns: 72px minmax(0, 1fr) auto;
+        gap: 6px;
+        padding: 9px;
+    }
+
+    .voucher-code {
+        font-size: 11px;
         gap: 3px;
     }
 
-    .bank img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .bank span {
-        font-size: 10px;
-    }
-
-}
-
-
-@media (max-width: 400px) {
-
-    section {
-        padding: 0 8px;
-    }
-
-    .shopping,
-    .info {
-        padding: 12px;
-    }
-
-    .shopping h2,
-    .info h2 {
-        font-size: 16px;
-    }
-
-    .pr img {
-        width: 55px;
-        height: 50px;
-    }
-
-    .pr h4 {
-        font-size: 11px;
-    }
-
-    .pr h5 {
-        font-size: 10px;
-    }
-
-    .pr p {
-        font-size: 10px;
-    }
-
-    .payment p {
-        font-size: 12px;
-    }
-
-    .payment p:last-child {
-        font-size: 14px;
-    }
-
-    .text input,
-    .bank-info input {
+    .voucher-code i {
         font-size: 13px;
     }
 
-    .method button {
-        font-size: 14px;
+    .voucher-info {
+        min-width: 0;
     }
 
-    .pay {
-        font-size: 14px;
+    .voucher-min {
+        margin-top: 0;
+        margin-bottom: 1px;
     }
 
-    .banks {
-        gap: 5px;
-    }
-
-    .bank {
-        height: 55px;
-    }
-
-    .bank img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .bank span {
-        font-size: 9px;
-    }
-
-}
-
-
-@media (max-width: 320px) {
-
-    section {
-        padding: 0 5px;
-    }
-
-    .shopping,
-    .info {
-        padding: 10px;
-    }
-
-    .shopping h2,
-    .info h2 {
-        font-size: 14px;
-    }
-
-    .pr {
-        gap: 5px;
-    }
-
-    .pr img {
-        width: 48px;
-        height: 45px;
-    }
-
-    .pr h4 {
+    .min {
         font-size: 10px;
     }
 
-    .pr h5,
-    .pr p {
-        font-size: 9px;
-    }
-
-    .payment p {
-        font-size: 11px;
-    }
-
-    .payment p:last-child {
-        font-size: 13px;
-    }
-
-    .text input,
-    .bank-info input {
-        font-size: 12px;
-    }
-
-    .bank img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .bank span {
+    .voucher-date {
+        gap: 1px 4px;
         font-size: 8px;
     }
 
+    .voucher-date p {
+        white-space: nowrap;
+    }
+
+    .voucher-discount {
+        font-size: 9px;
+        padding: 5px 6px;
+    }
+} 
+
+
+@media (max-width: 400px) { 
+    section { 
+        padding: 0 8px; 
+    } 
+
+    .shopping, .info { 
+        padding: 12px; 
+    } 
+
+    .shopping h2, .info h2 { 
+        font-size: 16px; 
+    } 
+
+    .pr img { 
+        width: 55px; 
+        height: 50px; 
+    } 
+
+    .pr h4 { 
+        font-size: 11px; 
+    } 
+
+    .pr h5 { 
+        font-size: 10px; 
+    } 
+
+    .pr p { 
+        font-size: 10px; 
+    } 
+
+    .payment p { 
+        font-size: 12px; 
+    } 
+
+    .payment p:last-child { 
+        font-size: 14px; 
+    } 
+
+    .text input, .bank-info input { 
+        font-size: 13px; 
+    } 
+
+    .method button { 
+        font-size: 14px; 
+    } 
+
+    .pay { 
+        font-size: 14px; 
+    } 
+
+    .banks { 
+        gap: 5px; 
+    } 
+
+    .bank { 
+        height: 55px; 
+    } 
+
+    .bank img { 
+        width: 35px; 
+        height: 35px; 
+    } 
+
+    .bank span { 
+        font-size: 9px; 
+    }
+
+
+    .voucher h3 {
+        font-size: 16px;
+        margin-bottom: 9px;
+    }
+
+    .voucher-item {
+        grid-template-columns: 65px minmax(0, 1fr) auto;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .voucher-code {
+        font-size: 10px;
+        gap: 2px;
+    }
+
+    .voucher-code i {
+        font-size: 12px;
+    }
+
+    .voucher-info {
+        min-width: 0;
+    }
+
+    .voucher-min {
+        margin-top: 0;
+        margin-bottom: 1px;
+    }
+
+    .min {
+        font-size: 9px;
+    }
+
+    .voucher-date {
+        gap: 1px 3px;
+        font-size: 7px;
+    }
+
+    .voucher-date p {
+        white-space: nowrap;
+    }
+
+    .voucher-discount {
+        font-size: 8px;
+        padding: 4px 5px;
+    }
+} 
+
+
+@media (max-width: 320px) { 
+    section { 
+        padding: 0 5px; 
+    } 
+
+    .shopping, .info { 
+        padding: 10px; 
+    } 
+
+    .shopping h2, .info h2 { 
+        font-size: 14px; 
+    } 
+
+    .pr { 
+        gap: 5px; 
+    } 
+
+    .pr img { 
+        width: 48px; 
+        height: 45px; 
+    } 
+
+    .pr h4 { 
+        font-size: 10px; 
+    } 
+
+    .pr h5, .pr p { 
+        font-size: 9px; 
+    } 
+
+    .payment p { 
+        font-size: 11px; 
+    } 
+
+    .payment p:last-child { 
+        font-size: 13px; 
+    } 
+
+    .text input, .bank-info input { 
+        font-size: 12px; 
+    } 
+
+    .bank img { 
+        width: 30px; 
+        height: 30px; 
+    } 
+
+    .bank span { 
+        font-size: 8px; 
+    }
+
+
+    .voucher h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .voucher-item {
+        grid-template-columns: 58px minmax(0, 1fr) auto;
+        gap: 4px;
+        padding: 7px;
+    }
+
+    .voucher-code {
+        font-size: 9px;
+        gap: 2px;
+    }
+
+    .voucher-code i {
+        font-size: 11px;
+    }
+
+    .voucher-info {
+        min-width: 0;
+    }
+
+    .voucher-min {
+        margin-top: 0;
+        margin-bottom: 1px;
+    }
+
+    .min {
+        font-size: 8px;
+    }
+
+    .voucher-date {
+        gap: 1px 2px;
+        font-size: 6px;
+    }
+
+    .voucher-date p {
+        white-space: nowrap;
+    }
+
+    .voucher-discount {
+        font-size: 7px;
+        padding: 4px;
+    }
 }

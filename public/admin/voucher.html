@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../images/logo bida.png">
+    <link rel="stylesheet" href="../css/voucher.css">
+    <link rel="stylesheet" href="../css/slidebar.css">
+    <link rel="stylesheet" href="../css/tableadmin.css">
+    <link rel="stylesheet" href="../css/thongbao.css">
+    <link rel="stylesheet" href="../css/lookup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ MÃ GIẢM GIÁ</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="slide"></div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="person">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell bell"></i>
+                <span class="notification-count"></span>
+
+                <div class="notification-box">
+                    <!-- <h3>Thông Báo</h3> -->
+
+                    <!-- <div class="notification-item">
+                        <p>Bạn có đơn hàng mới cần xử lý.</p>
+                        <span class="notification-time">26/08/2026 - 10:15</span>
+                    </div> -->
+                    
+                </div>
+            </div>
+        
+            <div class="im"></div>
+        </div>
+
+        <div class="form-bg">
+            <div class="voucher-form">
+
+                <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
+
+                <h2>THÊM MÃ GIẢM GIÁ</h2>
+
+                <label>Mã Giảm Giá</label>
+                <input type="text" class="code" placeholder="Mã Giảm Giá">
+
+                <label>Phân Loại</label>
+                <select class="type">
+                    <option value="" disabled selected hidden>Chọn Phân Loại</option>
+                    <option value="percent">Giảm Phần Trăm</option>
+                    <option value="money">Giảm Tiền</option>
+                </select>
+
+                <label>Giá Trị Giảm</label>
+                <input type="number" class="value" placeholder="Giá Trị Giảm">
+
+                <label>Đơn Hàng Tối Thiểu</label>
+                <input type="number" class="min-order" placeholder="Đơn Hàng Tối Thiểu">
+
+                <label>Số Lượng</label>
+                <input type="number" class="quantity" placeholder="Số Lượng">
+
+                <label>Ngày Bắt Đầu</label>
+                <input type="datetime-local" class="start-date">
+
+                <label>Ngày Kết Thúc</label>
+                <input type="datetime-local" class="end-date">
+
+                <button class="add-voucher"><i class="fa-solid fa-plus"></i> THÊM MÃ GIẢM GIÁ</button>
+
+            </div>
+        </div>
+
+        <div class="edit-bg">
+            <div class="edit-form">
+
+                <span class="econ"><i class="fa-solid fa-circle-xmark"></i></span>
+
+                <h2>SỬA MÃ GIẢM GIÁ</h2>
+
+                <label>Mã Giảm Giá</label>
+                <input type="text" class="code" placeholder="Mã Giảm Giá">
+
+                <label>Phân Loại</label>
+                <select class="type">
+                    <option value="" disabled selected hidden>Chọn Phân Loại</option>
+                    <option value="percent">Giảm Phần Trăm</option>
+                    <option value="money">Giảm Tiền</option>
+                </select>
+
+                <label>Giá Trị Giảm</label>
+                <input type="number" class="value" placeholder="Giá Trị Giảm">
+
+                <label>Đơn Hàng Tối Thiểu</label>
+                <input type="number" class="min-order" placeholder="Đơn Hàng Tối Thiểu">
+
+                <label>Số Lượng</label>
+                <input type="number" class="quantity" placeholder="Số Lượng">
+
+                <label>Ngày Bắt Đầu</label>
+                <input type="datetime-local" class="start-date">
+
+                <label>Ngày Kết Thúc</label>
+                <input type="datetime-local" class="end-date">
+
+                <button class="edit-voucher"><i class="fa-solid fa-pen-clip"></i> CẬP NHẬT MÃ GIẢM GIÁ</button>
+
+            </div>
+        </div>
+
+        <div class="top">
+            <h1>QUẢN LÝ MÃ GIẢM GIÁ</h1>
+        </div>
+
+        <div class="table-container">
+
+            <button class="add"><i class="fa fa-plus"></i> Thêm Mã Giảm Giá</button>
+            
+            <div class="lookUp">
+                <div class="search-product"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Tìm Khách Hàng, SĐT..."></div>
+                <div class="filter">
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select class="filter-product">
+                        <option value="all">Tất Cả</option>
+                        <option value="price">Giảm Tiền</option>
+                        <option value="percent">Giảm Phần Trăm</option>
+                        <option value="actioning">Đang Hoạt Động</option>
+                        <option value="due">Đã Hết Hạn</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Mã Giảm Giá</th>
+                        <th>Loại</th>
+                        <th>Giá Trị</th>
+                        <th>Đơn Tối Thiểu</th>
+                        <th>Số Lượng</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Ngày Kết Thúc</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Nguyễn Văn A</td>
+                    <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=nguyenquangtrung0704@gmail.com" class="email-link" target="_blank">nguyenquangtrung0704@gmail.com</a></td>
+                    <td>0123456789</td>
+                    <td><button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Trần Thị B</td>
+                    <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=tranthib@gmail.com" class="email-link" target="_blank">tranthib@gmail.com</a></td>
+                    <td>0987654321</td>
+                    <td>
+                        <button class="delete"><i class="fa-solid fa-trash-can"></i> Xóa</button>
+                    </td>
+                </tr> -->
+                <tbody class="voucher-list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="confirm-box2">
+    <div class="confirm-content2">
+        <p>Bạn Có Chắc Muốn Xóa Mã Giảm Giá Này?</p>
+
+        <button class="no2">Không</button>
+        <button class="yes2">Xác Nhận</button>
+    </div>
+</div>
+
+<div class="mgs2"></div>
+
+<script src="../js/voucher.js"></script>
+<script src="../js/loadadmin.js"></script>
+<script src="../js/slidebar.js"></script>
+<script src="../js/lookup.js"></script>
+</body>
+</html>

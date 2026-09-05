@@ -157,6 +157,17 @@ button.pay {
     margin-left: 250px;
 }
 
+.no-comment  {
+    margin: 15px 0;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #9a3412;
+    background: #fff7ed;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
 .review-comment-section {
     width: 100%;
     margin-top: 50px;
@@ -179,6 +190,7 @@ button.pay {
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 30px;
+    display: none;
 }
 
 .comment-form h3, .comments-list h3 {
@@ -434,6 +446,12 @@ button.pay {
         width: 100%;
         box-sizing: border-box;
     }
+
+    .no-comment {
+        font-size: 19px;
+        padding: 18px 10px;
+        white-space: nowrap;
+    }
 }
 
 
@@ -561,6 +579,12 @@ button.pay {
 
     .name {
         font-size: 18px;
+    }
+
+    .no-comment {
+        font-size: 18px;
+        padding: 17px 8px;
+        white-space: nowrap;
     }
 }
 
@@ -747,6 +771,12 @@ button.pay {
 
     .name {
         font-size: 16px;
+    }
+
+    .no-comment {
+        padding: 15px 6px;
+        font-size: 16px;
+        white-space: nowrap;
     }
 }
 
@@ -939,6 +969,12 @@ button.pay {
     .name {
         font-size: 14px;
     }
+
+    .no-comment {
+        padding: 13px 5px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
 }
 
 
@@ -1068,6 +1104,12 @@ button.pay {
     .name {
         font-size: 13px;
     }
+
+    .no-comment {
+        padding: 11px 3px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
 }
 
 
@@ -1132,5 +1174,11 @@ button.pay {
 
     .name {
         font-size: 12px;
+    }
+
+    .no-comment {
+        padding: 10px 2px;
+        font-size: 11px;
+        white-space: nowrap;
     }
 }

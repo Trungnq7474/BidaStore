@@ -1,9 +1,26 @@
 const {sql} = require('../config/db');
 
 const addComment = async (req, res) => {
-    const { product_id, user_name, comment_text, rating} = req.body;
+    const { product_id, user_name, comment_text, rating, user_id} = req.body;
 
     try {
+
+        const check = await sql.query`
+            SELECT o.id FROM orders o
+            INNER JOIN orderitems oi ON o.id = oi.order_id
+            WHERE o.user_id = ${user_id}
+            AND oi.product_name = (
+                SELECT product_name
+                FROM products
+                WHERE product_id = ${product_id}
+            )
+            AND o.status = 'xong'
+        `;
+
+        if(check.recordset.length === 0) {
+            return res.send("not")
+        }
+
         const result = await sql.query`
             INSERT INTO comments (product_id, user_name, comment_text, rating)
             OUTPUT INSERTED.id
@@ -144,4 +161,33 @@ const getCommentcount = async (req, res) => {
         res.status(500).send(err.message);
     }
 }
-module.exports = { addComment, getComment, getAllComment, replyComment, deleteComment, getCommentcount };
+
+const checkBuy = async (req, res) => {
+    const { product_id, user_id } = req.query;
+
+    try {
+        const result = await sql.query`
+            SELECT o.id 
+            FROM orders o
+            INNER JOIN orderitems oi ON o.id = oi.order_id
+            WHERE o.user_id = ${user_id}
+            AND oi.product_name = (
+                SELECT product_name
+                FROM products
+                WHERE product_id = ${product_id}
+            )
+            AND o.status = 'xong'
+        `;
+
+        if(result.recordset.length > 0) {
+            return res.send("yes");
+        }
+
+        res.send("no");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+}
+module.exports = { addComment, getComment, getAllComment, replyComment, deleteComment, getCommentcount, checkBuy };

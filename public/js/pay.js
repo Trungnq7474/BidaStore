@@ -13,6 +13,9 @@ const bankTotal = document.querySelector('.bank-total');
 let method = "COD";
 let total = 0;
 let product_id = null;
+let selectedVoucher = null;
+let discount = 0;
+const c = document.querySelector('.c');
 
 function getImageUrl(image) {
     if (!image) return "";
@@ -66,12 +69,111 @@ banks.forEach(bank => {
         const nameBank = bank.dataset.bank;
 
         bankName.value = nameBank;
-        bankTotal.value = (total + 30000).toLocaleString('vi-VN') + " VNĐ";
+        bankTotal.value = (total + 30000 - discount).toLocaleString('vi-VN') + " VNĐ";
 
         bankInfo.style.display = "block";
     });
 
 });
+
+async function loadVouchers() {
+    const res = await fetch('/getvouchers');
+    const data = await res.json();
+
+    const voucherList = document.querySelector('.voucher-list');
+
+    voucherList.innerHTML = "";
+
+    data.forEach(voucher => {
+        if(voucher.is_active != 1) {
+            return;
+        }
+
+        if(voucher.quantity <= 0) {
+            return;
+        }
+
+        const now = new Date();
+
+        const start = new Date(voucher.start_date.replace(" ", "T"));
+        const end = new Date(voucher.end_date.replace(" ", "T"));
+
+        if(now < start || now > end) {
+            return;
+        }
+
+        if(total < voucher.min_order) {
+            return
+        }
+
+        let text = "";
+        if(voucher.type === 'percent') {
+            text = 'Giảm ' + voucher.value + '%';
+        }
+
+        else {
+            text = 'Giảm ' + voucher.value.toLocaleString('vi-VN') + ' VNĐ';
+        }
+
+        voucherList.innerHTML +=`
+            <div class="voucher-item" data-id="${voucher.id}">
+                <div class="voucher-code"><i class="fa-solid fa-ticket-simple"></i> ${voucher.code}</div>
+
+                <div class="voucher-info">
+                    <div class="voucher-min">
+                        <b class="min">Đơn tối thiểu ${voucher.min_order.toLocaleString('vi-VN')} VNĐ</b>
+                    </div>
+
+                    <div class="voucher-date">
+                        <b><p>Bắt Đầu: ${voucher.start_date.replace("T", " ").slice(0, 16)}</p></b>
+                        <b><p>Kết Thúc: ${voucher.end_date.replace("T", " ").slice(0, 16)}</p></b>
+                    
+                    </div>
+                </div>
+
+                <div class="voucher-discount">${text}</div>
+            </div>
+        `;
+    });
+
+    const items = document.querySelectorAll('.voucher-item');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            items.forEach(v => {
+                v.classList.remove('selected');
+            });
+
+            item.classList.add('selected');
+            const id = item.dataset.id;
+
+            selectedVoucher = data.find(v => v.id == id);
+            
+            reDuce();
+
+            const ship = 30000;
+            c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
+            bankTotal.value = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ"
+        });
+    });
+}
+
+function reDuce() {
+    if(!selectedVoucher) {
+        discount = 0;
+        return;
+    }
+
+    if(selectedVoucher.type === "percent") {
+        discount = total * selectedVoucher.value / 100;
+    }
+    else {
+        discount = selectedVoucher.value;
+    }
+
+    if(discount > total) {
+        discount = total;
+    }
+}
 
 // Load dữ liệu giỏ hàng và hiển thị lên trang thanh toán
 window.onload = loadPay;
@@ -90,7 +192,6 @@ async function loadPay() {
     
     const tp = document.querySelector('.tp');
     const a = document.querySelector('.a');
-    const c = document.querySelector('.c');
 
     tp.innerHTML = '';
 
@@ -159,9 +260,11 @@ async function loadPay() {
 
     a.innerText = total.toLocaleString('vi-VN') + " VNĐ";
     const ship = 30000;
-    c.innerText = (total + ship).toLocaleString('vi-VN') + " VNĐ";
+    c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
 
-    bankTotal.value = (total + ship).toLocaleString('vi-VN') + " VNĐ";
+    bankTotal.value = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
+
+    loadVouchers();
 }
 
 const pay = document.querySelector(".pay");
@@ -212,13 +315,40 @@ pay.addEventListener('click', async (e) => {
             address: address,
             method: method,
             product_id: product_id,
-            total: total + ship,
+            subtotal: total,
+            total: total + ship- discount,
+            voucher_id: selectedVoucher ? selectedVoucher.id : null,
             bank_name: bankName.value,
             bank_account: bankAccount.value
         })
     });
 
     const result = await res.json();
+
+    if(result.message === "voucher_not_found") {
+        show("Voucher Không Tồn Tại !");
+        return;
+    }
+
+    if(result.message === "voucher_out") {
+        show("Voucher Đã Hết Lượt Sử Dụng !");
+        return;
+    }
+
+    if(result.message === "voucher_inactive") {
+        show("Voucher Không Còn Hoạt Động !");
+        return;
+    }
+
+    if(result.message === "voucher_min") {
+        show("Đơn Hàng Không Đủ Điều Kiện Sử Dụng Voucher !");
+        return;
+    }
+
+    if(result.message === "voucher_expired") {
+        show("Voucher Đã Hết Hạn !");
+        return;
+    }
 
     if(result.success) {
         document.querySelector(".name").value = "";

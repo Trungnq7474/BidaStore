@@ -1,0 +1,697 @@
+body {
+    background: #f4f6f9;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+    min-width: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top h1 {
+    margin: auto;
+    font-size: 35px;
+    color: #111827;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.add {
+    border: none;
+    font-size: 17px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.add:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.icon,
+.econ {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    font-size: 25px;
+    color: #3d62c5;
+    cursor: pointer;
+}
+
+.form-bg,
+.edit-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 22, 22, 0.495);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.voucher-form,
+.edit-form {
+    background-color: #cfffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: 1% auto;
+    width: 500px;
+    display: grid;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgb(81, 76, 76);
+    box-sizing: border-box;
+    animation: showw 0.5s ease-in-out;
+}
+
+@keyframes showw {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.voucher-form h2,
+.edit-form h2 {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #4268ba;
+}
+
+.voucher-form label,
+.edit-form label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin-left: 4px;
+    color: #2b5694;
+}
+
+.voucher-form input,
+.voucher-form select,
+.edit-form input,
+.edit-form select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #71ffd9;
+    width: 450px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: #f3f9ff;
+    outline: none;
+    color: #003f6f;
+    box-sizing: border-box;
+}
+
+.voucher-form input:focus,
+.voucher-form select:focus,
+.edit-form input:focus,
+.edit-form select:focus {
+    border: 2px solid #c5c5ff;
+}
+
+.voucher-form option,
+.edit-form option {
+    color: #003f6f;
+    font-weight: bold;
+    background-color: #e9efff;
+}
+
+.add-voucher,
+.edit-voucher {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4197ff;
+    color: #edf9e1;
+    cursor: pointer;
+    height: 45px;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 15px;
+}
+
+.add-voucher:hover,
+.edit-voucher:hover {
+    transform: scale(1.02);
+    background-color: #367fd7;
+    color: #ffffd0;
+}
+
+.delete {
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.edit {
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    padding: 8px 14px;
+    background: #f59e0b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.edit:hover {
+    background: #d97706;
+    transform: scale(1.05);
+}
+
+.delete:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.voucher-active {
+    color: white;
+    background-color: #1cb052;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px 12px;
+}
+
+.voucher-inactive {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 15px;
+    padding: 10px 12px;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        padding: 25px;
+    }
+
+    .top {
+        margin-bottom: 25px;
+    }
+
+    .top h1 {
+        font-size: 32px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .add {
+        font-size: 16px;
+        padding: 11px 16px;
+        margin-bottom: 18px;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 450px;
+        max-width: calc(100vw - 40px);
+        max-height: 90vh;
+        margin: 3vh auto;
+        padding: 10px 18px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .edit,
+    .delete {
+        font-size: 14px;
+        padding: 7px 10px;
+        margin: 2px;
+        white-space: nowrap;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 8px 10px;
+        font-size: 13px;
+        border-radius: 12px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        padding: 20px;
+    }
+
+    .top {
+        margin-bottom: 20px;
+    }
+
+    .top h1 {
+        font-size: 29px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .add {
+        font-size: 15px;
+        padding: 10px 14px;
+        margin-bottom: 16px;
+    }
+
+    .edit,
+    .delete {
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 7px 9px;
+        font-size: 12px;
+        border-radius: 11px;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 420px;
+        max-width: calc(100vw - 50px);
+        max-height: 88vh;
+        margin: 4vh auto;
+        padding: 10px 16px;
+    }
+
+    .voucher-form h2,
+    .edit-form h2 {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .voucher-form label,
+    .edit-form label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        height: 40px;
+        padding: 8px 10px;
+        font-size: 14px;
+        margin-bottom: 11px;
+    }
+
+    .add-voucher,
+    .edit-voucher {
+        height: 40px;
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .top h1 {
+        width: 100%;
+        font-size: 25px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .add {
+        width: auto;
+        height: 34px;
+        padding: 8px 11px;
+        margin-bottom: 15px;
+        font-size: 13px;
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+
+    .edit,
+    .delete {
+        font-size: 12px;
+        padding: 7px 8px;
+        margin: 2px;
+        white-space: nowrap;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 7px 9px;
+        font-size: 12px;
+        border-radius: 11px;
+        white-space: nowrap;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 10px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 380px;
+        max-width: calc(100vw - 40px);
+        max-height: 85vh;
+        margin: 5vh auto;
+        padding: 10px 15px;
+        border-radius: 13px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .voucher-form h2,
+    .edit-form h2 {
+        font-size: 18px;
+        margin-top: 4px;
+        margin-bottom: 13px;
+        text-align: center;
+    }
+
+    .voucher-form label,
+    .edit-form label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        width: 100%;
+        height: 38px;
+        padding: 7px 9px;
+        font-size: 13px;
+        margin-bottom: 9px;
+        box-sizing: border-box;
+    }
+
+    .add-voucher,
+    .edit-voucher {
+        width: 100%;
+        height: 38px;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        padding: 12px;
+    }
+
+    .top {
+        margin-bottom: 12px;
+    }
+
+    .top h1 {
+        font-size: 22px;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .add {
+        height: 31px;
+        padding: 7px 9px;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .edit,
+    .delete {
+        font-size: 11px;
+        padding: 6px 7px;
+        margin: 1px;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 6px 8px;
+        font-size: 11px;
+        border-radius: 10px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 8px;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 340px;
+        max-width: calc(100vw - 30px);
+        max-height: 82vh;
+        margin: 6vh auto;
+        padding: 9px 13px;
+        border-radius: 12px;
+    }
+
+    .voucher-form h2,
+    .edit-form h2 {
+        font-size: 17px;
+        margin-bottom: 11px;
+    }
+
+    .voucher-form label,
+    .edit-form label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        height: 36px;
+        padding: 6px 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .add-voucher,
+    .edit-voucher {
+        width: 100%;
+        height: 36px;
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .main {
+        padding: 9px;
+    }
+
+    .top {
+        margin-bottom: 10px;
+    }
+
+    .top h1 {
+        font-size: 19px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .add {
+        height: 28px;
+        padding: 6px 8px;
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .edit,
+    .delete {
+        font-size: 10px;
+        padding: 5px 6px;
+        margin: 1px;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 5px 7px;
+        font-size: 10px;
+        border-radius: 9px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 5px;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 310px;
+        max-width: calc(100vw - 20px);
+        max-height: 80vh;
+        margin: 7vh auto;
+        padding: 8px 11px;
+        border-radius: 11px;
+    }
+
+    .voucher-form h2,
+    .edit-form h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .voucher-form label,
+    .edit-form label {
+        font-size: 11px;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        height: 34px;
+        padding: 5px 7px;
+        font-size: 11px;
+        margin-bottom: 7px;
+    }
+
+    .add-voucher,
+    .edit-voucher {
+        width: 100%;
+        height: 34px;
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .main {
+        padding: 7px;
+    }
+
+    .top {
+        margin-bottom: 8px;
+    }
+
+    .top h1 {
+        font-size: 17px;
+        margin-top: 8px;
+        margin-bottom: 13px;
+    }
+
+    .add {
+        height: 25px;
+        padding: 5px 7px;
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    .edit,
+    .delete {
+        font-size: 9px;
+        padding: 5px;
+        margin: 1px;
+    }
+
+    .voucher-active,
+    .voucher-inactive {
+        padding: 4px 6px;
+        font-size: 9px;
+        border-radius: 8px;
+    }
+
+    .form-bg,
+    .edit-bg {
+        padding: 4px;
+    }
+
+    .voucher-form,
+    .edit-form {
+        width: 290px;
+        max-width: calc(100vw - 16px);
+        max-height: 78vh;
+        margin: 8vh auto;
+        padding: 7px 10px;
+    }
+
+    .voucher-form h2,
+    .edit-form h2 {
+        font-size: 15px;
+        margin-bottom: 9px;
+    }
+
+    .voucher-form label,
+    .edit-form label {
+        font-size: 10px;
+    }
+
+    .voucher-form input,
+    .voucher-form select,
+    .edit-form input,
+    .edit-form select {
+        height: 32px;
+        font-size: 10px;
+        margin-bottom: 6px;
+        padding: 5px 6px;
+    }
+
+    .add-voucher,
+    .edit-voucher {
+        width: 100%;
+        height: 32px;
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+}

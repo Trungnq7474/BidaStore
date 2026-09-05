@@ -1,3 +1,16 @@
+function getImageUrl(image) {
+    if (!image) return "";
+
+    if (image.startsWith("http://") || image.startsWith("https://")) {
+        return image;
+    }
+
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+
+    return `/images/${image}`;
+}
+
 async function tt(yt) {
     yt.classList.remove("cho", "dang", "xong", "huy");
     yt.classList.add(yt.value);
@@ -150,7 +163,7 @@ fetch('/getallorders')
                     productlist.innerHTML +=`
                     <div class="product-item">
                         <div class="product-info">
-                            <img src="${imageUrl}" alt="Ảnh" class="product-img">
+                            <img src="${getImageUrl(item.image)}" alt="Ảnh" class="product-img">
                             <div class="product-detail">
                                 <h3 class="product-name">${item.product_name}</h3>
                                 <h4 class="product-qty">Số lượng: x${item.quantity}</h4>
@@ -193,6 +206,37 @@ fetch('/getallorders')
             document.querySelector('.time').innerText = order.created_at.replace("T", " ").slice(0,16);
             document.querySelector('.price').innerText = order.total.toLocaleString('vi-VN') + " VNĐ";
             document.querySelector('.phone').innerText = order.phone;
+
+            const voucherRow = document.querySelector('.voucher-row');
+            const voucherCode = document.querySelector('.voucher-code');
+            const voucherDiscount = document.querySelector('.voucher-discount');
+
+            if(order.voucher) {
+                let discount = 0;
+                let productTotal = 0;
+
+                items.forEach(item => {
+                    productTotal += item.price * item.quantity;
+                });
+
+                if(order.voucher.type === "percent") {
+                    discount = productTotal * order.voucher.value / 100;
+                }
+
+                else {
+                    discount = order.voucher.value;
+                }
+
+                voucherCode.innerText = order.voucher.code;
+                voucherDiscount.innerText = discount.toLocaleString('vi-VN') + " VNĐ";
+
+                voucherRow.style.display = "flex";
+            }
+
+            else {
+                voucherRow.style.display = "none";
+            }
+
 
             inbox.style.display = "block";
         }

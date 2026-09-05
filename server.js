@@ -55,6 +55,9 @@ app.use('/', payrouters);
 const messrouters = require('./routes/messrouters');
 app.use('/', messrouters);
 
+const voucherrouters = require('./routes/voucherrouter');
+app.use('/', voucherrouters);
+
 
 // chạy server
 app.listen(3000, () =>{

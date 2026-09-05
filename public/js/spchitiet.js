@@ -15,11 +15,13 @@ const cart = document.querySelector('.cart');
 
         let product_name = productbox.querySelector("h2").innerText;
         let price = productbox.querySelector("h3").innerText.replace(/\D/g, "");
-        let image = productbox.querySelector("img").src;
+        let image = productbox.querySelector("img").getAttribute("src");
+
+        image = image.replace(/^\/+/, "");
+        image = image.replace(/^images\//, "");
 
         const user_id = datauser.user.id;
 
-        try {
             const res = await fetch('/add-cart', {
                 method: 'POST',
                 headers: {
@@ -33,23 +35,32 @@ const cart = document.querySelector('.cart');
                     image
                 })
             });
-            showmgs(`Đã Thêm Sản Phẩm ${product_name} Vào Giỏ Hàng`);
-        }
-        
-        catch(err) {
-            showmgs("Lỗi Thêm Giỏ Hàng");
-        }
-    });
 
-function showmgs(text){
-    const mgs = document.querySelector('.mgs');
-    mgs.innerText = text;
-    mgs.style.display = 'block';
+            const data = await res.text();
 
-    setTimeout(() => {
-        mgs.style.display = 'none';
-    }, 2000);
-}
+            if(data === "ok") {
+                showmgs(`Đã Thêm Sản Phẩm ${product_name} Vào Giỏ Hàng`);
+
+                const resCart = await fetch(`get-cart?user_id=${user_id}`);
+                const dataCart = await resCart.json();
+
+                const cartCount = document.querySelector('.cart-count');
+
+                let total = 0;
+
+                dataCart.forEach(item => {
+                    total += item.quantity;
+                });
+
+                cartCount.innerText = total;
+                cartCount.style.display = "flex";
+            }
+
+            else { 
+                showmgs("Lỗi Thêm Giỏ Hàng"); 
+            }
+            
+});
 
 document.querySelector('.pay').addEventListener('click', async (e) => {
     e.preventDefault();
@@ -99,6 +110,7 @@ btn.addEventListener('click', async () => {
         return;
     }
 
+    const user_id = dataUser.user.id;
     const user_name = dataUser.user.username;
 
     const comment_text = document.querySelector('.comment-text').value;
@@ -118,6 +130,7 @@ btn.addEventListener('click', async () => {
 
         body: JSON.stringify({
             product_id,
+            user_id,
             user_name,
             comment_text,
             rating
@@ -128,7 +141,13 @@ btn.addEventListener('click', async () => {
 
     if(data == "ok"){
         showmgs("Đã Gửi Bình Luận Thành Công !");
+        document.querySelector('.comment-text').value = "";
+        document.querySelector('.rating-input').value = "0";
         loadComments();
+    }
+
+    else if(data === "not") {
+        showmgs("Bạn Chưa Mua Sản Phẩm Này Nên Không Được Đánh Giá !")
     }
 
     else {
@@ -136,13 +155,50 @@ btn.addEventListener('click', async () => {
     }
 });
 
+async function checkBuy() {
+    const commentForm = document.querySelector('.comment-form');
+
+    const resUser = await fetch('get-user');
+    const dataUser = await resUser.json();
+
+    if(!dataUser.user) {
+        return;
+    }
+
+    const user_id = dataUser.user.id;
+    
+    const res = await fetch(`/checkbuy?product_id=${product_id}&user_id=${user_id}`);
+
+    const data = await res.text();
+
+    if(data === "yes") {
+        commentForm.style.display = "block";
+    }
+
+    else {
+        commentForm.style.display = "none";
+    }
+}
+
 async function loadComments() {
     
     const res = await fetch(`/getcomment/${product_id}`);
     const data = await res.json();
 
     const commentList = document.querySelector('.comments-list');
+
     commentList.innerHTML = "";
+
+        if(data.length === 0) {
+                commentList.innerHTML +=`
+                    <p class="no-comment">Chưa Có Bình Luận Nào Cho Sản Phẩm Này !</p>
+                `;
+                return;
+            }
+        
+        commentList.innerHTML = `
+            <h3>Tất Cả Đánh Giá</h3>
+        `;
 
     data.forEach(comment => {
 
@@ -180,6 +236,17 @@ async function loadComments() {
 }
 
 loadComments();
+checkBuy();
+
+function showmgs(text){
+    const mgs = document.querySelector('.mgs');
+    mgs.innerText = text;
+    mgs.style.display = 'block';
+
+    setTimeout(() => {
+        mgs.style.display = 'none';
+    }, 2000);
+}
 
 
 

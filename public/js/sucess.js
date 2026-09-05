@@ -17,6 +17,7 @@ window.onload = async function() {
 
     const res = await fetch(`/getorder/${order_id}`);
     const order = await res.json();
+    const voucher = order.voucher;
 
     const resItems = await fetch(`/getorderitems/${order_id}`);
     const items = await resItems.json();
@@ -24,8 +25,10 @@ window.onload = async function() {
     const invoice = document.querySelector(".invoice-box");
 
     let productList = "";
+    let productTotal = 0;
 
     items.forEach(item => {
+        productTotal += item.price * item.quantity;
         productList += `
             <div class="product-list">
                 <div class="product-item">
@@ -98,9 +101,23 @@ window.onload = async function() {
                 ${productList}
             </div>
 
-            <div class="invoice-roww" style="margin-top: 10px;">
+            <div class="invoice-roww" style="margin-top: 10px; margin-bottom: 15px;">
                 <span class="label">Phí vận chuyển: 30.000 VNĐ</span>
             </div>
+
+           ${voucher ? `
+                <div class="invoice-roww">
+                    <i class="fa-solid fa-ticket-simple"></i>
+                    <span class="label">
+                        Voucher: ${voucher.code}
+                        (Giảm: ${
+                            voucher.type === "percent"
+                            ? (productTotal * voucher.value / 100).toLocaleString('vi-VN')
+                            : voucher.value.toLocaleString('vi-VN')
+                        } VNĐ)
+                    </span>
+                </div>
+            ` : ""}
             
             <div class="total-row">
                 <span class="tong"><i class="fa-solid fa-circle-dollar-to-slot"></i> TỔNG THANH TOÁN:</span>

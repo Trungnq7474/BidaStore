@@ -1,6 +1,21 @@
 const params = new URLSearchParams(window.location.search);
 const keyword = params.get("keyword");
 
+function getImageUrl(image) {
+    if (!image) return "";
+
+    image = String(image).trim();
+
+    if (image.startsWith("http://") || image.startsWith("https://")) {
+        return image;
+    }
+
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+
+    return `/images/${image}`;
+}
+
 fetch('/search?keyword=' + keyword)
     .then(res => res.json())
     .then(data => {
@@ -24,7 +39,7 @@ fetch('/search?keyword=' + keyword)
             <a href="spchitiet.html?product_id=${item.product_id}" class="tr">
                     <div class="kk">
                         <div class="pro">
-                            <img src="images/${item.image}" alt="Ảnh">
+                            <img src="${getImageUrl(item.image)}" alt="Ảnh">
 
                             <div class="pro1">
                                 <h5>${item.product_name}</h5>
@@ -64,7 +79,10 @@ fetch('/search?keyword=' + keyword)
 
             let product_name = productbox.querySelector("h5").innerText;
             let price = productbox.querySelector("h4").innerText.replace(/\D/g, "");
-            let image = productbox.querySelector("img").src;
+            let image = productbox.querySelector("img").getAttribute("src");
+
+            image = image.replace(/^\/+/, "");
+            image = image.replace(/^images\//, "");
 
             const user_id = datauser.user.id;
 
