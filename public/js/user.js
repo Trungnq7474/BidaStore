@@ -14,7 +14,7 @@ fetch('/users')
             `
                 <tr data-filter="${user.role}">
                     <td>USR-00${user.id}</td>
-                    <td><div class="name"><div class="picture">${picture}</div> ${user.username}</div></td>
+                    <td><div class="name"><div class="picture">${picture}</div> <span class="username">${user.username}</span></td>
                     <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=${user.email}" class="email-link" target="_blank">${user.email}</a></td>
                     <td>${user.phone}</td>
                     <td><b>${user.role}</b></td>
@@ -30,7 +30,7 @@ document.addEventListener('click', function(e){
     if(e.target.closest('.delete')) {
         now = e.target.closest('tr');
         const id = now.querySelector('.delete').dataset.id;
-        const name = now.children[1].innerText;
+        const name = now.querySelector('.username').innerText;
 
         const box = document.querySelector('.confirm-box2');
         const yes = document.querySelector('.yes2');
