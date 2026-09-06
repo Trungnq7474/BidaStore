@@ -114,8 +114,10 @@ h6 {
 .qt {
     display: flex;
     justify-content: center;
+    margin: auto;
     align-items: center;
     margin-bottom: 60px;
+    width: 70%;
 }
 
 .nq {
