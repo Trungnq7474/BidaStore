@@ -70,7 +70,7 @@ async function loadCart() {
         listcart.innerHTML += 
             `
             <div class="cartt">
-                <span><img src="/images/${item.image}" alt="Ảnh"></span>
+                <span><img src="${getImageUrl(item.image)}" alt="Ảnh"></span>
                 <div class="item">
                     <h4>${item.product_name}</h4>
                     <h5>${item.price.toLocaleString('vi-VN')} VNĐ</h5>
@@ -223,4 +223,17 @@ document.addEventListener('click', async(e) => {
 
         window.location.href = '/pay.html';
     });
+
+function getImageUrl(image) { 
+    if (!image) return ""; 
+ 
+    if (image.startsWith("http://") || image.startsWith("https://")) { 
+        return image; 
+    } 
+ 
+    image = image.replace(/^\/+/, ""); 
+    image = image.replace(/^images\//, ""); 
+ 
+    return `/images/${image}`; 
+}
 

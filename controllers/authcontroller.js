@@ -119,12 +119,17 @@ const deleteUser = async (req, res) => {
 
     try{
         await sql.query`
+            DELETE FROM messages WHERE user_id = ${id}
+        `;
+
+        await sql.query`
             DELETE FROM users WHERE id = ${id}
         `;
         res.send("ok");
     }
 
     catch (err) {
+        console.log("LỖI XÓA USER:", err.message);
         res.status(500).send(err.message);
     }
 };
@@ -175,7 +180,7 @@ const updatePassword = async (req, res) => {
     }
 
     catch (err) {
-        res.status(500).send(message);
+        res.status(500).send(err.message);
     }
 }
 

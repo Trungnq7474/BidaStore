@@ -276,6 +276,14 @@ document.addEventListener('click', async function(e) {
         const items = await resorder.json();
 
         items.forEach(item => {
+
+            let image = item.image;
+
+            if(image) {
+                image = image.replace(/^\/+/, "");
+                image = image.replace(/^images\//, "");
+            }
+
             fetch('/add-cart', {
                 method: 'POST',
                 headers: {
@@ -285,7 +293,7 @@ document.addEventListener('click', async function(e) {
                     user_id: user_id,
                     product_name: item.product_name,
                     price: item.price,
-                    image: item.image.split("/images/").pop()
+                    image: image
                 })
             });
         });
