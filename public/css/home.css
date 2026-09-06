@@ -120,6 +120,10 @@ h6 {
     width: 70%;
 }
 
+.nq a {
+    text-decoration: none;
+}
+
 .nq {
     display: flex;
     overflow: hidden;
@@ -135,6 +139,12 @@ h6 {
     background-color:rgb(252, 255, 254);
     margin: 20px;
     border-radius: 20px; 
+    transition: 0.4s ease-in-out;
+}
+
+.nq img:hover {
+    transform: scale(1.04);
+    transition: 0.4s ease-in-out;
 }
 
 .trai,
