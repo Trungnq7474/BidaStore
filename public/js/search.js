@@ -51,6 +51,9 @@ fetch('/search?keyword=' + keyword)
                                 <i class="fas fa-star"></i>
 
                                 <h4>${item.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                <p class="stock ${item.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                    ${item.stock > 0 ? `Còn ${item.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                                </p>
                             </div>
 
                             <span class="cart">

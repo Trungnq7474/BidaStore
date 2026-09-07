@@ -14,6 +14,7 @@ fetch('/products')
                     </td>
                     <td>${product.product_name}</td>
                     <td>${product.price.toLocaleString("vi-VN")} VNĐ</td>
+                    <td>${product.stock}</td>
                     <td style="width: 277px">${product.description}</td>       
                     <td>
                         <button class="edit" data-id="${product.product_id}"><i class="fa-solid fa-pen-to-square"></i> Sửa</button>
@@ -39,11 +40,12 @@ icon.addEventListener('click', () => {
 document.querySelector('.save').addEventListener('click', async () => {
     const inname = document.querySelector('.inname').value;
     const inprice = document.querySelector('.inprice').value;
+    const inquan = document.querySelector('.inquan').value;
     const indescrip = document.querySelector('.indescrip').value;
     const inimg = document.querySelector('.inimg').files[0];
     const incate = document.querySelector('.incate').value;
 
-    if(inname === "" || inprice === "" || !inimg || indescrip === "" || incate === "") {
+    if(inname === "" || inprice === "" || !inimg || indescrip === "" || incate === "" || inquan === "") {
         show("Bạn Không Được Phép Để Trống !");
         return;
     }
@@ -53,6 +55,7 @@ document.querySelector('.save').addEventListener('click', async () => {
     formData.append("inname", inname);
     formData.append("indescrip", indescrip);
     formData.append("inprice", inprice);
+    formData.append("inquan", inquan);
     formData.append("image", inimg);
     formData.append("incate", incate);
 
@@ -92,6 +95,7 @@ document.addEventListener('click', async function(e) {
         old = {
             product_name: product.product_name,
             price: product.price,
+            stock: product.stock,
             category: product.category,
             description: product.description,
             image: product.image
@@ -99,6 +103,7 @@ document.addEventListener('click', async function(e) {
 
         document.querySelector('.edname').value = product.product_name;
         document.querySelector('.edprice').value = product.price;
+        document.querySelector('.edquan').value = product.stock;
         document.querySelector('.edcate').value = product.category;
         document.querySelector('.eddescrip').value = product.description;
 
@@ -110,16 +115,17 @@ document.querySelector('.update').addEventListener('click', async () => {
 
     const name = document.querySelector('.edname').value;
     const price = document.querySelector('.edprice').value;
+    const stock = document.querySelector('.edquan').value;
     const category = document.querySelector('.edcate').value;
     const description= document.querySelector('.eddescrip').value;
     const image = document.querySelector('.edimg').files[0];
 
-    if(name === "" || price === "" || category === "" || description === "") {
+    if(name === "" || price === "" || category === "" || description === "" || stock === "") {
         show("Bạn Không Được Phép Để Trống !");
         return;
     }
 
-    if(name === old.product_name && Number(price) === Number(old.price) && category === old.category && description === old.description && !image) {
+    if(name === old.product_name && Number(price) === Number(old.price) && category === old.category && description === old.description && !image && Number(stock) === Number(old.stock)) {
         show("Bạn Chưa Sửa Đổi !");
         return;
     }
@@ -129,6 +135,7 @@ document.querySelector('.update').addEventListener('click', async () => {
     formData.append("id", edit);
     formData.append("name", name);
     formData.append("price", price);
+    formData.append("stock", stock);
     formData.append("category", category);
     formData.append("description", description);
 

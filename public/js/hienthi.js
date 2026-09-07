@@ -100,7 +100,7 @@ document.addEventListener('click', async(e) => {
     // Tăng số lượng
 
     if(e.target.closest('.cong')) {
-        await fetch('/increase', {
+        const res = await fetch('/increase', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -108,8 +108,22 @@ document.addEventListener('click', async(e) => {
                 product_name
             })
         });
-        loadCart();
-        updatecount();
+
+        const data = await res.text();
+
+        if(data === "ok") {
+            loadCart();
+            updatecount();
+        }
+
+        else if(data === "not_enough") {
+            showalert(`Sản Phẩm ${product_name} Không Đủ Số Lượng !`);
+        }
+
+        else {
+            showalert("Lỗi Tăng Số Lượng !")
+        }
+        
     }
 
     // Giảm số lượng

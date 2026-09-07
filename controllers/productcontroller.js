@@ -60,14 +60,14 @@ const searchProducts = async (req, res) => {
 };
 
 const addPro = async (req, res) => {
-    const {inname, inprice, indescrip, incate} = req.body;
+    const {inname, inprice, indescrip, incate, inquan} = req.body;
 
     const inimg = req.file.filename;
 
     try {
         await sql.query`
-            INSERT INTO products (product_name, price, image, description, category)
-            VALUES (${inname}, ${inprice}, ${inimg}, ${indescrip}, ${incate})
+            INSERT INTO products (product_name, price, image, description, category, stock)
+            VALUES (${inname}, ${inprice}, ${inimg}, ${indescrip}, ${incate}, ${inquan})
         `;
 
         res.send("ok");
@@ -90,7 +90,7 @@ const deletePro = async (req, res) => {
     }
 
     catch (err) {
-        res.status(500).send(message);
+        res.status(500).send(err.message);
     }
 }
 
@@ -110,7 +110,7 @@ const getProcate = async (req, res) => {
 }
 
 const updatePro = async (req, res) => {
-    const {id, name, price, category, description} = req.body;
+    const {id, name, price, category, description, stock} = req.body;
 
     try {
         if(req.file) {
@@ -121,7 +121,8 @@ const updatePro = async (req, res) => {
                                     price = ${price},
                                     image = ${image},
                                     description = ${description},
-                                    category = ${category}
+                                    category = ${category},
+                                    stock = ${stock}
                 WHERE product_id = ${id}
             `;
         }
@@ -131,7 +132,8 @@ const updatePro = async (req, res) => {
                 UPDATE products SET product_name = ${name},
                                     price = ${price},
                                     description = ${description},
-                                    category = ${category}
+                                    category = ${category},
+                                    stock = ${stock}
                 WHERE product_id = ${id}
             `;
         }

@@ -56,11 +56,21 @@ const cart = document.querySelector('.cart');
                 cartCount.style.display = "flex";
             }
 
+            else if (data === "out") {
+                showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`)
+            }
+
+            else if (data === "out_enough") {
+                showmgs(`Sản Phẩm ${product_name} Không Đủ Số Lượng !`)
+            }
+
             else { 
                 showmgs("Lỗi Thêm Giỏ Hàng"); 
             }
             
 });
+
+const product_id =new URLSearchParams(window.location.search).get("product_id");
 
 document.querySelector('.pay').addEventListener('click', async (e) => {
     e.preventDefault();
@@ -73,10 +83,16 @@ document.querySelector('.pay').addEventListener('click', async (e) => {
         return;
     }
 
+    const res = await fetch(`/product/${product_id}`);
+    const product = await res.json();
+
+    if(product.stock <= 0) {
+        showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`);
+        return;
+    }
+
     window.location.href = `/pay.html?product_id=${product_id}`;
 });
-
-const product_id =new URLSearchParams(window.location.search).get("product_id");
 
 fetch(`/product/${product_id}`)
 
@@ -84,17 +100,25 @@ fetch(`/product/${product_id}`)
 
 .then(data => {
 
-    document.getElementById("image").src =
-    "images/" + data.image;
+    document.getElementById("image").src = "images/" + data.image;
 
-    document.getElementById("product_name").innerText =
-    data.product_name;
+    document.getElementById("product_name").innerText = data.product_name;
 
-    document.getElementById("price").innerText =
-    Number(data.price).toLocaleString('vi-VN') + " VNĐ";
+    document.getElementById("price").innerText = Number(data.price).toLocaleString('vi-VN') + " VNĐ";
 
-    document.getElementById("description").innerText =
-    data.description;
+    const stock = document.querySelector('.stock');
+
+    if(data.stock > 0) {
+        stock.textContent = `Còn ${data.stock} Sản Phẩm`;
+        stock.classList.add('con-hang');
+    }
+
+    else {
+        stock.textContent = "Đã Hết Hàng";
+        stock.classList.add('het-hang');
+    }
+
+    document.getElementById("description").innerText = data.description;
 
 });
 

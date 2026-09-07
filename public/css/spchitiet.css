@@ -75,6 +75,21 @@ section {
     color: rgba(53, 64, 0, 0.97);
 }
 
+.stock {
+    margin-left: 14%;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.con-hang {
+    color: #850068;
+}
+
+.het-hang {
+    color: #e80000;
+}
+
 .sp .god .cart i {
     font-size: 40px;
     background-color: rgb(248, 251, 251);
@@ -414,6 +429,14 @@ button.pay {
         font-size: 20px;
     }
 
+    .stock {
+        margin-left: 0;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 6px;
+        margin-bottom: 9px;
+    }
+
     .info {
         width: 100%;
     }
@@ -504,6 +527,13 @@ button.pay {
         margin: 12px 0;
         font-size: 19px;
         text-align: center;
+    }
+
+    .stock {
+        margin: 4px 0 8px;
+        font-size: 19px;
+        text-align: center;
+        letter-spacing: 0.3px;
     }
 
     .info {
@@ -621,6 +651,13 @@ button.pay {
     .sp .kk .pro1 h3 {
         font-size: 18px;
         margin: 10px 0;
+    }
+
+    .stock {
+        margin: 3px 0 7px;
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 0.2px;
     }
 
     .sp .kk .pro1 i {
@@ -815,6 +852,13 @@ button.pay {
         margin: 8px 0;
     }
 
+    .stock {
+        margin: 2px 0 6px;
+        font-size: 17px;
+        text-align: center;
+        letter-spacing: 0.1px;
+    }
+
     .sp .kk .pro1 i {
         font-size: 11px;
     }
@@ -1002,6 +1046,13 @@ button.pay {
         font-size: 14px;
     }
 
+    .stock {
+        margin: 4px 0 8px;
+        font-size: 19px;
+        text-align: center;
+        letter-spacing: 0.3px;
+    }
+
     .sp .kk .pro1 i {
         font-size: 10px;
     }
@@ -1134,6 +1185,12 @@ button.pay {
 
     .sp .kk .pro1 h3 {
         font-size: 13px;
+    }
+
+    .stock {
+        margin: 2px 0 4px;
+        font-size: 14px;
+        text-align: center;
     }
 
     .info h1 {

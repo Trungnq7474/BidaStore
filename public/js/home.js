@@ -132,6 +132,9 @@ async function loadProduct() {
                                 <i class="fas fa-star"></i>
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                    ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                                </p>
                             </div>
 
                             <span class="cart">
@@ -170,6 +173,9 @@ async function loadBest() {
                                 <i class="fas fa-star"></i>
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                    ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                                </p>
                             </div>
 
                             <span class="cart">

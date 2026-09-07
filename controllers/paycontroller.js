@@ -62,14 +62,24 @@ const createOrder = async (req, res) => {
         // NẾU CÓ product_id → MUA NGAY
         if(product_id) {
             const proresult = await sql.query`
-                SELECT product_name, image, price FROM products WHERE product_id = ${product_id}
+                SELECT product_name, image, price, stock FROM products WHERE product_id = ${product_id}
             `;
 
             const product = proresult.recordset[0];
+
+            if(product.stock <= 0) {
+                return res.send("out");
+            }
             const image = `images/${product.image}`;
             await sql.query`
                 INSERT INTO orderitems (order_id, product_name, image, quantity, price)
                 VALUES (${order_id}, ${product.product_name}, ${image}, 1, ${product.price})
+            `;
+
+            await sql.query`
+                UPDATE products
+                SET stock = stock - 1
+                WHERE product_id = ${product_id}
             `;
         }
 
@@ -83,9 +93,28 @@ const createOrder = async (req, res) => {
             
                 // LƯU SẢN PHẨM VÀO BẢNG ORDERITEMS
                 for(const item of cart) {
+
+                    const proresutl = await sql.query`
+                        SELECT product_id, stock
+                        FROM products
+                        WHERE product_name = ${item.product_name}
+                    `;
+
+                    const product = proresutl.recordset[0];
+
+                    if(product.stock < item.quantity) {
+                        return res.send("not_enough");
+                    }
+
                     await sql.query`
                         INSERT INTO orderitems (order_id, product_name, image, quantity, price)
                         VALUES (${order_id}, ${item.product_name}, ${item.image}, ${item.quantity}, ${item.price})
+                    `;
+
+                    await sql.query`
+                        UPDATE products
+                        SET stock = stock - ${item.quantity}
+                        WHERE product_id = ${product.product_id}
                     `;
                 }
 

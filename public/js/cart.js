@@ -69,6 +69,14 @@ document.addEventListener('click', async (e) => {
                     });
             }
 
+            else if(data === "out") {
+                showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`)
+            }
+
+            else if (data === "not_enough") {
+                showmgs(`Sản Phẩm ${product_name} Không Đủ Số Lượng !`);
+            }
+
             else {
                 showmgs("Lỗi Thêm Giỏ Hàng");
             }
