@@ -241,6 +241,22 @@ const updateStatus = async (req, res) => {
             return res.send("not");
         }
 
+        if(status === "huy") {
+            const items = await sql.query`
+                SELECT product_name, quantity
+                FROM orderitems
+                WHERE order_id = ${id}
+            `;
+
+            for(const item of items.recordset) {
+                await sql.query`
+                    UPDATE products
+                    SET stock = stock + ${item.quantity}
+                    WHERE product_name = ${item.product_name}                
+                `;
+            }
+        }
+
         await sql.query`
             UPDATE orders SET status = ${status} WHERE id = ${id}
         `;

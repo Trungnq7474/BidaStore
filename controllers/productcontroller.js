@@ -193,6 +193,7 @@ const getTopten = async (req, res) => {
                            oi.product_name,
                            oi.image,
                            oi.price,
+                           p.stock,
             SUM(oi.quantity) AS da_ban
             FROM orderitems oi 
             JOIN orders o
@@ -204,7 +205,8 @@ const getTopten = async (req, res) => {
                 p.product_id,
                 oi.product_name,
                 oi.image,
-                oi.price
+                oi.price,
+                p.stock
             ORDER BY SUM(oi.quantity) DESC
         `;
 
