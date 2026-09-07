@@ -104,6 +104,19 @@ fetch('/search?keyword=' + keyword)
                     })
                 });
 
+                const result = await res.text();
+
+                if(result === "out") {
+                    showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`);
+                    return;
+                }
+
+                if(result === "not_enough") {
+                    showmgs(`Sản Phẩm ${product_name} Không Đủ Số Lượng !`);
+                }
+
+                
+
                 const resCart = await fetch(`/get-cart?user_id=${user_id}`);
                 const dataCart = await resCart.json();
 

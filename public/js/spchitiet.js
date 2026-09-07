@@ -87,7 +87,7 @@ document.querySelector('.pay').addEventListener('click', async (e) => {
     const product = await res.json();
 
     if(product.stock <= 0) {
-        showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`);
+        showmgs(`Sản Phẩm ${product.product_name} Đã Hết Hàng !`);
         return;
     }
 
