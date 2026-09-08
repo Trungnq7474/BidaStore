@@ -275,7 +275,7 @@ resetFilter.addEventListener('click', () => {
 
     document.querySelector(".ok h1").innerText = "SẢN PHẨM NỔI BẬT";
     document.getElementById("bestTitle").style.display = "block";
-    document.getElementById("bestList").style.display = "grid";
+    document.getElementById("bestList").style.display = "flex";
 
     loadProduct();
 

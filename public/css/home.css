@@ -341,11 +341,14 @@ h6 {
 
 .mes {
     position: fixed;
-    font-size: 70px;
+    font-size: 60px;
     top: 600px;
     left: 1350px;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
-    color: rgb(69, 118, 255);
+    background-color: #e2ffef;
+    color: rgb(0, 65, 196);
     z-index: 9999;
     transition: 0.4s ease-in-out;
 }
@@ -487,6 +490,48 @@ h6 {
         right: 30px;
         bottom: 30px;
         font-size: 65px;
+    }
+
+    .product-filter-btn {
+        width: auto;
+        margin-left: auto;
+        margin-right: 5%;
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+
+    .product-filter-box {
+        width: 500px;
+        max-width: 90%;
+        right: 5%;
+        top: 1040px;
+        padding: 20px 25px;
+    }
+
+    .product-filter-item label {
+        font-size: 16px;
+    }
+
+    .product-filter-item label i {
+        font-size: 20px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        height: 40px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .product-price-input span {
+        font-size: 16px;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 40px;
+        padding: 9px 17px;
+        font-size: 14px;
     }
 }
 
@@ -630,6 +675,48 @@ h6 {
         height: 26px;
         font-size: 14px;
     }
+
+    .product-filter-btn {
+        width: auto;
+        margin-left: auto;
+        margin-right: 5%;
+        padding: 9px 16px;
+        font-size: 15px;
+    }
+
+    .product-filter-box {
+        width: 450px;
+        max-width: 90%;
+        right: 5%;
+        top: 960px;
+        padding: 18px 22px;
+    }
+
+    .product-filter-item label {
+        font-size: 15px;
+    }
+
+    .product-filter-item label i {
+        font-size: 19px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        height: 39px;
+        font-size: 13px;
+        padding: 0 9px;
+    }
+
+    .product-price-input span {
+        font-size: 15px;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 39px;
+        padding: 8px 15px;
+        font-size: 13px;
+    }
 }
 
 
@@ -772,6 +859,48 @@ h6 {
         width: 25px;
         height: 25px;
         font-size: 13px;
+    }
+
+    .product-filter-btn {
+        width: auto;
+        margin-left: auto;
+        margin-right: 5%;
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .product-filter-box {
+        width: 400px;
+        max-width: 90%;
+        right: 5%;
+        top: 870px;
+        padding: 16px 20px;
+    }
+
+    .product-filter-item label {
+        font-size: 14px;
+    }
+
+    .product-filter-item label i {
+        font-size: 18px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        height: 37px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .product-price-input span {
+        font-size: 14px;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 37px;
+        padding: 7px 13px;
+        font-size: 12px;
     }
 }
 
@@ -941,6 +1070,73 @@ h6 {
         top: -6px;
         right: -6px;
     }
+
+    .product-filter-btn {
+        width: auto;
+        max-width: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: 10px;
+        padding: 8px 13px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .product-filter-box {
+        width: calc(100% - 30px);
+        max-width: 600px;
+        right: 15px;
+        left: auto;
+        top: 725px;
+        padding: 15px 18px;
+        box-sizing: border-box;
+    }
+
+    .product-filter-item {
+        gap: 5px;
+    }
+
+    .product-filter-item label {
+        font-size: 13px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+
+    .product-filter-item label i {
+        font-size: 16px;
+        margin-right: 4px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        width: 100%;
+        height: 36px;
+        min-width: 0;
+        font-size: 12px;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    .product-price-input {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .product-price-input span {
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .product-filter-actions {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 36px;
+        padding: 7px 11px;
+        font-size: 12px;
+    }
 }
 
 
@@ -1100,6 +1296,66 @@ h6 {
         top: -5px;
         right: -5px;
     }
+
+    .product-filter-btn {
+        width: auto;
+        max-width: calc(100% - 16px);
+        margin-left: auto;
+        margin-right: 8px;
+        padding: 7px 11px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .product-filter-box {
+        width: calc(100% - 20px);
+        max-width: 380px;
+        right: 10px;
+        top: 610px;
+        padding: 12px 15px;
+    }
+
+    .product-filter-item {
+        gap: 4px;
+    }
+
+    .product-filter-item label {
+        font-size: 12px;
+        margin-top: 7px;
+        margin-bottom: 3px;
+    }
+
+    .product-filter-item label i {
+        font-size: 14px;
+        margin-right: 3px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        height: 34px;
+        font-size: 11px;
+        padding: 0 7px;
+    }
+
+    .product-price-input {
+        gap: 5px;
+        margin-bottom: 9px;
+    }
+
+    .product-price-input span {
+        font-size: 12px;
+    }
+
+    .product-filter-actions {
+        gap: 5px;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 34px;
+        padding: 6px 9px;
+        font-size: 11px;
+    }
 }
 
 
@@ -1258,6 +1514,66 @@ h6 {
         font-size: 9px;
         top: -5px;
         right: -5px;
+    }
+
+    .product-filter-btn {
+        width: auto;
+        max-width: calc(100% - 12px);
+        margin-left: auto;
+        margin-right: 6px;
+        padding: 6px 9px;
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .product-filter-box {
+        width: calc(100% - 12px);
+        max-width: 290px;
+        right: 6px;
+        top: 537px;
+        padding: 10px 12px;
+    }
+
+    .product-filter-item {
+        gap: 3px;
+    }
+
+    .product-filter-item label {
+        font-size: 11px;
+        margin-top: 6px;
+        margin-bottom: 2px;
+    }
+
+    .product-filter-item label i {
+        font-size: 13px;
+        margin-right: 2px;
+    }
+
+    .product-filter-item select,
+    .product-price-input input {
+        height: 32px;
+        font-size: 10px;
+        padding: 0 6px;
+    }
+
+    .product-price-input {
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    .product-price-input span {
+        font-size: 11px;
+    }
+
+    .product-filter-actions {
+        gap: 4px;
+    }
+
+    .product-apply-btn,
+    .product-reset-btn {
+        height: 32px;
+        padding: 5px 8px;
+        font-size: 10px;
     }
 }
 
