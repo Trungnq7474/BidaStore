@@ -54,9 +54,65 @@
     </div>
     </section>
     
-    <div class="ok">
-    <h1>SẢN PHẨM NỔI BẬT</h1>
-    <p>________<i class="fas fa-heart"></i>________</p>
+        <button class="product-filter-btn" id="filterBtn" type="button"><i class="fa-solid fa-filter"></i> Lọc</button>
+  
+        <div class="ok">
+        <h1>SẢN PHẨM NỔI BẬT</h1>
+        <p>________<i class="fas fa-heart"></i>________</p>
+        </div>
+
+    <div class="product-filter-box" id="filterBox">
+
+    <div class="product-filter-item">
+            <label for="filterProduct">
+                <i class="fa-solid fa-box"></i> Sản Phẩm
+            </label>
+
+            <select id="filterProduct">
+                <option value="" disabled selected hidden>-- Chọn Sản Phẩm --</option>
+                <option value="Cơ Bida">Cơ Bida</option>
+                <option value="Bao Bida">Bao Bida</option>
+                <option value="Khung Xếp">Khung Xếp</option>
+                <option value="Bóng Bida">Bóng Bida</option>
+                <option value="Găng Tay">Găng Tay</option>
+                <option value="Lơ Bida">Lơ Bida</option>
+                <option value="Bàn Bida">Bàn Bida</option>
+                <option value="Nỉ Bàn">Nỉ Bàn</option>
+            </select>
+        </div>
+
+        <div class="product-filter-item">
+            <label>
+                <i class="fa-solid fa-money-bill"></i> Khoảng Giá
+            </label>
+
+            <div class="product-price-input">
+                <input type="number" id="minPrice" placeholder="Giá Từ">
+                <span><i class="fa-solid fa-right-long"></i></span>
+                <input type="number" id="maxPrice" placeholder="Giá Đến">
+            </div>
+        </div>
+
+        <div class="product-filter-item">
+            <label for="sortPrice">
+                <i class="fa-solid fa-arrow-down-wide-short"></i> Sắp Xếp
+            </label>
+
+            <select id="sortPrice">
+                <option value="">Mặc Định</option>
+                <option value="asc">Giá Thấp → Cao</option>
+                <option value="desc">Giá Cao → Thấp</option>
+            </select>
+        </div>
+
+        <div class="product-filter-actions">
+            <button class="product-apply-btn" id="applyFilter" type="button">
+                <i class="fa-solid fa-check"></i> ÁP DỤNG</button>
+
+            <button class="product-reset-btn" id="resetFilter" type="button">
+                <i class="fa-solid fa-rotate-left"></i> ĐẶT LẠI</button>
+        </div>
+
     </div>
 
     <section class="sp" id="productList">
@@ -80,7 +136,7 @@
          
 </section>
 
-    <div class="ok">
+    <div class="ok" id="bestTitle">
         <h1>SẢN PHẨM BÁN CHẠY</h1>
         <p>________<i class="fas fa-heart"></i>________</p>
     </div>

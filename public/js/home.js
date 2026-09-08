@@ -189,3 +189,94 @@ async function loadBest() {
 }
 
 loadBest();
+
+const filterBtn = document.getElementById("filterBtn");
+const filterBox = document.getElementById("filterBox");
+const filterProduct = document.getElementById("filterProduct");
+const applyFilter = document.getElementById("applyFilter");
+
+filterBtn.addEventListener("click", () => {
+    filterBox.classList.toggle("show");
+    filterBtn.classList.toggle("active");
+});
+
+applyFilter.addEventListener('click', async function() {
+    const category = filterProduct.value;
+    const minPrice = document.getElementById("minPrice").value;
+    const maxPrice = document.getElementById("maxPrice").value;
+    const sort = document.getElementById("sortPrice").value;
+
+    if(category === "" && minPrice === "" && maxPrice === "" && sort === "") {
+        show("Bạn Chưa Chọn Phần Để Lọc !");
+        return;
+    }
+
+    document.querySelector(".ok h1").innerText = "TẤT CẢ SẢN PHẨM";
+    document.getElementById("bestTitle").style.display = "none";
+    document.getElementById("bestList").style.display = "none";
+
+    const res =  await fetch('/products');
+    const data = await res.json();
+
+    if(sort === "asc") {
+        data.sort((a,b) => a.price - b.price);
+    }
+
+    if(sort === "desc") {
+        data.sort((a,b) => b.price - a.price);
+    }
+
+    const productList = document.getElementById('productList');
+
+    productList.innerHTML = "";
+
+    data.forEach(product => {
+        if(product.category === category && (!minPrice || product.price >= minPrice) && (!maxPrice || product.price <= maxPrice)) {
+            productList.innerHTML +=`
+                <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+                    <div class="kk">
+                        <div class="pro">
+                            <img src="images/${product.image}" alt="Ảnh">
+
+                            <div class="pro1">
+                                <h5>${product.product_name}</h5>
+
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                    ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                                </p>
+                            </div>
+
+                            <span class="cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+    });
+});
+
+const resetFilter = document.getElementById("resetFilter");
+
+resetFilter.addEventListener('click', () => {
+    filterProduct.value = "";
+
+    document.getElementById("minPrice").value = "";
+    document.getElementById("maxPrice").value = "";
+    document.getElementById("sortPrice").value = "";
+
+    document.querySelector(".ok h1").innerText = "SẢN PHẨM NỔI BẬT";
+    document.getElementById("bestTitle").style.display = "block";
+    document.getElementById("bestList").style.display = "grid";
+
+    loadProduct();
+
+});
