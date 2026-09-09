@@ -83,7 +83,9 @@ async function getMessage() {
     let dayold = "";
 
     data.forEach(item => {
-        const day = new Date(item.created_at).toLocaleDateString('vi-VN');
+        const day = new Date(item.created_at).toLocaleDateString('vi-VN', {
+            timeZone: 'Asia/Ho_Chi_Minh'
+        });
 
         if(day !== dayold) {
             mess.innerHTML +=`
