@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti } = require('../controllers/paycontroller');
+const { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete } = require('../controllers/paycontroller');
 
 router.post('/createorder', createOrder);
 router.get('/getorder/:id', getOrder);
@@ -19,6 +19,10 @@ router.get('/getusernoti', getUsernoti);
 router.put('/readusernoti', readUsernoti);
 router.delete('/deleteusernoti', deleteUsernoti);
 router.delete('/deleteadminnoti', deleteAminnoti);
+router.get('/getmyproductcount', getMyproductCount);
+router.get('/getmyordercount', getMyOrderCount);
+router.get('/getmymoney', getMyMoney);
+router.get('/getmycomplete', getMyComplete);
 
 
 

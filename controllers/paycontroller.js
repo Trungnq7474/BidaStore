@@ -465,4 +465,81 @@ const deleteAminnoti = async (req, res) => {
     }
 };
 
-module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti };
+const getMyproductCount = async (req, res) => {
+    try {
+        const user_id = req.session.user.id;
+
+        const result = await sql.query`
+            SELECT SUM(oi.quantity) AS total
+            FROM orders o
+            JOIN orderitems oi ON o.id = oi.order_id
+            WHERE o.user_id = ${user_id}
+            AND o.status = 'xong'
+        `;
+
+        res.json(result.recordset[0]);
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+
+const getMyOrderCount = async(req, res) => {
+    try {
+        const user_id = req.session.user.id;
+
+        const result = await sql.query`
+            SELECT COUNT(*) AS total
+            FROM orders
+            WHERE user_id = ${user_id}
+        `;
+
+        res.json(result.recordset[0]);
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+
+const getMyMoney = async (req, res) => {
+    try {
+        const user_id = req.session.user.id;
+
+        const result = await sql.query`
+            SELECT SUM(total) AS total
+            FROM orders
+            WHERE user_id = ${user_id}
+            AND status = 'xong'
+        `;
+
+        res.json(result.recordset[0]);
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+
+const getMyComplete = async (req, res) => {
+    try {
+        const user_id = req.session.user.id;
+
+        const result = await sql.query`
+            SELECT COUNT(*) AS total
+            FROM orders
+            WHERE user_id = ${user_id}
+            AND status = 'xong';
+        `;
+
+        res.json(result.recordset[0]);
+    }
+
+    catch (err) {
+        res.status(500).send(errr.message);
+    }
+};
+
+
+module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete };

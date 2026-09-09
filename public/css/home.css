@@ -351,11 +351,44 @@ h6 {
     color: rgb(0, 65, 196);
     z-index: 9999;
     transition: 0.4s ease-in-out;
+    animation: nhapnhay 2s infinite;
 }
 
 .mes:hover {
     transform: translateY(-15px);
     transition: 0.4s ease-in-out;
+}
+
+@keyframes nhapnhay {
+    0% {
+        color: #2563eb;
+        background-color: #dbeafe;
+        transform: scale(1);
+    }
+
+    25% {
+        color: #ef4444;
+        background-color: #fee2e2;
+        transform: scale(1.15);
+    }
+
+    50% {
+        color: #22c55e;
+        background-color: #dcfce7;
+        transform: scale(1);
+    }
+
+    75% {
+        color: #f59e0b;
+        background-color: #fef3c7;
+        transform: scale(1.15);
+    }
+
+    100% {
+        color: #2563eb;
+        background-color: #dbeafe;
+        transform: scale(1);
+    }
 }
 
 .chat-count {

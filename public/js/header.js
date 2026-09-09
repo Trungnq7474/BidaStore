@@ -38,7 +38,9 @@ fetch('header.html')
                 if(searchBox.style.display === "block") {
                     searchBox.style.display = "none";
                 } else {
-                    searchBox.style.display = "block";
+                   searchBox.style.display = "block";
+                    search.removeAttribute("readonly");
+                    search.value = "";
                     search.focus();
                 }
             });

@@ -8,6 +8,7 @@
 .choose {
     width: 280px;
     height: 540px;
+    height: auto;
     padding-top: 35px;
     background: #d9e1e5;
     border-radius: 18px;
@@ -31,7 +32,8 @@
 
 .cn,
 .mk,
-.dc {
+.dc,
+.tq {
     width: 250px;
     margin: 0 auto 8px;
     padding: 15px 18px;
@@ -48,7 +50,9 @@
 
 .cn:hover,
 .mk:hover,
-.dc:hover {
+.dc:hover,
+.tq:hover {
+
     background: #cbd5da;
     color: #263238;
     transform: scale(1.02);
@@ -57,7 +61,8 @@
 
 .cn.active,
 .mk.active,
-.dc.active {
+.dc.active,
+.tq.active {
     background: #ea580c;
     color: white;
     box-shadow: 0 5px 15px rgba(234,88,12,0.2);
@@ -516,6 +521,70 @@ h2 {
     transform: translateY(-2px);
 }
 
+.tongquan {
+    display: none;
+    padding: 35px 40px;
+}
+
+.overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.overview-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px 20px;
+    background: #eef2f4;
+    border: 1px solid #d9e1e5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.overview-item:hover {
+    background: #fff8f4;
+    border-color: #ea580c;
+    transform: translateY(-4px);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(234,88,12,0.15);
+}
+
+.overview-item i {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #546e7a;
+    color: white;
+    font-size: 25px;
+    transition: 0.4s ease-in-out;
+}
+
+.overview-item:hover i {
+    background: #ea580c;
+}
+
+.overview-item p {
+    margin-bottom: 8px;
+    color: #4a5f6a;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.overview-item strong {
+    display: block;
+    color: #006496;
+    text-align: center;
+    font-size: 21px;
+}
+
+
 @media (max-width: 1100px) {
     .profile {
         width: 90%;
@@ -537,7 +606,8 @@ h2 {
 
     .cn,
     .mk,
-    .dc {
+    .dc,
+    .tq {
         width: 220px;
         padding: 13px 15px;
         font-size: 16px;
@@ -549,7 +619,8 @@ h2 {
 
     .tt,
     .dmk,
-    .diachi {
+    .diachi,
+    .tongquan {
         padding: 30px 35px;
     }
 
@@ -576,6 +647,31 @@ h2 {
     .dmkk input {
         height: 45px;
         font-size: 15px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .overview-item {
+        padding: 20px 15px;
+        gap: 12px;
+    }
+
+    .overview-item i {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .overview-item p {
+        font-size: 15px;
+    }
+
+    .overview-item strong {
+        font-size: 19px;
     }
 
     .address-item {
@@ -650,7 +746,8 @@ h2 {
 
     .cn,
     .mk,
-    .dc {
+    .dc,
+    .tq {
         width: 190px;
         padding: 11px 12px;
         font-size: 14px;
@@ -662,7 +759,8 @@ h2 {
 
     .tt,
     .dmk,
-    .diachi {
+    .diachi,
+    .tongquan {
         padding: 25px 28px;
     }
 
@@ -722,6 +820,31 @@ h2 {
         width: 18px;
         height: 18px;
         font-size: 15px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .overview-item {
+        padding: 17px 13px;
+        gap: 10px;
+    }
+
+    .overview-item i {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .overview-item p {
+        font-size: 13px;
+    }
+
+    .overview-item strong {
+        font-size: 17px;
     }
 
     .address-item {
@@ -826,7 +949,8 @@ h2 {
 
     .cn,
     .mk,
-    .dc {
+    .dc,
+    .tq {
         width: 100%;
         box-sizing: border-box;
         padding: 10px 12px;
@@ -843,7 +967,8 @@ h2 {
 
     .tt,
     .dmk,
-    .diachi {
+    .diachi,
+    .tongquan {
         width: 100%;
         padding: 22px 20px;
         box-sizing: border-box;
@@ -916,6 +1041,44 @@ h2 {
         width: 17px;
         height: 17px;
         font-size: 14px;
+    }
+
+    .tongquan {
+        padding: 22px 20px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .overview-item {
+        min-width: 0;
+        padding: 15px 10px;
+        gap: 9px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .overview-item i {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+
+    .overview-item p {
+        margin-bottom: 4px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .overview-item strong {
+        font-size: 16px;
+        text-align: center;
+        overflow-wrap: anywhere;
     }
 
     .diachi {
@@ -1066,7 +1229,8 @@ h2 {
 
     .cn,
     .mk,
-    .dc {
+    .dc,
+    .tq {
         padding: 8px 9px;
         margin-bottom: 5px;
         font-size: 11px;
@@ -1079,7 +1243,8 @@ h2 {
 
     .tt,
     .dmk,
-    .diachi {
+    .diachi,
+    .tongquan {
         padding: 17px 14px;
     }
 
@@ -1149,6 +1314,44 @@ h2 {
         width: 15px;
         height: 15px;
         font-size: 12px;
+    }
+
+    .tongquan {
+        padding: 17px 14px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .overview-item {
+        min-width: 0;
+        padding: 12px 7px;
+        gap: 7px;
+        border-radius: 7px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .overview-item i {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+
+    .overview-item p {
+        font-size: 10px;
+        margin-bottom: 3px;
+        text-align: center;
+    }
+
+    .overview-item strong {
+        font-size: 14px;
+        text-align: center;
     }
 
     .diachi {
@@ -1279,14 +1482,16 @@ h2 {
 
     .cn,
     .mk,
-    .dc {
+    .dc,
+    .tq {
         padding: 7px;
         font-size: 10px;
     }
 
     .tt,
     .dmk,
-    .diachi {
+    .diachi,
+    .tongquan {
         padding: 14px 10px;
     }
 
@@ -1335,6 +1540,42 @@ h2 {
         margin-right: 7px;
         margin-top: -36px;
         font-size: 11px;
+    }
+
+    .tongquan {
+        padding: 14px 10px;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .overview-item {
+        min-width: 0;
+        padding: 10px 5px;
+        gap: 6px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .overview-item i {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .overview-item p {
+        font-size: 9px;
+        margin-bottom: 2px;
+        text-align: center;
+    }
+
+    .overview-item strong {
+        font-size: 12px;
+        text-align: center;
     }
 
     .address-item {

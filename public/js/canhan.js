@@ -1,39 +1,59 @@
+const tongquan = document.querySelector('.tongquan');
 const tt = document.querySelector('.tt'); 
 const dmk = document.querySelector('.dmk'); 
 const diachi = document.querySelector('.diachi');
 
+const tq = document.querySelector('.tq');
 const cn = document.querySelector('.cn'); 
 const mk = document.querySelector('.mk'); 
 const dc = document.querySelector('.dc');
 
 cn.addEventListener('click', () => {
+    tongquan.style.display = "none";
     tt.style.display = "block";
     dmk.style.display = "none";
     diachi.style.display = "none";
 
     cn.classList.add("active");
+    tq.classList.remove("active");
     mk.classList.remove("active");
     dc.classList.remove("active");
 });
 
 mk.addEventListener('click', () => {
+    tongquan.style.display = "none";
     tt.style.display = "none";
     dmk.style.display = "block";
     diachi.style.display = "none";
 
     mk.classList.add("active");
+    tq.classList.remove("active");
     cn.classList.remove("active");
     dc.classList.remove("active");
 })
 
 dc.addEventListener('click', () => {
+    tongquan.style.display = "none";
     tt.style.display = "none";
     dmk.style.display = "none";
     diachi.style.display = "block";
 
     dc.classList.add("active");
+    tq.classList.remove("active");
     cn.classList.remove("active");
     mk.classList.remove("active");
+});
+
+tq.addEventListener('click', () => {
+    tongquan.style.display = "block";
+    tt.style.display = "none";
+    dmk.style.display = "none";
+    diachi.style.display = "none";
+
+    tq.classList.add("active");
+    cn.classList.remove("active");
+    mk.classList.remove("active");
+    dc.classList.remove("active");
 });
 
 let oldname;
@@ -531,6 +551,42 @@ document.addEventListener('click', async (e) => {
         }
     }
 });
+
+async function getMyProductCount() {
+    const res = await fetch('/getmyproductcount');
+    const data = await res.json();
+
+    document.querySelector('.total-product').textContent = data.total || 0;
+}
+
+getMyProductCount();
+
+async function getMyMoney() {
+    const res = await fetch('/getmymoney');
+    const data = await res.json();
+
+    document.querySelector('.total-money').textContent = Number(data.total || 0).toLocaleString('vi-VN') + " VNĐ";
+}
+
+getMyMoney();
+
+async function getMyOrder() {
+    const res = await fetch('/getmyordercount');
+    const data = await res.json();
+
+    document.querySelector('.total-order').textContent = data.total || 0;
+}
+
+getMyOrder();
+
+async function getMyComplete() {
+    const res = await fetch('/getmycomplete');
+    const data = await res.json();
+
+    document.querySelector('.total-complete').textContent = data.total || 0;
+}
+
+getMyComplete();
 
 
 function show(text) {
