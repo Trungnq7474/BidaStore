@@ -16,6 +16,67 @@ let product_id = null;
 let selectedVoucher = null;
 let discount = 0;
 const c = document.querySelector('.c');
+const address = document.querySelector('.address');
+const changeAddress = document.querySelector('.change-address');
+const addressSuggestions = document.querySelector('.address-suggestions');
+
+let addresses = [];
+
+async function getAddress() {
+    const res = await fetch('/getaddress');
+    addresses = await res.json();
+
+    if(addresses.length === 0) {
+        changeAddress.style.display = "none";
+        return;
+    }
+
+    const defaultAddress = addresses.find(item => item.is_default);
+
+    if(defaultAddress) {
+        address.value = `${defaultAddress.address_detail}, ${defaultAddress.ward}, ${defaultAddress.city}`;
+    }
+
+    changeAddress.style.display = "block";
+}
+
+changeAddress.addEventListener('click', () => {
+    addressSuggestions.innerHTML = "";
+
+    addresses.forEach(item => {
+
+        const text = `${item.address_detail}, ${item.ward}, ${item.city}`;
+
+        if(address.value === text) {
+            return;
+        }
+
+        addressSuggestions.innerHTML +=`
+            <div class="address-suggestion" data-id="${item.address_id}">
+                <strong>${item.name}</strong>
+                ${item.is_default ? "<span>Mặc Định</span>" : ""}
+                <p>${item.phone}</p>
+                <p>${text}</p>
+            </div>
+        `;
+    });
+
+    addressSuggestions.style.display = "block";
+
+    const items = document.querySelectorAll('.address-suggestion');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const id = item.dataset.id;
+
+            const addressItem = addresses.find(a => a.address_id == id);
+
+            address.value = `${addressItem.address_detail}, ${addressItem.ward}, ${addressItem.city}`;
+
+            addressSuggestions.style.display = "none";
+        });
+    });
+});
 
 function getImageUrl(image) {
     if (!image) return "";
@@ -186,6 +247,8 @@ async function loadPay() {
     document.querySelector(".name").value = dataUser.user.username;
     document.querySelector(".phone").value = dataUser.user.phone;
     document.querySelector(".email").value = dataUser.user.email;
+
+    getAddress();
     
 
     product_id = new URLSearchParams(window.location.search).get("product_id");

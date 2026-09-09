@@ -186,6 +186,97 @@ input:focus {
     box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
 }
 
+.change-address {
+    margin-top: 8px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #585757;
+    color: rgb(213, 255, 234);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.change-address:hover {
+    transform: scale(1.03);
+    transition: 0.4s ease-in-out;
+    background: #443f3f;
+    color: white;
+}
+
+.address-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.address-box .address {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #979797;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.address-box .address:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.address-suggestions {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.address-suggestion {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.address-suggestion:hover {
+    border-color: #333;
+    background: #f8f8f8;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-3px);
+}
+
+.address-suggestion strong {
+    font-size: 16px;
+    color: #222;
+}
+
+.address-suggestion span {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.address-suggestion p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+    line-height: 1.4;
+}
+
 .voucher {
     margin-top: 20px;
     padding: 18px;
@@ -420,29 +511,29 @@ input:focus {
     font-weight: bold;
 }
 
-@media (max-width: 1200px) { 
-    section { 
-        padding: 0 20px; 
-        box-sizing: border-box; 
-    } 
-
-    .shopping, .info { 
-        width: 50%; 
-        box-sizing: border-box; 
-    } 
-
-    .pr { 
-        width: 100%; 
-        box-sizing: border-box; 
-        gap: 20px; 
-    } 
-
-    .prduc { 
-        width: auto; 
-        flex: 1; 
-        min-width: 0; 
+@media (max-width: 1200px) {
+    section {
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
+    .shopping,
+    .info {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .pr {
+        width: 100%;
+        box-sizing: border-box;
+        gap: 20px;
+    }
+
+    .prduc {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+    }
 
     .voucher h3 {
         font-size: 18px;
@@ -481,77 +572,128 @@ input:focus {
         font-size: 11px;
     }
 
-    .voucher-date p {
-        white-space: nowrap;
-    }
-
     .voucher-discount {
         font-size: 13px;
         padding: 6px 9px;
     }
-} 
 
-
-@media (max-width: 992px) { 
-    section { 
-        padding: 0 20px; 
-    } 
-
-    .shopping, .info { 
-        width: 50%; 
-        padding: 25px; 
-    } 
-
-    .pr { 
-        padding: 10px; 
-        gap: 15px; 
-    } 
-
-    .pr img { 
-        width: 90px; 
-        height: 80px; 
-    } 
-
-    .prduc { 
-        width: auto; 
-        flex: 1; 
-    } 
-
-    .pr h4 { 
-        font-size: 15px; 
-    } 
-
-    .pr h5 { 
-        font-size: 14px; 
-    } 
-
-    .pr p { 
-        font-size: 14px; 
-    } 
-
-    .method { 
-        gap: 10px; 
-    } 
-
-    .method button { 
-        font-size: 15px; 
-        padding: 10px 5px; 
-    } 
-
-    .bank { 
-        padding: 8px; 
-        gap: 5px; 
-    } 
-
-    .bank img { 
-        width: 60px; 
-        height: 60px; 
-    } 
-
-    .bank span { 
-        font-size: 13px; 
+    .address-box {
+        width: 100%;
     }
 
+    .address-box .address {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .address-suggestions {
+        width: 100%;
+    }
+
+    .address-suggestion {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 0 20px;
+    }
+
+    .shopping,
+    .info {
+        width: 50%;
+        padding: 25px;
+    }
+
+    .pr {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .pr img {
+        width: 90px;
+        height: 80px;
+    }
+
+    .prduc {
+        width: auto;
+        flex: 1;
+    }
+
+    .pr h4 {
+        font-size: 15px;
+    }
+
+    .pr h5 {
+        font-size: 14px;
+    }
+
+    .pr p {
+        font-size: 14px;
+    }
+
+    .method {
+        gap: 10px;
+    }
+
+    .method button {
+        font-size: 15px;
+        padding: 10px 5px;
+    }
+
+    .bank {
+        padding: 8px;
+        gap: 5px;
+    }
+
+    .bank img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bank span {
+        font-size: 13px;
+    }
+
+    .address-box {
+        width: 100%;
+    }
+
+    .address-box .address {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .address-suggestions {
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .address-suggestion {
+        padding: 11px 12px;
+        margin-bottom: 8px;
+    }
+
+    .address-suggestion strong {
+        font-size: 14px;
+    }
+
+    .address-suggestion span {
+        font-size: 12px;
+        padding: 3px 7px;
+    }
+
+    .address-suggestion p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .change-address {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
 
     .voucher h3 {
         font-size: 18px;
@@ -572,10 +714,6 @@ input:focus {
         font-size: 16px;
     }
 
-    .voucher-info {
-        min-width: 0;
-    }
-
     .voucher-min {
         margin-top: 1px;
         margin-bottom: 2px;
@@ -590,140 +728,163 @@ input:focus {
         font-size: 10px;
     }
 
-    .voucher-date p {
-        white-space: nowrap;
-    }
-
     .voucher-discount {
         font-size: 12px;
         padding: 6px 8px;
     }
-} 
+}
 
-
-@media (max-width: 768px) { 
-    section { 
-        display: flex; 
-        flex-direction: column; 
-        width: 100%; 
-        padding: 0 15px; 
-        box-sizing: border-box; 
-    } 
-
-    .shopping, .info { 
-        width: 100%; 
-        box-sizing: border-box; 
-        border-radius: 15px; 
-    } 
-
-    .shopping { 
-        border-right: none; 
-        border-bottom: 1px solid #dee2e6; 
-    } 
-
-    .info { 
-        margin-top: 15px; 
-    } 
-
-    .shopping h2, .info h2 { 
-        font-size: 21px; 
-    } 
-
-    .tp { 
-        height: 220px; 
-    } 
-
-    .pr { 
-        width: 100%; 
-        padding: 10px; 
-        gap: 12px; 
-        box-sizing: border-box; 
-    } 
-
-    .pr img { 
-        width: 80px; 
-        height: 70px; 
-    } 
-
-    .prduc { 
-        flex: 1; 
-        width: auto; 
-        min-width: 0; 
-    } 
-
-    .pr h4 { 
-        font-size: 14px; 
-        margin: 5px 0; 
-    } 
-
-    .pr h5 { 
-        font-size: 13px; 
-        margin: 5px 0; 
-    } 
-
-    .pr p { 
-        font-size: 13px; 
-        white-space: nowrap; 
-    } 
-
-    .payment { 
-        padding: 15px; 
-    } 
-
-    .payment p { 
-        font-size: 15px; 
-    } 
-
-    .payment p:last-child { 
-        font-size: 18px; 
-    } 
-
-    .method { 
-        flex-direction: column; 
-        gap: 10px; 
-    } 
-
-    .method button { 
-        width: 100%; 
-        font-size: 16px; 
-    } 
-
-    .text input { 
-        font-size: 15px; 
-    } 
-
-    .pay { 
-        font-size: 18px; 
-    } 
-
-    .bank-box { 
-        padding: 15px; 
-    } 
-
-    .banks { 
-        grid-template-columns: 1fr 1fr; 
-        gap: 8px; 
-    } 
-
-    .bank { 
-        height: 70px; 
-        padding: 5px; 
-    } 
-
-    .bank img { 
-        width: 50px; 
-        height: 50px; 
-    } 
-
-    .bank span { 
-        font-size: 12px; 
-    } 
-
-    .bank-info input { 
-        box-sizing: border-box; 
-        font-size: 15px; 
+@media (max-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin-top: 120px;
+        margin-bottom: 60px;
     }
 
+    .shopping,
+    .info {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 15px;
+    }
+
+    .shopping {
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .info {
+        margin-top: 15px;
+    }
+
+    .shopping h2,
+    .info h2 {
+        font-size: 21px;
+    }
+
+    .tp {
+        height: 220px;
+    }
+
+    .pr {
+        width: 100%;
+        padding: 10px;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    .pr img {
+        width: 80px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .prduc {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .pr h4 {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .pr h5 {
+        font-size: 13px;
+        margin: 5px 0;
+    }
+
+    .pr p {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .payment {
+        padding: 15px;
+    }
+
+    .payment p {
+        font-size: 15px;
+    }
+
+    .payment p:last-child {
+        font-size: 18px;
+    }
+
+    .method {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .method button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .text input {
+        font-size: 15px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .address-box {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .address-box .address {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .address-suggestions {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .address-suggestion {
+        width: 100%;
+        padding: 11px 12px;
+        margin-bottom: 8px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .address-suggestion strong {
+        font-size: 14px;
+    }
+
+    .address-suggestion span {
+        display: inline-block;
+        margin-left: 5px;
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+
+    .address-suggestion p {
+        margin: 5px 0 0;
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .change-address {
+        margin-top: 7px;
+        padding: 9px 15px;
+        font-size: 14px;
+    }
+
+    .voucher {
+        padding: 15px;
+    }
 
     .voucher h3 {
         font-size: 18px;
@@ -751,11 +912,6 @@ input:focus {
         min-width: 0;
     }
 
-    .voucher-min {
-        margin-top: 1px;
-        margin-bottom: 1px;
-    }
-
     .min {
         font-size: 11px;
     }
@@ -765,114 +921,194 @@ input:focus {
         font-size: 9px;
     }
 
-    .voucher-date p {
-        white-space: nowrap;
-    }
-
     .voucher-discount {
         font-size: 10px;
         padding: 6px 7px;
     }
-} 
 
-
-@media (max-width: 576px) { 
-    section { 
-        padding: 0 10px; 
-        margin-top: 110px; 
-    } 
-
-    .shopping, .info { 
-        padding: 18px; 
-    } 
-
-    .shopping h2, .info h2 { 
-        font-size: 18px; 
-    } 
-
-    .shopping a { 
-        font-size: 14px; 
-    } 
-
-    .tp { 
-        height: 200px; 
-    } 
-
-    .pr { 
-        gap: 8px; 
-        padding: 8px; 
-    } 
-
-    .pr img { 
-        width: 65px; 
-        height: 60px; 
-    } 
-
-    .pr h4 { 
-        font-size: 12px; 
-    } 
-
-    .pr h5 { 
-        font-size: 11px; 
-    } 
-
-    .pr p { 
-        font-size: 11px; 
-    } 
-
-    .payment { 
-        padding: 12px; 
-    } 
-
-    .payment p { 
-        font-size: 13px; 
-        margin-bottom: 12px; 
-    } 
-
-    .payment p:last-child { 
-        font-size: 16px; 
-    } 
-
-    .text label, .bank-info label { 
-        font-size: 13px; 
-    } 
-
-    .text input, .bank-info input { 
-        padding: 10px; 
-        font-size: 14px; 
-    } 
-
-    .pay { 
-        padding: 12px; 
-        font-size: 16px; 
-    } 
-
-    .pay i { 
-        font-size: 22px; 
-    } 
-
-    .bank-box { 
-        padding: 12px; 
-    } 
-
-    .bank-box h3 { 
-        font-size: 16px; 
-    } 
-
-    .bank { 
-        height: 60px; 
-        gap: 3px; 
-    } 
-
-    .bank img { 
-        width: 40px; 
-        height: 40px; 
-    } 
-
-    .bank span { 
-        font-size: 10px; 
+    .pay {
+        font-size: 18px;
     }
 
+    .bank-box {
+        padding: 15px;
+    }
+
+    .banks {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .bank {
+        height: 70px;
+        padding: 5px;
+    }
+
+    .bank img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bank span {
+        font-size: 12px;
+    }
+
+    .bank-info input {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: 0 10px;
+        margin-top: 110px;
+        margin-bottom: 45px;
+    }
+
+    .shopping,
+    .info {
+        padding: 18px;
+    }
+
+    .shopping h2,
+    .info h2 {
+        font-size: 18px;
+    }
+
+    .shopping a {
+        font-size: 14px;
+    }
+
+    .tp {
+        height: 200px;
+    }
+
+    .pr {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .pr img {
+        width: 65px;
+        height: 60px;
+    }
+
+    .pr h4 {
+        font-size: 12px;
+    }
+
+    .pr h5 {
+        font-size: 11px;
+    }
+
+    .pr p {
+        font-size: 11px;
+    }
+
+    .payment {
+        padding: 12px;
+    }
+
+    .payment p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .payment p:last-child {
+        font-size: 16px;
+    }
+
+    .text label,
+    .bank-info label {
+        font-size: 13px;
+    }
+
+    .text input,
+    .bank-info input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .address-box {
+        gap: 7px;
+    }
+
+    .address-box .address {
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 7px;
+    }
+
+    .address-suggestions {
+        margin-top: 4px;
+    }
+
+    .address-suggestion {
+        padding: 9px 10px;
+        margin-bottom: 7px;
+        border-radius: 7px;
+    }
+
+    .address-suggestion strong {
+        font-size: 13px;
+    }
+
+    .address-suggestion span {
+        margin-left: 4px;
+        padding: 2px 5px;
+        font-size: 10px;
+    }
+
+    .address-suggestion p {
+        margin-top: 4px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .change-address {
+        padding: 8px 13px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    .pay {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .pay i {
+        font-size: 22px;
+    }
+
+    .bank-box {
+        padding: 12px;
+    }
+
+    .bank-box h3 {
+        font-size: 16px;
+    }
+
+    .bank {
+        height: 60px;
+        gap: 3px;
+    }
+
+    .bank img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bank span {
+        font-size: 10px;
+    }
+
+    .voucher {
+        padding: 12px;
+    }
 
     .voucher h3 {
         font-size: 17px;
@@ -894,15 +1130,6 @@ input:focus {
         font-size: 13px;
     }
 
-    .voucher-info {
-        min-width: 0;
-    }
-
-    .voucher-min {
-        margin-top: 0;
-        margin-bottom: 1px;
-    }
-
     .min {
         font-size: 10px;
     }
@@ -912,84 +1139,121 @@ input:focus {
         font-size: 8px;
     }
 
-    .voucher-date p {
-        white-space: nowrap;
-    }
-
     .voucher-discount {
         font-size: 9px;
         padding: 5px 6px;
     }
-} 
+}
 
-
-@media (max-width: 400px) { 
-    section { 
-        padding: 0 8px; 
-    } 
-
-    .shopping, .info { 
-        padding: 12px; 
-    } 
-
-    .shopping h2, .info h2 { 
-        font-size: 16px; 
-    } 
-
-    .pr img { 
-        width: 55px; 
-        height: 50px; 
-    } 
-
-    .pr h4 { 
-        font-size: 11px; 
-    } 
-
-    .pr h5 { 
-        font-size: 10px; 
-    } 
-
-    .pr p { 
-        font-size: 10px; 
-    } 
-
-    .payment p { 
-        font-size: 12px; 
-    } 
-
-    .payment p:last-child { 
-        font-size: 14px; 
-    } 
-
-    .text input, .bank-info input { 
-        font-size: 13px; 
-    } 
-
-    .method button { 
-        font-size: 14px; 
-    } 
-
-    .pay { 
-        font-size: 14px; 
-    } 
-
-    .banks { 
-        gap: 5px; 
-    } 
-
-    .bank { 
-        height: 55px; 
-    } 
-
-    .bank img { 
-        width: 35px; 
-        height: 35px; 
-    } 
-
-    .bank span { 
-        font-size: 9px; 
+@media (max-width: 400px) {
+    section {
+        padding: 0 8px;
+        margin-top: 100px;
     }
 
+    .shopping,
+    .info {
+        padding: 12px;
+    }
+
+    .shopping h2,
+    .info h2 {
+        font-size: 16px;
+    }
+
+    .pr {
+        gap: 6px;
+    }
+
+    .pr img {
+        width: 55px;
+        height: 50px;
+    }
+
+    .pr h4 {
+        font-size: 11px;
+    }
+
+    .pr h5 {
+        font-size: 10px;
+    }
+
+    .pr p {
+        font-size: 10px;
+    }
+
+    .payment p {
+        font-size: 12px;
+    }
+
+    .payment p:last-child {
+        font-size: 14px;
+    }
+
+    .text input,
+    .bank-info input {
+        font-size: 13px;
+    }
+
+    .method button {
+        font-size: 14px;
+    }
+
+    .address-box .address {
+        padding: 9px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .address-suggestion {
+        padding: 8px 9px;
+        margin-bottom: 6px;
+        border-radius: 6px;
+    }
+
+    .address-suggestion strong {
+        font-size: 12px;
+    }
+
+    .address-suggestion span {
+        padding: 2px 4px;
+        font-size: 9px;
+    }
+
+    .address-suggestion p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .change-address {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .pay {
+        font-size: 14px;
+    }
+
+    .banks {
+        gap: 5px;
+    }
+
+    .bank {
+        height: 55px;
+    }
+
+    .bank img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .bank span {
+        font-size: 9px;
+    }
+
+    .voucher {
+        padding: 10px;
+    }
 
     .voucher h3 {
         font-size: 16px;
@@ -1004,20 +1268,10 @@ input:focus {
 
     .voucher-code {
         font-size: 10px;
-        gap: 2px;
     }
 
     .voucher-code i {
         font-size: 12px;
-    }
-
-    .voucher-info {
-        min-width: 0;
-    }
-
-    .voucher-min {
-        margin-top: 0;
-        margin-bottom: 1px;
     }
 
     .min {
@@ -1025,72 +1279,122 @@ input:focus {
     }
 
     .voucher-date {
-        gap: 1px 3px;
         font-size: 7px;
-    }
-
-    .voucher-date p {
-        white-space: nowrap;
     }
 
     .voucher-discount {
         font-size: 8px;
         padding: 4px 5px;
     }
-} 
+}
 
-
-@media (max-width: 320px) { 
-    section { 
-        padding: 0 5px; 
-    } 
-
-    .shopping, .info { 
-        padding: 10px; 
-    } 
-
-    .shopping h2, .info h2 { 
-        font-size: 14px; 
-    } 
-
-    .pr { 
-        gap: 5px; 
-    } 
-
-    .pr img { 
-        width: 48px; 
-        height: 45px; 
-    } 
-
-    .pr h4 { 
-        font-size: 10px; 
-    } 
-
-    .pr h5, .pr p { 
-        font-size: 9px; 
-    } 
-
-    .payment p { 
-        font-size: 11px; 
-    } 
-
-    .payment p:last-child { 
-        font-size: 13px; 
-    } 
-
-    .text input, .bank-info input { 
-        font-size: 12px; 
-    } 
-
-    .bank img { 
-        width: 30px; 
-        height: 30px; 
-    } 
-
-    .bank span { 
-        font-size: 8px; 
+@media (max-width: 320px) {
+    section {
+        padding: 0 5px;
+        margin-top: 90px;
     }
 
+    .shopping,
+    .info {
+        padding: 10px;
+    }
+
+    .shopping h2,
+    .info h2 {
+        font-size: 14px;
+    }
+
+    .pr {
+        gap: 5px;
+        padding: 7px;
+    }
+
+    .pr img {
+        width: 48px;
+        height: 45px;
+    }
+
+    .pr h4 {
+        font-size: 10px;
+    }
+
+    .pr h5,
+    .pr p {
+        font-size: 9px;
+    }
+
+    .payment p {
+        font-size: 11px;
+    }
+
+    .payment p:last-child {
+        font-size: 13px;
+    }
+
+    .text input,
+    .bank-info input {
+        font-size: 12px;
+    }
+
+    .method button {
+        font-size: 13px;
+        padding: 9px 5px;
+    }
+
+    .address-box {
+        gap: 5px;
+    }
+
+    .address-box .address {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .address-suggestion {
+        padding: 7px 8px;
+        margin-bottom: 5px;
+    }
+
+    .address-suggestion strong {
+        font-size: 11px;
+    }
+
+    .address-suggestion span {
+        font-size: 8px;
+        padding: 2px 4px;
+    }
+
+    .address-suggestion p {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .change-address {
+        padding: 6px 9px;
+        font-size: 11px;
+    }
+
+    .pay {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .pay i {
+        font-size: 20px;
+    }
+
+    .bank img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .bank span {
+        font-size: 8px;
+    }
+
+    .voucher {
+        padding: 8px;
+    }
 
     .voucher h3 {
         font-size: 15px;
@@ -1112,26 +1416,13 @@ input:focus {
         font-size: 11px;
     }
 
-    .voucher-info {
-        min-width: 0;
-    }
-
-    .voucher-min {
-        margin-top: 0;
-        margin-bottom: 1px;
-    }
-
     .min {
         font-size: 8px;
     }
 
     .voucher-date {
-        gap: 1px 2px;
         font-size: 6px;
-    }
-
-    .voucher-date p {
-        white-space: nowrap;
+        gap: 1px 2px;
     }
 
     .voucher-discount {
