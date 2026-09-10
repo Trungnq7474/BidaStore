@@ -22,11 +22,7 @@ async function updatecount() {
     const res = await fetch(`/get-cart?user_id=${user_id}`);
     const cart = await res.json();
 
-    let total = 0;
-
-    cart.forEach(item => {
-        total += item.quantity;
-    });
+    let total = cart.length;
 
     if(total > 0) {
         cartcount.innerText = total;
@@ -113,7 +109,6 @@ document.addEventListener('click', async(e) => {
 
         if(data === "ok") {
             loadCart();
-            updatecount();
         }
 
         else if(data === "not_enough") {
@@ -138,7 +133,6 @@ document.addEventListener('click', async(e) => {
             })
         });
         loadCart();
-        updatecount();
     }
 
     // Xóa 1 sản phẩm

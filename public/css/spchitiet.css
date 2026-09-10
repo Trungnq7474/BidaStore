@@ -387,6 +387,119 @@ button.pay {
     font-weight: bold;
 }
 
+.ok {
+    text-align: center;
+    position: relative;
+    margin-top: -40px;
+}
+
+.ok h1 {
+    color: red;
+    font-size: 30px;
+}
+
+.ok p {
+    font-size: 30px;
+    color: rgb(128, 242, 217);
+    font-weight: bold;
+}
+
+.ok i {
+    color: rgb(1, 76, 252);
+}
+
+.related-list {
+    margin-bottom: 40px;
+}
+
+.related-list .related-tr {
+    text-decoration: none;
+    width: 18%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.related-list {
+    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+}
+
+.related-list .related-kk {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(5, 249, 143);
+    background-color: rgb(143, 252, 162);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.related-list .related-kk img {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(166, 166, 166);
+    display: block;
+}
+
+.related-list .related-kk:hover {
+    transform: scale(1.04);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 35px rgba(151, 181, 0, 0.57);
+}
+
+.related-list .related-kk .related-pro1 h5 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+    height: 36px;
+    font-size: 18px;
+    line-height: 18px;
+    color: rgb(110, 68, 116);
+    overflow: hidden;
+}
+
+.related-list .related-kk .related-pro1 i {
+    font-size: 15px;
+    color: rgb(239, 9, 9);
+}
+
+.related-list .related-kk .related-pro1 h4 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: rgba(53, 64, 0, 0.97);
+}
+
+.stock-product {
+    margin: 8px 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.related-list .related-kk .related-pro .related-cart i {
+    font-size: 30px;
+    background-color: rgb(248, 251, 251);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: rgb(129, 130, 73);
+    transition: 0.4s ease-in-out;
+}
+
+.related-list .related-kk .related-pro a i:hover {
+    background-color: rgb(255, 225, 77);
+    transition: 0.4s ease-in-out;
+    transform: scale(1.04);
+}
+
 
 @media (max-width: 1200px) {
 
@@ -475,6 +588,61 @@ button.pay {
         padding: 18px 10px;
         white-space: nowrap;
     }
+
+    .ok {
+        margin-top: -20px;
+    }
+
+    .ok h1 {
+        font-size: 28px;
+    }
+
+    .ok p {
+        font-size: 27px;
+    }
+
+    .related-list {
+        padding: 10px 18px;
+        gap: 22px;
+    }
+
+    .related-list .related-tr {
+        width: 23%;
+    }
+
+    .related-list .related-kk {
+        padding: 9px 10px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 16px;
+        height: 34px;
+        line-height: 17px;
+        margin-top: 11px;
+        margin-bottom: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 13px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .stock-product {
+        font-size: 13px;
+        margin: 6px 0 8px;
+        letter-spacing: 0.3px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 25px;
+        padding: 7px 10px;
+    }
+
 }
 
 
@@ -615,6 +783,65 @@ button.pay {
         font-size: 18px;
         padding: 17px 8px;
         white-space: nowrap;
+    }
+
+    .ok {
+        margin-top: -20px;
+    }
+
+    .okl h1 {
+        font-size: 26px;
+    }
+
+    .ok p {
+        font-size: 25px;
+    }
+
+    .related-list {
+        padding: 10px 16px;
+        gap: 20px;
+    }
+
+    .related-list .related-tr {
+        width: 31%;
+    }
+
+    .related-list .related-kk {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 15px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 15px;
+        height: 32px;
+        line-height: 16px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 12px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 15px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .stock-product {
+        font-size: 12px;
+        margin: 5px 0 7px;
+        letter-spacing: 0.2px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 23px;
+        padding: 6px 9px;
     }
 }
 
@@ -814,6 +1041,68 @@ button.pay {
         padding: 15px 6px;
         font-size: 16px;
         white-space: nowrap;
+    }
+
+    .ok {
+        margin-top: -20px;
+        margin-bottom: 18px;
+        padding: 10px 14px;
+    }
+
+    .ok h1 {
+        font-size: 23px;
+    }
+
+    .ok p {
+        font-size: 21px;
+    }
+
+    .related-list {
+        padding: 8px 12px;
+        gap: 16px 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .related-list .related-tr {
+        width: calc((100% - 16px) / 3);
+    }
+
+    .related-list .related-kk {
+        padding: 5px;
+        border-radius: 11px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 9px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 12px;
+        height: 28px;
+        line-height: 14px;
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 10px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 12px;
+        margin-top: 7px;
+        margin-bottom: 6px;
+    }
+
+    .stock-product {
+        font-size: 10px;
+        margin: 5px 0 6px;
+        letter-spacing: 0.2px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 19px;
+        padding: 5px 7px;
     }
 }
 
@@ -1019,6 +1308,69 @@ button.pay {
         font-size: 14px;
         white-space: nowrap;
     }
+
+    .ok {
+        margin-top: -20px;
+        margin-bottom: 15px;
+        padding: 8px 10px;
+    }
+
+    .ok h1 {
+        font-size: 20px;
+    }
+
+    .ok p {
+        font-size: 18px;
+    }
+
+    .related-list {
+        padding: 7px 10px;
+        gap: 13px 7px;
+        letter-spacing: 0.3px;
+    }
+
+    .related-list .related-tr {
+        width: calc((100% - 14px) / 3);
+    }
+
+    .related-list .related-kk {
+        padding: 4px;
+        border-radius: 9px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 11px;
+        height: 27px;
+        line-height: 13px;
+        margin-top: 7px;
+        margin-bottom: 4px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 9px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 11px;
+        margin-top: 6px;
+        margin-bottom: 5px;
+    }
+
+    .stock-product {
+        font-size: 9px;
+        margin: 4px 0 5px;
+        letter-spacing: 0.1px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 17px;
+        padding: 4px 6px;
+    }
+
 }
 
 
@@ -1161,6 +1513,69 @@ button.pay {
         font-size: 12px;
         white-space: nowrap;
     }
+
+    .ok {
+        margin-top: -20px;
+        margin-bottom: 12px;
+        padding: 7px 8px;
+    }
+
+    .ok h1 {
+        font-size: 18px;
+    }
+
+    .ok p {
+        font-size: 16px;
+    }
+
+    .related-list {
+        padding: 6px 8px;
+        gap: 10px 6px;
+        letter-spacing: 0;
+    }
+
+    .related-list .related-tr {
+        width: calc((100% - 12px) / 3);
+    }
+
+    .related-list .related-kk {
+        padding: 3px;
+        border-radius: 8px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 6px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 10px;
+        height: 25px;
+        line-height: 12px;
+        margin-top: 6px;
+        margin-bottom: 4px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 4px;
+    }
+
+    .stock-product {
+        font-size: 8px;
+        margin: 4px 0;
+        letter-spacing: 0;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 15px;
+        padding: 3px 5px;
+    }
+
 }
 
 
@@ -1237,5 +1652,67 @@ button.pay {
         padding: 10px 2px;
         font-size: 11px;
         white-space: nowrap;
+    }
+
+    .ok {
+        margin-top: -20px;
+        margin-bottom: 10px;
+        padding: 6px 7px;
+    }
+
+    .ok h1 {
+        font-size: 16px;
+    }
+
+    .ok p {
+        font-size: 14px;
+    }
+
+    .related-list {
+        padding: 5px 7px;
+        gap: 8px 5px;
+        letter-spacing: 0;
+    }
+
+    .related-list .related-tr {
+        width: calc((100% - 10px) / 3);
+    }
+
+    .related-list .related-kk {
+        padding: 3px;
+        border-radius: 7px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 5px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 9px;
+        height: 22px;
+        line-height: 11px;
+        margin-top: 5px;
+        margin-bottom: 3px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 9px;
+        margin-top: 4px;
+        margin-bottom: 3px;
+    }
+
+    .stock-product {
+        font-size: 8px;
+        margin: 3px 0 4px;
+        letter-spacing: 0;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 13px;
+        padding: 3px 4px;
     }
 }

@@ -77,6 +77,14 @@
     overflow: hidden;
 }
 
+.info h2 i {
+    font-size: 30px;
+}
+
+.tt {
+    display: none;
+}
+
 .tt,
 .dmk {
     padding: 35px 40px;
@@ -522,7 +530,7 @@ h2 {
 }
 
 .tongquan {
-    display: none;
+    display: block;
     padding: 35px 40px;
 }
 
@@ -615,6 +623,10 @@ h2 {
 
     .info {
         min-height: 500px;
+    }
+
+    .info h2 i {
+        font-size: 28px;
     }
 
     .tt,
@@ -756,6 +768,10 @@ h2 {
     .info {
         min-height: 460px;
     }
+
+    .info h2 i {
+        font-size: 26px;
+    }   
 
     .tt,
     .dmk,
@@ -963,6 +979,10 @@ h2 {
         width: 100%;
         min-height: 0;
         border-radius: 14px;
+    }
+
+    .info h2 i {
+        font-size: 25px;
     }
 
     .tt,
@@ -1241,6 +1261,10 @@ h2 {
         border-radius: 12px;
     }
 
+    .info h2 i {
+        font-size: 24px;
+    }
+
     .tt,
     .dmk,
     .diachi,
@@ -1497,6 +1521,10 @@ h2 {
 
     h2 {
         font-size: 14px;
+    }
+
+    .info h2 i {
+        font-size: 18px;
     }
 
     .line {

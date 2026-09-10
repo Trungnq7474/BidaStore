@@ -259,8 +259,150 @@ async function loadComments() {
     });
 }
 
+async function loadProduct() {
+    const res = await fetch(`/product/${product_id}`);
+    const product = await res.json();
+
+    const resProduct = await fetch(`/getprocate/${product.category}`);
+    const data = await resProduct.json();
+
+    const productList = document.querySelector('.related-list');
+
+    productList.innerHTML = "";
+
+    let count = 0;
+
+    data.forEach(product => {
+        if(product.product_id == product_id) {
+            return;
+        }
+
+        if(count >= 10) {
+            return;
+        }
+
+        productList.innerHTML +=`
+             <a href="spchitiet.html?product_id=${product.product_id}" class="related-tr">
+                <div class="related-kk">
+                    <div class="related-pro">
+                        <img src="images/${product.image}" alt="Ảnh">
+
+                        <div class="related-pro1">
+                            <h5>${product.product_name}</h5>
+
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+
+                            <p class="stock-product ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                            </p>
+                        </div>
+
+                        <span class="related-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        `;
+
+        count++;
+    });
+}
+
 loadComments();
 checkBuy();
+loadProduct();
+
+document.addEventListener('click', async (e) => {
+
+    const icon = e.target.closest('.related-cart');
+
+    if(!icon) {
+        return;
+    }
+
+    e.preventDefault();
+
+    const resuser = await fetch('/get-user');
+    const datauser = await resuser.json();
+
+    if(!datauser.user) {
+        showmgs("Bạn Vui Lòng Đăng Nhập Để Sử Dụng Chức Năng Này !");
+        return;
+    }
+
+    let productbox = icon.closest('.related-pro');
+
+    let product_name = productbox.querySelector("h5").innerText;
+    let price = productbox.querySelector("h4").innerText.replace(/\D/g, "");
+    let image = productbox.querySelector("img").getAttribute("src");
+
+    image = image.replace(/^\/+/, "");
+    image = image.replace(/^images\//, "");
+    
+    const user_id = datauser.user.id;
+
+        fetch('/add-cart', {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                user_id,
+                product_name,
+                price,
+                image
+            })
+        })
+
+        .then(res => res.text())
+        .then(data => {
+            if(data === "ok") {
+                showmgs(`Bạn Đã Thêm Sản Phẩm ${product_name} Vào Giỏ Hàng`);
+
+                const cartcount = document.querySelector('.cart-count');
+
+                fetch(`/get-cart?user_id=${user_id}`)
+                    .then(res => res.json())
+                    .then(cart => {
+                        let total = 0;
+
+                        cart.forEach(item => {
+                            total += item.quantity;
+                        });
+
+                        if(total > 0) {
+                            cartcount.innerText = total;
+                            cartcount.style.display = "flex";
+                        }
+
+                        else {
+                            cartcount.style.display = "none";
+                        }
+                    });
+            }
+
+            else if(data === "out") {
+                showmgs(`Sản Phẩm ${product_name} Đã Hết Hàng !`)
+            }
+
+            else if (data === "not_enough") {
+                showmgs(`Sản Phẩm ${product_name} Không Đủ Số Lượng !`);
+            }
+
+            else {
+                showmgs("Lỗi Thêm Giỏ Hàng");
+            }
+        });
+});
 
 function showmgs(text){
     const mgs = document.querySelector('.mgs');
