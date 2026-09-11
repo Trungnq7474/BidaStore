@@ -11,7 +11,8 @@ const qrMoney = document.querySelector('.qr-money');
 let method = "COD";
 let total = 0;
 let product_id = null;
-const shopAccount = "1031258532";
+let order_id = null;
+const shopAccount = "92079112345555";
 let selectedVoucher = null;
 let discount = 0;
 const c = document.querySelector('.c');
@@ -108,7 +109,7 @@ cash.addEventListener('click', () =>{
     QR.classList.remove("active");
 });
 
-QR.addEventListener('click', () =>{
+QR.addEventListener('click', async () =>{
 
     method = "QR";
 
@@ -117,7 +118,61 @@ QR.addEventListener('click', () =>{
     QR.classList.add("active");
     cash.classList.remove("active");
 
-    showQR();
+    if(location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+        
+        const name = document.querySelector(".name").value;
+        const phone = document.querySelector(".phone").value;
+        const email = document.querySelector(".email").value;
+        const address = document.querySelector(".address").value;
+
+        if(name === "" || phone === "" || email === "" || address === "") {
+            show("Bạn Không Được Phép Để Trống !");
+            return;
+        }
+
+        const resUser = await fetch('/get-user');
+        const dataUser = await resUser.json();
+
+        const ship = 30000;
+
+        const res = await fetch('/createorder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                user_id: dataUser.user_id,
+                name_receive: name,
+                email: email,
+                phone: phone,
+                address: address,
+                method: "QR",
+                product_id: product_id,
+                subtotal: total,
+                total: total + ship - discount,
+                voucher_id: selectedVoucher ? selectedVoucher.id : null,
+                bank_name: "MB Bank",
+                bank_account: shopAccount
+            })
+        });
+
+        const result = await res.json();
+
+        if(!result.success) {
+            show("Không Thể Tạo Đơn Hàng !");
+            return;
+        }
+
+        order_id = result.order_id;
+
+        showQR();
+        checkPayment();
+    }
+
+    else {
+        showQR();
+    } 
 });
 
 async function loadVouchers() {
@@ -197,7 +252,7 @@ async function loadVouchers() {
             const ship = 30000;
             c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
 
-            if(method === "QR") {
+            if(method === "QR" && order_id) {
                 showQR();
             }
         });
@@ -318,7 +373,7 @@ const pay = document.querySelector(".pay");
 pay.addEventListener('click', async (e) => {
 
     e.preventDefault();
-
+ 
     const name = document.querySelector(".name").value;
     const phone = document.querySelector(".phone").value;
     const email = document.querySelector(".email").value;
@@ -351,7 +406,7 @@ pay.addEventListener('click', async (e) => {
             subtotal: total,
             total: total + ship- discount,
             voucher_id: selectedVoucher ? selectedVoucher.id : null,
-            bank_name: method === "QR" ? "Vietcombank" : "",
+            bank_name: method === "QR" ? "MB Bank" : "",
             bank_account: method === "QR" ? shopAccount : ""
         })
     });
@@ -411,12 +466,29 @@ pay.addEventListener('click', async (e) => {
 function showQR() {
     const money = total + 30000 - discount;
 
-    qrImage.src = "https://img.vietqr.io/image/MB-92079112345555-compact.png";
+    qrImage.src = `https://img.vietqr.io/image/MB-92079112345555-compact.png?amount=${money}&addInfo=ORD-${order_id}`;
 
    
     qrMoney.innerText = money.toLocaleString('vi-VN') + " VNĐ";
 
     qrCode.style.display = "block";
+}
+
+
+if(location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+    pay.style.display = "none";
+}
+
+function checkPayment() {
+    const timer = setInterval(async () => {
+        const res = await fetch(`/checkpayment/${order_id}`);
+        const result = await res.json();
+
+        if(result.success && result.status === "dang") {
+            clearInterval(timer);
+            window.location.href = `/sucess.html?order_id=${order_id}`;
+        }
+    }, 3000);
 }
 
 function show(text) {

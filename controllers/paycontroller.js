@@ -541,5 +541,82 @@ const getMyComplete = async (req, res) => {
     }
 };
 
+const checkPayment = async (req, res) => {
 
-module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete };
+    try {
+        const order_id = req.params.id;
+
+        const result = await sql.query`
+            SELECT id, status, method, total
+            FROM orders
+            WHERE id =${order_id}
+        `;
+
+        if(result.recordset.length === 0) {
+            return res.json({ success: false});
+        }
+
+        res.json({
+            success: true,
+            status: result.recordset[0].status
+        });
+    }
+
+    catch(err) {
+        res.status(500).send(err.message);
+    }
+};
+
+const sePay = async (req, res) => {
+    try {
+        const data = req.body;
+
+        const code = data.code;
+        const amount = data.transferAmount;
+
+        if(!code) {
+            return res.send("no code");
+        }
+
+        if(!code.startsWith("ORD-")) {
+            return res.send("no order");
+        }
+
+        const order_id = code.replace("ORD-", "");
+
+        const result = await sql.query`
+            SELECT id, total, status, method
+            FROM orders
+            WHERE id =${order_id}
+        `;
+
+        if(result.recordset.length === 0) {
+            return res.send("order not found");
+        }
+
+        const order = result.recordset[0];
+
+        if(order.method !== "QR") {
+            return res.send("not qr");
+        }
+
+        if(amount < order.total) {
+            return res.send("not enough");
+        }
+
+        await sql.query`
+            UPDATE orders
+            SET status = 'dang'
+            WHERE id =${order_id}
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+ 
+
+module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay };
