@@ -483,7 +483,7 @@ function checkPayment() {
         const res = await fetch(`/checkpayment/${order_id}`);
         const result = await res.json();
 
-        if(result.success && result.status === "dang") {
+        if(result.success && result.paid) {
             clearInterval(timer);
             window.location.href = `/sucess.html?order_id=${order_id}`;
         }

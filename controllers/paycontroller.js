@@ -537,7 +537,7 @@ const getMyComplete = async (req, res) => {
     }
 
     catch (err) {
-        res.status(500).send(errr.message);
+        res.status(500).send(err.message);
     }
 };
 
@@ -547,7 +547,7 @@ const checkPayment = async (req, res) => {
         const order_id = req.params.id;
 
         const result = await sql.query`
-            SELECT id, status, method, total
+            SELECT id, status, method, total, bank_name
             FROM orders
             WHERE id =${order_id}
         `;
@@ -558,7 +558,8 @@ const checkPayment = async (req, res) => {
 
         res.json({
             success: true,
-            status: result.recordset[0].status
+            status: result.recordset[0].status,
+            paid: result.recordset[0].bank_name === "Đã Thanh Toán"
         });
     }
 
@@ -597,18 +598,14 @@ const sePay = async (req, res) => {
             return res.send("Không phải đơn QR");
         }
 
-        if(order.status !== "cho") {
-            return res.send("Đơn đã được xử lý");
-        }
-
         if(amount < order.total) {
             return res.send("Chưa đủ tiền");
         }
 
         await sql.query`
             UPDATE orders
-            SET status = 'dang'
-            WHERE id =${order_id}
+            SET bank_name = 'Đã Thanh Toán'
+            WHERE id = ${order_id}
         `;
 
         res.send("ok");
