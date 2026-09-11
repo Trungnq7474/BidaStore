@@ -142,7 +142,7 @@ QR.addEventListener('click', async () =>{
             },
 
             body: JSON.stringify({
-                user_id: dataUser.user_id,
+                user_id: dataUser.user.id,
                 name_receive: name,
                 email: email,
                 phone: phone,
@@ -466,7 +466,7 @@ pay.addEventListener('click', async (e) => {
 function showQR() {
     const money = total + 30000 - discount;
 
-    qrImage.src = `https://img.vietqr.io/image/MB-92079112345555-compact.png?amount=${money}&addInfo=ORD-${order_id}`;
+    qrImage.src = `https://img.vietqr.io/image/MB-92079112345555-compact.png?amount=${money}&addInfo=ORD-00${order_id}`;
 
    
     qrMoney.innerText = money.toLocaleString('vi-VN') + " VNĐ";

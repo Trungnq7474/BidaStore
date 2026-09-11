@@ -578,11 +578,11 @@ const sePay = async (req, res) => {
             return res.send("no code");
         }
 
-        if(!code.startsWith("ORD-")) {
+        if(!code.startsWith("ORD-00")) {
             return res.send("no order");
         }
 
-        const order_id = code.replace("ORD-", "");
+        const order_id = code.replace("ORD-00", "");
 
         const result = await sql.query`
             SELECT id, total, status, method
