@@ -104,6 +104,8 @@ fetch(`/product/${product_id}`)
 
     document.getElementById("product_name").innerText = data.product_name;
 
+    document.querySelector('.icon').innerHTML = getStars(data.average_rating);
+
     document.getElementById("price").innerText = Number(data.price).toLocaleString('vi-VN') + " VNĐ";
 
     const stock = document.querySelector('.stock');
@@ -290,11 +292,7 @@ async function loadProduct() {
                         <div class="related-pro1">
                             <h5>${product.product_name}</h5>
 
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            ${getStars(product.average_rating)}
 
                             <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
 
@@ -403,6 +401,23 @@ document.addEventListener('click', async (e) => {
             }
         });
 });
+
+
+function getStars(rating) {
+    let starts = "";
+
+    [1, 2, 3, 4, 5].forEach(i => {
+        if(i <= rating) {
+            starts += `<i class="fas fa-star"></i>`;
+        }
+
+        else {
+            starts += `<i class="far fa-star"></i>`
+        }
+    });
+
+    return starts;
+}
 
 function showmgs(text){
     const mgs = document.querySelector('.mgs');

@@ -44,11 +44,7 @@ fetch('/search?keyword=' + keyword)
                             <div class="pro1">
                                 <h5>${item.product_name}</h5>
 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                ${getStars(item.average_rating)}
 
                                 <h4>${item.price.toLocaleString("vi-VN")} VNĐ</h4>
                                 <p class="stock ${item.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -134,6 +130,21 @@ fetch('/search?keyword=' + keyword)
         });
     });
 });
+
+function getStars(rating) {
+    let stars = "";
+
+    [1, 2, 3, 4, 5].forEach(i => {
+        if(i <= rating) {
+            stars += `<i class="fas fa-star"></i>`;
+        }
+        else {
+            stars += `<i class="far fa-star"></i>`;
+        }
+    });
+
+    return stars;
+}
 
 function showmgs(text) {
     const mgs = document.querySelector('.mgs');

@@ -108,7 +108,7 @@ cash.addEventListener('click', () =>{
     cash.classList.add("active");
     QR.classList.remove("active");
 
-    pay.style.display = "none";
+    pay.style.display = "block";
 });
 
 QR.addEventListener('click', async () =>{

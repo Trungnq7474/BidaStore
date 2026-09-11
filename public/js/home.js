@@ -125,11 +125,7 @@ async function loadProduct() {
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                ${getStars(product.average_rating)}
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -166,11 +162,7 @@ async function loadBest() {
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                ${getStars(product.average_rating)}
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -241,11 +233,7 @@ applyFilter.addEventListener('click', async function() {
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                ${getStars(product.average_rating)}
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -280,3 +268,19 @@ resetFilter.addEventListener('click', () => {
     loadProduct();
 
 });
+
+function getStars(rating) {
+    let stars = "";
+
+    [1, 2, 3, 4, 5].forEach(i => {
+        if(i <= rating) {
+            stars += `<i class="fas fa-star"></i>`;
+        }
+
+        else {
+            stars += `<i class="far fa-star"></i>`;
+        }
+    });
+
+    return stars;
+}

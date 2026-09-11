@@ -19,7 +19,12 @@ const getproducts = async (req, res) => {
     const product_id = req.params.product_id;
     try {
         const result = await sql.query`
-            SELECT * FROM products WHERE product_id = ${product_id}
+            SELECT p.*, AVG(c.rating) AS average_rating
+            FROM products p
+            LEFT JOIN comments c
+                ON p.product_id = c.product_id
+            WHERE p.product_id = ${product_id}
+            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
         `;
 
         res.json(result.recordset[0]);
@@ -33,7 +38,11 @@ const getproducts = async (req, res) => {
 const getproducts2 = async (req, res) => {
     try {
         const kq = await sql.query`
-            SELECT * FROM products
+            SELECT p.*, AVG(c.rating) AS average_rating
+            FROM products p
+            LEFT JOIN comments c
+                ON p.product_id = c.product_id
+            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
         `;
         res.json(kq.recordset);
     }
@@ -48,7 +57,12 @@ const searchProducts = async (req, res) => {
         const keyword = '%' + (req.query.keyword || "") + '%';
 
         const kq = await sql.query`
-            SELECT * FROM products WHERE product_name LIKE ${keyword}
+            SELECT p.*, AVG(c.rating) AS average_rating
+            FROM products p
+            LEFT JOIN comments c
+                ON p.product_id = c.product_id 
+            WHERE product_name LIKE ${keyword}
+             GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
         `;
 
         res.json(kq.recordset);
@@ -98,7 +112,12 @@ const getProcate = async (req, res) => {
     const cate = req.params.category;
     try {
         const result = await sql.query`
-            SELECT * FROM products WHERE category = ${cate}
+            SELECT p.*, AVG(c.rating) AS average_rating
+            FROM products p
+            LEFT JOIN comments c
+                ON p.product_id = c.product_id
+            WHERE p.category = ${cate}
+            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
         `;
 
         res.json(result.recordset);
@@ -194,12 +213,15 @@ const getTopten = async (req, res) => {
                            oi.image,
                            oi.price,
                            p.stock,
+                           AVG(c.rating) AS average_rating,
             SUM(oi.quantity) AS da_ban
             FROM orderitems oi 
             JOIN orders o
                 ON oi.order_id = o.id
             JOIN products p
                 ON oi.product_name = p.product_name
+            LEFT JOIN comments c
+                ON p.product_id = c.product_id
             WHERE o.status = 'xong'
             GROUP BY
                 p.product_id,

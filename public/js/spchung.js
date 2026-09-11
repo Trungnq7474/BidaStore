@@ -25,11 +25,7 @@ if(brand) {
                                     <div class="pro1">
                                         <h5>${product.product_name}</h5>
 
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                        ${getStars(product.average_rating)}
 
                                         <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
                                         <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -68,11 +64,7 @@ else if (category) {
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                ${getStars(product.average_rating)}
 
                                 <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
@@ -89,4 +81,20 @@ else if (category) {
             `;
         })
     })
+}
+
+function getStars(rating) {
+    let starts = "";
+
+    [1, 2, 3, 4, 5].forEach(i => {
+        if(i <= rating) {
+            starts += `<i class="fas fa-star"></i>`;
+        }
+
+        else {
+            starts += `<i class="far fa-star"></i>`
+        }
+    });
+
+    return starts;
 }
