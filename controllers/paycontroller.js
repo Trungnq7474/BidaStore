@@ -556,10 +556,12 @@ const checkPayment = async (req, res) => {
             return res.json({ success: false});
         }
 
+        const order = result.recordset[0];
+
         res.json({
             success: true,
-            status: result.recordset[0].status,
-            paid: result.recordset[0].bank_name === "Đã Thanh Toán"
+            status: order.status,
+            paid: order.bank_name.includes("Thanh Toán")
         });
     }
 
