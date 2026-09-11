@@ -107,6 +107,8 @@ cash.addEventListener('click', () =>{
 
     cash.classList.add("active");
     QR.classList.remove("active");
+
+    pay.style.display = "none";
 });
 
 QR.addEventListener('click', async () =>{
@@ -165,6 +167,8 @@ QR.addEventListener('click', async () =>{
         }
 
         order_id = result.order_id;
+        
+        pay.style.display = "none";
 
         showQR();
         checkPayment();
@@ -472,11 +476,6 @@ function showQR() {
     qrMoney.innerText = money.toLocaleString('vi-VN') + " VNĐ";
 
     qrCode.style.display = "block";
-}
-
-
-if(location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
-    pay.style.display = "none";
 }
 
 function checkPayment() {

@@ -571,18 +571,15 @@ const sePay = async (req, res) => {
     try {
         const data = req.body;
 
-        const code = data.code;
-        const amount = data.transferAmount;
+        const content = data.content || "";
+        const amount = Number(data.transferAmount);
+        const match = content.match(/ORD-?00(\d+)/);
 
-        if(!code) {
-            return res.send("no code");
+        if(!match) {
+            return res.send("Không tìm thấy mã đơn");
         }
 
-        if(!code.startsWith("ORD-00")) {
-            return res.send("no order");
-        }
-
-        const order_id = code.replace("ORD-00", "");
+        const order_id = match[1];
 
         const result = await sql.query`
             SELECT id, total, status, method
@@ -591,17 +588,21 @@ const sePay = async (req, res) => {
         `;
 
         if(result.recordset.length === 0) {
-            return res.send("order not found");
+            return res.send("Không tìm thấy đơn hàng");
         }
 
         const order = result.recordset[0];
 
         if(order.method !== "QR") {
-            return res.send("not qr");
+            return res.send("Không phải đơn QR");
+        }
+
+        if(order.status !== "cho") {
+            return res.send("Đơn đã được xử lý");
         }
 
         if(amount < order.total) {
-            return res.send("not enough");
+            return res.send("Chưa đủ tiền");
         }
 
         await sql.query`
