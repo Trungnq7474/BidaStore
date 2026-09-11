@@ -76,7 +76,7 @@ window.onload = async function() {
                 <div class="invoice-row"> 
                     <span class="label">
                         <i class="tt fa-solid fa-building-columns"></i> 
-                        <b>Ngân Hàng: 
+                        <b>Ngân Hàng (Shop): 
                             <span class="text">${order.bank_name}</span>
                         </b>
                     </span> 
@@ -85,7 +85,7 @@ window.onload = async function() {
                 <div class="invoice-row"> 
                     <span class="label">
                         <i class="tt fa-solid fa-money-check"></i> 
-                        <b>Số Tài Khoản: 
+                        <b>Số Tài Khoản (Shop): 
                             <span class="text">${order.bank_account}</span>
                         </b>
                     </span> 

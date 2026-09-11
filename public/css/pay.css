@@ -147,7 +147,8 @@ hr {
     color: #495057;
 }
 
-.method button:hover, .method button.active {
+.method button:hover,
+.method button.active {
     background: #0d6efd;
     color: #ffffff;
     border-color: #0d6efd;
@@ -414,100 +415,66 @@ input:focus {
     display: none;
     margin-top: 20px;
     padding: 20px;
-    background: #f8f9fa;
     border: 2px solid #dee2e6;
-    border-radius: 20px;  
+    border-radius: 20px;
 }
 
-.bank-box h3 {
-    margin-top: -2px;
+.qr-code {
+    display: none;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
     text-align: center;
-    color: #343a40;
 }
 
-.banks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+.qr-image {
+    display: block;
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    margin: auto;
+    margin-top: -20px;
 }
 
-.bank {
-    height: 80px;
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 10px;
-    background: #ffffff;
-    cursor: pointer;
+.qr-info {
+    width: 106%;
+    margin-top: 18px;
+    margin-left: -3%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+}
+
+.qr-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: 0.4s ease-in-out;
+    justify-content: space-between;
+    min-height: 50px;
+    gap: 20px;
 }
 
-.bank img {
-    width: 85px;
-    height: 85px;
-    object-fit: contain;
+.qr-border {
+    border-bottom: 1px solid #e0e2e5;
 }
 
-.bank span {
+.qr-info p {
+    margin: 0;
+    color: #575e64;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.qr-info h3 {
+    margin: 0;
+    color: #3d4985;
     font-size: 16px;
-    font-weight: bold;
-    color: #004a94;
+    text-align: right;
 }
 
-.bank:hover {
-    border-color: #0d6efd;
-    background: #f0f6ff;
-    transform: translateY(-3px);
-    transition: 0.4s ease-in-out;
-}
-
-.bank.selected {
-    border: 2px solid #0d6efd;
-    background: #f2f8ff;
-    box-shadow: 0 0px 10px rgba(13, 109, 253, 0.37);
-}
-
-.bank-info {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 2px solid #dee2e6;
-    display: none;
-    flex-direction: column;
-}
-
-.bank-info label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #495057;
-}
-
-.bank-info input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 10px;
-    background: #f8fbff;
-    font-size: 17px;
-    outline: none;
-    transition: 0.3s;
-    font-weight: bold;
-    color: #002c59;
-}
-
-.bank-info .bank-name {
-    background: #f8fbff;
-    color: #240078;
-}
-
-.bank-info .bank-total {
-    background: #f8fbff;
-    color: #185a00;
+.qr-info .qr-money {
+    color: #d00030;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -641,20 +608,6 @@ input:focus {
     .method button {
         font-size: 15px;
         padding: 10px 5px;
-    }
-
-    .bank {
-        padding: 8px;
-        gap: 5px;
-    }
-
-    .bank img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .bank span {
-        font-size: 13px;
     }
 
     .address-box {
@@ -933,31 +886,7 @@ input:focus {
     .bank-box {
         padding: 15px;
     }
-
-    .banks {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-
-    .bank {
-        height: 70px;
-        padding: 5px;
-    }
-
-    .bank img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .bank span {
-        font-size: 12px;
-    }
-
-    .bank-info input {
-        box-sizing: border-box;
-        width: 100%;
-        font-size: 15px;
-    }
+    
 }
 
 @media (max-width: 576px) {
@@ -1020,13 +949,11 @@ input:focus {
         font-size: 16px;
     }
 
-    .text label,
-    .bank-info label {
+    .text label {
         font-size: 13px;
     }
 
-    .text input,
-    .bank-info input {
+    .text input {
         width: 100%;
         box-sizing: border-box;
         padding: 10px;
@@ -1086,24 +1013,6 @@ input:focus {
 
     .bank-box {
         padding: 12px;
-    }
-
-    .bank-box h3 {
-        font-size: 16px;
-    }
-
-    .bank {
-        height: 60px;
-        gap: 3px;
-    }
-
-    .bank img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .bank span {
-        font-size: 10px;
     }
 
     .voucher {
@@ -1190,8 +1099,7 @@ input:focus {
         font-size: 14px;
     }
 
-    .text input,
-    .bank-info input {
+    .text input {
         font-size: 13px;
     }
 
@@ -1234,21 +1142,8 @@ input:focus {
         font-size: 14px;
     }
 
-    .banks {
-        gap: 5px;
-    }
-
-    .bank {
-        height: 55px;
-    }
-
-    .bank img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .bank span {
-        font-size: 9px;
+    .bank-box {
+        padding: 10px;
     }
 
     .voucher {
@@ -1331,8 +1226,7 @@ input:focus {
         font-size: 13px;
     }
 
-    .text input,
-    .bank-info input {
+    .text input {
         font-size: 12px;
     }
 
@@ -1383,13 +1277,8 @@ input:focus {
         font-size: 20px;
     }
 
-    .bank img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .bank span {
-        font-size: 8px;
+    .bank-box {
+        padding: 8px;
     }
 
     .voucher {

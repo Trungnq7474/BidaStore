@@ -3,16 +3,15 @@ const QR = document.querySelector('.QR');
 const text = document.querySelector('.text');
 
 const bankBox = document.querySelector('.bank-box');
-const banks = document.querySelectorAll('.bank');
-const bankInfo = document.querySelector('.bank-info');
 
-const bankName = document.querySelector('.bank-name');
-const bankAccount = document.querySelector('.bank-account');
-const bankTotal = document.querySelector('.bank-total');
+const qrCode = document.querySelector('.qr-code');
+const qrImage = document.querySelector('.qr-image');
+const qrMoney = document.querySelector('.qr-money');
 
 let method = "COD";
 let total = 0;
 let product_id = null;
+const shopAccount = "1031258532";
 let selectedVoucher = null;
 let discount = 0;
 const c = document.querySelector('.c');
@@ -117,24 +116,8 @@ QR.addEventListener('click', () =>{
 
     QR.classList.add("active");
     cash.classList.remove("active");
-});
 
-banks.forEach(bank => {
-    bank.addEventListener('click', () => {
-        banks.forEach(item => {
-            item.classList.remove("selected");
-        });
-
-        bank.classList.add("selected");
-
-        const nameBank = bank.dataset.bank;
-
-        bankName.value = nameBank;
-        bankTotal.value = (total + 30000 - discount).toLocaleString('vi-VN') + " VNĐ";
-
-        bankInfo.style.display = "block";
-    });
-
+    showQR();
 });
 
 async function loadVouchers() {
@@ -213,7 +196,10 @@ async function loadVouchers() {
 
             const ship = 30000;
             c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
-            bankTotal.value = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ"
+
+            if(method === "QR") {
+                showQR();
+            }
         });
     });
 }
@@ -325,8 +311,6 @@ async function loadPay() {
     const ship = 30000;
     c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
 
-    bankTotal.value = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
-
     loadVouchers();
 }
 
@@ -344,20 +328,6 @@ pay.addEventListener('click', async (e) => {
         show("Bạn Không Được Phép Để Trống ! ");
         return;
     }
-
-    if(method === "QR") {
-        if(!bankName.value) {
-            show("Bạn Vui Lòng Chọn Ngân Hàng !");
-            return;
-        }
-        
-        if(bankAccount.value.trim() === "") {
-            show("Bạn Vui Lòng Nhập Số Tài Khoản !");    
-            return;  
-        }
-    }
-
-    
 
     const resUser = await fetch('/get-user');
     const dataUser = await resUser.json();
@@ -381,8 +351,8 @@ pay.addEventListener('click', async (e) => {
             subtotal: total,
             total: total + ship- discount,
             voucher_id: selectedVoucher ? selectedVoucher.id : null,
-            bank_name: bankName.value,
-            bank_account: bankAccount.value
+            bank_name: method === "QR" ? "Vietcombank" : "",
+            bank_account: method === "QR" ? shopAccount : ""
         })
     });
 
@@ -419,6 +389,7 @@ pay.addEventListener('click', async (e) => {
         document.querySelector(".address").value = "";
         document.querySelector(".email").value = "";
         total = 0;
+
         document.querySelector('.tp').innerHTML = "";
         document.querySelector('.a').innerText = "0 VNĐ";
         document.querySelector('.c').innerText = "0 VNĐ";
@@ -430,19 +401,23 @@ pay.addEventListener('click', async (e) => {
         cash.classList.add("active");
         QR.classList.remove("active");
 
-        banks.forEach(bank => {
-            bank.classList.remove("selected");
-        });
-
-        bankInfo.style.display = "none";
-
-        bankName.value = "";
-        bankAccount.value = "";
-        bankTotal.value = "";
+        qrCode.style.display = "none";
+        qrImage.src = "";
 
         window.location.href = `/sucess.html?order_id=${result.order_id}`;
     }
 });
+
+function showQR() {
+    const money = total + 30000 - discount;
+
+    qrImage.src = "https://img.vietqr.io/image/MB-92079112345555-compact.png";
+
+   
+    qrMoney.innerText = money.toLocaleString('vi-VN') + " VNĐ";
+
+    qrCode.style.display = "block";
+}
 
 function show(text) {
     const mgs = document.querySelector('.mgs');
