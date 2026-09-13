@@ -174,7 +174,7 @@ fetch('/getallorders')
                 `;
             });
             
-            document.querySelector('.id').innerText = `ORD-00${order.id}`
+            document.querySelector('.invoice-box .id').innerText = `ORD-00${id}`
             document.querySelector('.name').innerText = order.name_receive;
             document.querySelector('.email').innerText = order.email;
             document.querySelector('.phone').innerText = order.phone;
@@ -207,17 +207,37 @@ fetch('/getallorders')
             document.querySelector('.price').innerText = order.total.toLocaleString('vi-VN') + " VNĐ";
             document.querySelector('.phone').innerText = order.phone;
 
+            const shippingMethod = document.querySelector('.shipping-method');
+            const shippingFee = document.querySelector('.shipping-fee');
             const voucherRow = document.querySelector('.voucher-row');
             const voucherCode = document.querySelector('.voucher-code');
             const voucherDiscount = document.querySelector('.voucher-discount');
+            const voucherMinus = document.querySelector('.voucher-minus');
+
+            let productTotal = 0;
+
+            items.forEach(item => {
+                productTotal += item.price * item.quantity;
+            });
+
+            document.querySelector('.product-total').innerText =
+                productTotal.toLocaleString('vi-VN') + " VNĐ";
+
+            if(order.shipping === 30000) {
+                shippingMethod.innerText = "Giao Hàng Tiêu Chuẩn";
+                shippingFee.innerText = "30.000 VNĐ";
+            }
+            else if(order.shipping === 50000) {
+                shippingMethod.innerText = "Giao Hàng Nhanh";
+                shippingFee.innerText = "50.000 VNĐ";
+            }
+            else {
+                shippingMethod.innerText = "Miễn Phí Giao Hàng";
+                shippingFee.innerText = "Miễn Phí";
+            }
 
             if(order.voucher) {
                 let discount = 0;
-                let productTotal = 0;
-
-                items.forEach(item => {
-                    productTotal += item.price * item.quantity;
-                });
 
                 if(order.voucher.type === "percent") {
                     discount = productTotal * order.voucher.value / 100;
@@ -229,7 +249,8 @@ fetch('/getallorders')
 
                 voucherCode.innerText = order.voucher.code;
                 voucherDiscount.innerText = discount.toLocaleString('vi-VN') + " VNĐ";
-
+                voucherMinus.innerText = "- " + discount.toLocaleString('vi-VN') + " VNĐ";
+                
                 voucherRow.style.display = "flex";
             }
 

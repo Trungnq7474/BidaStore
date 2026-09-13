@@ -38,10 +38,57 @@
             <div class="voucher-list"></div>
         </div>
             
-            <div class="payment">
-                <p>Đơn Hàng<span class="a"></span></p>
-                <p>Phí Ship<span class="b">30.000 VNĐ</span></p>
-                <p>Tổng Đơn Hàng<span class="c">30.000 VNĐ</span></p>
+        <div class="shipping"> 
+            <h3><i class="fa-solid fa-truck-fast"></i> Phương Thức Giao Hàng</h3> 
+
+            <label class="shipping-option"> 
+                <div class="shipping-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <div class="shipping-info"> 
+                    <strong>Giao Hàng Tiêu Chuẩn</strong> 
+                    <span>30.000 VNĐ</span> 
+                </div>
+
+                <input type="radio" name="shipping" value="30000" checked> 
+            </label> 
+
+            <label class="shipping-option"> 
+                <div class="shipping-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div class="shipping-info"> 
+                    <strong>Giao Hàng Nhanh</strong> 
+                    <span>50.000 VNĐ</span> 
+                </div>
+
+                <input type="radio" name="shipping" value="50000"> 
+            </label> 
+
+            <label class="shipping-option"> 
+                <div class="shipping-icon">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+
+                <div class="shipping-info"> 
+                    <strong>Miễn Phí Giao Hàng</strong> 
+                    <span>Đơn Từ 2.000.000 VNĐ</span> 
+                </div>
+
+                <input type="radio" name="shipping" value="0" class="free-shipping" disabled> 
+            </label> 
+        </div>
+
+            <div class="payment"> 
+                <p>Đơn Hàng<span class="a"></span></p> 
+                <p>Phí Ship<span class="b"></span></p> 
+                <p class="voucher-discount-row">
+                    <span class="voucher-discount-name"></span>
+                    <span class="d"></span>
+                </p>
+                <p>Tổng Đơn Hàng<span class="c"></span></p> 
             </div>
         </div>
 

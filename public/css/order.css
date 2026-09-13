@@ -111,8 +111,10 @@ select.huy{
     margin-bottom: 30px;
     box-shadow: 0 20px 40px rgba(12, 12, 12, 0.296);
     width: 42%;
+    height: 650px;
+    overflow-y: auto;
     margin-left: 35%;
-    margin-top: 2px;
+    margin-top: 25px;
     animation: showw 0.5s ease-in-out;
 }
 
@@ -153,8 +155,8 @@ select.huy{
 }
 
 .invoice-row {
-    margin-bottom: 16px;
-    font-size: 16px;
+    margin-bottom: 20px;
+    font-size: 19px;
 }
 
 .invoice-row .label {
@@ -162,7 +164,7 @@ select.huy{
 }
 
 .invoice-row .tt {
-    font-size: 18px;
+    font-size: 19px;
     width: 31px;
     color: #7c3aed;
 }
@@ -225,10 +227,49 @@ select.huy{
 }
 
 .invoice-roww {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     color: #64748b;
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
+}
+
+.invoice-roww .label {
+    color: #64748b;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.invoice-roww i {
+    font-size: 23px;
+    color:#64748b;
+}
+
+.invoice-roww .text {
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.voucher-row .voucher-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.voucher-row .voucher-code {
+    margin-left: 0;
+}
+
+.voucher-minus {
+    color: #64748b;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .total-row {
@@ -298,6 +339,9 @@ select.huy{
 
     .invoice-box {
         width: 48%;
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
         margin-left: auto;
         margin-right: auto;
         padding: 18px;
@@ -346,10 +390,62 @@ select.huy{
 
     .invoice-roww {
         font-size: 16px;
+        gap: 10px;
+        margin-top: 13px;
+    }
+
+    .invoice-roww .label {
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .invoice-roww i {
+        font-size: 21px;
+        flex-shrink: 0;
+    }
+
+    .invoice-roww .text {
+        white-space: nowrap;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 10px;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 8px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 16px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 15px;
+        gap: 10px;
+        margin-top: 13px;
+        padding-top: 13px;
     }
 
     .total-row .tong {
@@ -358,6 +454,7 @@ select.huy{
 
     .total-row .price {
         font-size: 20px;
+        white-space: nowrap;
     }
 }
 
@@ -393,6 +490,9 @@ select.huy{
 
     .invoice-box {
         width: 55%;
+        height: auto;
+        max-height: 82vh;
+        overflow-y: auto;
         padding: 16px;
         margin-left: auto;
         margin-right: auto;
@@ -451,10 +551,58 @@ select.huy{
 
     .invoice-roww {
         font-size: 14px;
+        gap: 8px;
+        margin-top: 11px;
+    }
+
+    .invoice-roww .label {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .invoice-roww i {
+        font-size: 19px;
+        flex-shrink: 0;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 8px;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 7px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 14px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 13px;
+        gap: 8px;
+        margin-top: 11px;
+        padding-top: 11px;
     }
 
     .total-row .tong {
@@ -463,6 +611,7 @@ select.huy{
 
     .total-row .price {
         font-size: 18px;
+        white-space: nowrap;
     }
 
     .econ {
@@ -510,6 +659,9 @@ select.huy{
     .invoice-box {
         width: 70%;
         max-width: 500px;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: auto;
         padding: 14px;
         margin-left: auto;
         margin-right: auto;
@@ -586,11 +738,61 @@ select.huy{
 
     .invoice-roww {
         font-size: 12px;
+        gap: 6px;
         margin-top: 10px;
+    }
+
+    .invoice-roww .label {
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .invoice-roww i {
+        font-size: 17px;
+        flex-shrink: 0;
+    }
+
+    .invoice-roww .text {
+        white-space: nowrap;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 5px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 11px;
+        gap: 6px;
         margin-top: 10px;
         padding-top: 10px;
     }
@@ -601,6 +803,7 @@ select.huy{
 
     .total-row .price {
         font-size: 16px;
+        white-space: nowrap;
     }
 
     .econ {
@@ -638,6 +841,9 @@ select.huy{
     .invoice-box {
         width: 78%;
         max-width: 420px;
+        height: auto;
+        max-height: 78vh;
+        overflow-y: auto;
         padding: 12px;
         margin-top: 8px;
         margin-bottom: 20px;
@@ -699,11 +905,55 @@ select.huy{
 
     .invoice-roww {
         font-size: 11px;
+        gap: 5px;
         margin-top: 8px;
+    }
+
+    .invoice-roww .label {
+        gap: 5px;
+        min-width: 0;
+    }
+
+    .invoice-roww i {
+        font-size: 15px;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 5px;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 4px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.3;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 11px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 10px;
+        gap: 5px;
         padding-top: 8px;
         margin-top: 8px;
     }
@@ -714,6 +964,7 @@ select.huy{
 
     .total-row .price {
         font-size: 14px;
+        white-space: nowrap;
     }
 
     .econ {
@@ -749,6 +1000,9 @@ select.huy{
 
     .invoice-box {
         width: 84%;
+        height: auto;
+        max-height: 76vh;
+        overflow-y: auto;
         padding: 10px;
         border-radius: 9px;
     }
@@ -791,10 +1045,56 @@ select.huy{
 
     .invoice-roww {
         font-size: 10px;
+        gap: 4px;
+        margin-top: 7px;
+    }
+
+    .invoice-roww .label {
+        gap: 4px;
+    }
+
+    .invoice-roww i {
+        font-size: 14px;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 4px;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 3px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.3;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 9px;
+        gap: 4px;
+        margin-top: 7px;
+        padding-top: 7px;
     }
 
     .total-row .tong {
@@ -803,6 +1103,7 @@ select.huy{
 
     .total-row .price {
         font-size: 13px;
+        white-space: nowrap;
     }
 
     .econ {
@@ -838,6 +1139,9 @@ select.huy{
 
     .invoice-box {
         width: 88%;
+        height: auto;
+        max-height: 74vh;
+        overflow-y: auto;
         padding: 8px;
         border-radius: 8px;
     }
@@ -880,10 +1184,56 @@ select.huy{
 
     .invoice-roww {
         font-size: 9px;
+        gap: 3px;
+        margin-top: 6px;
+    }
+
+    .invoice-roww .label {
+        gap: 3px;
+    }
+
+    .invoice-roww i {
+        font-size: 13px;
+    }
+
+    .shipping-method,
+    .shipping-fee,
+    .product-total {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .voucher-row {
+        gap: 3px;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 3px;
+        min-width: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        line-height: 1.2;
+    }
+
+    .voucher-row .voucher-code {
+        margin-left: 0;
+    }
+
+    .voucher-row .voucher-discount {
+        white-space: nowrap;
+    }
+
+    .voucher-minus {
+        font-size: 9px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .total-row {
         font-size: 8px;
+        gap: 3px;
+        margin-top: 6px;
+        padding-top: 6px;
     }
 
     .total-row .tong {
@@ -892,6 +1242,7 @@ select.huy{
 
     .total-row .price {
         font-size: 12px;
+        white-space: nowrap;
     }
 
     .econ {

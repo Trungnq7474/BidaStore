@@ -3,7 +3,7 @@ const { sql } = require('../config/db');
 
 //TẠO ĐƠN HÀNG MỚI
 const createOrder = async (req, res) => {
-    const { user_id, name_receive, email, phone, address, method, total, subtotal, product_id, bank_name, bank_account, voucher_id } = req.body;
+    const { user_id, name_receive, email, phone, address, method, shipping, total, subtotal, product_id, bank_name, bank_account, voucher_id } = req.body;
     
     try {
 
@@ -40,9 +40,9 @@ const createOrder = async (req, res) => {
 
         //TẠO ĐƠN HÀNG
         const result = await sql.query`
-            INSERT INTO orders (user_id, name_receive, email, phone, address, total, method, bank_name, bank_account,voucher_id)
+            INSERT INTO orders (user_id, name_receive, email, phone, address, total, method, shipping, bank_name, bank_account,voucher_id)
             OUTPUT INSERTED.id
-            VALUES (${user_id}, ${name_receive}, ${email}, ${phone}, ${address}, ${total}, ${method}, ${bank_name}, ${bank_account}, ${voucher_id})
+            VALUES (${user_id}, ${name_receive}, ${email}, ${phone}, ${address}, ${total}, ${method}, ${shipping}, ${bank_name}, ${bank_account}, ${voucher_id})
         `;
         const order_id = result.recordset[0].id;
 

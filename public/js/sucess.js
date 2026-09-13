@@ -101,22 +101,41 @@ window.onload = async function() {
                 ${productList}
             </div>
 
-            <div class="invoice-roww" style="margin-top: 10px; margin-bottom: 15px;">
-                <span class="label">Phí vận chuyển: 30.000 VNĐ</span>
+            <div class="invoice-roww" style="margin-top: 15px;">
+                <span class="label"><i class="fa-solid fa-money-check-dollar"></i>Phương Thức Giao Hàng:</span>
+                <span class="text">
+                    ${order.shipping === 30000 ? "Giao Hàng Tiêu Chuẩn" : order.shipping === 50000 ? "Giao Hàng Nhanh" : "Miễn Phí Giao Hàng"}
+                </span>
             </div>
 
-           ${voucher ? `
-                <div class="invoice-roww">
-                    <i class="fa-solid fa-ticket-simple"></i>
+            <div class="invoice-roww" style="margin-top: 15px;">
+                <span class="label"><i class="fa-solid fa-coins"></i>Tổng Đơn Hàng:</span>
+                <span class="text">${productTotal.toLocaleString('vi-VN')} VNĐ</span>
+            </div>
+
+            <div class="invoice-roww" style="margin-top: 15px;">
+                <span class="label"><i class="fa-solid fa-money-bill-transfer"></i>Phí Vận Chuyển:</span>
+                <span class="text">
+                    ${order.shipping === 0 ? "Miễn Phí" : order.shipping.toLocaleString('vi-VN') + " VNĐ"}
+                </span>
+            </div>
+
+           ${voucher ? ` 
+                <div class="invoice-roww" style="margin-top: 15px;">
                     <span class="label">
-                        Voucher: ${voucher.code}
-                        (Giảm: ${
-                            voucher.type === "percent"
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        Voucher: ${voucher.code} 
+                        (Giảm: ${voucher.type === "percent"
                             ? (productTotal * voucher.value / 100).toLocaleString('vi-VN')
-                            : voucher.value.toLocaleString('vi-VN')
-                        } VNĐ)
+                            : voucher.value.toLocaleString('vi-VN')} VNĐ)
                     </span>
-                </div>
+
+                    <span class="text">
+                        - ${voucher.type === "percent"
+                            ? (productTotal * voucher.value / 100).toLocaleString('vi-VN')
+                            : voucher.value.toLocaleString('vi-VN')} VNĐ
+                    </span>
+                </div> 
             ` : ""}
             
             <div class="total-row">

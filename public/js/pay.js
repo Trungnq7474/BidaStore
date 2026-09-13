@@ -15,7 +15,14 @@ let order_id = null;
 const shopAccount = "92079112345555";
 let selectedVoucher = null;
 let discount = 0;
+let shipping = 30000;
+const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+const freeShipping = document.querySelector('.free-shipping');
+const shipText = document.querySelector('.b');
 const c = document.querySelector('.c');
+const d = document.querySelector('.d');
+const voucherDiscountName = document.querySelector('.voucher-discount-name');
+const voucherDiscountRow = document.querySelector('.voucher-discount-row');
 const address = document.querySelector('.address');
 const changeAddress = document.querySelector('.change-address');
 const addressSuggestions = document.querySelector('.address-suggestions');
@@ -78,6 +85,38 @@ changeAddress.addEventListener('click', () => {
     });
 });
 
+shippingOptions.forEach(option => {
+    option.addEventListener('change', () => {
+        shipping = Number(option.value);
+
+        if(shipping === 0) {
+            shipText.innerText = "Miễn Phí";
+        }
+
+        else {
+            shipText.innerText = shipping.toLocaleString('vi-VN') + " VNĐ";
+        }
+
+        c.innerText = (total + shipping - discount).toLocaleString('vi-VN') + " VNĐ";
+    });
+});
+
+function checkFreeShip() {
+    if(total >= 2000000) {
+        freeShipping.disabled = false;
+    }
+
+    else {
+        freeShipping.disabled = true;
+        if(freeShipping.checked) {
+            document.querySelector('input[name="shipping"][value="30000"]').checked = true;
+            shipping = 30000;
+            shipText.innerText = "30.000 VNĐ";
+            c.innerText = (total + shipping - discount).toLocaleString('vi-VN') + " VNĐ";
+        }
+    }
+}
+
 function getImageUrl(image) {
     if (!image) return "";
 
@@ -135,8 +174,6 @@ QR.addEventListener('click', async () =>{
         const resUser = await fetch('/get-user');
         const dataUser = await resUser.json();
 
-        const ship = 30000;
-
         const res = await fetch('/createorder', {
             method: 'POST',
             headers: {
@@ -152,7 +189,8 @@ QR.addEventListener('click', async () =>{
                 method: "QR",
                 product_id: product_id,
                 subtotal: total,
-                total: total + ship - discount,
+                shipping: shipping,
+                total: total + shipping - discount,
                 voucher_id: selectedVoucher ? selectedVoucher.id : null,
                 bank_name: "MB Bank",
                 bank_account: shopAccount
@@ -253,8 +291,11 @@ async function loadVouchers() {
             
             reDuce();
 
-            const ship = 30000;
-            c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
+            voucherDiscountName.innerText = `Voucher ${selectedVoucher.code}`;
+            d.innerText = "- " + discount.toLocaleString('vi-VN') + " VNĐ";
+
+            voucherDiscountRow.style.display = "flex";
+            c.innerText = (total + shipping - discount).toLocaleString('vi-VN') + " VNĐ";
 
             if(method === "QR" && order_id) {
                 showQR();
@@ -266,6 +307,7 @@ async function loadVouchers() {
 function reDuce() {
     if(!selectedVoucher) {
         discount = 0;
+        d.innerText = "0 VNĐ";
         return;
     }
 
@@ -367,8 +409,17 @@ async function loadPay() {
     // Hiển thị tổng tiền
 
     a.innerText = total.toLocaleString('vi-VN') + " VNĐ";
-    const ship = 30000;
-    c.innerText = (total + ship - discount).toLocaleString('vi-VN') + " VNĐ";
+    checkFreeShip();
+
+    if(shipping === 0) {
+        shipText.innerText = "Miễn Phí";
+    }
+
+    else {
+        shipText.innerText = shipping.toLocaleString('vi-VN') + " VNĐ";
+    }
+
+    c.innerText = (total + shipping - discount).toLocaleString('vi-VN') + " VNĐ";
 
     loadVouchers();
 }
@@ -391,8 +442,6 @@ pay.addEventListener('click', async (e) => {
     const resUser = await fetch('/get-user');
     const dataUser = await resUser.json();
 
-    const ship = 30000;
-
     const res = await fetch('/createorder', {
         method: 'POST',
         headers: {
@@ -408,7 +457,8 @@ pay.addEventListener('click', async (e) => {
             method: method,
             product_id: product_id,
             subtotal: total,
-            total: total + ship- discount,
+            shipping: shipping,
+            total: total + shipping - discount,
             voucher_id: selectedVoucher ? selectedVoucher.id : null,
             bank_name: method === "QR" ? "MB Bank" : "",
             bank_account: method === "QR" ? shopAccount : ""
@@ -468,7 +518,7 @@ pay.addEventListener('click', async (e) => {
 });
 
 function showQR() {
-    const money = total + 30000 - discount;
+    const money = total + shipping - discount;
 
     qrImage.src = `https://img.vietqr.io/image/MB-92079112345555-compact.png?amount=${money}&addInfo=ORD-00${order_id}`;
 
