@@ -34,46 +34,6 @@ document.addEventListener('click', async (e) => {
         const email = e.target.closest('.email-link').innerText;
         const isRead = row.dataset.filter === "da";
 
-        if(!isRead) {
-            const res = await fetch('/replycontact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json'
-                },
-                body: JSON.stringify({
-                    id
-                })
-            });
-
-            const data = await res.text();
-
-            if(data === "ok") {
-                await fetch('/readcontact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-
-                    body: JSON.stringify({
-                        id
-                    })
-                })
-
-                row.children[5].innerHTML = `
-                    <span class="done">Đã đọc</span>
-                `;
-
-                row.dataset.filter = "da";
-
-                show("Đã Gửi Email Phản Hồi Thành Công !");
-            }
-
-            else {
-                show("Gửi Email Thất Bại !");
-            }
-            return;
-        }
-
         const name = row.querySelector('.user').innerText;
         const message = row.querySelector('.des').innerText;
 
@@ -99,6 +59,27 @@ document.addEventListener('click', async (e) => {
         const gmailUrl = `https://mail.google.com/mail/u/1/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         window.open(gmailUrl, '_blank');
+
+        if(!isRead) {
+            await fetch('/readcontact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    id
+                })
+            });
+
+            row.children[5].innerHTML = `
+                <span class="done">Đã đọc</span>
+            `;
+
+            row.dataset.filter = "da";
+
+            show("Đã Mở Gmail Để Trả Lời Liên Hệ !");
+        }
 
     }
 });
