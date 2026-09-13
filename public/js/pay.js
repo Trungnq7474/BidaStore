@@ -53,10 +53,10 @@ changeAddress.addEventListener('click', () => {
 
         addressSuggestions.innerHTML +=`
             <div class="address-suggestion" data-id="${item.address_id}">
-                <strong>${item.name}</strong>
-                ${item.is_default ? "<span>Mặc Định</span>" : ""}
-                <p>${item.phone}</p>
-                <p>${text}</p>
+                <strong><i class="fa-solid fa-id-card"></i> ${item.name}</strong>
+                ${item.is_default ? `<span><i class="fa-solid fa-house-chimney-user"></i> Mặc Định</span>` : ""}
+                <p><i class="fa-solid fa-phone-volume"></i> ${item.phone}</p>
+                <p><i class="fa-solid fa-map-pin"></i> ${text}</p>
             </div>
         `;
     });

@@ -449,12 +449,12 @@ async function getAddress() {
                 <div class="address-item">
                     <div class="address-content">
                         <div class="address-top">
-                            <strong>${item.name}</strong>
-                            ${item.is_default ? `<span class="default-tag">Mặc Định</span>` : "" }
+                            <strong><i class="fa-solid fa-id-card"></i> ${item.name}</strong>
+                            ${item.is_default ? `<span class="default-tag"><i class="fa-solid fa-house-chimney-user"></i> Mặc Định</span>` : "" }
                         </div>
 
-                        <p>${item.phone}</p>
-                        <p>${item.address_detail}, ${item.ward}, ${item.city}</p>
+                        <p><i class="fa-solid fa-phone-volume"></i> ${item.phone}</p>
+                        <p><i class="fa-solid fa-map-pin"></i> ${item.address_detail}, ${item.ward}, ${item.city}</p>
                     </div>
 
                     <div class="address-action">

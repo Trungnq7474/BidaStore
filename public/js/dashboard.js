@@ -176,4 +176,47 @@ fetch('/gettopproduct')
         });
     });
 
+    const recentOrderList = document.querySelector('.recent-order-list');
+    
+    fetch('/getrecentorder')
+        .then(res => res.json())
+        .then(data => {
+            recentOrderList.innerHTML = "";
+
+            data.forEach(item => {
+                let status = "";
+                let statusClass = "";
+
+                if(item.status === "cho") {
+                    status = "Đã Đặt";
+                    statusClass = "status-cho";
+                }
+
+                if(item.status === "dang") {
+                    status = "Đang Giao";
+                    statusClass = "status-dang";
+                }
+
+                if(item.status === "xong") {
+                    status = "Đã Giao";
+                    statusClass = "status-xong";
+                }
+
+                if(item.status === "huy") {
+                    status = "Đã Hủy";
+                    statusClass = "status-huy";
+                }
+
+                recentOrderList.innerHTML +=`
+                     <tr>
+                        <td class="order-id">ORD-00${item.id}</td>
+                        <td class="customer-name">${item.name_receive}</td>
+                        <td class="order-total">${item.total.toLocaleString('vi-VN')} VNĐ</td>
+                        <td><span class="order-status ${statusClass}">${status}</span></td>
+                        <td class="order-date">${item.created_at.replace("T", " ").slice(0, 16)}</td>
+                    </tr>
+                `;
+            });
+        });
+
     

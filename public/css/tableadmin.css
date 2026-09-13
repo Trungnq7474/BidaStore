@@ -19,15 +19,18 @@ table{
 table th{
     background: #2563eb;
     color: white;
+    font-size: 18px;
     padding: 15px;
     text-align: center;
 }
 
 table td{
+    color: #1f2937;
     font-size: 17px;
     padding: 15px;
+    font-weight: bold;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 table img{
@@ -35,6 +38,62 @@ table img{
     height: 120px;
     border-radius: 10px;
     background-color: hsl(0, 0%, 90%);
+}
+
+table .id {
+    color: #2563eb;
+}
+
+table .spp {
+    color: #062a77;
+}
+
+table .prices {
+    color: rgb(177, 0, 0);
+}
+
+table .num {
+    color: #7c2275;
+}
+
+table .des {
+    color: blue;
+}
+
+table .user {
+    color: #374151;
+}
+
+table .hour {
+    color: #6b7280;
+}
+
+table .cod {
+    color: #d20000;;
+}
+
+table .qr {
+    color: #00647d;
+}
+
+table .discount-percent {
+    color: #875fc0;
+}
+
+table .discount-money {
+    color: #b45309;
+}
+
+table .call {
+    color: #0369a1;
+}
+
+table .role-admin {
+    color: #be0000;
+}
+
+table .role-user {
+    color: #2f4a36;
 }
 
 

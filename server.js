@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express'); //tạo server + API//
 const session = require('express-session'); //dùng để: lưu trạng thái đăng nhập (ai đang login)//
 const app = express(); // tạo website

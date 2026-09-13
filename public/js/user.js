@@ -13,12 +13,14 @@ fetch('/users')
              userList.innerHTML +=
             `
                 <tr data-filter="${user.role}">
-                    <td>USR-00${user.id}</td>
-                    <td><div class="name"><div class="picture">${picture}</div> <span class="username">${user.username}</span></td>
+                    <td class="id">USR-00${user.id}</td>
+                    <td><div class="name"><div class="picture">${picture}</div> <span class="user">${user.username}</span></td>
                     <td><a href="http://mail.google.com/mail/?view=cm&fs=1&to=${user.email}" class="email-link" target="_blank">${user.email}</a></td>
-                    <td>${user.phone}</td>
-                    <td><b>${user.role}</b></td>
-                    <td>${user.created_at.replace("T", " ").slice(0, 16)}</td>
+                    <td class="call">${user.phone}</td>
+                    <td class="${user.role === "admin" ? "role-admin" : "role-user"}">
+                        ${user.role}
+                    </td>
+                    <td class="hour">${user.created_at.replace("T", " ").slice(0, 16)}</td>
                     <td><button class="delete" data-id="${user.id}"><i class="fa-solid fa-trash-can"></i> Xóa</button>
                     </td>
                 </tr>
@@ -30,7 +32,7 @@ document.addEventListener('click', function(e){
     if(e.target.closest('.delete')) {
         now = e.target.closest('tr');
         const id = now.querySelector('.delete').dataset.id;
-        const name = now.querySelector('.username').innerText;
+        const name = now.querySelector('.user').innerText;
 
         const box = document.querySelector('.confirm-box2');
         const yes = document.querySelector('.yes2');

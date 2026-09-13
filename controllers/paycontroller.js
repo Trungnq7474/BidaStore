@@ -177,6 +177,28 @@ const getAllOrders = async (req, res) => {
     }
 }
 
+const getRecentOrder = async (req, res) => {
+    try {
+        const result = await sql.query`
+            SELECT TOP 7
+                id,
+                name_receive,
+                total,
+                status,
+                created_at
+            FROM orders
+            ORDER BY created_at DESC
+        `;
+
+        res.json(result.recordset);
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+    
+}
+
 // XÓA ĐƠN HÀNG
 const deleteOrder = async (req, res) => {
     const {id} = req.body;
@@ -619,4 +641,4 @@ const sePay = async (req, res) => {
 };
  
 
-module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay };
+module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getRecentOrder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay };

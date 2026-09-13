@@ -8,15 +8,15 @@ fetch('/getcontact')
             constactList.innerHTML += `
 
                 <tr data-id="${contact.id}" data-filter="${contact.is_read ? 'da' : 'chua'}">
-                    <td>FBK-00${contact.id}</td>
-                    <td>${contact.name}</td>
+                    <td class="id">FBK-00${contact.id}</td>
+                    <td class="user">${contact.name}</td>
                     <td>
-                        <a href="http://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}" target="_blank" class="email-link">${contact.email}</a>
+                        <a href="#" class="email-link">${contact.email}</a>
                     </td>
-                    <td>${contact.phone}</td>
-                    <td><b>${contact.mess}</b></td>
+                    <td class="call">${contact.phone}</td>
+                    <td class="des">${contact.mess}</td>
                     <td><span class="${contact.is_read ? 'done' : 'new'}"> ${contact.is_read ? 'Đã Đọc' : 'Chưa Đọc'}</span></td>
-                    <td>${contact.created_at.replace("T", " ").slice(0, 16)}</td>
+                    <td class="hour">${contact.created_at.replace("T", " ").slice(0, 16)}</td>
                     <td>
                         <button class="delete" data-id="${contact.id}"><i class="fa-solid fa-trash-can"></i> Xóa</button>
                     </td>
@@ -27,25 +27,79 @@ fetch('/getcontact')
 
 document.addEventListener('click', async (e) => {
     if(e.target.closest('.email-link')) {
+        e.preventDefault();
+
         const row = e.target.closest('tr');
         const id = row.dataset.id;
+        const email = e.target.closest('.email-link').innerText;
+        const isRead = row.dataset.filter === "da";
 
-        await fetch('/readcontact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+        if(!isRead) {
+            const res = await fetch('/replycontact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({
+                    id
+                })
+            });
 
-            body: JSON.stringify({
-                id
-            })
-        })
+            const data = await res.text();
 
-        row.children[5].innerHTML = `
-            <span class="done">Đã đọc</span>
-        `;
+            if(data === "ok") {
+                await fetch('/readcontact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
 
-        row.dataset.filter = "da";
+                    body: JSON.stringify({
+                        id
+                    })
+                })
+
+                row.children[5].innerHTML = `
+                    <span class="done">Đã đọc</span>
+                `;
+
+                row.dataset.filter = "da";
+
+                show("Đã Gửi Email Phản Hồi Thành Công !");
+            }
+
+            else {
+                show("Gửi Email Thất Bại !");
+            }
+            return;
+        }
+
+        const name = row.querySelector('.user').innerText;
+        const message = row.querySelector('.des').innerText;
+
+        const subject = "Phản Hồi Liên Hệ Từ BidaStore";
+
+        const body = `Xin Chào ${name} ! 😊😊
+
+
+        💙 𝗕𝗜𝗗𝗔 𝗦𝗧𝗢𝗥𝗘
+
+        𝗖ả𝗺 Ơ𝗻 𝗕ạ𝗻 Đã 𝗟𝗶ê𝗻 𝗛ệ 𝗩ớ𝗶 𝗕𝗶𝗱𝗮𝗦𝘁𝗼𝗿𝗲 !
+        📩 𝗡ộ𝗶 𝗗𝘂𝗻𝗴 𝗧𝗶𝗻 𝗡𝗵ắ𝗻 𝗖ủ𝗮 𝗕ạ𝗻:
+
+        💌 ${message}
+
+        Cảm Ơn Bạn Đã Liên Hệ Với BidaStore ! 💕 😊
+
+
+        Trân Trọng,
+
+        💙 BidaStore`;
+
+        const gmailUrl = `https://mail.google.com/mail/u/1/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.open(gmailUrl, '_blank');
+
     }
 });
 

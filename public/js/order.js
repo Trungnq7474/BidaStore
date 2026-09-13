@@ -59,11 +59,11 @@ fetch('/getallorders')
         data.forEach(order => {
             orderList.innerHTML += `
                 <tr data-filter="${order.method === "COD" ? "cod" : "qr"} ${order.status}">
-                    <td>ORD-00${order.id}</td>
-                    <td>${order.name_receive}</td>
-                    <td>${order.total.toLocaleString('vi-VN')} VNĐ</td>
-                    <td>${order.created_at.replace("T", " ").slice(0,16)}</td>
-                    <td><b>${order.method}</b></td>
+                    <td class="id">ORD-00${order.id}</td>
+                    <td class="user">${order.name_receive}</td>
+                    <td class="prices">${order.total.toLocaleString('vi-VN')} VNĐ</td>
+                    <td class="hour">${order.created_at.replace("T", " ").slice(0,16)}</td>
+                    <td class="${order.method === "COD" ? "cod" : "qr"}">${order.method}</td>
                     <td>
                         <select data-id="${order.id}" class="${order.status}"  onchange="tt(this)">
                             <option value="cho" ${order.status === "cho" ? "selected" : ""}>Chờ Xử Lý</option>

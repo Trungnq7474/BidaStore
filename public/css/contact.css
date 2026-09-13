@@ -42,6 +42,11 @@ main .contact p {
     border-left: 4px solid #38bdf8;
 }
 
+main .contact p a {
+    text-decoration: none;
+    color: #0062b9;
+}
+
 main .contact p i {
     width: 38px;
     height: 38px;
@@ -66,6 +71,10 @@ main .contact .icon {
     margin-top: 45px;
 }
 
+main .contact .icon a{
+    text-decoration: none;
+}
+
 main .contact .icon i {
     width: 50px;
     height: 50px;
@@ -75,30 +84,46 @@ main .contact .icon i {
     align-items: center;
     border-radius: 8px;
     background: #f0fbff;
-    color: #0075b0;
     font-size: 25px;
     transition: 0.4s ease-in-out;
 }
 
 main .contact .icon i:hover {
     transform: translateY(-5px);
+    transition: 0.4s ease-in-out;
     color: #ffffff;
 }
 
+main .contact .icon1 {
+    color: blue;
+}
+
+main .contact .icon2 {
+    color: rgb(77, 77, 255);
+}
+
+main .contact .icon4 {
+    color: #ba758c;
+}
+
+main .contact .icon5 {
+    color: #9fc823
+}
+
 main .contact .icon1:hover {
-    background: #1877f2;
+    background: blue;
 }
 
 main .contact .icon2:hover {
-    background: #6366f1;
+    background: rgb(77, 77, 255);
 }
 
 main .contact .icon4:hover {
-    background: #e1306c;
+    background: #ba758c;
 }
 
 main .contact .icon5:hover {
-    background: #22c55e;
+    background: #9fc823;
 }
 
 main .info {

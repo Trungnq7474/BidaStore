@@ -75,14 +75,18 @@ fetch('/getvouchers')
 
             voucherList.innerHTML += `
             <tr data-id="${voucher.id}" data-filter="${active ? 'actioning' : 'due'} ${voucher.type === "percent" ? "percent" : "price"}">
-                <td>VOU-00${voucher.id}</td>
-                <td>${voucher.code}</td>
-                <td>${voucher.type === "percent" ? "Giảm Phần Trăm" : "Giảm Tiền"}</td>
-                <td>${voucher.type === "percent" ? voucher.value + "%" : voucher.value.toLocaleString("vi-VN") + " VNĐ"}</td>
-                <td>${(voucher.min_order).toLocaleString("vi-VN")} VNĐ</td>
-                <td>${voucher.quantity}</td>
-                <td>${voucher.start_date.replace("T", " ").slice(0, 16)}</td>
-                <td>${voucher.end_date.replace("T", " ").slice(0, 16)}</td>
+                <td class="id">VOU-00${voucher.id}</td>
+                <td class="user">${voucher.code}</td>
+                <td class="${voucher.type === "percent" ? "discount-percent" : "discount-money"}">
+                    ${voucher.type === "percent" ? "Giảm Phần Trăm" : "Giảm Tiền"}
+                </td>
+                <td class="${voucher.type === "percent" ? "discount-percent" : "discount-money"}">
+                    ${voucher.type === "percent" ? voucher.value + "%" : voucher.value.toLocaleString("vi-VN") + " VNĐ"}
+                </td>
+                <td class="prices">${(voucher.min_order).toLocaleString("vi-VN")} VNĐ</td>
+                <td class="num">${voucher.quantity}</td>
+                <td class="hour">${voucher.start_date.replace("T", " ").slice(0, 16)}</td>
+                <td class="hour">${voucher.end_date.replace("T", " ").slice(0, 16)}</td>
                 <td><span class="${active ? 'voucher-active' : 'voucher-inactive'}"> 
                 ${active ? 'Đang Hoạt Động' : 'Đã Hết Hạn'}</span></td>
                 <td>

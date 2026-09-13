@@ -8,15 +8,15 @@ fetch('/getallComment')
             commentList.innerHTML += 
             `
                 <tr data-filter="${comment.shop_reply ? 'da' : 'chua'} ${['','mot','hai','ba','bon','nam'][comment.rating]}">
-                        <td>REV-00${comment.id}</td>
-                        <td>${comment.user_name}</td>
-                        <td>${comment.product_name}</td>
+                        <td class="id">REV-00${comment.id}</td>
+                        <td class="user">${comment.user_name}</td>
+                        <td class="spp">${comment.product_name}</td>
                         <td class="stars">
                             ${'<i class="fa-solid fa-star"></i> ' .repeat(comment.rating)} 
                         </td>
-                        <td><b>${comment.comment_text}</b></td>
-                        <td>${comment.created_at.replace("T", " ").slice(0, 16)}</td>
-                        <td><b>${comment.shop_reply || "Chưa Phản Hồi"}</b></td>
+                        <td class="des">${comment.comment_text}</td>
+                        <td class="hour">${comment.created_at.replace("T", " ").slice(0, 16)}</td>
+                        <td class="des">${comment.shop_reply || "Chưa Phản Hồi"}</td>
                         <td>
                             <span class="${comment.shop_reply ? "status-done" : "status-new"}">${comment.shop_reply ? "Đã Phản Hồi" : "Chưa Phản Hồi"}</span>
                         </td>

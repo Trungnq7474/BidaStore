@@ -8,14 +8,14 @@ fetch('/products')
                 productList.innerHTML += 
                 `
                 <tr>
-                    <td>PRO-00${product.product_id}</td>
+                    <td class="id">PRO-00${product.product_id}</td>
                     <td>
                         <img src="../images/${product.image}" alt="Ảnh">
                     </td>
-                    <td>${product.product_name}</td>
-                    <td>${product.price.toLocaleString("vi-VN")} VNĐ</td>
-                    <td>${product.stock}</td>
-                    <td style="width: 277px">${product.description}</td>       
+                    <td class="spp">${product.product_name}</td>
+                    <td class="prices">${product.price.toLocaleString("vi-VN")} VNĐ</td>
+                    <td class="num">${product.stock}</td>
+                    <td class="des" style="width: 277px">${product.description}</td>       
                     <td>
                         <button class="edit" data-id="${product.product_id}"><i class="fa-solid fa-pen-to-square"></i> Sửa</button>
                         <button class="delete" data-id="${product.product_id}"><i class="fa-solid fa-trash-can"></i> Xóa</button>
