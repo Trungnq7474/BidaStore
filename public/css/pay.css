@@ -387,6 +387,25 @@ input:focus {
     white-space: nowrap;
 }
 
+.no-voucher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px 15px;
+    margin: 5px 0;
+    color: #187abc;
+    font-size: 16px;
+    font-weight: bold;
+    background: #f7fbfd;
+    border: 2px solid #d2e6f4;;
+    border-radius: 14px;
+}
+
+.no-voucher i {
+    font-size: 22px;
+}
+
 .pay {
     margin-top: 30px;
     width: 100%;
@@ -604,6 +623,7 @@ input:focus {
 }
 
 @media (max-width: 1200px) {
+
     section {
         padding: 0 20px;
         box-sizing: border-box;
@@ -652,8 +672,16 @@ input:focus {
         font-size: 13px;
     }
 
+    .payment {
+        padding: 15px;
+    }
+
     .voucher {
         padding: 15px;
+    }
+
+    .voucher h3 {
+        font-size: 18px;
     }
 
     .voucher-item {
@@ -682,6 +710,16 @@ input:focus {
     .voucher-discount {
         font-size: 12px;
         padding: 6px 8px;
+    }
+
+    .no-voucher {
+        padding: 22px 12px;
+        gap: 10px;
+        font-size: 15px;
+    }
+
+    .no-voucher i {
+        font-size: 20px;
     }
 
     .address-box {
@@ -782,7 +820,9 @@ input:focus {
     }
 }
 
+
 @media (max-width: 992px) {
+
     section {
         padding: 0 15px;
     }
@@ -835,7 +875,6 @@ input:focus {
 
     .pr p {
         font-size: 12px;
-        white-space: nowrap;
     }
 
     .payment {
@@ -949,6 +988,16 @@ input:focus {
         padding: 5px 6px;
     }
 
+    .no-voucher {
+        padding: 20px 10px;
+        gap: 9px;
+        font-size: 14px;
+    }
+
+    .no-voucher i {
+        font-size: 19px;
+    }
+
     .pay {
         padding: 13px;
         font-size: 17px;
@@ -1037,7 +1086,9 @@ input:focus {
     }
 }
 
+
 @media (max-width: 768px) {
+
     section {
         display: flex;
         flex-direction: column;
@@ -1174,7 +1225,6 @@ input:focus {
     }
 
     .address-suggestion span {
-        display: inline-block;
         margin-left: 5px;
         padding: 3px 6px;
         font-size: 11px;
@@ -1236,6 +1286,16 @@ input:focus {
     .voucher-discount {
         font-size: 10px;
         padding: 6px 7px;
+    }
+
+    .no-voucher {
+        padding: 18px 8px;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .no-voucher i {
+        font-size: 18px;
     }
 
     .pay {
@@ -1338,7 +1398,9 @@ input:focus {
     }
 }
 
+
 @media (max-width: 576px) {
+
     section {
         padding: 0 10px;
         margin-top: 110px;
@@ -1482,13 +1544,23 @@ input:focus {
     }
 
     .voucher-date {
-        gap: 1px 4px;
         font-size: 8px;
+        gap: 1px 4px;
     }
 
     .voucher-discount {
         font-size: 9px;
         padding: 5px 6px;
+    }
+
+    .no-voucher {
+        padding: 17px 7px;
+        gap: 7px;
+        font-size: 13px;
+    }
+
+    .no-voucher i {
+        font-size: 17px;
     }
 
     .pay {
@@ -1515,14 +1587,13 @@ input:focus {
     }
 
     .qr-info {
-        margin-top: 10px;
         padding: 5px;
-        border-radius: 8px;
+        margin-top: 8px;
     }
 
     .qr-row {
         min-height: 38px;
-        gap: 5px;
+        gap: 4px;
     }
 
     .qr-info p {
@@ -1546,7 +1617,7 @@ input:focus {
 
     .shipping h3 {
         font-size: 17px;
-        margin-bottom: 10px;
+        margin-bottom: 9px;
     }
 
     .shipping-option {
@@ -1582,7 +1653,9 @@ input:focus {
     }
 }
 
+
 @media (max-width: 400px) {
+
     section {
         padding: 0 8px;
         margin-top: 100px;
@@ -1620,10 +1693,7 @@ input:focus {
         font-size: 11px;
     }
 
-    .pr h5 {
-        font-size: 10px;
-    }
-
+    .pr h5,
     .pr p {
         font-size: 10px;
     }
@@ -1720,6 +1790,16 @@ input:focus {
         padding: 4px 5px;
     }
 
+    .no-voucher {
+        padding: 15px 6px;
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .no-voucher i {
+        font-size: 16px;
+    }
+
     .pay {
         font-size: 14px;
         padding: 10px;
@@ -1804,7 +1884,9 @@ input:focus {
     }
 }
 
+
 @media (max-width: 320px) {
+
     section {
         padding: 0 5px;
         margin-top: 90px;
@@ -1938,6 +2020,16 @@ input:focus {
     .voucher-discount {
         font-size: 7px;
         padding: 4px;
+    }
+
+    .no-voucher {
+        padding: 14px 5px;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .no-voucher i {
+        font-size: 15px;
     }
 
     .pay {

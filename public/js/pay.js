@@ -225,6 +225,8 @@ async function loadVouchers() {
 
     voucherList.innerHTML = "";
 
+    let voucherCount = 0;
+
     data.forEach(voucher => {
         if(voucher.is_active != 1) {
             return;
@@ -255,6 +257,8 @@ async function loadVouchers() {
         else {
             text = 'Giảm ' + voucher.value.toLocaleString('vi-VN') + ' VNĐ';
         }
+        
+        voucherCount++;
 
         voucherList.innerHTML +=`
             <div class="voucher-item" data-id="${voucher.id}">
@@ -276,6 +280,12 @@ async function loadVouchers() {
             </div>
         `;
     });
+
+    if(voucherCount === 0) {
+        voucherList.innerHTML = `
+            <p class="no-voucher"><i class="fa-solid fa-circle-exclamation"></i> Không Có Mã Phù Hợp Cho Đơn Hàng Này !</p>
+        `;
+    }
 
     const items = document.querySelectorAll('.voucher-item');
     items.forEach(item => {
