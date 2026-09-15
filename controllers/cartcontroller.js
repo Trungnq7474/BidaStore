@@ -7,7 +7,7 @@ const addtoCart = async (req, res) => {
     try {
 
         const stockResult = await sql.query`
-            SELECT stock
+            SELECT price, new_price, stock
             FROM products
             WHERE product_name = ${product_name}
         `;
@@ -37,15 +37,16 @@ const addtoCart = async (req, res) => {
 
             await sql.query
             `
-                UPDATE carts SET quantity = quantity + 1 WHERE user_id = ${user_id} AND product_name = ${product_name}
+                UPDATE carts SET quantity = quantity + 1, price = ${product.price},
+                new_price = ${product.new_price} WHERE user_id = ${user_id} AND product_name = ${product_name}
             `;
         }
 
         else {
             await sql.query
             `
-                INSERT INTO carts (user_id, product_name, price, image, quantity)
-                VALUES (${user_id}, ${product_name}, ${price}, ${image}, 1)
+                INSERT INTO carts (user_id, product_name, price, new_price, image, quantity)
+                VALUES (${user_id}, ${product_name}, ${product.price}, ${product.new_price}, ${image}, 1)
             `;
         }
 

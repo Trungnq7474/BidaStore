@@ -109,8 +109,8 @@ h1 {
     position: absolute;
     right: 5%;
     top: 1040px;
-    z-index: 9999;
     display: none;
+    z-index: 2;
 }
 
 .product-filter-box.show {

@@ -190,6 +190,7 @@ QR.addEventListener('click', async () =>{
                 product_id: product_id,
                 subtotal: total,
                 shipping: shipping,
+                discount: discount,
                 total: total + shipping - discount,
                 voucher_id: selectedVoucher ? selectedVoucher.id : null,
                 bank_name: "MB Bank",
@@ -302,7 +303,6 @@ async function loadVouchers() {
             reDuce();
 
             voucherDiscountName.innerText = `Voucher ${selectedVoucher.code}`;
-            d.innerText = "- " + discount.toLocaleString('vi-VN') + " VNĐ";
 
             voucherDiscountRow.style.display = "flex";
             c.innerText = (total + shipping - discount).toLocaleString('vi-VN') + " VNĐ";
@@ -315,8 +315,9 @@ async function loadVouchers() {
 }
 
 function reDuce() {
+    discount = 0;
+
     if(!selectedVoucher) {
-        discount = 0;
         d.innerText = "0 VNĐ";
         return;
     }
@@ -324,6 +325,7 @@ function reDuce() {
     if(selectedVoucher.type === "percent") {
         discount = total * selectedVoucher.value / 100;
     }
+
     else {
         discount = selectedVoucher.value;
     }
@@ -331,6 +333,8 @@ function reDuce() {
     if(discount > total) {
         discount = total;
     }
+
+    d.innerText = "- " + discount.toLocaleString('vi-VN') + " VNĐ";
 }
 
 // Load dữ liệu giỏ hàng và hiển thị lên trang thanh toán
@@ -365,6 +369,10 @@ async function loadPay() {
 
         total = dataItem.price;
 
+        if(dataItem.new_price != null && dataItem.new_price < dataItem.price) {
+            total = dataItem.new_price;
+        }
+
         tp.innerHTML += `
         
         <div class="pr">
@@ -374,7 +382,17 @@ async function loadPay() {
 
             <div class="prduc">
                 <h4>${dataItem.product_name}</h4>
-                <h5>${dataItem.price.toLocaleString('vi-VN')} VNĐ</h5>
+                ${dataItem.new_price != null && dataItem.new_price < dataItem.price
+                ? `
+                    <div class="price-box">
+                        <h5 class="price-old">${dataItem.price.toLocaleString('vi-VN')} VNĐ</h5>
+                        <h5 class="price-new">${dataItem.new_price.toLocaleString('vi-VN')} VNĐ</h5>
+                    </div>
+                `
+                : `
+                    <h5 class="price-new">${dataItem.price.toLocaleString('vi-VN')} VNĐ</h5>
+                `
+            }
             </div>
 
             <p>x 1</p>
@@ -397,7 +415,13 @@ async function loadPay() {
         const dataCart = await resCart.json();
 
         dataCart.forEach(item => {
-            total += item.price * item.quantity;
+            let price = item.price;
+
+            if(item.new_price != null && item.new_price < item.price) {
+                price = item.new_price;
+            }
+
+            total += price * item.quantity;
 
             tp.innerHTML += `
 
@@ -408,7 +432,17 @@ async function loadPay() {
 
                 <div class="prduc">
                     <h4>${item.product_name}</h4>
-                    <h5>${item.price.toLocaleString('vi-VN')} VNĐ</h5>
+                    ${item.new_price != null && item.new_price < item.price
+                        ? `
+                            <div class="price-box">
+                                <h5 class="price-old">${item.price.toLocaleString('vi-VN')} VNĐ</h5>
+                                <h5 class="price-new">${item.new_price.toLocaleString('vi-VN')} VNĐ</h5>
+                            </div>
+                        `
+                        : `
+                            <h5 class="price-new">${item.price.toLocaleString('vi-VN')} VNĐ</h5>
+                        `
+                    }
             </div>
                 <p>x ${item.quantity}</p>
             </div> 
@@ -468,6 +502,7 @@ pay.addEventListener('click', async (e) => {
             product_id: product_id,
             subtotal: total,
             shipping: shipping,
+            discount: discount,
             total: total + shipping - discount,
             voucher_id: selectedVoucher ? selectedVoucher.id : null,
             bank_name: method === "QR" ? "MB Bank" : "",

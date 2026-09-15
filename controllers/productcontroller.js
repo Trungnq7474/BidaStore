@@ -24,7 +24,7 @@ const getproducts = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
             WHERE p.product_id = ${product_id}
-            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
         `;
 
         res.json(result.recordset[0]);
@@ -42,7 +42,7 @@ const getproducts2 = async (req, res) => {
             FROM products p
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
-            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
         `;
         res.json(kq.recordset);
     }
@@ -62,7 +62,7 @@ const searchProducts = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id 
             WHERE product_name LIKE ${keyword}
-             GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
+             GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
         `;
 
         res.json(kq.recordset);
@@ -74,14 +74,14 @@ const searchProducts = async (req, res) => {
 };
 
 const addPro = async (req, res) => {
-    const {inname, inprice, indescrip, incate, inquan} = req.body;
+    const {inname, inprice, innewprice, indiscount, indescrip, incate, inquan} = req.body;
 
     const inimg = req.file.filename;
 
     try {
         await sql.query`
-            INSERT INTO products (product_name, price, image, description, category, stock)
-            VALUES (${inname}, ${inprice}, ${inimg}, ${indescrip}, ${incate}, ${inquan})
+            INSERT INTO products (product_name, price, new_price, discount, image, description, category, stock)
+            VALUES (${inname}, ${inprice}, ${innewprice || null}, ${indiscount || null}, ${inimg}, ${indescrip}, ${incate}, ${inquan})
         `;
 
         res.send("ok");
@@ -117,7 +117,7 @@ const getProcate = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
             WHERE p.category = ${cate}
-            GROUP BY p.product_id, p.product_name, p.price, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
         `;
 
         res.json(result.recordset);
@@ -129,7 +129,7 @@ const getProcate = async (req, res) => {
 }
 
 const updatePro = async (req, res) => {
-    const {id, name, price, category, description, stock} = req.body;
+    const {id, name, price, new_price, discount, category, description, stock} = req.body;
 
     try {
         if(req.file) {
@@ -138,6 +138,8 @@ const updatePro = async (req, res) => {
             await sql.query`
                 UPDATE products SET product_name = ${name},
                                     price = ${price},
+                                    new_price = ${new_price || null},
+                                    discount = ${discount || null},
                                     image = ${image},
                                     description = ${description},
                                     category = ${category},
@@ -150,6 +152,8 @@ const updatePro = async (req, res) => {
             await sql.query`
                 UPDATE products SET product_name = ${name},
                                     price = ${price},
+                                    new_price = ${new_price || null},
+                                    discount = ${discount || null},
                                     description = ${description},
                                     category = ${category},
                                     stock = ${stock}

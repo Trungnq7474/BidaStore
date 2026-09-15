@@ -222,7 +222,15 @@ const getOrderItems = async (req, res) => {
         const order_id = req.params.id;
 
         const result = await sql.query`
-            SELECT * FROM orderitems WHERE order_id = ${order_id}        
+            SELECT 
+                oi.*,
+                p.price AS old_price,
+                p.new_price,
+                p.discount
+            FROM orderitems oi
+            LEFT JOIN products p
+                ON oi.product_name = p.product_name
+            WHERE oi.order_id = ${order_id}       
         `;
 
         res.json(result.recordset);

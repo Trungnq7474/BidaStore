@@ -16,18 +16,32 @@ if(brand) {
 
             data.forEach(product => {
                if(product.product_name.toUpperCase().includes(brand.toUpperCase())) {
+
+                    let price
                     productList.innerHTML +=`
                         <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
                             <div class="kk">
                                 <div class="pro">
                                     <img src="images/${product.image}" alt="Ảnh">
 
+                                    ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+
                                     <div class="pro1">
                                         <h5>${product.product_name}</h5>
 
                                         ${getStars(product.average_rating)}
 
-                                        <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        ${product.new_price
+                                            ? `
+                                                <div class="price-box">
+                                                    <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                                    <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                                </div>
+                                            `
+                                            : `
+                                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            `
+                                        }
                                         <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                             ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                         </p>
@@ -60,13 +74,25 @@ else if (category) {
                     <div class="kk">
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
-
+                            
+                            ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+                            
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
                                 ${getStars(product.average_rating)}
 
-                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                ${product.new_price
+                                    ? `
+                                        <div class="price-box">
+                                            <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        </div>
+                                    `
+                                    : `
+                                        <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    `
+                                } 
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                     ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                 </p>

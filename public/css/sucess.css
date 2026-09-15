@@ -152,9 +152,33 @@
         }
 
         .product-price {
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: flex-end; 
+            gap: 10px; 
+            font-weight: bold; 
+            color: #1e293b; 
+            font-size: 20px; 
+        }
+
+        .price-old {
+            color: rgb(120, 120, 120);
+            text-decoration: line-through;
+            font-size: 18px;
             font-weight: bold;
+        }
+
+        .price-new {
             color: #1e293b;
             font-size: 20px;
+            font-weight: bold;
+        }
+
+        .price-normal {
+            color: #1e293b;
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .invoice-roww {
@@ -262,8 +286,51 @@
         height: 90px;
     }
 
-    .product-price {
+    .product-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .product-detail {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .product-name {
         font-size: 18px;
+        line-height: 1.4;
+        margin: 5px 0;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 18px;
+    }
+
+    .price-old {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .price-new {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .price-normal {
+        font-size: 18px;
+        white-space: nowrap;
     }
 
     .invoice-roww {
@@ -344,40 +411,89 @@
         max-height: 270px;
     }
 
-    .product-img {
-        width: 100px;
-        height: 80px;
+    .product-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
     }
 
     .product-info {
+        display: flex;
+        align-items: center;
         gap: 12px;
         min-width: 0;
+        flex: 1;
+    }
+
+    .product-img {
+        width: 100px;
+        height: 80px;
+        flex-shrink: 0;
     }
 
     .product-detail {
         min-width: 0;
+        flex: 1;
     }
 
     .product-name {
         font-size: 16px;
-        word-break: break-word;
+        line-height: 1.4;
+        margin: 5px 0;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .product-detail .product-qty {
+        font-size: 13px;
+        margin-top: -4px;
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 7px;
+        width: 40%;
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 17px;
+    }
+
+    .price-old {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .price-new {
+        font-size: 17px;
+        white-space: nowrap;
+    }
+
+    .price-normal {
         font-size: 17px;
         white-space: nowrap;
     }
 
     .invoice-roww {
         font-size: 15px;
+        gap: 10px;
     }
 
     .invoice-roww .label {
         gap: 10px;
+        min-width: 0;
+    }
+
+    .invoice-roww .text {
+        white-space: nowrap;
     }
 
     .invoice-roww i {
         font-size: 19px;
+        flex-shrink: 0;
     }
 
     .total-row {
@@ -494,14 +610,19 @@
     }
 
     .product-item {
-        gap: 10px;
+        display: flex;
         align-items: center;
+        gap: 10px;
+        width: 100%;
     }
 
     .product-info {
+        display: flex;
+        align-items: center;
         gap: 10px;
         min-width: 0;
         flex: 1;
+        width: 60%;
     }
 
     .product-img {
@@ -512,13 +633,17 @@
 
     .product-detail {
         min-width: 0;
+        flex: 1;
+        width: 0;
     }
 
     .product-name {
         font-size: 14px;
+        line-height: 1.4;
         margin: 5px 0;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     .product-detail .product-qty {
@@ -527,9 +652,29 @@
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+        width: 40%;
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .price-old {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .price-new {
         font-size: 14px;
         white-space: nowrap;
-        flex-shrink: 0;
+    }
+
+    .price-normal {
+        font-size: 14px;
+        white-space: nowrap;
     }
 
     .invoice-roww {
@@ -550,31 +695,6 @@
     .invoice-roww i {
         font-size: 17px;
         flex-shrink: 0;
-    }
-
-    .shipping-method,
-    .shipping-fee,
-    .product-total,
-    .voucher-row,
-    .voucher-code,
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 14px;
-    }
-
-    .voucher-row {
-        gap: 10px;
-    }
-
-    .voucher-code {
-        max-width: 55%;
-        word-break: break-word;
-    }
-
-    .voucher-discount,
-    .voucher-minus {
-        white-space: nowrap;
-        text-align: right;
     }
 
     .total-row {
@@ -689,22 +809,40 @@
     }
 
     .product-item {
+        display: flex;
+        align-items: center;
         gap: 7px;
+        width: 100%;
     }
 
     .product-info {
+        display: flex;
+        align-items: center;
         gap: 7px;
+        min-width: 0;
+        flex: 1;
+        width: 60%;
     }
 
     .product-img {
         width: 65px;
         height: 55px;
+        flex-shrink: 0;
+    }
+
+    .product-detail {
+        min-width: 0;
+        flex: 1;
+        width: 0;
     }
 
     .product-name {
-        font-size: 12px;
-        margin: 3px 0;
+        font-size: 13px;
         line-height: 1.4;
+        margin: 3px 0;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     .product-detail .product-qty {
@@ -713,7 +851,29 @@
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+        width: 40%;
+        flex-shrink: 0;
+        white-space: nowrap;
         font-size: 12px;
+    }
+
+    .price-old {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .price-new {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .price-normal {
+        font-size: 12px;
+        white-space: nowrap;
     }
 
     .invoice-roww {
@@ -723,7 +883,6 @@
 
     .invoice-roww .label {
         gap: 6px;
-        min-width: 0;
     }
 
     .invoice-roww .text {
@@ -735,35 +894,9 @@
         font-size: 16px;
     }
 
-    .shipping-method,
-    .shipping-fee,
-    .product-total,
-    .voucher-row,
-    .voucher-code,
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 12px;
-    }
-
-    .voucher-row {
-        gap: 7px;
-    }
-
-    .voucher-code {
-        max-width: 50%;
-        word-break: break-word;
-    }
-
-    .voucher-discount,
-    .voucher-minus {
-        white-space: nowrap;
-        text-align: right;
-    }
-
     .total-row {
         font-size: 12px;
         gap: 8px;
-        margin-top: 12px;
     }
 
     .total-row .price,
@@ -860,26 +993,73 @@
         margin: 8px 0;
     }
 
+    .product-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .product-info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        min-width: 0;
+        flex: 1;
+        width: 60%;
+    }
+
     .product-img {
         width: 55px;
         height: 48px;
         border-radius: 7px;
+        flex-shrink: 0;
     }
 
-    .product-info {
-        gap: 5px;
+    .product-detail {
+        min-width: 0;
+        flex: 1;
+        width: 0;
     }
 
     .product-name {
-        font-size: 11px;
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 3px 0;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     .product-detail .product-qty {
         font-size: 9px;
+        margin-top: -2px;
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 3px;
+        width: 40%;
+        flex-shrink: 0;
+        white-space: nowrap;
         font-size: 10px;
+    }
+
+    .price-old {
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .price-new {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .price-normal {
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     .invoice-roww {
@@ -893,29 +1073,6 @@
 
     .invoice-roww i {
         font-size: 14px;
-    }
-
-    .shipping-method,
-    .shipping-fee,
-    .product-total,
-    .voucher-row,
-    .voucher-code,
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 10px;
-    }
-
-    .voucher-row {
-        gap: 5px;
-    }
-
-    .voucher-code {
-        max-width: 48%;
-    }
-
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 10px;
     }
 
     .total-row {
@@ -1018,29 +1175,72 @@
     }
 
     .product-item {
+        display: flex;
+        align-items: center;
         gap: 5px;
+        width: 100%;
     }
 
     .product-info {
+        display: flex;
+        align-items: center;
         gap: 4px;
+        min-width: 0;
+        flex: 1;
+        width: 60%;
     }
 
     .product-img {
         width: 45px;
         height: 40px;
         border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .product-detail {
+        min-width: 0;
+        flex: 1;
+        width: 0;
     }
 
     .product-name {
-        font-size: 10px;
+        font-size: 11px;
+        line-height: 1.4;
+        margin: 3px 0;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     .product-detail .product-qty {
         font-size: 8px;
+        margin-top: -2px;
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2px;
+        width: 40%;
+        flex-shrink: 0;
+        white-space: nowrap;
         font-size: 9px;
+    }
+
+    .price-old {
+        font-size: 7px;
+        white-space: nowrap;
+    }
+
+    .price-new {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .price-normal {
+        font-size: 9px;
+        white-space: nowrap;
     }
 
     .invoice-roww {
@@ -1054,29 +1254,6 @@
 
     .invoice-roww i {
         font-size: 13px;
-    }
-
-    .shipping-method,
-    .shipping-fee,
-    .product-total,
-    .voucher-row,
-    .voucher-code,
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 9px;
-    }
-
-    .voucher-row {
-        gap: 4px;
-    }
-
-    .voucher-code {
-        max-width: 45%;
-    }
-
-    .voucher-discount,
-    .voucher-minus {
-        font-size: 9px;
     }
 
     .total-row {

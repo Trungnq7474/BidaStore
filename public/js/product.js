@@ -14,6 +14,19 @@ fetch('/products')
                     </td>
                     <td class="spp">${product.product_name}</td>
                     <td class="prices">${product.price.toLocaleString("vi-VN")} VNĐ</td>
+                    <td class="new-prices">
+                        ${product.new_price
+                            ? `<span class="has-price">${product.new_price.toLocaleString("vi-VN")} VNĐ</span>`
+                            : `<span class="no-price">Không Có</span>`
+                        }
+                    </td>
+
+                    <td class="discount">
+                        ${product.discount
+                            ? `<span class="has-discount">${product.discount}%</span>`
+                            : `<span class="no-discount">Không Có</span>`
+                        }
+                    </td>
                     <td class="num">${product.stock}</td>
                     <td class="des" style="width: 277px">${product.description}</td>       
                     <td>
@@ -37,9 +50,44 @@ icon.addEventListener('click', () => {
     form.style.display = "none";
 });
 
+const inprice = document.querySelector('.inprice');
+const innewprice = document.querySelector('.innewprice');
+const indiscount = document.querySelector('.indiscount');
+
+inprice.addEventListener('input', () => {
+    const oldPrice = Number(inprice.value);
+    const newPrice = Number(innewprice.value);
+
+    if(!oldPrice || !newPrice) {
+        indiscount.value = "";
+        return;
+    }
+    
+    const discount = ((oldPrice - newPrice) / oldPrice) * 100;
+
+    indiscount.value = Math.round(discount);
+});
+
+
+innewprice.addEventListener('input', () => {
+    const oldPrice = Number(inprice.value);
+    const newPrice = Number(innewprice.value);
+
+    if(!oldPrice || !newPrice) {
+        indiscount.value = "";
+        return;
+    }
+
+    const discount = ((oldPrice - newPrice) / oldPrice) * 100;
+
+    indiscount.value = Math.round(discount);
+});
+
 document.querySelector('.save').addEventListener('click', async () => {
     const inname = document.querySelector('.inname').value;
     const inprice = document.querySelector('.inprice').value;
+    const innewprice = document.querySelector('.innewprice').value;
+    const indiscount = document.querySelector('.indiscount').value;
     const inquan = document.querySelector('.inquan').value;
     const indescrip = document.querySelector('.indescrip').value;
     const inimg = document.querySelector('.inimg').files[0];
@@ -55,6 +103,8 @@ document.querySelector('.save').addEventListener('click', async () => {
     formData.append("inname", inname);
     formData.append("indescrip", indescrip);
     formData.append("inprice", inprice);
+    formData.append("innewprice", innewprice);
+    formData.append("indiscount", indiscount);
     formData.append("inquan", inquan);
     formData.append("image", inimg);
     formData.append("incate", incate);
@@ -95,6 +145,8 @@ document.addEventListener('click', async function(e) {
         old = {
             product_name: product.product_name,
             price: product.price,
+            new_price: product.new_price,
+            discount: product.discount,
             stock: product.stock,
             category: product.category,
             description: product.description,
@@ -103,6 +155,8 @@ document.addEventListener('click', async function(e) {
 
         document.querySelector('.edname').value = product.product_name;
         document.querySelector('.edprice').value = product.price;
+        document.querySelector('.ednewprice').value = product.new_price || "";
+        document.querySelector('.eddiscount').value = product.discount || "";
         document.querySelector('.edquan').value = product.stock;
         document.querySelector('.edcate').value = product.category;
         document.querySelector('.eddescrip').value = product.description;
@@ -111,10 +165,45 @@ document.addEventListener('click', async function(e) {
     }
 });
 
+const edprice = document.querySelector('.edprice');
+const ednewprice = document.querySelector('.ednewprice');
+const eddiscount = document.querySelector('.eddiscount');
+
+edprice.addEventListener('input', () => {
+    const oldPrice = Number(edprice.value);
+    const newPrice = Number(ednewprice.value);
+
+    if(!oldPrice || !newPrice) {
+        eddiscount.value = "";
+        return;
+    }
+
+    const discount = ((oldPrice - newPrice) / oldPrice) * 100;
+
+    eddiscount.value = Math.round(discount);
+});
+
+ednewprice.addEventListener('input', () => {
+    const oldPrice = Number(edprice.value);
+    const newPrice = Number(ednewprice.value);
+
+    if(!oldPrice || !newPrice) {
+        eddiscount.value = "";
+        return;
+    }
+
+    const discount = ((oldPrice - newPrice) / oldPrice) * 100;
+
+    eddiscount.value = Math.round(discount);
+});
+
+
 document.querySelector('.update').addEventListener('click', async () => {
 
     const name = document.querySelector('.edname').value;
     const price = document.querySelector('.edprice').value;
+    const new_price = document.querySelector('.ednewprice').value;
+    const discount = document.querySelector('.eddiscount').value;
     const stock = document.querySelector('.edquan').value;
     const category = document.querySelector('.edcate').value;
     const description= document.querySelector('.eddescrip').value;
@@ -125,7 +214,7 @@ document.querySelector('.update').addEventListener('click', async () => {
         return;
     }
 
-    if(name === old.product_name && Number(price) === Number(old.price) && category === old.category && description === old.description && !image && Number(stock) === Number(old.stock)) {
+    if(name === old.product_name && Number(price) === Number(old.price) && Number(new_price) === Number(old.new_price) && Number(discount) === Number(old.discount)  && category === old.category && description === old.description && !image && Number(stock) === Number(old.stock)) {
         show("Bạn Chưa Sửa Đổi !");
         return;
     }
@@ -135,6 +224,8 @@ document.querySelector('.update').addEventListener('click', async () => {
     formData.append("id", edit);
     formData.append("name", name);
     formData.append("price", price);
+    formData.append("new_price", new_price);
+    formData.append("discount", discount);
     formData.append("stock", stock);
     formData.append("category", category);
     formData.append("description", description);

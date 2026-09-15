@@ -96,6 +96,22 @@ table .role-user {
     color: #2f4a36;
 }
 
+table .has-price {
+    color: rgb(177, 0, 0);
+}
+
+table .no-price {
+    color: rgb(101, 95, 94);
+}
+
+table .has-discount {
+    color: rgb(177, 0, 0);
+}
+
+table .no-discount {
+    color: rgb(101, 95, 94);
+}
+
 
 @media (max-width: 1200px) {
 

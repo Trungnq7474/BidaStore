@@ -26,9 +26,16 @@ window.onload = async function() {
 
     let productList = "";
     let productTotal = 0;
+    let promotionTotal = 0;
 
     items.forEach(item => {
-        productTotal += item.price * item.quantity;
+        if (item.discount > 0 && item.new_price) {
+            productTotal += item.new_price * item.quantity;
+            promotionTotal += (item.old_price - item.new_price) * item.quantity;
+        } else {
+            productTotal += item.price * item.quantity;
+        }
+
         productList += `
             <div class="product-list">
                 <div class="product-item">
@@ -39,7 +46,13 @@ window.onload = async function() {
                             <h4 class="product-qty">Số lượng: x${item.quantity}</h4>
                         </div>
                     </div>
-                    <span class="product-price">${item.price.toLocaleString('vi-VN')} VNĐ</span>
+                    <span class="product-price">
+                        ${item.discount > 0 && item.new_price
+                            ? `<span class="price-old">${item.old_price.toLocaleString('vi-VN')} VNĐ</span>
+                                <span class="price-new">${item.new_price.toLocaleString('vi-VN')} VNĐ</span>`
+                            : `<span class="price-normal">${item.price.toLocaleString('vi-VN')} VNĐ</span>`
+                        }
+                    </span>
                 </div>
             </div>
         `;
@@ -112,6 +125,17 @@ window.onload = async function() {
                 <span class="label"><i class="fa-solid fa-coins"></i>Tổng Đơn Hàng:</span>
                 <span class="text">${productTotal.toLocaleString('vi-VN')} VNĐ</span>
             </div>
+
+            ${promotionTotal > 0 ? `
+                <div class="invoice-roww" style="margin-top: 15px;">
+                    <span class="label">
+                        <i class="fa-solid fa-tag"></i>Giá Khuyến Mãi:
+                    </span>
+                    <span class="text">
+                        - ${promotionTotal.toLocaleString('vi-VN')} VNĐ
+                    </span>
+                </div>
+            ` : ""}
 
             <div class="invoice-roww" style="margin-top: 15px;">
                 <span class="label"><i class="fa-solid fa-money-bill-transfer"></i>Phí Vận Chuyển:</span>

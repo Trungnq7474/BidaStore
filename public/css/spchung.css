@@ -46,13 +46,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-    letter-spacing: 2px;
+    gap: 35px;
     box-sizing: border-box;
 }
 
 .sp .kk {
-    width: 100%;
+    position: relative;
+    width: 106%;
     padding: 10px 12px;
     border: 1px solid rgb(5, 249, 143);
     background-color: rgb(143, 252, 162);
@@ -88,19 +88,51 @@
 }
 
 .sp .kk .pro1 i {
-    font-size: 15px;
+    font-size: 17px;
     color: rgb(239, 9, 9);
 }
 
 .sp .kk .pro1 h4 {
     margin-top: 15px;
-    margin-bottom: 12px;
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(53, 64, 0, 0.97);
 }
 
+.price-box {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 8px;
+}
+
+.sp .kk .pro1 h4.price-old {
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+.sp .kk .pro1 h4.price-new {
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: rgba(53, 64, 0, 0.97);
+    font-weight: bold;
+}
+
+.discount-user {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+    color: white;
+    border-radius: 12px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .stock {
-    margin: 8px 0 10px;
+    margin: -3px 0 10px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -142,452 +174,658 @@
     overflow-wrap: break-word;
 }
 
-@media (max-width: 1400px) {
-    .sp {
-        gap: 25px;
+@media (max-width: 1400px) { 
+    .sp { 
+        gap: 25px; 
+    } 
+ 
+    .sp .tr { 
+        width: 18%; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 17px; 
+        height: 35px; 
+        line-height: 17px; 
+        margin-top: 13px; 
+        margin-bottom: 10px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 14px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 13px; 
+        margin-top: 12px; 
+        margin-bottom: 17px; 
     }
 
-    .sp .tr {
-        width: 18%;
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: nowrap;
     }
 
-    .sp .kk .pro1 h5 {
-        font-size: 17px;
-        height: 35px;
-        line-height: 17px;
-        margin-top: 13px;
-        margin-bottom: 10px;
-    }
-
-    .sp .kk .pro1 i {
-        font-size: 14px;
-    }
-
-    .sp .kk .pro1 h4 {
-        font-size: 17px;
+    .sp .kk .pro1 h4.price-old {
+        font-size: 12px;
         margin-top: 12px;
         margin-bottom: 10px;
     }
 
-    .stock {
-        font-size: 14px;
-        margin: 7px 0 9px;
-        letter-spacing: 0.3px;
-    }
-
-    .sp .kk .pro .cart i {
-        font-size: 27px;
-        padding: 8px 12px;
-    }
-
-    .mess {
-        font-size: 33px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .nd {
-        margin-top: 120px;
-    }
-
-    .nd h1 {
-        font-size: 28px;
-    }
-
-    .nd p {
-        font-size: 27px;
-    }
-
-    .sp {
-        padding: 10px 18px;
-        gap: 22px;
-    }
-
-    .sp .tr {
-        width: 23%;
-    }
-
-    .sp .kk {
-        padding: 9px 10px;
-    }
-
-    .sp .kk .pro1 h5 {
-        font-size: 16px;
-        height: 34px;
-        line-height: 17px;
-        margin-top: 11px;
-        margin-bottom: 8px;
-    }
-
-    .sp .kk .pro1 i {
+    .sp .kk .pro1 h4.price-new {
         font-size: 13px;
+        margin-top: 12px;
+        margin-bottom: 10px;
     }
 
-    .sp .kk .pro1 h4 {
-        font-size: 16px;
+    .discount-user {
+        top: 7px;
+        right: 7px;
+        padding: 5px 6px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+ 
+    .stock { 
+        font-size: 14px; 
+        margin: 7px 0 9px; 
+        letter-spacing: 0.3px; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 27px; 
+        padding: 8px 12px; 
+    } 
+ 
+    .mess { 
+        font-size: 33px; 
+    } 
+} 
+ 
+@media (max-width: 1200px) { 
+    .nd { 
+        margin-top: 120px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 28px; 
+    } 
+ 
+    .nd p { 
+        font-size: 27px; 
+    } 
+ 
+    .sp { 
+        padding: 10px 18px; 
+        gap: 22px; 
+    } 
+ 
+    .sp .tr { 
+        width: 23%; 
+    } 
+ 
+    .sp .kk { 
+        padding: 9px 10px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 16px; 
+        height: 34px; 
+        line-height: 17px; 
+        margin-top: 11px; 
+        margin-bottom: 8px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 13px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 14px; 
+        margin-top: 10px; 
+        margin-bottom: 13px; 
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .sp .kk .pro1 h4.price-old {
+        font-size: 12px;
         margin-top: 10px;
         margin-bottom: 8px;
     }
 
-    .stock {
-        font-size: 13px;
-        margin: 6px 0 8px;
-        letter-spacing: 0.3px;
+    .sp .kk .pro1 h4.price-new {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 8px;
     }
 
-    .sp .kk .pro .cart i {
-        font-size: 25px;
-        padding: 7px 10px;
-    }
-
-    .mess {
-        margin-top: 150px;
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 992px) {
-    .nd {
-        margin-top: 110px;
-    }
-
-    .nd h1 {
-        font-size: 26px;
-    }
-
-    .nd p {
-        font-size: 25px;
-    }
-
-    .sp {
-        padding: 10px 16px;
-        gap: 20px;
-    }
-
-    .sp .tr {
-        width: 31%;
-    }
-
-    .sp .kk {
-        padding: 8px;
-        border-radius: 16px;
-    }
-
-    .sp .kk img {
-        border-radius: 15px;
-    }
-
-    .sp .kk .pro1 h5 {
-        font-size: 15px;
-        height: 32px;
-        line-height: 16px;
-        margin-top: 9px;
-        margin-bottom: 7px;
-    }
-
-    .sp .kk .pro1 i {
-        font-size: 12px;
-    }
-
-    .sp .kk .pro1 h4 {
-        font-size: 15px;
-        margin-top: 9px;
-        margin-bottom: 7px;
-    }
-
-    .stock {
-        font-size: 12px;
-        margin: 5px 0 7px;
-        letter-spacing: 0.2px;
-    }
-
-    .sp .kk .pro .cart i {
-        font-size: 23px;
-        padding: 6px 9px;
-    }
-
-    .mess {
-        margin-top: 130px;
-        font-size: 27px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nd {
-        margin-top: 100px;
-        margin-bottom: 18px;
-        padding: 10px 14px;
-    }
-
-    .nd h1 {
-        font-size: 23px;
-    }
-
-    .nd p {
-        font-size: 21px;
-    }
-
-    .sp {
-        padding: 8px 12px;
-        gap: 16px 8px;
-        letter-spacing: 0.5px;
-    }
-
-    .sp .tr {
-        width: calc((100% - 16px) / 3);
-    }
-
-    .sp .kk {
+    .discount-user {
+        top: 6px;
+        right: 6px;
         padding: 5px;
-        border-radius: 11px;
-    }
-
-    .sp .kk img {
+        font-size: 13px;
         border-radius: 9px;
     }
-
-    .sp .kk .pro1 h5 {
-        font-size: 12px;
-        height: 28px;
-        line-height: 14px;
-        margin-top: 8px;
-        margin-bottom: 5px;
+ 
+    .stock { 
+        font-size: 13px; 
+        margin: 6px 0 8px; 
+        letter-spacing: 0.3px; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 25px; 
+        padding: 7px 10px; 
+    } 
+ 
+    .mess { 
+        margin-top: 150px; 
+        font-size: 30px; 
+    } 
+} 
+ 
+@media (max-width: 992px) { 
+    .nd { 
+        margin-top: 110px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 26px; 
+    } 
+ 
+    .nd p { 
+        font-size: 25px; 
+    } 
+ 
+    .sp { 
+        padding: 10px 16px; 
+        gap: 20px; 
+    } 
+ 
+    .sp .tr { 
+        width: 31%; 
+    } 
+ 
+    .sp .kk { 
+        padding: 8px; 
+        border-radius: 16px; 
+    } 
+ 
+    .sp .kk img { 
+        border-radius: 15px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 15px; 
+        height: 32px; 
+        line-height: 16px; 
+        margin-top: 9px; 
+        margin-bottom: 7px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 12px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 15px; 
+        margin-top: 9px; 
+        margin-bottom: 7px; 
     }
 
-    .sp .kk .pro1 i {
-        font-size: 10px;
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 
-    .sp .kk .pro1 h4 {
+    .sp .kk .pro1 h4.price-old {
+        font-size: 14px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .sp .kk .pro1 h4.price-new {
+        font-size: 15px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .discount-user {
+        top: 6px;
+        right: 6px;
+        padding: 4px 5px;
         font-size: 12px;
+        border-radius: 8px;
+    }
+ 
+    .stock { 
+        font-size: 12px; 
+        margin: 5px 0 7px; 
+        letter-spacing: 0.2px; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 23px; 
+        padding: 6px 9px; 
+    } 
+ 
+    .mess { 
+        margin-top: 130px; 
+        font-size: 27px; 
+    } 
+} 
+ 
+@media (max-width: 768px) { 
+    .nd { 
+        margin-top: 100px; 
+        margin-bottom: 18px; 
+        padding: 10px 14px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 23px; 
+    } 
+ 
+    .nd p { 
+        font-size: 21px; 
+    } 
+ 
+    .sp { 
+        padding: 8px 14px; 
+        gap: 20px 16px; 
+        letter-spacing: 0.5px; 
+    } 
+ 
+    .sp .tr { 
+        width: calc((100% - 16px) / 2); 
+    } 
+ 
+    .sp .kk { 
+        width: 100%;
+        padding: 5px; 
+        border-radius: 11px; 
+    } 
+ 
+    .sp .kk img { 
+        border-radius: 9px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 15px; 
+        height: 28px; 
+        line-height: 14px; 
+        margin-top: 8px; 
+        margin-bottom: 5px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 14px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 16px; 
+        margin-top: 7px; 
+        margin-bottom: 11px; 
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sp .kk .pro1 h4.price-old {
+        font-size: 15px;
         margin-top: 7px;
         margin-bottom: 6px;
     }
 
-    .stock {
-        font-size: 10px;
-        margin: 5px 0 6px;
-        letter-spacing: 0.2px;
-    }
-
-    .sp .kk .pro .cart i {
-        font-size: 19px;
-        padding: 5px 7px;
-    }
-
-    .mess {
-        margin-top: 110px;
-        margin-bottom: 20px;
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 576px) {
-    .nd {
-        margin-top: 90px;
-        margin-bottom: 15px;
-        padding: 8px 10px;
-    }
-
-    .nd h1 {
-        font-size: 20px;
-    }
-
-    .nd p {
-        font-size: 18px;
-    }
-
-    .sp {
-        padding: 7px 10px;
-        gap: 13px 7px;
-        letter-spacing: 0.3px;
-    }
-
-    .sp .tr {
-        width: calc((100% - 14px) / 3);
-    }
-
-    .sp .kk {
-        padding: 4px;
-        border-radius: 9px;
-    }
-
-    .sp .kk img {
-        border-radius: 7px;
-    }
-
-    .sp .kk .pro1 h5 {
-        font-size: 11px;
-        height: 27px;
-        line-height: 13px;
+    .sp .kk .pro1 h4.price-new {
+        font-size: 16px;
         margin-top: 7px;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
     }
 
-    .sp .kk .pro1 i {
-        font-size: 9px;
+    .discount-user {
+        top: 5px;
+        right: 5px;
+        padding: 4px 6px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+ 
+    .stock { 
+        font-size: 14px; 
+        margin: 5px 0 6px; 
+        letter-spacing: 0.2px; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 23px; 
+        padding: 6px 8px; 
+    } 
+ 
+    .mess { 
+        margin-top: 110px; 
+        margin-bottom: 20px; 
+        font-size: 22px; 
+    } 
+} 
+ 
+@media (max-width: 576px) { 
+    .nd { 
+        margin-top: 90px; 
+        margin-bottom: 15px; 
+        padding: 8px 10px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 20px; 
+    } 
+ 
+    .nd p { 
+        font-size: 18px; 
+    } 
+ 
+    .sp { 
+        padding: 7px 12px; 
+        gap: 18px 14px; 
+        letter-spacing: 0.3px; 
+    } 
+ 
+    .sp .tr { 
+        width: calc((100% - 14px) / 2); 
+    } 
+ 
+    .sp .kk { 
+        width: 100%;
+        padding: 4px; 
+        border-radius: 9px; 
+    } 
+ 
+    .sp .kk img { 
+        border-radius: 7px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 11px; 
+        height: 27px; 
+        line-height: 13px; 
+        margin-top: 7px; 
+        margin-bottom: 4px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 9px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 11px; 
+        margin-top: 6px; 
+        margin-bottom: 9px; 
     }
 
-    .sp .kk .pro1 h4 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sp .kk .pro1 h4.price-old {
+        font-size: 10px;
+        margin-top: 6px;
+        margin-bottom: 5px;
+    }
+
+    .sp .kk .pro1 h4.price-new {
         font-size: 11px;
         margin-top: 6px;
         margin-bottom: 5px;
     }
 
-    .stock {
-        font-size: 9px;
-        margin: 4px 0 5px;
-        letter-spacing: 0.1px;
-    }
-
-    .sp .kk .pro .cart i {
-        font-size: 17px;
-        padding: 4px 6px;
-    }
-
-    .mess {
-        margin-top: 100px;
-        margin-bottom: 18px;
-        font-size: 19px;
-    }
-}
-
-@media (max-width: 400px) {
-    .nd {
-        margin-top: 80px;
-        margin-bottom: 12px;
-        padding: 7px 8px;
-    }
-
-    .nd h1 {
-        font-size: 18px;
-    }
-
-    .nd p {
-        font-size: 16px;
-    }
-
-    .sp {
-        padding: 6px 8px;
-        gap: 10px 6px;
-        letter-spacing: 0;
-    }
-
-    .sp .tr {
-        width: calc((100% - 12px) / 3);
-    }
-
-    .sp .kk {
-        padding: 3px;
-        border-radius: 8px;
-    }
-
-    .sp .kk img {
-        border-radius: 6px;
-    }
-
-    .sp .kk .pro1 h5 {
+    .discount-user {
+        top: 4px;
+        right: 4px;
+        padding: 4px;
         font-size: 10px;
-        height: 25px;
-        line-height: 12px;
-        margin-top: 6px;
-        margin-bottom: 4px;
-    }
-
-    .sp .kk .pro1 i {
-        font-size: 8px;
-    }
-
-    .sp .kk .pro1 h4 {
-        font-size: 10px;
-        margin-top: 5px;
-        margin-bottom: 4px;
-    }
-
-    .stock {
-        font-size: 8px;
-        margin: 4px 0;
-        letter-spacing: 0;
-    }
-
-    .sp .kk .pro .cart i {
-        font-size: 15px;
-        padding: 3px 5px;
-    }
-
-    .mess {
-        margin-top: 90px;
-        margin-bottom: 15px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 320px) {
-    .nd {
-        margin-top: 75px;
-        margin-bottom: 10px;
-        padding: 6px 7px;
-    }
-
-    .nd h1 {
-        font-size: 16px;
-    }
-
-    .nd p {
-        font-size: 14px;
-    }
-
-    .sp {
-        padding: 5px 7px;
-        gap: 8px 5px;
-        letter-spacing: 0;
-    }
-
-    .sp .tr {
-        width: calc((100% - 10px) / 3);
-    }
-
-    .sp .kk {
-        padding: 3px;
         border-radius: 7px;
     }
-
-    .sp .kk img {
-        border-radius: 5px;
+ 
+    .stock { 
+        font-size: 9px; 
+        margin: 4px 0 5px; 
+        letter-spacing: 0.1px; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 17px; 
+        padding: 4px 6px; 
+    } 
+ 
+    .mess { 
+        margin-top: 100px; 
+        margin-bottom: 18px; 
+        font-size: 19px; 
+    } 
+} 
+ 
+@media (max-width: 400px) { 
+    .nd { 
+        margin-top: 80px; 
+        margin-bottom: 12px; 
+        padding: 7px 8px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 18px; 
+    } 
+ 
+    .nd p { 
+        font-size: 16px; 
+    } 
+ 
+    .sp { 
+        padding: 6px 10px; 
+        gap: 16px 12px; 
+        letter-spacing: 0; 
+    } 
+ 
+    .sp .tr { 
+        width: calc((100% - 12px) / 2); 
+    } 
+ 
+    .sp .kk { 
+        width: 100%;
+        padding: 3px; 
+        border-radius: 8px; 
+    } 
+ 
+    .sp .kk img { 
+        border-radius: 6px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 10px; 
+        height: 25px; 
+        line-height: 12px; 
+        margin-top: 6px; 
+        margin-bottom: 4px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 8px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 10px; 
+        margin-top: 5px; 
+        margin-bottom: 8px; 
     }
 
-    .sp .kk .pro1 h5 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sp .kk .pro1 h4.price-old {
         font-size: 9px;
-        height: 22px;
-        line-height: 11px;
         margin-top: 5px;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
     }
 
-    .sp .kk .pro1 i {
+    .sp .kk .pro1 h4.price-new {
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 4px;
+    }
+
+    .discount-user {
+        top: 3px;
+        right: 3px;
+        padding: 4px 3px;
+        font-size: 9px;
+        border-radius: 6px;
+    }
+ 
+    .stock { 
+        font-size: 8px; 
+        margin: 4px 0; 
+        letter-spacing: 0; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 15px; 
+        padding: 3px 5px; 
+    } 
+ 
+    .mess { 
+        margin-top: 90px; 
+        margin-bottom: 15px; 
+        font-size: 16px; 
+    } 
+} 
+ 
+@media (max-width: 320px) { 
+    .nd { 
+        margin-top: 75px; 
+        margin-bottom: 10px; 
+        padding: 6px 7px; 
+    } 
+ 
+    .nd h1 { 
+        font-size: 16px; 
+    } 
+ 
+    .nd p { 
+        font-size: 14px; 
+    } 
+ 
+    .sp { 
+        padding: 5px 9px; 
+        gap: 14px 10px; 
+        letter-spacing: 0; 
+    } 
+ 
+    .sp .tr { 
+        width: calc((100% - 10px) / 2); 
+    } 
+ 
+    .sp .kk { 
+        width: 100%;
+        padding: 3px; 
+        border-radius: 7px; 
+    } 
+ 
+    .sp .kk img { 
+        border-radius: 5px; 
+    } 
+ 
+    .sp .kk .pro1 h5 { 
+        font-size: 9px; 
+        height: 22px; 
+        line-height: 11px; 
+        margin-top: 5px; 
+        margin-bottom: 3px; 
+    } 
+ 
+    .sp .kk .pro1 i { 
+        font-size: 7px; 
+    } 
+ 
+    .sp .kk .pro1 h4 { 
+        font-size: 9px; 
+        margin-top: 4px; 
+        margin-bottom: 6px; 
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .sp .kk .pro1 h4.price-old {
         font-size: 7px;
+        margin-top: 4px;
+        margin-bottom: 3px;
+        text-decoration: line-through rgba(53, 64, 0, 0.97);
     }
 
-    .sp .kk .pro1 h4 {
+    .sp .kk .pro1 h4.price-new {
         font-size: 9px;
         margin-top: 4px;
         margin-bottom: 3px;
     }
 
-    .stock {
+    .discount-user {
+        top: 3px;
+        right: 3px;
+        padding: 3px;
         font-size: 8px;
-        margin: 3px 0 4px;
-        letter-spacing: 0;
+        border-radius: 5px;
     }
-
-    .sp .kk .pro .cart i {
-        font-size: 13px;
-        padding: 3px 4px;
-    }
-
-    .mess {
-        margin-top: 80px;
-        margin-bottom: 12px;
-        font-size: 14px;
-    }
+ 
+    .stock { 
+        font-size: 8px; 
+        margin: 3px 0 4px; 
+        letter-spacing: 0; 
+    } 
+ 
+    .sp .kk .pro .cart i { 
+        font-size: 13px; 
+        padding: 3px 4px; 
+    } 
+ 
+    .mess { 
+        margin-top: 80px; 
+        margin-bottom: 12px; 
+        font-size: 14px; 
+    } 
 }

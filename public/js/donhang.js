@@ -70,7 +70,14 @@ async function showOrders(data) {
                             <h3>${item.product_name}</h3>
                             <p>Số lượng: x ${item.quantity}</p>
                         </div>
-                        <h4 class="price">Giá: ${item.price.toLocaleString('vi-VN')} VNĐ</h4>
+                        <div class="order-price">
+                            ${item.discount > 0 && item.new_price ? `
+                                <span class="price-old">${item.old_price.toLocaleString('vi-VN')} VNĐ</span>
+                                <span class="price-new">${item.new_price.toLocaleString('vi-VN')} VNĐ</span>
+                            ` : `
+                                <span class="price-normal">${item.price.toLocaleString('vi-VN')} VNĐ</span>
+                            `}
+                        </div>
                     </div>
                 </div>
             `;
@@ -218,12 +225,37 @@ document.addEventListener('click', async function(e) {
         const shippingFee = document.querySelector('.shipping-fee');
 
         let productTotal = 0;
+        let promotionTotal = 0;
+
         items.forEach(item => {
-            productTotal += item.price * item.quantity;
+            
+            if(item.discount > 0 && item.new_price) {
+                productTotal += item.new_price * item.quantity;
+            }
+
+            else {
+                productTotal += item.price * item.quantity;
+            }
+
+            if(item.discount > 0 && item.old_price && item.new_price) {
+                promotionTotal += (item.old_price - item.new_price) * item.quantity;
+            }
         });
 
         document.querySelector('.product-total').innerText = productTotal.toLocaleString('vi-VN') + " VNĐ";
-        
+        const promotionRow = document.querySelector('.promotion-row');
+        const promotionTotalElement = document.querySelector('.promotion-total');
+
+
+        if(promotionTotal > 0) {
+            promotionTotalElement.innerText = "- " + promotionTotal.toLocaleString('vi-VN') + " VNĐ";
+            promotionRow.style.display = "flex";
+        }
+
+        else {
+            promotionRow.style.display = "none";
+        }
+
         if(order.shipping === 30000) {
             shippingMethod.innerText = "Giao Hàng Tiêu Chuẩn";
             shippingFee.innerText = "30.000 VNĐ";
@@ -271,7 +303,14 @@ document.addEventListener('click', async function(e) {
                                 <h4 class="product-qty">Số lượng: x${item.quantity}</h4>
                             </div>
                         </div>
-                        <span class="product-price">${item.price.toLocaleString('vi-VN')} VNĐ</span>
+                        <div class="product-price">
+                            ${item.discount > 0 && item.new_price ? `
+                                <span class="price-old">${item.old_price.toLocaleString('vi-VN')} VNĐ</span>
+                                <span class="price-new">${item.new_price.toLocaleString('vi-VN')} VNĐ</span>
+                            ` : `
+                                <span class="price-normal">${item.price.toLocaleString('vi-VN')} VNĐ</span>
+                            `}
+                        </div>
                     </div>
             `;
         });

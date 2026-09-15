@@ -32,7 +32,16 @@ span img{
 .item{
    margin-top: 10px;
    width: 400px;
-   
+   text-align: center;
+  
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -25px;
 }
 
 .quantity {
@@ -62,6 +71,18 @@ h5{
     color: rgb(4, 18, 209);
     font-size: 20px;
     text-align: center;
+}
+
+.item .price-old {
+    color: rgb(120, 120, 120);
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+.item .price-new {
+    color: rgb(4, 18, 209);
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .cong, .tru{
@@ -197,12 +218,32 @@ i.trash{
         font-size: 18px;
     }
 
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: -20px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
     .removeA,
     .pay {
         width: 165px;
         font-size: 18px;
     }
 }
+
 
 @media (max-width: 992px) {
 
@@ -243,6 +284,25 @@ i.trash{
         font-size: 17px;
     }
 
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: -18px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
     .nut {
         gap: 7px;
     }
@@ -280,6 +340,7 @@ i.trash{
         font-size: 65px;
     }
 }
+
 
 @media (max-width: 768px) {
 
@@ -321,6 +382,25 @@ i.trash{
 
     h5 {
         font-size: 15px;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        margin-top: -15px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 13px;
+        white-space: nowrap;
     }
 
     .nut {
@@ -369,6 +449,7 @@ i.trash{
     }
 }
 
+
 @media (max-width: 576px) {
 
     main {
@@ -399,18 +480,37 @@ i.trash{
     }
 
     .item {
-        width: 125px;
+        width: 145px;
         margin-top: 5px;
     }
 
     h4 {
-        font-size: 12px;
+        font-size: 11px;
         margin: 8px 0;
     }
 
     h5 {
         font-size: 13px;
         margin: 8px 0;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        margin-top: -13px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     .nut {
@@ -459,6 +559,7 @@ i.trash{
     }
 }
 
+
 @media (max-width: 400px) {
 
     main {
@@ -488,7 +589,7 @@ i.trash{
     }
 
     .item {
-        width: 100px;
+        width: 120px;
     }
 
     h4 {
@@ -499,6 +600,25 @@ i.trash{
     h5 {
         font-size: 11px;
         margin: 6px 0;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        margin-top: -10px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 6px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 8px;
+        white-space: nowrap;
     }
 
     .nut {
@@ -545,6 +665,7 @@ i.trash{
     }
 }
 
+
 @media (max-width: 320px) {
 
     main {
@@ -570,15 +691,40 @@ i.trash{
     }
 
     .item {
-        width: 82px;
+        width: 105px;
     }
 
     h4 {
         font-size: 9px;
+        margin: 5px 0;
     }
 
     h5 {
         font-size: 10px;
+        margin: 5px 0;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        margin-top: -8px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 6px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .nut {
+        gap: 3px;
     }
 
     .nut span {
@@ -614,4 +760,3 @@ i.trash{
         font-size: 32px;
     }
 }
-

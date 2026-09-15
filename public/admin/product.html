@@ -60,8 +60,12 @@
                     <h2>Thêm Sản Phẩm Mới</h2>
                     <label>Sản Phẩm</label>
                     <input class="inname" type="text" placeholder="Tên Sản Phẩm...">
-                    <label>Giá Tiền</label>
+                    <label>Giá</label>
                     <input class="inprice" type="number" placeholder="Giá...">
+                    <label>Giá Khuyến Mãi</label>
+                    <input class="innewprice" type="number" placeholder="Giá Khuyến Mãi...">
+                    <label>Giảm Giá (%)</label>
+                    <input class="indiscount" type="number" placeholder="Giảm (%)..." readonly>
                     <label>Số Lượng</label>
                     <input class="inquan" type="number" placeholder="Số Lượng...">
                     <label>Phân Loại</label>
@@ -90,11 +94,15 @@
                     <span class="econ"><i class="fa-solid fa-circle-xmark"></i></span>
                     <h2>Sửa Sản Phẩm</h2>
                     <label>Sản Phẩm</label>
-                    <input class="edname" type="text">
-                    <label>Giá Tiền</label>
-                    <input class="edprice" type="number">
+                    <input class="edname" type="text" placeholder="Tên Sản Phẩm...">
+                    <label>Giá</label>
+                    <input class="edprice" type="number" placeholder="Giá...">
+                    <label>Giá Khuyến Mãi</label>
+                    <input class="ednewprice" type="number" placeholder="Giá Khuyến Mãi...">
+                    <label>Giảm Giá (%)</label>
+                    <input class="eddiscount" type="number" placeholder="Giảm (%)..." readonly>
                     <label>Số Lượng</label>
-                    <input class="edquan" type="number">
+                    <input class="edquan" type="number" placeholder="Số Lượng...">
                     <label>Phân Loại</label>
                     <select class="edcate">
                         <option disabled selected>Chọn Phân Loại</option>
@@ -108,7 +116,7 @@
                         <option value="Khung Xếp">Khung Xếp</option>
                     </select>
                     <label>Mô Tả</label>
-                    <textarea class="eddescrip"></textarea>
+                    <textarea class="eddescrip" placeholder="Mô Tả..."></textarea>
                     <label>Hình Ảnh</label>
                     <input class="edimg" type="file">
                 
@@ -123,6 +131,8 @@
                         <th>Ảnh</th>
                         <th>Sản Phẩm</th>
                         <th>Giá</th>
+                        <th>Giá Khuyến Mãi</th>
+                        <th>Giảm Giá</th>
                         <th>Số Lượng</th>
                         <th>Mô Tả</th>
                         <th>Hành Động</th>

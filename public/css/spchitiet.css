@@ -31,6 +31,7 @@ section {
 }
 
 .sp .kk {
+    position: relative;
     width: 90%;
     height: auto;
     padding: 10px 12px;
@@ -48,6 +49,19 @@ section {
     height: 576px;
     border-radius: 20px;
     background-color: rgb(166, 166, 166);
+}
+
+.sp .kk .discount-user {
+    position: absolute;
+    top: 4px;
+    right: 43%;
+    padding: 8px;
+    color: white;
+    border-radius: 12px;
+    background-color: red;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
 }
 
 .icon{
@@ -72,7 +86,44 @@ section {
     margin-left: 70px;
     margin-top: 18px;
     margin-bottom: 12px;
+    color: rgb(120, 120, 120);
+}
+
+.sp .price-box {
+   margin-top: 6px;
+   margin-bottom: 20px;
+}
+
+.sp .price-box #price {
+    margin-left: 65px;
+    margin-bottom: 12px;
     color: rgba(53, 64, 0, 0.97);
+}
+
+.sp .price-box.has-discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: -10px;
+    margin-left: -200px;
+}
+
+.sp .price-box.has-discount #price {
+    margin-left: 0;
+}
+
+.sp .price-box .price-old {
+    font-size: 18px;
+    color: rgb(120, 120, 120);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+.sp .price-box #price.price-new {
+    color: rgba(53, 64, 0, 0.97);
+    font-weight: bold;
+    font-size: 19px;
 }
 
 .stock {
@@ -425,13 +476,13 @@ button.pay {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-    letter-spacing: 2px;
+    gap: 35px;
     box-sizing: border-box;
 }
 
 .related-list .related-kk {
-    width: 100%;
+    position: relative;
+    width: 106%;
     padding: 10px 12px;
     border: 1px solid rgb(5, 249, 143);
     background-color: rgb(143, 252, 162);
@@ -467,19 +518,51 @@ button.pay {
 }
 
 .related-list .related-kk .related-pro1 i {
-    font-size: 15px;
+    font-size: 17px;
     color: rgb(239, 9, 9);
 }
 
 .related-list .related-kk .related-pro1 h4 {
     margin-top: 15px;
-    margin-bottom: 12px;
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(53, 64, 0, 0.97);
 }
 
+.price-box {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 8px;
+}
+
+.related-list .related-kk .related-pro1 h4.price-old {
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+.related-list .related-kk .related-pro1 h4.price-new {
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: rgba(53, 64, 0, 0.97);
+    font-weight: bold;
+}
+
+.discount-user {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+    color: white;
+    border-radius: 12px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .stock-product {
-    margin: 8px 0 10px;
+    margin: -3px 0 10px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -500,6 +583,200 @@ button.pay {
     transform: scale(1.04);
 }
 
+@media (max-width: 1400px) {
+
+    section {
+        margin-top: 120px;
+        margin-bottom: 55px;
+    }
+
+    .sp .kk {
+        width: 92%;
+        padding: 15px;
+    }
+
+    .sp .pro1 {
+        margin-left: 60px;
+        min-width: 0;
+    }
+
+    .sp .kk img {
+        width: 52%;
+        height: 520px;
+        object-fit: contain;
+    }
+
+    .sp .kk .pro1 h2 {
+        width: 100%;
+        margin-left: 0;
+        font-size: 25px;
+    }
+
+    .icon {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sp .kk .pro1 h3 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .sp .price-box {
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        margin-left: 0;
+        margin-bottom: 14px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .stock {
+        margin-left: 0;
+        text-align: center;
+        font-size: 19px;
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        margin-left: 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .info p {
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .god {
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .sp .god .cart i {
+        font-size: 28px;
+        padding: 9px 12px;
+    }
+
+    button.pay {
+        width: 165px;
+        height: 50px;
+        font-size: 22px;
+        margin-top: 25px;
+    }
+
+    .sp .kk .discount-user {
+        top: 8px;
+        right: 46%;
+        font-size: 15px;
+        padding: 6px 7px;
+    }
+
+    .ud p {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .review-comment-section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .related-list {
+        padding: 10px 20px;
+        gap: 22px;
+    }
+
+    .related-list .related-tr {
+        width: 21.5%;
+    }
+
+    .related-list .related-kk {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 16px;
+        height: 34px;
+        line-height: 17px;
+        margin-top: 10px;
+        margin-bottom: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 13px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 14px;
+        margin-top: 9px;
+        margin-bottom: 10px;
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 12px;
+        margin-top: 8px;
+        margin-bottom: 6px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 6px;
+    }
+
+    .discount-user {
+        top: 6px;
+        right: 6px;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .stock-product {
+        font-size: 13px;
+        margin: 5px 0 7px;
+        letter-spacing: 0.2px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 24px;
+        padding: 10px 12px;
+    }
+}
 
 @media (max-width: 1200px) {
 
@@ -542,6 +819,33 @@ button.pay {
         font-size: 20px;
     }
 
+    .sp .price-box {
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 17px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 19px;
+    }
+
     .stock {
         margin-left: 0;
         text-align: center;
@@ -570,7 +874,20 @@ button.pay {
     .god {
         margin-left: 0;
         justify-content: center;
+        align-items: center;
         gap: 30px;
+    }
+
+    .sp .god .cart i {
+        font-size: 30px;
+        padding: 12px 15px;
+    }
+
+    .sp .kk .discount-user {
+        top: 8px;
+        right: 45%;
+        font-size: 16px;
+        padding: 7px;
     }
 
     .ud p {
@@ -602,15 +919,44 @@ button.pay {
     }
 
     .related-list {
-        padding: 10px 18px;
-        gap: 22px;
+        padding: 10px 16px; 
+        gap: 20px; 
     }
 
     .related-list .related-tr {
         width: 23%;
     }
 
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 11px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .discount-user {
+        top: 6px;
+        right: 6px;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
     .related-list .related-kk {
+        width: 100%;
         padding: 9px 10px;
     }
 
@@ -627,9 +973,9 @@ button.pay {
     }
 
     .related-list .related-kk .related-pro1 h4 {
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 8px;
+        font-size: 13px; 
+        margin-top: 10px; 
+        margin-bottom: 13px; 
     }
 
     .stock-product {
@@ -642,7 +988,6 @@ button.pay {
         font-size: 25px;
         padding: 7px 10px;
     }
-
 }
 
 
@@ -695,6 +1040,40 @@ button.pay {
         margin: 12px 0;
         font-size: 19px;
         text-align: center;
+    }
+
+    .sp .price-box {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin: 5px 0 10px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 16px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 18px;
+    }
+
+    .sp .kk .discount-user {
+        top: 8px;
+        right: 14%;
+        font-size: 15px;
+        padding: 6px;
     }
 
     .stock {
@@ -789,7 +1168,7 @@ button.pay {
         margin-top: -20px;
     }
 
-    .okl h1 {
+    .ok h1 {
         font-size: 26px;
     }
 
@@ -798,7 +1177,7 @@ button.pay {
     }
 
     .related-list {
-        padding: 10px 16px;
+        padding: 10px 16px; 
         gap: 20px;
     }
 
@@ -807,6 +1186,7 @@ button.pay {
     }
 
     .related-list .related-kk {
+        width: 100%;
         padding: 8px;
         border-radius: 16px;
     }
@@ -827,10 +1207,39 @@ button.pay {
         font-size: 12px;
     }
 
-    .related-list .related-kk .related-pro1 h4 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 14px;
+        margin-top: 9px;
+        margin-bottom: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
         font-size: 15px;
         margin-top: 9px;
         margin-bottom: 7px;
+    }
+
+    .discount-user {
+        top: 6px;
+        right: 6px;
+        padding: 4px 5px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 15px; 
+        margin-top: 9px; 
+        margin-bottom: 7px; 
     }
 
     .stock-product {
@@ -857,12 +1266,12 @@ button.pay {
         width: calc(100% - 20px);
         padding: 12px;
         border-radius: 15px;
-        box-sizing: border-box;
     }
 
     .sp .kk img {
         width: 85%;
         height: 330px;
+        object-fit: contain;
     }
 
     .sp .pro1 {
@@ -878,6 +1287,41 @@ button.pay {
     .sp .kk .pro1 h3 {
         font-size: 18px;
         margin: 10px 0;
+    }
+
+    .sp .price-box {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin: 4px 0 8px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 15px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 17px;
+    }
+
+    .sp .kk .discount-user {
+        top: 6px;
+        right: 7%;
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 9px;
     }
 
     .stock {
@@ -1058,16 +1502,17 @@ button.pay {
     }
 
     .related-list {
-        padding: 8px 12px;
-        gap: 16px 8px;
-        letter-spacing: 0.5px;
+        padding: 8px 14px; 
+        gap: 20px 16px; 
+        letter-spacing: 0.5px; 
     }
 
     .related-list .related-tr {
-        width: calc((100% - 16px) / 3);
+        width: calc((100% - 16px) / 2);
     }
 
     .related-list .related-kk {
+        width: 100%;
         padding: 5px;
         border-radius: 11px;
     }
@@ -1088,10 +1533,39 @@ button.pay {
         font-size: 10px;
     }
 
-    .related-list .related-kk .related-pro1 h4 {
-        font-size: 12px;
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 15px;
         margin-top: 7px;
         margin-bottom: 6px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
+        font-size: 16px;
+        margin-top: 7px;
+        margin-bottom: 6px;
+    }
+
+    .discount-user {
+        top: 5px;
+        right: 5px;
+        padding: 4px 6px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 16px; 
+        margin-top: 7px; 
+        margin-bottom: 11px; 
     }
 
     .stock-product {
@@ -1124,6 +1598,7 @@ button.pay {
         width: 100%;
         height: 260px;
         border-radius: 13px;
+        object-fit: contain;
     }
 
     .sp .pro1 {
@@ -1139,6 +1614,41 @@ button.pay {
     .sp .kk .pro1 h3 {
         font-size: 16px;
         margin: 8px 0;
+    }
+
+    .sp .price-box {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 3px 0 7px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 13px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 15px;
+    }
+
+    .sp .kk .discount-user {
+        top: 4px;
+        right: 1%;
+        padding: 4px 5px;
+        font-size: 12px;
+        border-radius: 8px;
     }
 
     .stock {
@@ -1324,16 +1834,17 @@ button.pay {
     }
 
     .related-list {
-        padding: 7px 10px;
-        gap: 13px 7px;
-        letter-spacing: 0.3px;
+        padding: 7px 12px; 
+        gap: 18px 14px; 
+        letter-spacing: 0.3px;  
     }
 
     .related-list .related-tr {
-        width: calc((100% - 14px) / 3);
+        width: calc((100% - 14px) / 2);
     }
 
     .related-list .related-kk {
+        width: 100%;
         padding: 4px;
         border-radius: 9px;
     }
@@ -1354,10 +1865,39 @@ button.pay {
         font-size: 9px;
     }
 
-    .related-list .related-kk .related-pro1 h4 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 10px;
+        margin-top: 6px;
+        margin-bottom: 5px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
         font-size: 11px;
         margin-top: 6px;
         margin-bottom: 5px;
+    }
+
+    .discount-user {
+        top: 4px;
+        right: 4px;
+        padding: 4px;
+        font-size: 10px;
+        border-radius: 7px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 11px; 
+        margin-top: 6px; 
+        margin-bottom: 9px;
     }
 
     .stock-product {
@@ -1370,7 +1910,6 @@ button.pay {
         font-size: 17px;
         padding: 4px 6px;
     }
-
 }
 
 
@@ -1396,6 +1935,27 @@ button.pay {
 
     .sp .kk .pro1 h3 {
         font-size: 14px;
+    }
+
+    .sp .price-box {
+        gap: 4px;
+        margin: 3px 0 6px;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 12px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 14px;
+    }
+
+    .sp .kk .discount-user {
+        top: 4px;
+        right: 1%;
+        padding: 3px 5px;
+        font-size: 11px;
+        border-radius: 7px;
     }
 
     .stock {
@@ -1529,16 +2089,17 @@ button.pay {
     }
 
     .related-list {
-        padding: 6px 8px;
-        gap: 10px 6px;
-        letter-spacing: 0;
+        padding: 6px 10px; 
+        gap: 16px 12px; 
+        letter-spacing: 0; 
     }
 
     .related-list .related-tr {
-        width: calc((100% - 12px) / 3);
+        width: calc((100% - 12px) / 2);
     }
 
     .related-list .related-kk {
+        width: 100%;
         padding: 3px;
         border-radius: 8px;
     }
@@ -1559,10 +2120,39 @@ button.pay {
         font-size: 8px;
     }
 
-    .related-list .related-kk .related-pro1 h4 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 9px;
+        margin-top: 5px;
+        margin-bottom: 4px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
         font-size: 10px;
         margin-top: 5px;
         margin-bottom: 4px;
+    }
+
+    .discount-user {
+        top: 3px;
+        right: 3px;
+        padding: 4px 3px;
+        font-size: 9px;
+        border-radius: 6px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 10px; 
+        margin-top: 5px; 
+        margin-bottom: 8px; 
     }
 
     .stock-product {
@@ -1575,11 +2165,10 @@ button.pay {
         font-size: 15px;
         padding: 3px 5px;
     }
-
 }
 
 
-@media (max-width: 360px) {
+@media (max-width: 320px) {
 
     section {
         margin-top: 80px;
@@ -1600,6 +2189,27 @@ button.pay {
 
     .sp .kk .pro1 h3 {
         font-size: 13px;
+    }
+
+    .sp .price-box {
+        gap: 3px;
+        margin: 2px 0 5px;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 11px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 13px;
+    }
+
+    .sp .kk .discount-user {
+        top: 4px;
+        right: 1%;
+        padding: 3px 4px;
+        font-size: 10px;
+        border-radius: 6px;
     }
 
     .stock {
@@ -1669,16 +2279,17 @@ button.pay {
     }
 
     .related-list {
-        padding: 5px 7px;
-        gap: 8px 5px;
+        padding: 5px 9px; 
+        gap: 14px 10px; 
         letter-spacing: 0;
     }
 
     .related-list .related-tr {
-        width: calc((100% - 10px) / 3);
+        width: calc((100% - 10px) / 2);
     }
 
     .related-list .related-kk {
+        width: 100%;
         padding: 3px;
         border-radius: 7px;
     }
@@ -1699,10 +2310,41 @@ button.pay {
         font-size: 7px;
     }
 
-    .related-list .related-kk .related-pro1 h4 {
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 7px;
+        margin-top: 4px;
+        margin-bottom: 3px;
+        text-decoration: line-through;
+        color: rgb(120, 120, 120);
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
         font-size: 9px;
         margin-top: 4px;
         margin-bottom: 3px;
+    }
+
+    .discount-user {
+        top: 3px;
+        right: 3px;
+        padding: 3px;
+        font-size: 8px;
+        border-radius: 5px;
+    }
+ 
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 9px; 
+        margin-top: 4px; 
+        margin-bottom: 6px; 
     }
 
     .stock-product {
@@ -1716,3 +2358,4 @@ button.pay {
         padding: 3px 4px;
     }
 }
+

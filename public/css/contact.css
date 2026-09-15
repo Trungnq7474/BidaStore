@@ -236,6 +236,10 @@ main .info button.send:hover {
     main .contact p {
         font-size: 15px;
     }
+
+    main .contact .map {
+        height: 350px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -256,6 +260,11 @@ main .info button.send:hover {
 
     main .contact p {
         font-size: 15px;
+    }
+
+    main .contact .map {
+        height: 300px;
+        margin-top: 20px;
     }
 }
 
@@ -312,6 +321,14 @@ main .info button.send:hover {
         width: 40px;
         height: 40px;
         font-size: 19px;
+    }
+
+    main .contact .map {
+        height: 240px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-width: 2px;
+        border-radius: 14px;
     }
 
     main .info {
@@ -397,6 +414,14 @@ main .info button.send:hover {
         font-size: 16px;
     }
 
+    main .contact .map {
+        height: 200px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+
     main .info {
         padding: 18px 15px;
     }
@@ -470,6 +495,14 @@ main .info button.send:hover {
         font-size: 14px;
     }
 
+    main .contact .map {
+        height: 170px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        border-width: 2px;
+        border-radius: 10px;
+    }
+
     main .info {
         padding: 15px 12px;
     }
@@ -520,4 +553,24 @@ main .contact p {
 
 main .contact p span {
     white-space: normal;
+}
+
+main .contact .map {
+    width: 100%;
+    height: 400px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border: 3px solid #a0e7ff;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px rgba(2, 51, 131, 0.364);
+    box-sizing: border-box;
+}
+
+main .contact .map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }

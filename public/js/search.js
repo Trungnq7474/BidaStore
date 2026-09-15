@@ -41,12 +41,24 @@ fetch('/search?keyword=' + keyword)
                         <div class="pro">
                             <img src="${getImageUrl(item.image)}" alt="Ảnh">
 
+                            ${item.discount ? `<span class="discount-user">- ${item.discount}%</span>` : ""}
+
                             <div class="pro1">
                                 <h5>${item.product_name}</h5>
 
                                 ${getStars(item.average_rating)}
 
-                                <h4>${item.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                ${item.new_price
+                                    ? `
+                                        <div class="price-box">
+                                            <h4 class="price-old">${item.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            <h4 class="price-new">${item.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        </div>
+                                     `
+                                    : `
+                                        <h4>${item.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    `
+                                }
                                 <p class="stock ${item.stock > 0 ? 'con-hang' : 'het-hang'}">
                                     ${item.stock > 0 ? `Còn ${item.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                 </p>

@@ -103,13 +103,65 @@ function show(text) {
     }, 2000);
 }
 
+async function loadPromotion() {
+    const res = await fetch('/products');
+    const products = await res.json();
+
+    const promotionProducts = products.filter(product => {
+        return product.discount > 0 && product.new_price;
+    });
+
+    promotionProducts.sort(() => Math.random() - 0.5);
+    const random = promotionProducts;
+
+    const promotionList = document.getElementById('promotionList');
+
+    promotionList.innerHTML = ""
+    random.forEach(product => {
+        promotionList.innerHTML +=`
+            <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+                <div class="kk">
+                    <div class="pro">
+                        <img src="images/${product.image}" alt="Ảnh">
+
+                        <span class="discount-user">- ${product.discount}%</span>
+
+                        <div class="pro1">
+                            <h5>${product.product_name}</h5>
+
+                            ${getStars(product.average_rating)}
+
+                            <div class="price-box">
+                                <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                            </div>
+
+                            <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
+                                ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
+                            </p>
+                        </div>
+
+                        <span class="cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        `;
+    });
+}   
+
 async function loadProduct() {
     const res = await fetch('/products');
     const products = await res.json();
 
-    products.sort(() => Math.random() - 0.5);
+    const normalProducts = products.filter(product => {
+        return !(product.discount > 0 && product.new_price);
+    });
 
-    const random = products.slice(0, 10);
+    normalProducts.sort(() => Math.random() - 0.5);
+
+    const random = normalProducts.slice(0, 10);
 
     const productList = document.getElementById('productList');
 
@@ -122,12 +174,24 @@ async function loadProduct() {
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
 
+                            ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
                                 ${getStars(product.average_rating)}
 
-                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                ${product.new_price
+                                    ? `
+                                        <div class="price-box">
+                                            <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        </div>
+                                    `
+                                    : `
+                                        <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    `
+                                }
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                     ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                 </p>
@@ -159,12 +223,24 @@ async function loadBest() {
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
 
+                            ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
                                 ${getStars(product.average_rating)}
 
-                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                ${product.new_price
+                                    ? `
+                                        <div class="price-box">
+                                            <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        </div>
+                                    `
+                                    : `
+                                         <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    `
+                                }
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                     ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                 </p>
@@ -180,6 +256,7 @@ async function loadBest() {
     });
 }
 
+loadPromotion();
 loadBest();
 
 const filterBtn = document.getElementById("filterBtn");
@@ -198,14 +275,24 @@ applyFilter.addEventListener('click', async function() {
     const maxPrice = document.getElementById("maxPrice").value;
     const sort = document.getElementById("sortPrice").value;
 
-    if(category === "" && minPrice === "" && maxPrice === "" && sort === "") {
-        show("Bạn Chưa Chọn Phần Để Lọc !");
+    if(category === "") {
+        show("Bạn Chưa Chọn Sản Phẩm Để Lọc !");
         return;
     }
 
-    document.querySelector(".ok h1").innerText = "TẤT CẢ SẢN PHẨM";
+    document.getElementById("promotionTitle").style.display = "none";
+    document.getElementById("promotionList").style.display = "none";
+
     document.getElementById("bestTitle").style.display = "none";
     document.getElementById("bestList").style.display = "none";
+
+    const titles = document.querySelectorAll(".ok h1");
+
+    titles.forEach(title => {
+        if(title.innerText === "SẢN PHẨM NỔI BẬT") {
+            title.innerText = "TẤT CẢ SẢN PHẨM";
+        }
+    });
 
     const res =  await fetch('/products');
     const data = await res.json();
@@ -230,12 +317,24 @@ applyFilter.addEventListener('click', async function() {
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
 
+                            ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+
                             <div class="pro1">
                                 <h5>${product.product_name}</h5>
 
                                 ${getStars(product.average_rating)}
 
-                                <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                ${product.new_price
+                                    ? `
+                                        <div class="price-box">
+                                            <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                            <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        </div>
+                                    `
+                                    : `
+                                         <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    `
+                                }
                                 <p class="stock ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                     ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
                                 </p>
@@ -261,11 +360,23 @@ resetFilter.addEventListener('click', () => {
     document.getElementById("maxPrice").value = "";
     document.getElementById("sortPrice").value = "";
 
-    document.querySelector(".ok h1").innerText = "SẢN PHẨM NỔI BẬT";
+    const titles = document.querySelectorAll(".ok h1");
+
+    titles.forEach(title => {
+        if(title.innerText === "TẤT CẢ SẢN PHẨM") {
+            title.innerText = "SẢN PHẨM NỔI BẬT";
+        }
+    });
+
+    document.getElementById("promotionTitle").style.display = "block";
+    document.getElementById("promotionList").style.display = "flex";
+
     document.getElementById("bestTitle").style.display = "block";
     document.getElementById("bestList").style.display = "flex";
 
+    loadPromotion();
     loadProduct();
+    loadBest();
 
 });
 

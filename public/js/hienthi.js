@@ -69,7 +69,17 @@ async function loadCart() {
                 <span><img src="${getImageUrl(item.image)}" alt="Ảnh"></span>
                 <div class="item">
                     <h4>${item.product_name}</h4>
-                    <h5>${item.price.toLocaleString('vi-VN')} VNĐ</h5>
+                    ${item.new_price != null && item.new_price < item.price
+                        ? `
+                            <div class="price-box">
+                                <h5 class="price-old">${Number(item.price).toLocaleString('vi-VN')} VNĐ</h5>
+                                <h5 class="price-new">${Number(item.new_price).toLocaleString('vi-VN')} VNĐ</h5>
+                            </div>
+                        `
+                        : `
+                            <h5 class="price-new">${Number(item.price).toLocaleString('vi-VN')} VNĐ</h5>
+                        `
+                    }
                 </div>
                 <div class="nut">
                     <button class="tru"><i class="fa-solid fa-minus"></i></button> <span>${item.quantity}</span> <button class="cong"><i class="fa-solid fa-plus"></i></button>
@@ -201,7 +211,12 @@ document.addEventListener('click', async(e) => {
         let total = 0;
 
         cart.forEach(function(item){
-            total += item.price * item.quantity;
+            let price = item.price
+            if(item.new_price != null && item.new_price < item.price) {
+                price = item.new_price;
+            }
+
+            total += price * item.quantity;
         });
 
         document.querySelector('.total').innerText = total.toLocaleString('vi-VN');

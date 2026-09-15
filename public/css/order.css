@@ -1,26 +1,27 @@
-body{
+body {
     background: #f4f6f9;
 }
 
-.container{
+.container {
     display: flex;
     min-height: 100vh;
 }
 
-.main{
+.main {
     flex: 1;
     padding: 30px;
     min-width: 0;
+    box-sizing: border-box;
 }
 
-.top{
+.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.top h1{
+.top h1 {
     margin: auto;
     font-size: 35px;
     color: #111827;
@@ -28,7 +29,7 @@ body{
     margin-bottom: 30px;
 }
 
-.edit{
+.edit {
     font-weight: bold;
     font-size: 17px;
     border: none;
@@ -41,7 +42,7 @@ body{
     transition: 0.3s ease-in-out;
 }
 
-.delete{
+.delete {
     font-weight: bold;
     font-size: 17px;
     border: none;
@@ -53,13 +54,13 @@ body{
     cursor: pointer;
 }
 
-.edit:hover{
+.edit:hover {
     background: #d97706;
     transition: 0.3s ease-in-out;
     transform: scale(1.05);
 }
 
-.delete:hover{
+.delete:hover {
     background: #dc2626;
     transition: 0.3s ease-in-out;
     transform: scale(1.05);
@@ -83,22 +84,22 @@ option {
     background-color: #c2fff2;
 }
 
-select.cho{
+select.cho {
     color: white;
     background: orange;
 }
 
-select.dang{
+select.dang {
     color: white;
     background: blue;
 }
 
-select.xong{
+select.xong {
     color: white;
     background: green;
 }
 
-select.huy{
+select.huy {
     color: white;
     background: red;
 }
@@ -113,9 +114,11 @@ select.huy{
     width: 42%;
     height: 650px;
     overflow-y: auto;
+    overflow-x: hidden;
     margin-left: 35%;
     margin-top: 25px;
     animation: showw 0.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 @keyframes showw {
@@ -150,7 +153,12 @@ select.huy{
     border-radius: 20px;
 }
 
-.name, .email, .phone, .address, .method, .time {
+.name,
+.email,
+.phone,
+.address,
+.method,
+.time {
     color: rgb(55, 114, 217);
 }
 
@@ -174,6 +182,7 @@ select.huy{
     font-weight: 600;
     text-align: right;
     max-width: 65%;
+    overflow-wrap: anywhere;
 }
 
 .text {
@@ -181,28 +190,43 @@ select.huy{
 }
 
 .product-list {
-    padding: 15px 0;
-    margin-top: -15px;
-    max-height: 170px;
+    padding: 11px 0;
+    margin-top: -5px;
+    max-height: 140px;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .product-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     font-size: 14px;
     color: #1e293b;
     padding: 8px 0;
     border-top: 1px dashed #a78bfa;
     border-bottom: 1px dashed #a78bfa;
     margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.product-name {
+    width: 400px;
+    max-width: 60%;
+    overflow-wrap: break-word;
 }
 
 .product-info {
     display: flex;
     align-items: center;
     gap: 15px;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .product-img {
@@ -212,6 +236,7 @@ select.huy{
     background-color: #ddd6fe;
     object-fit: cover;
     border: 1px solid #c4b5fd;
+    flex-shrink: 0;
 }
 
 .product-detail .product-qty {
@@ -221,9 +246,31 @@ select.huy{
 }
 
 .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
     font-weight: bold;
     color: #334155;
     font-size: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.product-price .price-old {
+    color: rgb(120, 120, 120);
+    text-decoration: line-through;
+    font-size: 15px;
+}
+
+.product-price .price-new {
+    color: #334155;
+    font-size: 17px;
+}
+
+.product-price .price-normal {
+    color: #334155;
+    font-size: 17px;
 }
 
 .invoice-roww {
@@ -235,6 +282,7 @@ select.huy{
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
+    min-width: 0;
 }
 
 .invoice-roww .label {
@@ -243,11 +291,13 @@ select.huy{
     display: flex;
     align-items: center;
     gap: 15px;
+    min-width: 0;
 }
 
 .invoice-roww i {
     font-size: 23px;
-    color:#64748b;
+    color: #64748b;
+    flex-shrink: 0;
 }
 
 .invoice-roww .text {
@@ -255,11 +305,24 @@ select.huy{
     white-space: nowrap;
 }
 
+.shipping-method,
+.shipping-fee,
+.product-total,
+.promotion-total {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.promotion-row {
+    display: flex;
+}
+
 .voucher-row .voucher-text {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
+    min-width: 0;
 }
 
 .voucher-row .voucher-code {
@@ -270,27 +333,33 @@ select.huy{
     color: #64748b;
     font-weight: bold;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .total-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #ddd6fe;
     font-size: 16px;
     font-weight: 700;
+    min-width: 0;
 }
 
 .total-row .price {
     color: #dc2626;
     font-size: 22px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .total-row .tong {
     color: #dc2626;
     font-size: 20px;
+    min-width: 0;
 }
 
 .box {
@@ -301,6 +370,7 @@ select.huy{
     height: 100%;
     background: rgba(23, 22, 22, 0.495);
     display: none;
+    overflow: hidden;
 }
 
 .econ {
@@ -311,6 +381,17 @@ select.huy{
     color: #3d62c5;
     cursor: pointer;
 }
+
+.product-list::-webkit-scrollbar:horizontal {
+    height: 0;
+    display: none;
+}
+
+.invoice-box::-webkit-scrollbar:horizontal {
+    height: 0;
+    display: none;
+}
+
 
 @media (max-width: 1200px) {
 
@@ -342,6 +423,7 @@ select.huy{
         height: auto;
         max-height: 85vh;
         overflow-y: auto;
+        overflow-x: hidden;
         margin-left: auto;
         margin-right: auto;
         padding: 18px;
@@ -380,11 +462,25 @@ select.huy{
         height: 78px;
     }
 
+    .product-name {
+        font-size: 13px;
+    }
+
     .product-detail .product-qty {
         margin-top: 10px;
     }
 
     .product-price {
+        font-size: 17px;
+        gap: 6px;
+    }
+
+    .product-price .price-old {
+        font-size: 14px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
         font-size: 17px;
     }
 
@@ -410,7 +506,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }
@@ -493,6 +590,7 @@ select.huy{
         height: auto;
         max-height: 82vh;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: 16px;
         margin-left: auto;
         margin-right: auto;
@@ -540,12 +638,26 @@ select.huy{
         height: 65px;
     }
 
+    .product-name {
+        font-size: 11px;
+    }
+
     .product-detail .product-qty {
         margin-top: 7px;
         font-size: 12px;
     }
 
     .product-price {
+        font-size: 15px;
+        gap: 5px;
+    }
+
+    .product-price .price-old {
+        font-size: 12px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
         font-size: 15px;
     }
 
@@ -567,7 +679,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }
@@ -662,6 +775,7 @@ select.huy{
         height: auto;
         max-height: 80vh;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: 14px;
         margin-left: auto;
         margin-right: auto;
@@ -702,6 +816,7 @@ select.huy{
         padding: 10px 0;
         margin-top: -6px;
         max-height: 140px;
+        overflow-x: hidden;
     }
 
     .product-item {
@@ -713,6 +828,7 @@ select.huy{
     .product-info {
         gap: 7px;
         min-width: 0;
+        max-width: 100%;
     }
 
     .product-img {
@@ -724,6 +840,13 @@ select.huy{
 
     .product-detail {
         min-width: 0;
+        max-width: 100%;
+    }
+
+    .product-name {
+        width: auto;
+        max-width: 100%;
+        font-size: 10px;
     }
 
     .product-detail .product-qty {
@@ -733,7 +856,17 @@ select.huy{
 
     .product-price {
         font-size: 13px;
+        gap: 4px;
         white-space: nowrap;
+    }
+
+    .product-price .price-old {
+        font-size: 10px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
+        font-size: 13px;
     }
 
     .invoice-roww {
@@ -758,7 +891,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }
@@ -844,6 +978,7 @@ select.huy{
         height: auto;
         max-height: 78vh;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: 12px;
         margin-top: 8px;
         margin-bottom: 20px;
@@ -877,6 +1012,7 @@ select.huy{
     .product-list {
         max-height: 125px;
         padding: 8px 0;
+        overflow-x: hidden;
     }
 
     .product-item {
@@ -894,12 +1030,26 @@ select.huy{
         height: 46px;
     }
 
+    .product-name {
+        font-size: 9px;
+    }
+
     .product-detail .product-qty {
         font-size: 9px;
         margin-top: 4px;
     }
 
     .product-price {
+        font-size: 11px;
+        gap: 3px;
+    }
+
+    .product-price .price-old {
+        font-size: 9px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
         font-size: 11px;
     }
 
@@ -920,7 +1070,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }
@@ -1003,6 +1154,7 @@ select.huy{
         height: auto;
         max-height: 76vh;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: 10px;
         border-radius: 9px;
     }
@@ -1024,6 +1176,7 @@ select.huy{
 
     .product-list {
         max-height: 115px;
+        overflow-x: hidden;
     }
 
     .product-item {
@@ -1035,11 +1188,25 @@ select.huy{
         height: 41px;
     }
 
+    .product-name {
+        font-size: 8px;
+    }
+
     .product-detail .product-qty {
         font-size: 8px;
     }
 
     .product-price {
+        font-size: 10px;
+        gap: 3px;
+    }
+
+    .product-price .price-old {
+        font-size: 8px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
         font-size: 10px;
     }
 
@@ -1059,7 +1226,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }
@@ -1142,6 +1310,7 @@ select.huy{
         height: auto;
         max-height: 74vh;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: 8px;
         border-radius: 8px;
     }
@@ -1163,6 +1332,7 @@ select.huy{
 
     .product-list {
         max-height: 105px;
+        overflow-x: hidden;
     }
 
     .product-item {
@@ -1174,11 +1344,25 @@ select.huy{
         height: 37px;
     }
 
+    .product-name {
+        font-size: 7px;
+    }
+
     .product-detail .product-qty {
         font-size: 8px;
     }
 
     .product-price {
+        font-size: 9px;
+        gap: 2px;
+    }
+
+    .product-price .price-old {
+        font-size: 7px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
         font-size: 9px;
     }
 
@@ -1198,7 +1382,8 @@ select.huy{
 
     .shipping-method,
     .shipping-fee,
-    .product-total {
+    .product-total,
+    .promotion-total {
         white-space: nowrap;
         flex-shrink: 0;
     }

@@ -106,7 +106,35 @@ fetch(`/product/${product_id}`)
 
     document.querySelector('.icon').innerHTML = getStars(data.average_rating);
 
-    document.getElementById("price").innerText = Number(data.price).toLocaleString('vi-VN') + " VNĐ";
+    const discount = document.getElementById("discount");
+
+    if(data.discount) {
+        discount.innerText = "- " + data.discount + "%";
+        discount.style.display = "block";
+    }
+
+    else {
+        discount.innerText = "";
+        discount.style.display = "none";
+    }
+
+    const priceOld = document.getElementById("price-old");
+    const price = document.getElementById("price");
+    const priceBox = document.querySelector(".price-box");
+
+    if(data.new_price) {
+        priceOld.innerText = Number(data.price).toLocaleString('vi-VN') + " VNĐ";
+        price.innerText = Number(data.new_price).toLocaleString('vi-VN') + " VNĐ";
+        price.classList.add("price-new");
+        priceBox.classList.add("has-discount");
+        priceBox.style.display = "flex";
+    }
+
+    else {
+        priceOld.innerText = "";
+        price.innerText = Number(data.price).toLocaleString('vi-VN') + " VNĐ";
+        priceBox.style.display = "block";
+    }
 
     const stock = document.querySelector('.stock');
 
@@ -289,12 +317,24 @@ async function loadProduct() {
                     <div class="related-pro">
                         <img src="images/${product.image}" alt="Ảnh">
 
+                        ${product.discount ? `<span class="discount-user">- ${product.discount}%</span>` : ""}
+
                         <div class="related-pro1">
                             <h5>${product.product_name}</h5>
 
                             ${getStars(product.average_rating)}
 
-                            <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                            ${product.new_price
+                                ? `
+                                    <div class="price-box">
+                                        <h4 class="price-old">${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                        <h4 class="price-new">${product.new_price.toLocaleString("vi-VN")} VNĐ</h4>
+                                    </div>
+                                `
+                                : `
+                                    <h4>${product.price.toLocaleString("vi-VN")} VNĐ</h4>
+                                `
+                            } 
 
                             <p class="stock-product ${product.stock > 0 ? 'con-hang' : 'het-hang'}">
                                 ${product.stock > 0 ? `Còn ${product.stock} Sản Phẩm` : "Đã Hết Hàng"}
