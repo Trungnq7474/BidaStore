@@ -407,6 +407,74 @@ h6 {
     font-weight: bold;
 }
 
+#promotionList {
+    position: relative;
+    width: 100%;
+    border: 2px solid #d97878;
+    border-radius: 25px;
+    background-color: #ffd2d2;
+}
+
+@keyframes khuyenmai {
+    0% {
+        color: #ffffff;
+        background-color: #ff0000;
+        transform: scale(1) rotate(7deg);
+    }
+
+    25% {
+        color: #fff200;
+        background-color: #ff6600;
+        transform: scale(1.08) rotate(-7deg);
+    }
+
+    50% {
+        color: #ffffff;
+        background-color: #ffcc00;
+        transform: scale(1) rotate(7deg);
+    }
+
+    75% {
+        color: #fff200;
+        background-color: #ff3300;
+        transform: scale(1.08) rotate(-7deg);
+    }
+
+    100% {
+        color: #ffffff;
+        background-color: #ff0000;
+        transform: scale(1) rotate(7deg);
+    }
+}
+
+#promotionList::before,
+#promotionList::after {
+    position: absolute;
+    top: -40px;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: rgb(182, 0, 0);
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 20;
+    animation: khuyenmai 2s infinite;
+}
+
+#promotionList::before {
+    content: "🔥 KHUYẾN MÃI";
+    left: 18px;
+    transform: rotate(-7deg);
+}
+
+#promotionList::after {
+    content: "KHUYẾN MÃI 🔥";
+    right: 18px;
+    transform: rotate(7deg);
+}
+
+
+
 @media (min-width: 1201px) and (max-width: 1600px) {
 
     .main {
@@ -565,6 +633,30 @@ h6 {
         height: 40px;
         padding: 9px 17px;
         font-size: 14px;
+    }
+
+     #promotionList {
+        width: 100%;
+        margin: 20px auto 50px;
+        border-radius: 25px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -34px;
+        padding: 9px 18px;
+        font-size: 17px;
+        border-radius: 19px;
+    }
+
+    #promotionList::before {
+        left: 16px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 16px;
+        transform: rotate(7deg);
     }
 }
 
@@ -750,6 +842,30 @@ h6 {
         padding: 8px 15px;
         font-size: 13px;
     }
+
+    #promotionList {
+        width: 100%;
+        margin: 20px auto 50px;
+        border-radius: 23px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -32px;
+        padding: 8px 16px;
+        font-size: 16px;
+        border-radius: 18px;
+    }
+
+    #promotionList::before {
+        left: 14px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 14px;
+        transform: rotate(7deg);
+    }
 }
 
 
@@ -934,6 +1050,30 @@ h6 {
         height: 37px;
         padding: 7px 13px;
         font-size: 12px;
+    }
+
+    #promotionList {
+        width: 100%;
+        margin: 18px auto 45px;
+        border-radius: 22px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -30px;
+        padding: 7px 14px;
+        font-size: 15px;
+        border-radius: 17px;
+    }
+
+    #promotionList::before {
+        left: 12px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 12px;
+        transform: rotate(7deg);
     }
 }
 
@@ -1170,6 +1310,30 @@ h6 {
         padding: 7px 11px;
         font-size: 12px;
     }
+
+    #promotionList {
+        width: 100%;
+        margin: 18px auto 45px;
+        border-radius: 21px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -28px;
+        padding: 7px 13px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    #promotionList::before {
+        left: 10px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 10px;
+        transform: rotate(7deg);
+    }
 }
 
 
@@ -1388,6 +1552,30 @@ h6 {
         height: 34px;
         padding: 6px 9px;
         font-size: 11px;
+    }
+
+    #promotionList {
+        width: 100%;
+        margin: 17px auto 40px;
+        border-radius: 20px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -25px;
+        padding: 6px 11px;
+        font-size: 12px;
+        border-radius: 14px;
+    }
+
+    #promotionList::before {
+        left: 8px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 8px;
+        transform: rotate(7deg);
     }
 }
 
@@ -1608,5 +1796,28 @@ h6 {
         padding: 5px 8px;
         font-size: 10px;
     }
-}
 
+    #promotionList {
+        width: 100%;
+        margin: 15px auto 35px;
+        border-radius: 18px;
+    }
+
+    #promotionList::before,
+    #promotionList::after {
+        top: -22px;
+        padding: 5px 8px;
+        font-size: 10px;
+        border-radius: 12px;
+    }
+
+    #promotionList::before {
+        left: 5px;
+        transform: rotate(-7deg);
+    }
+
+    #promotionList::after {
+        right: 5px;
+        transform: rotate(7deg);
+    }
+}

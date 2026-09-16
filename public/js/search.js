@@ -36,7 +36,7 @@ fetch('/search?keyword=' + keyword)
 
             list.innerHTML += `
             
-            <a href="spchitiet.html?product_id=${item.product_id}" class="tr">
+            <a href="spchitiet.html?product_id=${item.product_id}" class="tr ${item.discount > 0 && item.new_price ? 'promotion-product' : ''}">
                     <div class="kk">
                         <div class="pro">
                             <img src="${getImageUrl(item.image)}" alt="Ảnh">

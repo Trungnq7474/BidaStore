@@ -583,6 +583,57 @@ button.pay {
     transform: scale(1.04);
 }
 
+.related-list .promotion-product .related-kk {
+    border: 1px solid #ff6565;
+    background-color: #ff6565;
+}
+
+.related-list .promotion-product .related-kk:hover {
+    box-shadow: 0 0 35px #ff6565;
+}
+
+.related-list .promotion-product .related-kk img {
+    background-color: #d8fffc;
+}
+
+.related-list .promotion-product .related-pro1 h5 {
+    color: #840000;
+}
+
+.related-list .promotion-product .related-pro1 i {
+    color: #ffd500;
+}
+
+.related-list .promotion-product .related-pro1 h4 {
+    color: #ffffff;
+    margin-bottom: 22px;
+}
+
+.related-list .promotion-product .related-pro1 h4.price-old {
+    color: #eeeeee;
+}
+
+.related-list .promotion-product .related-pro1 h4.price-new {
+    color: #fff200;
+}
+
+.related-list .promotion-product .stock-product.con-hang {
+    color: #ffffff;
+}
+
+.related-list .promotion-product .stock-product.het-hang {
+    color: #090067;
+}
+
+.related-list .promotion-product .discount-user {
+    background-color: red;
+    color: white;
+}
+
+.related-list .promotion-product .related-pro .related-cart i {
+    color: #ff3f3f;
+}
+
 @media (max-width: 1400px) {
 
     section {

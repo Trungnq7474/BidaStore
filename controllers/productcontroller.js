@@ -189,14 +189,29 @@ const getTopproduct = async (req, res) => {
     try{
         const result = await sql.query`
             SELECT TOP 3 
-                   oi.product_name,
-                   oi.image,
+                   p.product_id,
+                   p.product_name,
+                   p.image,
                    SUM(oi.quantity) AS da_ban,
-                   SUM(oi.quantity * oi.price) AS doanh_thu
+                   SUM(
+                        oi.quantity *
+                        CASE
+                            WHEN p.new_price IS NOT NULL AND p.new_price > 0
+                            THEN p.new_price
+                            ELSE p.price
+                        END
+                   ) AS doanh_thu
             FROM orderitems oi JOIN orders o
                             ON oi.order_id = o.id
+                            JOIN products p
+                            ON oi.product_name = p.product_name
             WHERE o.status = 'xong'
-            GROUP BY oi.product_name, oi.image
+            GROUP BY 
+                p.product_id,
+                p.product_name, 
+                p.image, 
+                p.price,
+                p.new_price
             ORDER BY SUM(oi.quantity) DESC
         `;
 
@@ -212,11 +227,13 @@ const getTopproduct = async (req, res) => {
 const getTopten = async (req, res) => {
     try {
         const result = await sql.query`
-            SELECT TOP 10  p.product_id,
-                           oi.product_name,
-                           oi.image,
-                           oi.price,
-                           p.stock,
+            SELECT TOP 10   p.product_id,
+                            p.product_name,
+                            p.image,
+                            p.price,
+                            p.new_price,
+                            p.discount,
+                            p.stock,
                            AVG(c.rating) AS average_rating,
             SUM(oi.quantity) AS da_ban
             FROM orderitems oi 
@@ -228,10 +245,12 @@ const getTopten = async (req, res) => {
                 ON p.product_id = c.product_id
             WHERE o.status = 'xong'
             GROUP BY
-                p.product_id,
-                oi.product_name,
-                oi.image,
-                oi.price,
+               p.product_id,
+                p.product_name,
+                p.image,
+                p.price,
+                p.new_price,
+                p.discount,
                 p.stock
             ORDER BY SUM(oi.quantity) DESC
         `;

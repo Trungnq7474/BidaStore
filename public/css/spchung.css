@@ -54,7 +54,7 @@
     position: relative;
     width: 106%;
     padding: 10px 12px;
-    border: 1px solid rgb(5, 249, 143);
+    border: 1px solid rgb(143, 252, 162);
     background-color: rgb(143, 252, 162);
     border-radius: 20px;
     cursor: pointer;
@@ -73,7 +73,7 @@
 .sp .kk:hover {
     transform: scale(1.04);
     transition: 0.4s ease-in-out;
-    box-shadow: 0 0 35px rgba(151, 181, 0, 0.57);
+    box-shadow: 0 0 35px rgb(143, 252, 162);
 }
 
 .sp .kk .pro1 h5 {
@@ -155,11 +155,57 @@
     transition: 0.4s ease-in-out;
 }
 
-.sp .kk .pro a i:hover {
-    background-color: rgb(255, 225, 77);
-    transition: 0.4s ease-in-out;
-    transform: scale(1.04);
+.sp .promotion-product .kk {
+    border: 1px solid #ff6565;
+    background-color: #ff6565;
 }
+
+.sp .promotion-product .kk:hover {
+    box-shadow: 0 0 35px #ff6565;
+}
+
+.sp .promotion-product .kk img {
+    background-color: #d8fffc;
+}
+
+.sp .promotion-product .pro1 h5 {
+    color: #840000;
+}
+
+.sp .promotion-product .pro1 i {
+    color: #ffd500;
+}
+
+.sp .promotion-product .pro1 h4 {
+    color: #ffffff;
+    margin-bottom: 22px;
+}
+
+.sp .promotion-product .pro1 h4.price-old {
+    color: #eeeeee;
+}
+
+.sp .promotion-product .pro1 h4.price-new {
+    color: #fff200;
+}
+
+.sp .promotion-product .stock.con-hang {
+    color: #ffffff;
+}
+
+.sp .promotion-product .stock.het-hang {
+    color: #090067;
+}
+
+.sp .promotion-product .discount-user {
+    background-color: red;
+    color: white;
+}
+
+.sp .promotion-product .pro .cart i {
+    color: #ff3f3f;
+}
+
 
 .mess {
     margin-top: 180px;

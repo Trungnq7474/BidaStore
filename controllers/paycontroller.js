@@ -62,7 +62,7 @@ const createOrder = async (req, res) => {
         // NẾU CÓ product_id → MUA NGAY
         if(product_id) {
             const proresult = await sql.query`
-                SELECT product_name, image, price, stock FROM products WHERE product_id = ${product_id}
+                SELECT product_name, image, price, new_price, stock FROM products WHERE product_id = ${product_id}
             `;
 
             const product = proresult.recordset[0];
@@ -70,10 +70,17 @@ const createOrder = async (req, res) => {
             if(product.stock <= 0) {
                 return res.send("out");
             }
+
+            let orderPrice = product.price;
+
+            if(product.new_price !== null && product.new_price > 0) {
+                orderPrice = product.new_price;
+            }
+
             const image = `images/${product.image}`;
             await sql.query`
                 INSERT INTO orderitems (order_id, product_name, image, quantity, price)
-                VALUES (${order_id}, ${product.product_name}, ${image}, 1, ${product.price})
+                VALUES (${order_id}, ${product.product_name}, ${image}, 1, ${orderPrice})
             `;
 
             await sql.query`
@@ -95,7 +102,7 @@ const createOrder = async (req, res) => {
                 for(const item of cart) {
 
                     const proresutl = await sql.query`
-                        SELECT product_id, stock
+                        SELECT product_id, stock, price, new_price
                         FROM products
                         WHERE product_name = ${item.product_name}
                     `;
@@ -106,9 +113,15 @@ const createOrder = async (req, res) => {
                         return res.send("not_enough");
                     }
 
+                    let orderPrice = product.price;
+
+                    if(product.new_price !== null && product.new_price > 0) {
+                        orderPrice = product.new_price;
+                    }
+
                     await sql.query`
                         INSERT INTO orderitems (order_id, product_name, image, quantity, price)
-                        VALUES (${order_id}, ${item.product_name}, ${item.image}, ${item.quantity}, ${item.price})
+                        VALUES (${order_id}, ${item.product_name}, ${item.image}, ${item.quantity}, ${orderPrice})
                     `;
 
                     await sql.query`
@@ -242,18 +255,19 @@ const getOrderItems = async (req, res) => {
 }
 
 const updateStatus = async (req, res) => {
-    const {id, status} = req.body;
+    const {id, status, fromUser} = req.body;
 
     try {
 
         const result = await sql.query`
-            SELECT status, user_id
+            SELECT status, user_id, name_receive
             FROM orders
             WHERE id = ${id}
         `;
 
         const old = result.recordset[0].status;
         const user_id = result.recordset[0].user_id;
+        const name_receive = result.recordset[0].name_receive;
 
         if(old === "xong" || old === "huy") {
             return res.send("not");
@@ -301,7 +315,16 @@ const updateStatus = async (req, res) => {
            message = `Đơn Hàng ORD-00${id} Của Bạn Đã Giao Thành Công`;
         }
 
-        else if(status === "huy") {
+        else if(status === "huy" && fromUser) {
+            await sql.query`
+                INSERT INTO notifications (message, type)
+                VALUES(
+                    ${`${name_receive} Đã Hủy Đơn Hàng ORD-00${id}`}, 'order'
+                )
+            `;
+        }
+
+        else if(status === "huy" && !fromUser) {
             message = `Đơn Hàng ORD-00${id} Của Bạn Đã Bị Hủy`;
         }
 

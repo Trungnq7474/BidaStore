@@ -312,7 +312,7 @@ async function loadProduct() {
         }
 
         productList.innerHTML +=`
-             <a href="spchitiet.html?product_id=${product.product_id}" class="related-tr">
+             <a href="spchitiet.html?product_id=${product.product_id}" class="related-tr ${product.discount > 0 && product.new_price ? 'promotion-product' : ''}">
                 <div class="related-kk">
                     <div class="related-pro">
                         <img src="images/${product.image}" alt="Ảnh">

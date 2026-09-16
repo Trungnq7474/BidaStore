@@ -141,7 +141,8 @@ document.addEventListener('click', async function(e) {
 
             body: JSON.stringify({
                 id: id,
-                status: "huy"
+                status: "huy",
+                fromUser: true
             })
         });
 

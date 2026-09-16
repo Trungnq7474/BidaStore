@@ -119,7 +119,7 @@ async function loadPromotion() {
     promotionList.innerHTML = ""
     random.forEach(product => {
         promotionList.innerHTML +=`
-            <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+            <a href="spchitiet.html?product_id=${product.product_id}" class="tr promotion-product">
                 <div class="kk">
                     <div class="pro">
                         <img src="images/${product.image}" alt="Ảnh">
@@ -218,7 +218,7 @@ async function loadBest() {
 
     best.forEach(product => {
         bestList.innerHTML +=`
-            <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+            <a href="spchitiet.html?product_id=${product.product_id}" class="tr ${product.discount > 0 && product.new_price ? 'promotion-product' : ''}">
                     <div class="kk">
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
@@ -312,7 +312,7 @@ applyFilter.addEventListener('click', async function() {
     data.forEach(product => {
         if(product.category === category && (!minPrice || product.price >= minPrice) && (!maxPrice || product.price <= maxPrice)) {
             productList.innerHTML +=`
-                <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+                <a href="spchitiet.html?product_id=${product.product_id}" class="tr ${product.discount > 0 && product.new_price ? 'promotion-product' : ''}">
                     <div class="kk">
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">

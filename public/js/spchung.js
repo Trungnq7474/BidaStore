@@ -19,7 +19,7 @@ if(brand) {
 
                     let price
                     productList.innerHTML +=`
-                        <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+                        <a href="spchitiet.html?product_id=${product.product_id}" class="tr ${product.discount > 0 && product.new_price ? 'promotion-product' : ''}">
                             <div class="kk">
                                 <div class="pro">
                                     <img src="images/${product.image}" alt="Ảnh">
@@ -70,7 +70,7 @@ else if (category) {
 
         data.forEach(product => {
             productList.innerHTML += `
-                <a href="spchitiet.html?product_id=${product.product_id}" class="tr">
+                <a href="spchitiet.html?product_id=${product.product_id}" class="tr ${product.discount > 0 && product.new_price ? 'promotion-product' : ''}">
                     <div class="kk">
                         <div class="pro">
                             <img src="images/${product.image}" alt="Ảnh">
