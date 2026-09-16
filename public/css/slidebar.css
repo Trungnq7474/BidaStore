@@ -108,6 +108,11 @@
     padding: 14px 0;
 }
 
+.logout {
+    margin-top: auto;
+    width: 100%;
+}
+
 .logout button {
     width: 100%;
     padding: 14px;
@@ -118,10 +123,11 @@
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .logout button:hover {
+    transition: 0.4s ease-in-out;
     background: #dc2626;
     transform: scale(1.05);
 }
