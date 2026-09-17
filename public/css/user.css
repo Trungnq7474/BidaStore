@@ -80,6 +80,74 @@ body{
     transition: 0.4s ease-in-out;
 }
 
+.user-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 10px;
+    margin: auto;
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid;
+}
+
+.user-rank i {
+    font-size: 28px;
+}
+
+.user-rank.rank-bronze {
+   background: linear-gradient(135deg, #dca559, #cd7f32, #8c4a18);
+    color: #ffdab5;
+    border-color: #e6a15b;
+}
+
+.user-rank.rank-bronze i {
+      color:#ffe5b4;
+}
+
+.user-rank.rank-silver {
+    background: linear-gradient(135deg, #f8fafc, #c0c0c0, #e2e8f0);
+    color: #374151;
+    border-color: #a8a8a8;
+}
+
+.user-rank.rank-silver i {
+    color: #64748b;
+}
+
+.user-rank.rank-gold {
+    background: linear-gradient(135deg, #fff8c5, #f9d423, #e6a817);
+    color: #684600;
+    border-color: #d4a017;
+}
+
+.user-rank.rank-gold i {
+    color: #a66b00;
+}
+
+.user-rank.rank-diamond {
+    background: linear-gradient(135deg, #e0f7ff, #7dd3fc, #0284c7);
+    color: #083344;
+    border-color: #38bdf8;
+}
+
+.user-rank.rank-diamond i {
+    color: #075985;
+}
+
+.user-rank.rank-vip {
+    background: linear-gradient(135deg, #292524, #57534e, #1c1917);
+    color: #f5d88b;
+    border-color: #c9a84c;
+}
+
+.user-rank.rank-vip i {
+    color: #f5d88b;
+}
+
 @media (max-width: 1200px) {
 
     .main {
@@ -111,6 +179,16 @@ body{
         font-size: 15px;
     }
 
+    .user-rank {
+        gap: 6px;
+        padding: 9px 10px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .user-rank i {
+        font-size: 24px;
+    }
 }
 
 
@@ -152,6 +230,16 @@ body{
         overflow-wrap: anywhere;
     }
 
+      .user-rank {
+        gap: 5px;
+        padding: 8px 9px;
+        font-size: 14px;
+        border-width: 1px;
+    }
+
+    .user-rank i {
+        font-size: 21px;
+    }
 }
 
 
@@ -205,6 +293,16 @@ body{
         overflow-wrap: anywhere;
     }
 
+    .user-rank {
+        gap: 4px;
+        padding: 7px 8px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .user-rank i {
+        font-size: 19px;
+    }
 }
 
 
@@ -240,6 +338,16 @@ body{
         font-size: 12px;
     }
 
+    .user-rank {
+        gap: 4px;
+        padding: 6px 7px;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .user-rank i {
+        font-size: 17px;
+    }
 }
 
 
@@ -275,6 +383,16 @@ body{
         font-size: 11px;
     }
 
+    .user-rank {
+        gap: 3px;
+        padding: 5px 6px;
+        font-size: 11px;
+        border-radius: 10px;
+    }
+
+    .user-rank i {
+        font-size: 15px;
+    }
 }
 
 
@@ -309,4 +427,13 @@ body{
         font-size: 10px;
     }
 
+    .user-rank {
+        gap: 3px;
+        padding: 4px 5px;
+        font-size: 10px;
+    }
+
+    .user-rank i {
+        font-size: 13px;
+    }
 }

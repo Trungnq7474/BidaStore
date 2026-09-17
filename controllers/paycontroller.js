@@ -305,6 +305,25 @@ const updateStatus = async (req, res) => {
             UPDATE orders SET status = ${status} WHERE id = ${id}
         `;
 
+        await sql.query`
+            UPDATE users
+            SET membership_rank = (
+                SELECT
+                    CASE
+                        WHEN COUNT(*) < 5 THEN N'HẠNG ĐỒNG'
+                        WHEN COUNT(*) < 10 THEN N'HẠNG BẠC'
+                        WHEN COUNT(*) < 25 THEN N'HẠNG VÀNG'
+                        WHEN COUNT(*) < 50 THEN N'HẠNG KIM CƯƠNG'
+                        ELSE N'HẠNG VIP'
+                    END
+                FROM orders
+                WHERE user_id = ${user_id}
+                AND status = 'xong'
+            )
+            WHERE id = ${user_id}
+            AND role = 'customer'
+        `;
+
         let message = "";
 
         if(status === "dang") {
