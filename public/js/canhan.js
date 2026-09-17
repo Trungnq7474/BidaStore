@@ -583,7 +583,35 @@ async function getMyComplete() {
     const res = await fetch('/getmycomplete');
     const data = await res.json();
 
-    document.querySelector('.total-complete').textContent = data.total || 0;
+    const total = Number(data.total || 0);
+
+    document.querySelector('.total-complete').textContent = total;
+
+    const bronze = document.querySelector('.rank-bronze');
+    const silver = document.querySelector('.rank-silver');
+    const gold = document.querySelector('.rank-gold');
+    const diamond = document.querySelector('.rank-diamond');
+    const vip = document.querySelector('.rank-vip');
+
+    if (total >= 0 && total <= 4) {
+        bronze.style.display = "flex";
+    }
+
+    if (total >= 5 && total <= 9) {
+        silver.style.display = "flex";
+    }
+
+    if (total >= 10 && total <= 24) {
+        gold.style.display = "flex";
+    }
+
+    if (total >= 25 && total <= 49) {
+        diamond.style.display = "flex";
+    }
+
+    if (total >= 50) {
+        vip.style.display = "flex";
+    }
 }
 
 getMyComplete();

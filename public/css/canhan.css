@@ -15,6 +15,81 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
+.avatar-rank {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid;
+    box-shadow: 0px 0px 25px #4b55635b;
+}
+
+.avatar-rank i {
+    font-size: 30px;
+}
+
+.avatar-rank.rank-bronze {
+   background: linear-gradient(135deg, #dca559, #cd7f32, #8c4a18);
+    color: #ffdab5;
+    border-color: #e6a15b;
+    box-shadow: 0 0 25px rgba(201, 90, 10, 0.756);
+}
+
+.avatar-rank.rank-bronze i {
+      color:#ffe5b4;
+}
+
+.avatar-rank.rank-silver {
+    background: linear-gradient(135deg, #f8fafc, #c0c0c0, #e2e8f0);
+    color: #374151;
+    border-color: #a8a8a8;
+    box-shadow: 0 0 25px rgba(125, 136, 153, 0.8);
+}
+
+.avatar-rank.rank-silver i {
+    color: #64748b;
+}
+
+.avatar-rank.rank-gold {
+    background: linear-gradient(135deg, #fff8c5, #f9d423, #e6a817);
+    color: #684600;
+    border-color: #d4a017;
+    box-shadow: 0 0 25px rgba(212, 158, 23, 0.818);
+}
+
+.avatar-rank.rank-gold i {
+    color: #a66b00;
+}
+
+.avatar-rank.rank-diamond {
+    background: linear-gradient(135deg, #e0f7ff, #7dd3fc, #0284c7);
+    color: #083344;
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px rgba(14, 164, 233, 0.796);
+}
+
+.avatar-rank.rank-diamond i {
+    color: #075985;
+}
+
+.avatar-rank.rank-vip {
+    background: linear-gradient(135deg, #292524, #57534e, #1c1917);
+    color: #f5d88b;
+    border-color: #c9a84c;
+    box-shadow: 0 0 25px rgba(201, 168, 76, 0.837);
+}
+
+.avatar-rank.rank-vip i {
+    color: #f5d88b;
+}
+
 .picture {
     width: 125px;
     height: 125px;
@@ -599,6 +674,17 @@ h2 {
         gap: 20px;
     }
 
+    .avatar-rank {
+        gap: 7px;
+        padding: 9px 16px;
+        margin-bottom: 13px;
+        font-size: 16px;
+    }
+
+    .avatar-rank i {
+        font-size: 26px;
+    }
+
     .choose {
         width: 250px;
         height: 500px;
@@ -740,6 +826,18 @@ h2 {
     .profile {
         width: 92%;
         gap: 16px;
+    }
+
+    .avatar-rank {
+        gap: 6px;
+        padding: 8px 13px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        border-width: 2px;
+    }
+
+    .avatar-rank i {
+        font-size: 23px;
     }
 
     .choose {
@@ -945,6 +1043,18 @@ h2 {
         margin: 100px auto 60px;
         flex-direction: column;
         gap: 12px;
+    }
+
+    .avatar-rank {
+        gap: 6px;
+        padding: 8px 14px;
+        margin: 0 auto 15px;
+        font-size: 13px;
+        border-radius: 18px;
+    }
+
+    .avatar-rank i {
+        font-size: 21px;
     }
 
     .choose {
@@ -1235,6 +1345,18 @@ h2 {
         gap: 9px;
     }
 
+     .avatar-rank {
+        gap: 5px;
+        padding: 7px 12px;
+        margin-bottom: 12px;
+        font-size: 12px;
+        border-radius: 16px;
+    }
+
+    .avatar-rank i {
+        font-size: 18px;
+    }
+
     .choose {
         padding: 15px 10px;
         border-radius: 12px;
@@ -1491,6 +1613,18 @@ h2 {
         margin-top: 75px;
         margin-bottom: 35px;
         gap: 7px;
+    }
+
+    .avatar-rank {
+        gap: 4px;
+        padding: 6px 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        border-radius: 14px;
+    }
+
+    .avatar-rank i {
+        font-size: 15px;
     }
 
     .choose {
