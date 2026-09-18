@@ -204,6 +204,15 @@ a {
     .btnn {
         font-size: 18px;
     }
+
+    .google-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .google-btn i {
+        font-size: 23px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -265,6 +274,16 @@ a {
         line-height: 1.5;
         margin: 12px 0 5px;
     }
+
+    .google-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .google-btn i {
+        font-size: 21px;
+        padding: 7px 12px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -321,6 +340,16 @@ a {
         font-size: 12px;
         margin-top: 10px;
     }
+
+    .google-btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .google-btn i {
+        font-size: 19px;
+        padding: 4px 10px;
+    }
 }
 
 @media (max-width: 320px) {
@@ -367,5 +396,10 @@ a {
 
     p {
         font-size: 11px;
+    }
+
+    .google-btn i {
+        font-size: 17px;
+        padding: 3px 8px;
     }
 }
