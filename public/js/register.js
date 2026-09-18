@@ -142,6 +142,16 @@ eye.addEventListener('click', () => {
     }
 });
 
+const params = new URLSearchParams(window.location.search);
+
+if (params.get('googleLogin') === 'success') {
+    show("Bạn Đã Đăng Nhập Thành Công !");
+
+    setTimeout(() => {
+        window.location.href = "/";
+    }, 2000);
+}
+
 function show(text) {
     const mgs = document.querySelector('.mgs');
 

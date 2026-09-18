@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('../config/passport');
 
 const { register, login, logout, getUsersess, getAdmin, getUser, deleteUser, updateUser, updatePassword, addAddress, getAddress, getOneAddress, updateAddress, deleteAddress } = require('../controllers/authcontroller');
 
@@ -17,6 +18,36 @@ router.get('/getaddress', getAddress);
 router.get('/getoneaddress/:id', getOneAddress);
 router.put('/updateaddress/:id', updateAddress);
 router.delete('/deleteaddress/:id', deleteAddress);
+
+// Đăng nhập bằng Google
+router.get('/auth/google',
+    passport.authenticate('google', {
+        scope: ['profile', 'email']
+    })
+);
+
+router.get('/auth/google/callback',
+    passport.authenticate('google', {
+        failureRedirect: '/register.html',
+        session: false
+    }),
+    (req, res) => {
+        const user = req.user;
+
+        req.session.user = {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            phone: user.phone,
+            role: user.role,
+            membership_rank: user.membership_rank
+        };
+
+        req.session.save(() => {
+            res.redirect('/register.html?googleLogin=success');
+        });
+    }
+);
 
 module.exports = router;
 

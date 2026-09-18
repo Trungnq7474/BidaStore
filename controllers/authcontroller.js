@@ -18,9 +18,9 @@ const register = async (req, res) => {
 
         const result = await sql.query
         `
-            INSERT INTO users (username, password, email, phone)
+            INSERT INTO users (username, password, email, phone, membership_rank)
             OUTPUT INSERTED.id
-            VALUES (${username}, ${password}, ${email}, ${phone})
+            VALUES (${username}, ${password}, ${email}, ${phone}, N'HẠNG ĐỒNG')
         `;
 
         const user_id = result.recordset[0].id;
@@ -73,6 +73,7 @@ const login = async (req, res) => {
         res.status(500).send(err.message);
     }
 };
+
 const getUsersess = (req, res) => {
     res.json({
         user: req.session.user || null //req.session.user → lấy user đã login || null → nếu không có thì trả null

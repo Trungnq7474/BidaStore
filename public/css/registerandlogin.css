@@ -32,7 +32,7 @@ body {
     width: fit-content;
     padding: 20px 40px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 h1 {
@@ -123,6 +123,35 @@ a {
     font-weight: bold;
     text-align: left;
     margin-top: 12px;
+}
+
+.google-btn i {
+    margin: auto;
+    margin-top: 5px;
+    padding: 8px 14px;
+    background: chartreuse;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 2px rgba(65, 0, 126, 0.647);
+    transition: 0.4s ease-in-out;
+    display: flex;
+    height: 30px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(21, 0, 89);
+    font-size: 25px;
+}
+
+.google-btn i:hover {
+    transition: 0.4s ease-in-out;
+    background-color: rgb(216, 255, 44);
+    color: rgb(27, 0, 145);
+    transform: translateY(-5px);
+}
+
+.google-btn:hover i {
+    color: rgb(27, 0, 145);
 }
 
 @media (max-width: 900px) {
