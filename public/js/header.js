@@ -98,9 +98,6 @@ fetch('header.html')
                         bellCount.style.display = "none";
                     }
 
-                  
-
-
                     if(data.length === 0) {
                         notificationsBox.innerHTML =`
                             <h3>Thông Báo</h3>
@@ -131,12 +128,12 @@ fetch('header.html')
                         </div>
                     `;
                 });
-        }
+            }
 
         notificationsBox.addEventListener('click', (e) => {
             const item = e.target.closest(".notifications-item");
 
-            if(!item) {
+            if (!item.dataset.id) {
                 return;
             }
 

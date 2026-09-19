@@ -586,6 +586,7 @@ async function getMyComplete() {
     const total = Number(data.total || 0);
 
     document.querySelector('.total-complete').textContent = total;
+    updateRankProgress(total);
 
     const bronze = document.querySelector('.rank-bronze');
     const silver = document.querySelector('.rank-silver');
@@ -615,6 +616,72 @@ async function getMyComplete() {
 }
 
 getMyComplete();
+
+function updateRankProgress(total) {
+    const rankName = document.querySelector('.current-rank');
+    const rankCount = document.querySelector('.rank-progress-count');
+    const rankFill = document.querySelector('.rank-progress-fill');
+    const rankNext = document.querySelector('.rank-progress-next');
+
+    if (!rankName || !rankCount || !rankFill || !rankNext) {
+        return;
+    }
+
+    let currentRank;
+    let nextRank;
+    let currentCount;
+    let targetCount;
+
+    if (total < 5) {
+        currentRank = "HẠNG ĐỒNG";
+        nextRank = "BẠC";
+        currentCount = total;
+        targetCount = 5;
+    } 
+    
+    else if (total < 10) {
+        currentRank = "HẠNG BẠC";
+        nextRank = "VÀNG";
+        currentCount = total - 5;
+        targetCount = 5;
+    } 
+    
+    else if (total < 25) {
+        currentRank = "HẠNG VÀNG";
+        nextRank = "KIM CƯƠNG";
+        currentCount = total - 10;
+        targetCount = 15;
+    } 
+    
+    else if (total < 50) {
+        currentRank = "HẠNG KIM CƯƠNG";
+        nextRank = "KIM CƯƠNG VIP";
+        currentCount = total - 25;
+        targetCount = 25;
+    } 
+    
+    else {
+        currentRank = "HẠNG KIM CƯƠNG VIP";
+    }
+
+    rankName.textContent = currentRank;
+
+    if(currentRank === "VIP") {
+        rankCount.textContent = `${total} Đơn Hoàn Thành !`
+        rankFill.style.width = "100%";
+        rankNext.textContent = "Chúc Mừng ! Bạn Đã Đạt HẠNG KIM CƯƠNG VIP Cao Nhất !";
+        
+        return;
+    }
+
+    const process = (currentCount / targetCount) * 100;
+    const remaining = targetCount - currentCount;
+
+    rankCount.textContent = `${currentCount} / ${targetCount} Đơn`;
+    rankFill.style.width = `${process}%`;
+
+    rankNext.innerHTML = `Cần Thêm <span style="color: #ea580c;">${remaining}</span> Đơn Hàng Hoàn Thành Nữa Để Lên <span style="color: #ea580c;">HẠNG ${nextRank}</span> !`;
+}
 
 
 function show(text) {
