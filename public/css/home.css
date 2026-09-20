@@ -16,6 +16,56 @@
     padding: 10px 20px;
 }
 
+.main-text button {
+    animation: khampha 2s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 255, 132, 0.6);
+}
+
+@keyframes khampha {
+    0% {
+        background-color: #00ff84;
+        color: #003020;
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 10px #00ff84;
+    }
+
+    25% {
+        background-color: #ffff00;
+        color: #000000;
+        transform: scale(1.08) rotate(-10deg);
+        box-shadow: 0 0 20px #ffff00;
+    }
+
+    50% {
+        background-color: #ff9900;
+        color: #ffffff;
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 25px #ff9900;
+    }
+
+    75% {
+        background-color: #ff3333;
+        color: #ffffff;
+        transform: scale(1.08) rotate(10deg);
+        box-shadow: 0 0 20px #ff3333;
+    }
+
+    100% {
+        background-color: #00ff84;
+        color: #003020;
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 10px #00ff84;
+    }
+}
+
+.main-text button:hover {
+    animation-play-state: paused;
+    background-color: #ffffff;
+    color: #ff0000;
+    transform: scale(1.15);
+    box-shadow: 0 0 30px #ffffff;
+}
+
 h1 {
     font-size: 350%;
     color:rgb(15, 255, 255);

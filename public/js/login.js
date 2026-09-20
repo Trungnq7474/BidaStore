@@ -55,7 +55,7 @@ form.addEventListener('submit', async function(e) {
     const data = await res.text();
 
     if(data === "admin") {
-        show("Bạn Đã Đăng Nhập Admin Thành Công !");
+        show("Admin Đã Đăng Nhập Thành Công !");
 
         setTimeout(() => {
              window.location.href = "../admin/dashboard.html";
