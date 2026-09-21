@@ -100,7 +100,34 @@ fetch(`/product/${product_id}`)
 
 .then(data => {
 
-    document.getElementById("image").src = "images/" + data.image;
+    const image = document.getElementById("image");
+    const thumb1 = document.getElementById("thumb1");
+    const thumb2 = document.getElementById("thumb2");
+
+    image.src = "images/" + data.image;
+    thumb1.src = image.src;
+
+    if(data.image_360) {
+        thumb2.src = "images/" + data.image_360;
+    }
+
+    else {
+        thumb2.style.display = "none";
+    }
+
+    thumb1.addEventListener('click', () => {
+        image.src = thumb1.src;
+
+        thumb1.classList.add("active");
+        thumb2.classList.remove("active");
+    });
+
+    thumb2.addEventListener('click', () => {
+        image.src = thumb2.src;
+
+        thumb2.classList.add("active");
+        thumb1.classList.remove("active");
+    });
 
     document.getElementById("product_name").innerText = data.product_name;
 

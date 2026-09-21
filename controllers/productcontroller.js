@@ -24,7 +24,7 @@ const getproducts = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
             WHERE p.product_id = ${product_id}
-            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock, p.image_360
         `;
 
         res.json(result.recordset[0]);
@@ -42,7 +42,7 @@ const getproducts2 = async (req, res) => {
             FROM products p
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
-            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock, p.image_360
         `;
         res.json(kq.recordset);
     }
@@ -62,7 +62,7 @@ const searchProducts = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id 
             WHERE product_name LIKE ${keyword}
-             GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
+             GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock, p.image_360
         `;
 
         res.json(kq.recordset);
@@ -117,7 +117,7 @@ const getProcate = async (req, res) => {
             LEFT JOIN comments c
                 ON p.product_id = c.product_id
             WHERE p.category = ${cate}
-            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock
+            GROUP BY p.product_id, p.product_name, p.price, p.new_price, p.discount, p.image, p.description, p.category, p.stock, p.image_360
         `;
 
         res.json(result.recordset);
