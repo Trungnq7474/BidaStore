@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/logo bida.png">
+    <link rel="stylesheet" href="css/registerandlogin.css">
+    <link rel="stylesheet" href="css/thongbao.css">
+    <title>QUÊN MẬT KHẨU</title>
+</head>
+<body>
+    <form class="fg" id="formOTP">
+        <h1 class="forgot">QUÊN MẬT KHẨU</h1>
+
+        <input type="text" name="email" placeholder="Nhập email...">
+        <i class="fa-solid fa-envelope"></i>
+        <div class="error email-error"></div>
+
+        <button class="btnn" type="submit">GỬI MÃ OTP</button>
+
+        <p class="back"><a href="login.html">Quay lại đăng nhập</a></p>
+
+    </form>
+
+    <div id="otp-form">
+        <h1>XÁC MINH MÃ OTP</h1>
+
+        <div class="otp-container">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+            <input class="otp-input" type="text" maxlength="1" inputmode="numeric">
+        </div>
+
+        <p id="otp-timer"></p>
+
+        <button type="button" id="verifyotp">
+            XÁC MINH MÃ OTP
+        </button>
+
+    </div>
+
+    <div id="reset-form">
+        <h1>ĐỔI MẬT KHẨU</h1>
+
+        <input type="password" id="newPass" placeholder="Nhập mật khẩu mới...">
+        <i class="fa-solid fa-eye eye"></i>
+        <div class="error newpass-error"></div>
+
+        <input type="password" id="confirmPass" placeholder="Nhập lại mật khẩu mới...">
+        <i class="fa-solid fa-eye eyes"></i>
+        <div class="error confirmpass-error"></div>
+
+        <button type="button" id="resetpass">ĐỔI MẬT KHẨU</button>
+    </div>
+
+    <div class="mgs"></div>
+
+<script src="js/forgotpass.js"></script>
+
+</body>
+</html>

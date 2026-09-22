@@ -1,85 +1,66 @@
 const form = document.querySelector('.dk');
+const emailError = document.querySelector('.email-error');
+const passError = document.querySelector('.password-error');
+const usernameError = document.querySelector('.username-error');
+const phoneError = document.querySelector('.phone-error');
 
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const username = form.username.value;
-    const password = form.password.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
+    const username = form.username.value.trim();
+    const password = form.password.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
 
-    document.querySelector('.email-error').innerText = "";
-    document.querySelector('.username-error').innerText = "";
-    document.querySelector('.phone-error').innerText = "";
-    document.querySelector('.password-error').innerText = "";
-
-    let sai = false;
+    emailError.innerText = "";
+    usernameError.innerText = "";
+    phoneError.innerText = "";
+    passError.innerText = "";
 
     if (email === "") {
-        document.querySelector('.email-error').innerText =
-            "Vui lòng nhập email !";
-
-        sai = true;
-    }
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.querySelector('.email-error').innerText =
-            "Email không hợp lệ !";
-
-        sai = true;
-    }
-
-
-    if (username === "") {
-        document.querySelector('.username-error').innerText =
-            "Vui lòng nhập tên !";
-
-        sai = true;
-    }
-    else if (!/^[\p{L}]+(?: [\p{L}]+)+$/u.test(username.trim())) {
-        document.querySelector('.username-error').innerText = 
-            "Vui lòng nhập đầy đủ họ và tên !";
-
-        sai = true;
-    }
-    else if (username.trim().length < 3 || username.trim().length > 50) {
-        document.querySelector('.username-error').innerText = 
-            "Họ và tên phải từ 3-50 ký tự !";
-
-        sai = true;
-    }
-
-
-    if (phone === "") {
-        document.querySelector('.phone-error').innerText =
-            "Vui lòng nhập số điện thoại !";
-
-        sai = true;
-    }
-    else if (!/^0[0-9]{9}$/.test(phone)) {
-        document.querySelector('.phone-error').innerText =
-            "Số điện thoại phải có 10 số và bắt đầu bằng 0 !";
-
-        sai = true;
-    }
-
-
-    if (password === "") {
-        document.querySelector('.password-error').innerText =
-            "Vui lòng nhập mật khẩu !";
-
-        sai = true;
-    }
-    else if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/.test(password)) {
-        document.querySelector('.password-error').innerText =
-            "Mật khẩu phải ít nhất 6 ký tự, gồm chữ và số !";
-
-        sai = true;
-    }
-
-    if (sai) {
+        emailError.innerText = "Vui lòng nhập email !";
         return;
     }
 
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.innerText = "Email không hợp lệ !";
+        return;
+    }
+
+    if (username === "") {
+        usernameError.innerText = "Vui lòng nhập tên !";
+        return;
+    }
+
+    else if (!/^[\p{L}]+(?: [\p{L}]+)+$/u.test(username.trim())) {
+        usernameError.innerText =  "Vui lòng nhập đầy đủ họ và tên !";
+        return;
+    }
+
+    else if (username.trim().length < 3 || username.trim().length > 50) {
+        usernameError.innerText =  "Họ và tên phải từ 3-50 ký tự !";
+        return;
+    }
+
+    if (phone === "") {
+        phoneError.innerText = "Vui lòng nhập số điện thoại !";
+        return;
+    }
+    
+    else if (!/^0[0-9]{9}$/.test(phone)) {
+        phoneError.innerText = "Số điện thoại phải có 10 số và bắt đầu bằng 0 !";
+        return;
+    }
+
+    if (password === "") {
+        passError.innerText = "Vui lòng nhập mật khẩu !";
+        return;
+    }
+
+    else if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/.test(password)) {
+        passError.innerText = "Mật khẩu phải ít nhất 6 ký tự, gồm chữ và số !";
+        return;
+    }
 
     const res = await fetch('/register', {
         method: 'POST',

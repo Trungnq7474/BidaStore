@@ -1,44 +1,36 @@
 const form = document.querySelector('.dn');
+const emailError = document.querySelector('.email-error');
+const passError = document.querySelector('.password-error');
 
 form.addEventListener('submit', async function(e) {
     
     e.preventDefault();
 
-    const email = form.email.value;
-    const pass = form.password.value;
+    const email = form.email.value.trim();
+    const pass = form.password.value.trim();
 
-    let sai = false;
+    emailError.innerText = "";
+    passError.innerText = "";
 
     if (email === "") {
-        document.querySelector('.email-error').innerText =
-            "Vui lòng nhập email !";
-
-        sai = true;
-    }
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.querySelector('.email-error').innerText =
-            "Email không hợp lệ !";
-
-        sai = true;
-    }
-
-    if (pass === "") {
-        document.querySelector('.password-error').innerText =
-            "Vui lòng nhập mật khẩu !";
-
-        sai = true;
-    }
-    else if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/.test(pass)) {
-        document.querySelector('.password-error').innerText =
-            "Mật khẩu phải ít nhất 6 ký tự, gồm chữ và số !";
-
-        sai = true;
-    }
-
-    if (sai) {
+        emailError.innerText = "Vui lòng nhập email !";
         return;
     }
 
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.innerText = "Email không hợp lệ !";
+        return;
+    }
+
+    if (pass === "") {
+        passError.innerText = "Vui lòng nhập mật khẩu !";
+        return;
+    }
+
+    else if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/.test(pass)) {
+        passError.innerText = "Mật khẩu phải ít nhất 6 ký tự, gồm chữ và số !";
+        return;
+    }
 
     const res = await fetch('/login', {
         method: 'POST',

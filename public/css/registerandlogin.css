@@ -35,6 +35,51 @@ body {
     margin-top: 20px;
 }
 
+.fg {
+    display: grid;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(177, 217, 15, 0.399);
+    box-shadow: 1px 1px 3px 3px rgb(230, 255, 5);
+    border-radius: 7px;
+    width: fit-content;
+    padding: 20px 40px;
+    margin: auto;
+    margin-top: 188px;
+}
+
+#otp-form {
+    display: none;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(177, 217, 15, 0.399);
+    box-shadow: 1px 1px 3px 3px rgb(230, 255, 5);
+    border-radius: 7px;
+    width: fit-content;
+    padding: 30px 50px;
+    margin: auto;
+    margin-top: 210px;
+}
+
+#reset-form {
+    display: none;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(177, 217, 15, 0.399);
+    box-shadow: 1px 1px 3px 3px rgb(230, 255, 5);
+    border-radius: 7px;
+    width: fit-content;
+    padding: 30px 50px;
+    margin: auto;
+    margin-top: 150px;
+}
+
 h1 {
     text-align: center;
     color: rgb(217, 249, 13);
@@ -53,13 +98,13 @@ input {
     outline: none;
     background: transparent;
     box-sizing: border-box;
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
     display: block;
 }
 
 input:focus {
     border: 2px solid rgb(116, 236, 255);
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 input::placeholder {
@@ -75,8 +120,9 @@ i {
 }
 
 .btn,
-.btnn {
-    font-weight: bolder;
+.btnn,
+#resetpass {
+    font-weight: bold;
     font-size: 20px;
     border-radius: 20px;
     border: none;
@@ -92,7 +138,9 @@ i {
 }
 
 .btn:hover,
-.btnn:hover {
+.btnn:hover,
+#resetpass:hover,
+#verifyotp:hover {
     transform: translateY(-5px);
     transition: 0.4s ease-in-out;
     background-color: rgb(216, 255, 44);
@@ -106,13 +154,83 @@ p {
     color: rgb(230, 255, 5);
 }
 
+.forgot-pass {
+    text-align: right;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+#otp-timer {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(30, 0, 94);
+}
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.otp-container .otp-input {
+    width: 45px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: transparent;
+    border-radius: 10px;
+    color: rgb(120, 245, 12);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgba(40, 0, 78, 0.437);
+    transition: 0.4s ease-in-out;
+}
+
+.otp-container .otp-input:focus {
+    border-color: rgb(116, 236, 255);
+    box-shadow: 0 0 8px rgba(116, 236, 255, 0.6);
+}
+
+.otp-container .otp-input:-webkit-autofill,
+.otp-container .otp-input:-webkit-autofill:hover,
+.otp-container .otp-input:-webkit-autofill:focus,
+.otp-container .otp-input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    box-shadow: 2px 2px 2px 2px rgba(40, 0, 78, 0.437);
+    background-color: transparent;
+    transition: background-color 9999s ease-out 0s;
+}
+
+#verifyotp {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 15px;
+    margin: 15px auto;
+    background-color: chartreuse;
+    color: rgb(21, 0, 89);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(40, 0, 78, 0.437);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;
     color: rgb(0, 255, 229);
 }
 
-.eye {
+.eye,
+.eyes {
     cursor: pointer;
 }
 
@@ -154,12 +272,14 @@ a {
     color: rgb(27, 0, 145);
 }
 
+
 @media (max-width: 900px) {
 
     body {
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 30px 20px;
@@ -169,14 +289,29 @@ a {
     }
 
     .dn,
-    .dk {
-        width: min(100%, 480px);
+    .dk,
+    .fg,
+    #otp-form,
+    #reset-form {
+        width: 100%;
+        max-width: 480px;
         box-sizing: border-box;
-        margin: 0;
-        padding: 20px 30px;
+        margin: 20px auto;
+        padding: 25px 30px;
         background: rgba(0, 0, 0, 0.08);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+    }
+
+    .dn,
+    .dk {
+        margin-top: 0;
+    }
+
+    .fg,
+    #otp-form,
+    #reset-form {
+        justify-content: center;
     }
 
     input,
@@ -200,9 +335,20 @@ a {
         line-height: 1.5;
     }
 
+    .forgot-pass {
+        margin-right: 8px;
+        margin-top: 5px;
+    }
+
     .btn,
-    .btnn {
-        font-size: 18px;
+    .btnn,
+    #resetpass,
+    #verifyotp {
+        width: 100%;
+        max-width: 250px;
+        font-size: 17px;
+        padding: 10px 15px;
+        margin: 25px auto 10px;
     }
 
     .google-btn {
@@ -212,6 +358,29 @@ a {
 
     .google-btn i {
         font-size: 23px;
+    }
+
+    .otp-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 25px 0;
+    }
+
+    .otp-container .otp-input {
+        width: 45px;
+        height: 50px;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 22px;
+    }
+
+    #otp-timer {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 10px 0;
     }
 }
 
@@ -224,10 +393,14 @@ a {
     }
 
     .dn,
-    .dk {
+    .dk,
+    .fg,
+    #otp-form,
+    #reset-form {
         width: 100%;
         max-width: 430px;
-        padding: 18px 22px;
+        padding: 20px 22px;
+        margin: 15px auto;
         border-radius: 10px;
         background: rgba(0, 0, 0, 0.10);
         backdrop-filter: blur(18px);
@@ -237,42 +410,73 @@ a {
 
     h1 {
         font-size: 24px;
-        margin-bottom: 10px;
+        margin: 5px 0 10px;
     }
 
     input {
         width: 100%;
+        max-width: 100%;
         font-size: 16px;
         padding: 10px 38px 10px 17px;
         margin-top: 16px;
     }
 
-    i {
-        font-size: 16px;
-        margin-top: -29px;
-        margin-right: 13px;
+    .otp-container {
+        gap: 7px;
+        margin: 20px 0;
     }
 
-    .error {
-        width: 100%;
-        font-size: 13px;
-        margin-top: 8px;
-        line-height: 1.4;
+    .otp-container .otp-input {
+        flex: 1;
+        width: 0;
+        max-width: 45px;
+        height: 46px;
+        padding: 0;
+        margin: 0;
+        font-size: 21px;
+        border-radius: 9px;
+    }
+
+    #otp-timer {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 10px 0;
     }
 
     .btn,
-    .btnn {
+    .btnn,
+    #resetpass,
+    #verifyotp {
         width: 100%;
-        max-width: 180px;
+        max-width: 220px;
         font-size: 16px;
-        padding: 9px 15px;
-        margin: 25px auto 8px;
+        padding: 9px 12px;
+        margin: 20px auto 8px;
     }
 
     p {
         font-size: 14px;
         line-height: 1.5;
         margin: 12px 0 5px;
+    }
+
+    .forgot-pass {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .error {
+        width: 100%;
+        max-width: 100%;
+        font-size: 13px;
+        margin-top: 8px;
+        line-height: 1.4;
+    }
+
+    i {
+        font-size: 16px;
+        margin-top: -29px;
+        margin-right: 13px;
     }
 
     .google-btn {
@@ -283,6 +487,18 @@ a {
     .google-btn i {
         font-size: 21px;
         padding: 7px 12px;
+    }
+
+    .forgot-pass {
+        text-align: right;
+        margin-right: 5px;
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .forgot-pass a {
+        display: inline-block;
+        font-size: 14px;
     }
 }
 
@@ -295,14 +511,19 @@ a {
     }
 
     .dn,
-    .dk {
+    .dk,
+    .fg,
+    #otp-form,
+    #reset-form {
         width: 100%;
         max-width: 350px;
-        padding: 15px 17px;
+        padding: 17px;
+        margin: 12px auto;
         border-radius: 9px;
         background: rgba(0, 0, 0, 0.10);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
+        box-shadow: 1px 1px 3px 2px rgb(230, 255, 5);
     }
 
     h1 {
@@ -317,10 +538,37 @@ a {
         border-radius: 18px;
     }
 
-    i {
+    .otp-container {
+        gap: 6px;
+        margin: 18px 0;
+    }
+
+    .otp-container .otp-input {
+        max-width: 40px;
+        height: 42px;
+        padding: 0;
+        font-size: 19px;
+        border-radius: 8px;
+    }
+
+    #otp-timer {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+
+    .btn,
+    .btnn,
+    #resetpass,
+    #verifyotp {
+        max-width: 190px;
         font-size: 14px;
-        margin-top: -27px;
-        margin-right: 12px;
+        padding: 8px 10px;
+        margin: 18px auto 8px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 10px;
     }
 
     .error {
@@ -328,17 +576,10 @@ a {
         margin-top: 7px;
     }
 
-    .btn,
-    .btnn {
-        max-width: 160px;
+    i {
         font-size: 14px;
-        padding: 8px 12px;
-        margin-top: 22px;
-    }
-
-    p {
-        font-size: 12px;
-        margin-top: 10px;
+        margin-top: -27px;
+        margin-right: 12px;
     }
 
     .google-btn {
@@ -349,6 +590,16 @@ a {
     .google-btn i {
         font-size: 19px;
         padding: 4px 10px;
+    }
+
+    .forgot-pass {
+        margin-right: 3px;
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .forgot-pass a {
+        font-size: 12px;
     }
 }
 
@@ -361,8 +612,12 @@ a {
     }
 
     .dn,
-    .dk {
-        padding: 13px 13px;
+    .dk,
+    .fg,
+    #otp-form,
+    #reset-form {
+        padding: 13px;
+        margin: 10px auto;
         background: rgba(0, 0, 0, 0.10);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -377,29 +632,55 @@ a {
         padding: 8px 32px 8px 13px;
     }
 
-    i {
-        font-size: 13px;
-        margin-top: -25px;
-        margin-right: 10px;
+    .otp-container {
+        gap: 4px;
+        margin: 15px 0;
     }
 
-    .error {
-        font-size: 10px;
+    .otp-container .otp-input {
+        max-width: 35px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    #otp-timer {
+        font-size: 12px;
     }
 
     .btn,
-    .btnn {
-        max-width: 145px;
+    .btnn,
+    #resetpass,
+    #verifyotp {
+        max-width: 170px;
         font-size: 13px;
-        padding: 7px 10px;
+        padding: 7px 9px;
+        margin: 15px auto 7px;
     }
 
     p {
         font-size: 11px;
     }
 
+    .error {
+        font-size: 10px;
+    }
+
+    i {
+        font-size: 13px;
+        margin-top: -25px;
+        margin-right: 10px;
+    }
+
     .google-btn i {
         font-size: 17px;
         padding: 3px 8px;
+    }
+
+    .forgot-pass {
+        font-size: 11px;
+    }
+
+    .forgot-pass a {
+        font-size: 11px;
     }
 }
