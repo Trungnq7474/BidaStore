@@ -341,7 +341,9 @@ const sendForgotPasswordOTP = async (req, res) => {
         });
 
         await transporter.sendMail ({
-            from: process.env.EMAIL_USER,
+            from: process.env.RESEND_API_KEY
+                ? process.env.RESEND_FROM_EMAIL
+                : process.env.EMAIL_USER,
             to: email,
             subject: "MÃ OTP BIDASTORE",
             text: `Mã OTP Của Bạn Là ${otp}. \nMã Có Hiệu Lực Trong 1 Phút.`
