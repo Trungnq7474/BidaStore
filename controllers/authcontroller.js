@@ -346,7 +346,7 @@ const sendForgotPasswordOTP = async (req, res) => {
                 : process.env.EMAIL_USER,
             to: email,
             subject: "MÃ OTP BIDASTORE",
-            text: `Mã OTP Của Bạn Là ${otp}. \nMã Có Hiệu Lực Trong 1 Phút.`
+            text: `Mã OTP Của Bạn Là ${otp}. \nMã Có Hiệu Lực Trong 2 Phút.`
         });
 
         res.send("ok");
