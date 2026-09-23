@@ -33,7 +33,7 @@ if (
             const message = [
                 `From: ${from}`,
                 `To: ${mail.to}`,
-                `Subject: ${mail.subject}`,
+                `Subject: =?UTF-8?B?${Buffer.from(mail.subject || '', 'utf-8').toString('base64')}?=`,
                 'MIME-Version: 1.0',
                 'Content-Type: text/plain; charset="UTF-8"',
                 'Content-Transfer-Encoding: base64',
