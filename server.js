@@ -36,8 +36,14 @@ app.use(express.static('public'));// Cho phép người dùng truy cập các fi
 
 // Gọi router
 
-const authrouters = require('./routes/authroutes');
+const authrouters = require('./routes/authrouters');
 app.use('/', authrouters);
+
+const userrouters = require('./routes/userrouters');
+app.use('/', userrouters);
+
+const profilerouters = require('./routes/profilerouters');
+app.use('/', profilerouters);
 
 const cartrouters = require('./routes/cartrouters');
 app.use('/', cartrouters);
@@ -50,6 +56,9 @@ app.use('/', commentrouters);
 
 const contactrouters = require('./routes/contactrouters');
 app.use('/', contactrouters);
+
+const orderrouters = require('./routes/orderrouters');
+app.use('/', orderrouters);
 
 const payrouters = require('./routes/payrouters');
 app.use('/', payrouters);

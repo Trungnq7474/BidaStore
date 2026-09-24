@@ -208,7 +208,8 @@
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all { 
         width: 400px; 
         max-width: calc(100vw - 40px); 
         margin: 0; 
@@ -245,7 +246,8 @@
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all  { 
         width: 360px; 
         max-width: calc(100vw - 36px); 
         margin: 0; 
@@ -257,13 +259,15 @@
     } 
 
     .confirm-content p, 
-    .confirm-content2 p { 
+    .confirm-content2 p,
+    .confirm-content-all p  { 
         font-size: 16px; 
         margin-bottom: 22px; 
     } 
 
     .confirm-content button, 
-    .confirm-content2 button { 
+    .confirm-content2 button,
+    .confirm-content-all button { 
         width: 95px; 
         height: 39px; 
         font-size: 14px; 
@@ -296,12 +300,14 @@
     } 
 
     .confirm-box, 
-    .confirm-box2 { 
+    .confirm-box2,
+    .confirm-box-all { 
         padding: 15px; 
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all { 
         width: 330px; 
         max-width: calc(100vw - 30px); 
         margin: 0; 
@@ -314,14 +320,16 @@
     } 
 
     .confirm-content p, 
-    .confirm-content2 p { 
+    .confirm-content2 p,
+    .confirm-content-all p { 
         font-size: 15px; 
         line-height: 1.4; 
         margin-bottom: 19px; 
     } 
 
     .confirm-content button, 
-    .confirm-content2 button { 
+    .confirm-content2 button,
+    .confirm-content-all button { 
         width: 88px; 
         height: 37px; 
         font-size: 13px; 
@@ -354,12 +362,14 @@
     } 
 
     .confirm-box, 
-    .confirm-box2 { 
+    .confirm-box2,
+    .confirm-box-all { 
         padding: 12px; 
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all { 
         width: 290px; 
         max-width: calc(100vw - 24px); 
         margin: 0; 
@@ -372,14 +382,16 @@
     } 
 
     .confirm-content p, 
-    .confirm-content2 p { 
+    .confirm-content2 p,
+    .confirm-content-all p { 
         font-size: 14px; 
         line-height: 1.35; 
         margin-bottom: 17px; 
     } 
 
     .confirm-content button, 
-    .confirm-content2 button { 
+    .confirm-content2 button,
+    .confirm-content-all button { 
         width: 80px; 
         height: 35px; 
         font-size: 12px; 
@@ -412,12 +424,14 @@
     } 
 
     .confirm-box, 
-    .confirm-box2 { 
+    .confirm-box2,
+    .confirm-box-all { 
         padding: 10px; 
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all { 
         width: 260px; 
         max-width: calc(100vw - 20px); 
         margin: 0; 
@@ -430,14 +444,16 @@
     } 
 
     .confirm-content p, 
-    .confirm-content2 p { 
+    .confirm-content2 p,
+    .confirm-content-all p { 
         font-size: 13px; 
         line-height: 1.3; 
         margin-bottom: 15px; 
     } 
 
     .confirm-content button, 
-    .confirm-content2 button { 
+    .confirm-content2 button,
+    .confirm-content-all button { 
         width: 74px; 
         height: 32px; 
         font-size: 11px; 
@@ -470,12 +486,14 @@
     } 
 
     .confirm-box, 
-    .confirm-box2 { 
+    .confirm-box2,
+    .confirm-box-all { 
         padding: 8px; 
     } 
 
     .confirm-content, 
-    .confirm-content2 { 
+    .confirm-content2,
+    .confirm-content-all { 
         width: 235px; 
         max-width: calc(100vw - 16px); 
         margin: 0; 
@@ -488,14 +506,16 @@
     } 
 
     .confirm-content p, 
-    .confirm-content2 p { 
+    .confirm-content2 p,
+    .confirm-content-all p { 
         font-size: 12px; 
         line-height: 1.25; 
         margin-bottom: 13px; 
     } 
 
     .confirm-content button, 
-    .confirm-content2 button { 
+    .confirm-content2 button,
+    .confirm-content-all button { 
         width: 68px; 
         height: 30px; 
         font-size: 10px; 

@@ -242,8 +242,6 @@ option {
 }
 
 
-/* ==================== 1200px ==================== */
-
 @media (max-width: 1200px) {
 
     .main {
@@ -262,45 +260,41 @@ option {
 
     .lookUp {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
         gap: 15px;
         width: 100%;
+        flex-wrap: nowrap;
         box-sizing: border-box;
     }
 
     .add {
-        width: auto !important;
         height: 40px;
         padding: 10px 15px;
         margin: 0;
         font-size: 15px;
         white-space: nowrap;
         flex: 0 0 auto;
-        box-sizing: border-box;
     }
 
     .search-product {
-        width: 240px !important;
-        max-width: 240px !important;
-        min-width: 0 !important;
-        height: 40px !important;
-        flex: 0 1 240px !important;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        height: 40px;
+        flex: 0 0 240px;
         box-sizing: border-box;
+        margin-bottom: 15px;
     }
 
     .search-product i {
-        font-size: 14px !important;
+        font-size: 14px;
+        flex-shrink: 0;
     }
 
     .search-product input {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        height: 100% !important;
-        padding: 8px 10px !important;
-        font-size: 14px !important;
+        width: 100%;
+        min-width: 0;
+        font-size: 14px;
         box-sizing: border-box;
     }
 
@@ -310,6 +304,7 @@ option {
         padding: 7px 10px;
         margin: 2px;
         white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .addform,
@@ -335,8 +330,6 @@ option {
 }
 
 
-/* ==================== 992px ==================== */
-
 @media (max-width: 992px) {
 
     .main {
@@ -354,35 +347,45 @@ option {
     }
 
     .lookUp {
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 
     .add {
         height: 37px;
         padding: 9px 13px;
         font-size: 14px;
+        flex: 0 0 auto;
     }
 
     .search-product {
-        width: 210px !important;
-        max-width: 210px !important;
-        flex-basis: 210px !important;
-        height: 37px !important;
+        width: 210px;
+        min-width: 210px;
+        max-width: 210px;
+        height: 37px;
+        flex: 0 0 210px;
+        margin-bottom: 14px;
     }
 
     .search-product i {
-        font-size: 13px !important;
+        font-size: 13px;
+        flex-shrink: 0;
     }
 
     .search-product input {
-        font-size: 13px !important;
-        padding: 7px 9px !important;
+        width: 100%;
+        min-width: 0;
+        font-size: 13px;
+        padding: 7px 9px;
+        box-sizing: border-box;
     }
 
     .edit,
     .delete {
         font-size: 13px;
         padding: 7px 9px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .addform,
@@ -435,8 +438,6 @@ option {
 }
 
 
-/* ==================== 768px ==================== */
-
 @media (max-width: 768px) {
 
     .main {
@@ -461,53 +462,53 @@ option {
 
     .lookUp {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        gap: 8px;
+        gap: 7px;
         width: 100%;
+        flex-wrap: nowrap;
         box-sizing: border-box;
     }
 
     .add {
-        width: auto !important;
         height: 34px;
-        padding: 8px 11px;
+        padding: 8px 10px;
         margin: 0;
-        font-size: 13px;
+        font-size: 12px;
         white-space: nowrap;
-        flex: 0 1 auto;
-        box-sizing: border-box;
+        flex: 0 0 auto;
     }
 
     .search-product {
-        width: 180px !important;
-        max-width: 180px !important;
-        min-width: 0 !important;
-        height: 34px !important;
-        flex: 0 1 180px !important;
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        height: 34px;
+        flex: 0 0 150px;
+        margin-bottom: 12px;
         box-sizing: border-box;
     }
 
     .search-product i {
-        font-size: 12px !important;
+        font-size: 12px;
+        flex-shrink: 0;
     }
 
     .search-product input {
-        width: 100% !important;
-        min-width: 0 !important;
-        height: 100% !important;
-        padding: 6px 8px !important;
-        font-size: 12px !important;
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        padding: 6px 7px;
+        font-size: 12px;
         box-sizing: border-box;
     }
 
     .edit,
     .delete {
-        font-size: 12px;
+        font-size: 11px;
         padding: 7px 8px;
-        margin: 2px;
+        margin: 1px;
         white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .form-bg,
@@ -583,8 +584,6 @@ option {
 }
 
 
-/* ==================== 576px ==================== */
-
 @media (max-width: 576px) {
 
     .main {
@@ -598,37 +597,52 @@ option {
     }
 
     .lookUp {
-        gap: 7px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        flex-wrap: wrap;
+        box-sizing: border-box;
     }
 
     .add {
-        height: 31px;
+        height: 32px;
         padding: 7px 9px;
-        font-size: 12px;
+        font-size: 11px;
+        flex: 0 0 auto;
     }
 
     .search-product {
-        width: 150px !important;
-        max-width: 150px !important;
-        min-width: 0 !important;
-        flex-basis: 150px !important;
-        height: 31px !important;
+        width: 145px;
+        min-width: 145px;
+        max-width: 145px;
+        height: 32px;
+        flex: 0 0 145px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
     }
 
     .search-product i {
-        font-size: 11px !important;
+        font-size: 11px;
+        flex-shrink: 0;
     }
 
     .search-product input {
-        font-size: 11px !important;
-        padding: 5px 7px !important;
+        width: 100%;
+        min-width: 0;
+        font-size: 11px;
+        padding: 5px 6px;
+        box-sizing: border-box;
     }
 
     .edit,
     .delete {
-        font-size: 11px;
+        height: 32px;
+        font-size: 10px;
         padding: 6px 7px;
         margin: 1px;
+        white-space: nowrap;
+        flex: 0 0 auto;
     }
 
     .form-bg,
@@ -690,8 +704,6 @@ option {
 }
 
 
-/* ==================== 400px ==================== */
-
 @media (max-width: 400px) {
 
     .main {
@@ -706,34 +718,39 @@ option {
 
     .lookUp {
         gap: 5px;
+        flex-wrap: wrap;
     }
 
     .add {
-        height: 28px;
+        height: 30px;
         padding: 6px 8px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .search-product {
-        width: 120px !important;
-        max-width: 120px !important;
-        min-width: 0 !important;
-        flex-basis: 120px !important;
-        height: 28px !important;
+        width: 125px;
+        min-width: 125px;
+        max-width: 125px;
+        height: 30px;
+        flex: 0 0 125px;
+        margin-bottom: 8px;
     }
 
     .search-product i {
-        font-size: 10px !important;
+        font-size: 10px;
     }
 
     .search-product input {
-        font-size: 10px !important;
-        padding: 4px 6px !important;
+        width: 100%;
+        min-width: 0;
+        font-size: 10px;
+        padding: 4px 5px;
     }
 
     .edit,
     .delete {
-        font-size: 10px;
+        height: 30px;
+        font-size: 9px;
         padding: 5px 6px;
         margin: 1px;
     }
@@ -790,8 +807,6 @@ option {
 }
 
 
-/* ==================== 360px ==================== */
-
 @media (max-width: 360px) {
 
     .main {
@@ -806,34 +821,39 @@ option {
 
     .lookUp {
         gap: 4px;
+        flex-wrap: wrap;
     }
 
     .add {
-        height: 25px;
+        height: 28px;
         padding: 5px 7px;
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .search-product {
-        width: 105px !important;
-        max-width: 105px !important;
-        min-width: 0 !important;
-        flex-basis: 105px !important;
-        height: 25px !important;
+        width: 110px;
+        min-width: 110px;
+        max-width: 110px;
+        height: 28px;
+        flex: 0 0 110px;
+        margin-bottom: 7px;
     }
 
     .search-product i {
-        font-size: 9px !important;
+        font-size: 9px;
     }
 
     .search-product input {
-        font-size: 9px !important;
-        padding: 3px 5px !important;
+        width: 100%;
+        min-width: 0;
+        font-size: 9px;
+        padding: 3px 4px;
     }
 
     .edit,
     .delete {
-        font-size: 9px;
+        height: 28px;
+        font-size: 8px;
         padding: 5px;
         margin: 1px;
     }
