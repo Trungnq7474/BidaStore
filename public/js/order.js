@@ -295,6 +295,41 @@ fetch('/getallorders')
         }
     });
 
+    const deleteAllBtn = document.querySelector('.delete-all');
+    const confirmAllBox = document.querySelector('.confirm-box-all');
+    const noAllBtn = document.querySelector('.no-all');
+    const yesAllBtn = document.querySelector('.yes-all');
+
+    deleteAllBtn.addEventListener('click', () => {
+        const orderList = document.querySelector('.order-list');
+
+        if(orderList.querySelectorAll('tr').length === 0) {
+            show('Không Có Đơn Hàng Nào Để Xóa !');
+            return;
+        }
+        confirmAllBox.style.display = "block";
+    });
+
+    noAllBtn.addEventListener('click', () => {
+        confirmAllBox.style.display = 'none';
+    });
+
+    yesAllBtn.addEventListener('click', async () => {
+        const res = await fetch('/deletecontactall', {
+            method: "DELETE"
+        });
+
+        const data = await res.text();
+
+        if(data === "ok") {
+            confirmAllBox.style.display = 'none';
+
+            document.querySelector('.order-list').innerHTML = "";
+
+            show('Admin Đã Xóa Tất Cả Đơn Hàng Thành Công !');
+        }
+    });
+
     function show (text) {
         const mgs2 = document.querySelector('.mgs2');
 

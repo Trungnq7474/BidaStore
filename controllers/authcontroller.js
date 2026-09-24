@@ -133,7 +133,20 @@ const deleteUser = async (req, res) => {
     }
 
     catch (err) {
-        console.log("LỖI XÓA USER:", err.message);
+        res.status(500).send(err.message);
+    }
+};
+
+const deleteAllUser = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM users
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
         res.status(500).send(err.message);
     }
 };
@@ -411,4 +424,4 @@ const resetForgotPass = async (req, res) => {
     }
 };
 
-module.exports = { register, login, logout, getUser, deleteUser, updateUser, updatePassword, getUsersess, getAdmin, addAddress, getAddress, getOneAddress, updateAddress, deleteAddress, sendForgotPasswordOTP, verifyForgotPassOTP, resetForgotPass }; 
+module.exports = { register, login, logout, getUser, deleteUser, updateUser, updatePassword, getUsersess, getAdmin, addAddress, getAddress, getOneAddress, updateAddress, deleteAddress, deleteAllUser, sendForgotPasswordOTP, verifyForgotPassOTP, resetForgotPass }; 

@@ -60,7 +60,7 @@ async function replyComment() {
 
     const data = await res.text();
     if(data === "ok") {
-        show(`Admin Đã Phản Hồi Cho Bình Luận REV-00${id} Thành Công !`);
+        show(`Admin Đã Phản Hồi Cho Đánh Giá & Bình Luận REV-00${id} Thành Công !`);
     }
     setTimeout(() => {
         location.reload();
@@ -95,7 +95,7 @@ async function updateComment() {
     const data = await res.text();
 
     if (data === "ok") {
-        show(`Admin Đã Cập Nhật Phản Hồi Cho Bình Luận REV-00${id} Thành Công !`);
+        show(`Admin Đã Cập Nhật Phản Hồi Cho Đánh Giá & Bình Luận REV-00${id} Thành Công !`);
 
         setTimeout(() => {
             location.reload();
@@ -118,7 +118,7 @@ document.addEventListener('click', function(e){
         const shopreply = current.children[6].innerText;
 
         if(shopreply !== "Chưa Phản Hồi") {
-            show("Bình Luận Này Đã Được Phản Hồi !");
+            show("Đánh Giá & Bình Luận Này Đã Được Phản Hồi !");
             return;
         }
         
@@ -200,6 +200,41 @@ document.addEventListener('click', function(e){
                     }, 2000);
                 }
             });
+        }
+    });
+
+    const deleteAllBtn = document.querySelector('.delete-all');
+    const confirmAllBox = document.querySelector('.confirm-box-all');
+    const noAllBtn = document.querySelector('.no-all');
+    const yesAllBtn = document.querySelector('.yes-all');
+
+    deleteAllBtn.addEventListener('click', () => {
+        const commentList = document.querySelector('.comment-list');
+
+        if(commentList.querySelectorAll('tr').length === 0) {
+            show('Không Có Đánh Giá & Bình Luận Nào Để Xóa !');
+            return;
+        }
+        confirmAllBox.style.display = "block";
+    });
+
+    noAllBtn.addEventListener('click', () => {
+        confirmAllBox.style.display = 'none';
+    });
+
+    yesAllBtn.addEventListener('click', async () => {
+        const res = await fetch('/deleteallcomment', {
+            method: "DELETE"
+        });
+
+        const data = await res.text();
+
+        if(data === "ok") {
+            confirmAllBox.style.display = 'none';
+
+            document.querySelector('.comment-list').innerHTML = "";
+
+            show('Admin Đã Xóa Tất Cả Đánh Giá & Bình Luận Thành Công !');
         }
     });
         

@@ -147,6 +147,20 @@ const deleteComment = async (req, res) => {
     }
 };
 
+const deleteAllComment = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM comments
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+
 const updateComment = async (req, res) => {
     const { id, shop_reply } = req.body;
 
@@ -212,4 +226,4 @@ const checkBuy = async (req, res) => {
         res.status(500).send(err.message);
     }
 }
-module.exports = { addComment, getComment, getAllComment, replyComment, updateComment, deleteComment, getCommentcount, checkBuy };
+module.exports = { addComment, getComment, getAllComment, replyComment, updateComment, deleteComment, deleteAllComment, getCommentcount, checkBuy };

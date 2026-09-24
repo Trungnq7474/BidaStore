@@ -252,6 +252,41 @@ document.addEventListener('click', function(e) {
     }
 });
 
+    const deleteAllBtn = document.querySelector('.delete-all');
+    const confirmAllBox = document.querySelector('.confirm-box-all');
+    const noAllBtn = document.querySelector('.no-all');
+    const yesAllBtn = document.querySelector('.yes-all');
+
+    deleteAllBtn.addEventListener('click', () => {
+        const voucherList = document.querySelector('.voucher-list');
+
+        if(voucherList.querySelectorAll('tr').length === 0) {
+            show('Không Có Mã Giảm Giá Nào Để Xóa !');
+            return;
+        }
+        confirmAllBox.style.display = "block";
+    });
+
+    noAllBtn.addEventListener('click', () => {
+        confirmAllBox.style.display = 'none';
+    });
+
+    yesAllBtn.addEventListener('click', async () => {
+        const res = await fetch('/deleteallvoucher', {
+            method: "DELETE"
+        });
+
+        const data = await res.text();
+
+        if(data === "ok") {
+            confirmAllBox.style.display = 'none';
+
+            document.querySelector('.voucher-list').innerHTML = "";
+
+            show('Admin Đã Xóa Tất Cả Mã Giảm Giá Thành Công !');
+        }
+    });
+
 
     
 function show (text) {

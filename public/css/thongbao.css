@@ -53,7 +53,8 @@
 } 
 
 .confirm-box, 
-.confirm-box2 { 
+.confirm-box2,
+.confirm-box-all { 
     position: fixed; 
     inset: 0; 
     width: 100%; 
@@ -68,7 +69,8 @@
 } 
 
 .confirm-content, 
-.confirm-content2 { 
+.confirm-content2,
+.confirm-content-all { 
     position: relative; 
     width: 430px; 
     max-width: 100%; 
@@ -81,7 +83,8 @@
 } 
 
 .confirm-content,  
-.confirm-content2 { 
+.confirm-content2,
+.confirm-content-all { 
     background: #d5ffe5; 
     border: 1px solid #b8e6c8; 
     top: 5%; 
@@ -90,7 +93,8 @@
 } 
 
 .confirm-content p, 
-.confirm-content2 p { 
+.confirm-content2 p,
+.confirm-content-all p { 
     margin: 0 0 28px; 
     font-size: 18px; 
     font-weight: bold; 
@@ -101,12 +105,14 @@
     color: #285c3a; 
 } 
 
-.confirm-content2 p { 
+.confirm-content2 p,
+.confirm-content-all p { 
     color: #285477; 
 } 
 
 .confirm-content button, 
-.confirm-content2 button { 
+.confirm-content2 button,
+.confirm-content-all button { 
     width: 110px; 
     height: 42px; 
     border: none; 
@@ -141,25 +147,29 @@
     box-shadow: 0 6px 14px rgba(77, 168, 102, 0.35); 
 } 
 
-.confirm-content2 .no2 { 
+.confirm-content2 .no2,
+.confirm-content-all .no-all { 
     background: #edfdfa; 
     color: #444; 
     margin-right: 8px; 
 } 
 
-.confirm-content2 .no2:hover { 
+.confirm-content2 .no2:hover,
+.confirm-content-all .no-all:hover { 
     background: white; 
     transform: translateY(-2px); 
 } 
 
-.confirm-content2 .yes2 { 
+.confirm-content2 .yes2,
+.confirm-content-all .yes-all { 
     background: #4f9de8; 
     color: white; 
     margin-left: 8px; 
     box-shadow: 0 4px 10px rgba(79, 157, 232, 0.3); 
 } 
 
-.confirm-content2 .yes2:hover { 
+.confirm-content2 .yes2:hover,
+.confirm-content-all .yes-all:hover { 
     background: #3185d4; 
     transform: translateY(-2px); 
     box-shadow: 0 6px 14px rgba(49, 133, 212, 0.35); 

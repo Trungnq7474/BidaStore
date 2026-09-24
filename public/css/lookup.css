@@ -113,6 +113,28 @@
     font-size: 22px;
 }
 
+.delete-all {
+    margin: auto;
+    margin-top: 0px;
+    margin-left: -30px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-all:hover {
+    transition: 0.3s ease-in-out;
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+
 @media (max-width: 1200px) {
 
     .lookUp {

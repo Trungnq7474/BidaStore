@@ -108,6 +108,20 @@ const deletePro = async (req, res) => {
     }
 }
 
+const deleteAllPro = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM products
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+}
+
 const getProcate = async (req, res) => {
     const cate = req.params.category;
     try {
@@ -265,4 +279,4 @@ const getTopten = async (req, res) => {
 
 
 
-module.exports = { getproducts, getproducts2, searchProducts, addPro, upload, deletePro, getProcate, updatePro, getProductcount, getTopproduct, getTopten };
+module.exports = { getproducts, getproducts2, searchProducts, addPro, upload, deletePro, deleteAllPro, getProcate, updatePro, getProductcount, getTopproduct, getTopten };

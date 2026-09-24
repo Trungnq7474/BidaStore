@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getRecentOrder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay } = require('../controllers/paycontroller');
+const { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, deleteOrderAll, updateStatus, getMyorder, getRecentOrder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay } = require('../controllers/paycontroller');
 
 router.post('/createorder', createOrder);
 router.get('/getorder/:id', getOrder);
 router.get('/getallorders', getAllOrders);
 router.get('/getorderitems/:id', getOrderItems);
 router.delete('/deleteorder', deleteOrder);
+router.delete('/deleteorderall', deleteOrderAll);
 router.put('/updatestatus', updateStatus);
 router.get('/getmyorder', getMyorder);
 router.get('/getordercount', getOrdercount);

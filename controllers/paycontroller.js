@@ -227,6 +227,20 @@ const deleteOrder = async (req, res) => {
     catch (err) {
         res.status(500).send(err.message);
     }
+};
+
+const deleteOrderAll = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM orders
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
 }
 
 // LẤY SẢN PHẨM TRONG ĐƠN HÀNG
@@ -691,4 +705,4 @@ const sePay = async (req, res) => {
 };
  
 
-module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, updateStatus, getMyorder, getRecentOrder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay };
+module.exports = { createOrder, getOrder, getAllOrders, getOrderItems, deleteOrder, deleteOrderAll, updateStatus, getMyorder, getRecentOrder, getOrdercount, getReve, getOrdermonth, getNoti, readNoti, getUsernoti, readUsernoti, deleteUsernoti, deleteAminnoti, getMyproductCount, getMyOrderCount, getMyMoney, getMyComplete, checkPayment, sePay };

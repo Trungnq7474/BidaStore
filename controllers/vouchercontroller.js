@@ -61,6 +61,20 @@ const deleteVouchers = async (req, res) => {
     }
 };
 
+const deleteAllVoucher = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM vouchers
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
+
 const updateVouchers = async (req, res) => {
     const { id, code, type, value, min_order, quantity, start_date, end_date } = req.body;
 
@@ -107,4 +121,4 @@ const updateVouchersstatus = async (req, res) => {
 
 
 
-module.exports = { addVoucher, getVouchers, deleteVouchers, updateVouchers, updateVouchersstatus };
+module.exports = { addVoucher, getVouchers, deleteVouchers, deleteAllVoucher, updateVouchers, updateVouchersstatus };

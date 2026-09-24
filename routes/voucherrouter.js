@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { addVoucher, getVouchers, deleteVouchers, updateVouchers, updateVouchersstatus } = require('../controllers/vouchercontroller');
+const { addVoucher, getVouchers, deleteVouchers, deleteAllVoucher, updateVouchers, updateVouchersstatus } = require('../controllers/vouchercontroller');
 
 router.post('/add-voucher', addVoucher);
 router.get('/getvouchers', getVouchers);
 router.delete('/deletevouchers', deleteVouchers);
+router.delete('/deleteallvoucher', deleteAllVoucher);
 router.put('/updatevouchers', updateVouchers);
 router.put('/updatevouchersstatus', updateVouchersstatus);
 

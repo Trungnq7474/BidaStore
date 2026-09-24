@@ -90,7 +90,21 @@ const deleteContact = async (req, res) => {
     catch (error) {
         res.status(500).send(error.message);
     }
-}
+};
+
+const deleteAllContact = async (req, res) => {
+    try {
+        await sql.query`
+            DELETE FROM contacts
+        `;
+
+        res.send("ok");
+    }
+
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+};
 
 const getContactcount = async (req, res) => {
     
@@ -109,4 +123,4 @@ const getContactcount = async (req, res) => {
 }
 
 
-module.exports = { sendContact, getContact, readContact, deleteContact, getContactcount };
+module.exports = { sendContact, getContact, readContact, deleteContact, deleteAllContact, getContactcount };
