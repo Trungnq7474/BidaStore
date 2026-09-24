@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('../config/passport');
 
-const { register, login, logout, updateUser, updatePassword, addAddress, getAddress, getOneAddress, updateAddress, deleteAddress, sendForgotPasswordOTP, verifyForgotPassOTP, resetForgotPass } = require('../controllers/authcontroller');
+const { register, login, logout, sendForgotPasswordOTP, verifyForgotPassOTP, resetForgotPass } = require('../controllers/authcontroller');
 
 router.post('/register', register);
 router.post('/login', login);

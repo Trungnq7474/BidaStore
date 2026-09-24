@@ -1,5 +1,4 @@
 const { sql } = require('../config/db');
-const { getMyorder } = require('./ordercontroller');
 
 const updateUser = async (req, res) => {
     const { username, email, phone } = req.body;
