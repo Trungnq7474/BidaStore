@@ -27,95 +27,6 @@
         <span class="tab4"><i class="fa-solid fa-calendar-xmark"></i> Đã Hủy</span>
     </div>
 
-    <!-- <div class="order1">
-        <div class="firts">
-            <span class="md">Mã Đơn: 1</span>
-            <span class="status pending">Đã Đặt</span>
-        </div>
-            <div class="top">
-                <img class="im" src="images/ban-aileex.png" alt="Ảnh">
-
-            <div class="tl">
-                <div class="info">
-                    <h3>Bàn bida 1 giờ</h3>
-                    <p>Số lượng: x 1</p>
-                </div>
-                <h4 class="price">Tổng: 30.000.000 VNĐ</h4>
-            </div>
-        </div>
-        
-        <div class="act">
-            <button class="huy">Hủy Đơn Hàng</button>
-            <button class="xem">Xem Chi Tiết</button>
-        </div>
-            
-    </div>
-
-    <div class="order2">
-        <div class="firts">
-            <span class="md">Mã Đơn: 2</span>
-            <span class="status shipping">Đang Giao</span>
-        </div>
-            <div class="top">
-                <img class="im" src="images/ban-aileex.png" alt="Ảnh">
-
-            <div class="tl">
-                <div class="info">
-                    <h3>Bàn bida 1 giờ</h3>
-                    <p>Số lượng: x 1</p>
-                </div>
-                <h4 class="price">Tổng: 30.000.000 VNĐ</h4>
-            </div>
-        </div>
-
-        <div class="act">
-            <button class="xem">Xem Chi Tiết</button>
-        </div>
-    </div>
-
-    <div class="order3">
-        <div class="firts">
-            <span class="md">Mã Đơn: 3</span>
-            <span class="status done">Đã Giao</span>
-        </div>
-            <div class="top">
-                <img class="im" src="images/ban-aileex.png" alt="Ảnh">
-
-            <div class="tl">
-                <div class="info">
-                    <h3>Bàn bida 1 giờ</h3>
-                    <p>Số lượng: x 1</p>
-                </div>
-                <h4 class="price">Tổng: 30.000.000 VNĐ</h4>
-            </div>
-        </div>
-
-        <div class="act">
-            <button class="xem">Xem Chi Tiết</button>
-        </div>
-    </div>
-
-    <div class="order4">
-        <div class="firts">
-            <span class="md">Mã Đơn: 4</span>
-            <span class="status cancel">Đã Hủy</span>
-        </div>
-            <div class="top">
-                <img class="im" src="images/ban-aileex.png" alt="Ảnh">
-
-            <div class="tl">
-                <div class="info">
-                    <h3>Bàn bida RASSON-VICTORY-II-PLUS</h3>
-                    <p>Số lượng: x 1</p>
-                </div>
-                <h4 class="price">Tổng: 30.000.000 VNĐ</h4>
-            </div>
-        </div>
-
-        <div class="act">
-            <button class="xem">Xem Chi Tiết</button>
-        </div>
-    </div> -->
     <div class="order-list"></div>
 
 
@@ -171,20 +82,7 @@
                     <span class="label"><i class="tt fa-solid fa-clock"></i> <b>Thời Gian: <span class="time"></span></b></span>
                 </div>
 
-                <div class="product-list">
-                    <!-- <div class="product-item">
-                        <div class="product-info">
-                            <img src="../images/lơ taom.png" alt="Ảnh" class="product-img">
-                            <div class="product-detail">
-                                <h3 class="product-name">Cục Lơ TAOM</h3>
-                                <h4 class="product-qty">Số lượng: x1</h4>
-                            </div>
-                        </div>
-                        <span class="product-price">450.000 VNĐ</span>
-                    </div> -->
-                </div>
-
-                
+                <div class="product-list"></div>
 
                 <div class="invoice-roww" style="margin-top: 15px;">
                     <span class="label"><i class="fa-solid fa-money-check-dollar"></i>Phương Thức Giao Hàng:</span>
@@ -224,6 +122,162 @@
                 </div>
             </div>
         </div>
+    <div class="tracking-overlay">
+        <div class="tracking-form">
+
+            <span class="tracking-close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+
+            <div class="tracking-header">
+                <div>
+
+                    <h2>Hành Trình Đơn Hàng</h2>
+
+                    <p class="tracking-id">
+                       <b>Mã Đơn: ORD-00<span class="tracking-order-id"></span></b> 
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="tracking-status">
+
+                <div class="tracking-status-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                    <span>Trạng Thái Hiện Tại</span>
+
+                    <h3 class="tracking-status-text"></h3>
+                </div>
+
+            </div>
+
+
+            <div class="tracking-timeline">
+
+                <div class="tracking-step" data-status="cho">
+
+                    <div class="tracking-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="tracking-title">
+                            <h3>Đã Đặt</h3>
+                            <span class="tracking-time time-cho"></span>
+                        </div>
+
+                        <p>Đơn Hàng Đã Được Đặt Thành Công !</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tracking-line line-cho"></div>
+
+
+                <div class="tracking-step" data-status="dang">
+
+                    <div class="tracking-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="tracking-title">
+                            <h3>Đang Giao</h3>
+                            <span class="tracking-time time-dang"></span>
+                        </div>
+
+                        <p>Đơn Hàng Đang Được Giao Đến Bạn !</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tracking-line line-dang"></div>
+
+
+                <div class="tracking-step" data-status="xong">
+
+                    <div class="tracking-icon">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="tracking-title">
+                            <h3>Đã Giao</h3>
+                            <span class="tracking-time time-xong"></span>
+                        </div>
+
+                        <p>Đơn Hàng Đã Được Giao Thành Công !</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tracking-line cancel-line"></div>
+
+
+                <div class="tracking-step cancel-step" data-status="huy">
+
+                    <div class="tracking-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="tracking-title">
+                            <h3>Đã Hủy</h3>
+                            <span class="tracking-time time-huy"></span>
+                        </div>
+
+                        <p>Đơn Hàng Đã Được Hủy !</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tracking-products">
+
+                <div class="tracking-products-title">
+
+                    <h3>
+                        <i class="fa-solid fa-box-open"></i>
+                        Sản Phẩm Trong Đơn
+                    </h3>
+
+                    <span class="tracking-product-count">
+                        (<span class="tracking-count">0</span>)
+                        Sản Phẩm
+                    </span>
+
+                </div>
+
+
+                <div class="tracking-product-list">
+
+                </div>
+
+            </div>
+
+
+            <div class="tracking-footer">
+
+                <div class="tracking-footer-info">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+
+                    <span>
+                        Cảm Ơn Bạn Đã Mua Hàng Tại ShopBidaNQT !
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </main>
 
 <div class="confirm-box">

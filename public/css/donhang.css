@@ -210,9 +210,9 @@ h1 {
 }
 
 .mua-lai {
-    padding: 10px 18px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: #56cb39;
     color: white;
     font-size: 15px;
@@ -237,29 +237,28 @@ h1 {
     background: transparent;
     color: rgb(84, 84, 84);
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     transition: 0.4s ease-in-out;
 }
 
 .huy {
-    background-color: rgb(80, 56, 105);
+    background-color: rgb(108, 76, 143);
     font-weight: bold;
     transition: 0.4s ease-in-out;
     border: none;
-    color: rgb(244, 254, 245);
+    color: white;
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
 }
 
 .huy:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
     transition: 0.4s ease-in-out;
-    color: rgb(0, 34, 106);
-    background-color: rgb(97, 216, 224);
+    background-color: rgb(80, 56, 105);
 }
 
 .xem:hover {
@@ -563,6 +562,651 @@ h1 {
     color: #0f4c5c;
     cursor: pointer;
 }
+
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.view-order {
+    background: #038fc6;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.view-order:hover {
+    background: #0262c2;
+    transform: translateY(-2px);
+    transition: 0.4s ease-in-out;
+}
+
+.view-journey {
+    background: #08997e;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1px solid #9fffed;
+    transition: 0.4s ease-in-out;
+}
+
+.view-journey:hover {
+    background: #008563;
+    transform: translateY(-2px);
+    transition: 0.4s ease-in-out;
+}
+
+.tracking-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.42);
+    z-index: 1000;
+    display: none;
+}
+
+.tracking-form {
+    width: 650px;
+    max-width: 92%;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 5vh auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    animation: showw 0.4s ease-in-out;
+}
+
+.tracking-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #035172;
+}
+
+.tracking-header h2 {
+    margin: 0 0 8px;
+    font-size: 25px;
+    color: #045d86;
+}
+
+.tracking-id {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    color: #574f60;
+    font-weight: bold;
+    width: fit-content;
+    font-size: 17px;
+    background: #ffe2f9;
+    padding: 9px 19px;
+    border-radius: 20px;
+}
+
+.tracking-close {
+    display: flex;
+    justify-content: right;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #00939d;
+    cursor: pointer;
+}
+
+.tracking-status {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #eeffff;
+    border: 1px solid #dee8fd;
+}
+
+.tracking-status-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.tracking-status-icon.status-cho {
+    border-color: rgb(212, 138, 0);
+    background: orange;
+    color: white;
+}
+
+.tracking-status-icon.status-dang {
+    border-color: rgb(0, 0, 211);
+    background: blue;
+    color: white;
+}
+
+.tracking-status-icon.status-xong {
+    border-color: rgb(0, 95, 0);
+    background: green;
+    color: white;
+}
+
+.tracking-status-icon.status-huy {
+    border-color: rgb(194, 0, 0);
+    background: red;
+    color: white;
+}
+
+.tracking-status.status-cho span {
+    color: orange;
+}
+
+.tracking-status.status-dang span {
+    color: blue;
+}
+
+.tracking-status.status-xong span {
+    color: green;
+}
+
+.tracking-status.status-huy span {
+    color: red;
+}
+
+.tracking-status span {
+    line-height: 2;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tracking-status h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 18px;
+}
+
+.tracking-status h3.status-cho {
+    color: orange;
+}
+
+.tracking-status h3.status-dang {
+    color: blue;
+}
+
+.tracking-status h3.status-xong {
+    color: green;
+}
+
+.tracking-status h3.status-huy {
+    color: red;
+}
+
+.tracking-timeline {
+    margin-top: 30px;
+}
+
+.tracking-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    padding: 8px 0;
+}
+
+.tracking-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #9ca3af;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: 0.4s ease-in-out;
+}
+
+.tracking-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tracking-time {
+    display: flex;
+    justify-content: right;
+    margin-top: -6px;
+    font-size: 16px;
+    color: #707472;
+    font-weight: bold;
+}
+
+.tracking-info {
+    flex: 1;
+}
+
+.tracking-info h3 {
+    margin: 0 0 5px;
+    color: #9ca3af;
+}
+
+.tracking-info p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+    color: #9ca3af;
+    line-height: 1.3;
+}
+
+.tracking-line {
+    width: 2px;
+    height: 35px;
+    background: #cccfd3;
+    margin-left: 22px;
+}
+
+.tracking-step[data-status="cho"].active .tracking-icon {
+    border-color:  rgb(212, 138, 0);
+    color: white;
+    background: orange;
+}
+
+.tracking-step[data-status="cho"].active .tracking-info h3,
+.tracking-step[data-status="cho"].active .tracking-info p  {
+    color: orange;
+}
+
+.tracking-step[data-status="dang"].active .tracking-icon {
+    border-color: rgb(0, 0, 211);
+    color: white;
+    background-color: blue;
+}
+
+.tracking-step[data-status="dang"].active .tracking-info h3,
+.tracking-step[data-status="dang"].active .tracking-info p {
+    color: blue;
+}
+
+.tracking-step[data-status="xong"].active .tracking-icon {
+    border-color: rgb(0, 95, 0);
+    color: white;
+    background-color: green;
+}
+
+.tracking-step[data-status="xong"].active .tracking-info h3,
+.tracking-step[data-status="xong"].active .tracking-info p {
+    color: green;
+}
+
+.line-cho.active {
+    background: orange;
+}
+
+.line-dang.active {
+    background: blue;
+}
+
+.cancel-line,
+.cancel-step {
+    display: none;
+}
+
+.cancel-line.active {
+    display: block;
+    background: red;
+}
+
+.cancel-step.active {
+    display: flex;
+}
+
+.cancel-step.active .tracking-icon {
+    border-color: rgb(194, 0, 0);
+    color: white;
+    background-color: red;
+}
+
+.cancel-step.active .tracking-info h3,
+.cancel-step.active .tracking-info p {
+    color:red;
+}
+
+.tracking-products {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #035172;
+}
+
+.tracking-products-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.tracking-products-title h3 {
+    margin: 0;
+    color: #04475b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tracking-products-title h3 i {
+    margin-right: 7px;
+    color: #4d392e;
+    font-size: 22px;
+}
+
+.tracking-product-count {
+    color: #1e3561;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tracking-product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tracking-product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #eeffff;
+    border: 1px solid #dee8fd;
+}
+
+.tracking-product-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.tracking-product-img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #eef9f8;
+    object-fit: cover;
+    border: 1px solid #b7dfe2;
+    flex-shrink: 0;
+}
+
+.tracking-product-detail {
+    min-width: 0;
+}
+
+.tracking-product-name {
+    margin: 0 0 6px;
+    width: 300px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #13347a;
+    line-height: 1.4;
+}
+
+.tracking-product-qty {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.tracking-product-price {
+    flex-shrink: 0;
+    margin-top: 8px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tracking-product-price .price-old {
+    color: #9ca3af;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.tracking-product-price .price-new {
+    color: #67418a;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.tracking-product-price .price-normal {
+    color: #67418a;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.tracking-footer {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #035172;
+}
+
+.tracking-footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #303c54;
+    font-size: 16px;
+    text-align: center;
+}
+
+.tracking-footer-info i {
+    color: #203256;
+    font-size: 22px;
+}
+
+@media (max-width: 1400px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 90%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabs {
+        gap: 10px;
+        padding: 9px 12px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tab,
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 10px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .order1 {
+        padding: 12px 18px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .top {
+        gap: 25px;
+        min-width: 0;
+    }
+
+    .tl {
+        gap: 25px;
+        min-width: 0;
+    }
+
+    .info {
+        min-width: 0;
+    }
+
+    .info h3 {
+        max-width: 100%;
+        font-size: 18px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .info p {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .status {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+
+    .top img {
+        width: 160px;
+        height: 130px;
+        padding: 7px;
+        flex-shrink: 0;
+    }
+
+    .other {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .total {
+        font-size: 17px;
+    }
+
+    .xem,
+    .huy,
+    .mua-lai,
+    .view-order,
+    .view-journey {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    .invoice-box {
+        width: 65%;
+        height: auto;
+        max-width: 100%;
+        max-height: 82vh;
+        margin: 30px auto 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .invoice-roww {
+        font-size: 15px;
+        gap: 10px;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .invoice-roww .label {
+        gap: 10px;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .invoice-roww .text,
+    .shipping-method,
+    .shipping-fee,
+    .product-total,
+    .voucher-minus,
+    .promotion-total {
+        white-space: nowrap;
+    }
+
+    .voucher-row .voucher-text {
+        gap: 10px;
+        min-width: 0;
+        justify-content: flex-start;
+    }
+
+    .voucher-row .voucher-text .voucher-code {
+        margin-left: 0;
+    }
+
+    .order-price {
+        min-width: 0;
+        max-width: 100%;
+        gap: 7px;
+        flex-shrink: 1;
+    }
+
+    .order-price .price-old {
+        font-size: 15px;
+    }
+
+    .order-price .price-new,
+    .order-price .price-normal {
+        font-size: 16px;
+    }
+
+    .product-price {
+        min-width: 0;
+        max-width: 100%;
+        gap: 7px;
+        flex-shrink: 1;
+    }
+
+    .product-price .price-old {
+        font-size: 14px;
+    }
+
+    .product-price .price-new,
+    .product-price .price-normal {
+        font-size: 15px;
+    }
+
+    .promotion-total {
+        font-size: 15px;
+    }
+}
+
 
 @media (max-width: 1200px) {
 
@@ -887,9 +1531,11 @@ h1 {
 
     .xem,
     .huy,
-    .mua-lai {
+    .mua-lai,
+    .view-order,
+    .view-journey {
         padding: 7px 10px;
-        font-size: 11px;
+        font-size: 12px;
         border-radius: 12px;
     }
 
@@ -1061,6 +1707,188 @@ h1 {
     .promotion-total {
         font-size: 13px;
     }
+
+    .tracking-form {
+        width: 75%;
+        max-width: calc(100% - 30px);
+        max-height: 78vh;
+        margin: 25px auto 15px;
+        padding: 22px;
+        border-radius: 15px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .tracking-header {
+        padding-bottom: 15px;
+    }
+
+    .tracking-header h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .tracking-id {
+        margin-top: 8px;
+        font-size: 15px;
+        padding: 8px 15px;
+    }
+
+    .tracking-close {
+        font-size: 20px;
+        margin-top: 3px;
+        margin-bottom: 8px;
+    }
+
+    .tracking-status {
+        margin-top: 15px;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .tracking-status-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    .tracking-status span {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .tracking-status h3 {
+        font-size: 16px;
+    }
+
+    .tracking-timeline {
+        margin-top: 24px;
+    }
+
+    .tracking-step {
+        gap: 12px;
+        padding: 7px 0;
+    }
+
+    .tracking-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    .tracking-info {
+        min-width: 0;
+    }
+
+    .tracking-info h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .tracking-info p {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .tracking-title {
+        gap: 8px;
+    }
+
+    .tracking-time {
+        font-size: 13px;
+        margin-top: -4px;
+        white-space: nowrap;
+    }
+
+    .tracking-line {
+        height: 28px;
+        margin-left: 18px;
+    }
+
+    .tracking-products {
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
+    .tracking-products-title {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .tracking-products-title h3 {
+        font-size: 16px;
+    }
+
+    .tracking-products-title h3 i {
+        font-size: 19px;
+        margin-right: 5px;
+    }
+
+    .tracking-product-count {
+        font-size: 14px;
+    }
+
+    .tracking-product-item {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .tracking-product-info {
+        gap: 9px;
+    }
+
+    .tracking-product-img {
+        width: 85px;
+        height: 65px;
+    }
+
+    .tracking-product-detail {
+        min-width: 0;
+    }
+
+    .tracking-product-name {
+        width: auto;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .tracking-product-qty {
+        font-size: 12px;
+    }
+
+    .tracking-product-price {
+        gap: 6px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .tracking-product-price .price-old {
+        font-size: 12px;
+    }
+
+    .tracking-product-price .price-new,
+    .tracking-product-price .price-normal {
+        font-size: 13px;
+    }
+
+    .tracking-footer {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    .tracking-footer-info {
+        font-size: 14px;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+
+    .tracking-footer-info i {
+        font-size: 19px;
+    }
 }
 
 
@@ -1208,9 +2036,11 @@ h1 {
 
     .xem,
     .huy,
-    .mua-lai {
+    .mua-lai,
+    .view-order,
+    .view-journey {
         padding: 6px 8px;
-        font-size: 9px;
+        font-size: 12px;
         border-radius: 9px;
     }
 
@@ -1408,6 +2238,152 @@ h1 {
     .promotion-total {
         font-size: 11px;
     }
+
+     .tracking-form {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        max-height: 74vh;
+        margin: 20px auto 12px;
+        padding: 16px;
+        border-radius: 12px;
+        overflow-y: auto;
+        overflow-y: hidden;
+    }
+
+    .tracking-header {
+        padding-bottom: 12px;
+    }
+
+    .tracking-header h2 {
+        font-size: 20px;
+    }
+
+    .tracking-id {
+        font-size: 13px;
+        padding: 7px 13px;
+    }
+
+    .tracking-close {
+        font-size: 19px;
+        margin-bottom: 6px;
+    }
+
+    .tracking-status {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .tracking-status-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .tracking-status span {
+        font-size: 14px;
+    }
+
+    .tracking-status h3 {
+        font-size: 15px;
+    }
+
+    .tracking-timeline {
+        margin-top: 20px;
+    }
+
+    .tracking-step {
+        gap: 10px;
+        padding: 6px 0;
+    }
+
+    .tracking-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .tracking-info h3 {
+        font-size: 14px;
+    }
+
+    .tracking-info p {
+        font-size: 12px;
+    }
+
+    .tracking-time {
+        font-size: 11px;
+    }
+
+    .tracking-line {
+        height: 24px;
+        margin-left: 16px;
+    }
+
+    .tracking-products {
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+
+    .tracking-products-title h3 {
+        font-size: 14px;
+    }
+
+    .tracking-products-title h3 i {
+        font-size: 17px;
+    }
+
+    .tracking-product-count {
+        font-size: 12px;
+    }
+
+    .tracking-product-item {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .tracking-product-info {
+        gap: 8px;
+    }
+
+    .tracking-product-img {
+        width: 70px;
+        height: 55px;
+    }
+
+    .tracking-product-name {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .tracking-product-qty {
+        font-size: 10px;
+    }
+
+    .tracking-product-price {
+        gap: 4px;
+    }
+
+    .tracking-product-price .price-old {
+        font-size: 10px;
+    }
+
+    .tracking-product-price .price-new,
+    .tracking-product-price .price-normal {
+        font-size: 11px;
+    }
+
+    .tracking-footer {
+        margin-top: 16px;
+        padding-top: 12px;
+    }
+
+    .tracking-footer-info {
+        font-size: 12px;
+    }
+
+    .tracking-footer-info i {
+        font-size: 17px;
+    }
 }
 
 
@@ -1514,9 +2490,11 @@ h1 {
 
     .xem,
     .huy,
-    .mua-lai {
-        padding: 5px 6px;
-        font-size: 8px;
+    .mua-lai,
+    .view-order,
+    .view-journey {
+        padding: 6px 7px;
+        font-size: 9px;
         border-radius: 8px;
     }
 
@@ -1711,6 +2689,174 @@ h1 {
     .promotion-total {
         font-size: 9px;
     }
+
+    .tracking-form {
+        width: calc(95% - 16px);
+        max-height: 88vh;
+        padding: 12px;
+        border-radius: 10px;
+        max-height: 70vh;
+        margin: 18px auto 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .tracking-header {
+        padding-bottom: 10px;
+    }
+
+    .tracking-header h2 {
+        font-size: 18px;
+    }
+
+    .tracking-id {
+        margin-top: 6px;
+        font-size: 11px;
+        padding: 6px 11px;
+    }
+
+    .tracking-close {
+        font-size: 18px;
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+
+    .tracking-status {
+        margin-top: 10px;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .tracking-status-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .tracking-status span {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .tracking-status h3 {
+        font-size: 13px;
+    }
+
+    .tracking-timeline {
+        margin-top: 16px;
+    }
+
+    .tracking-step {
+        gap: 8px;
+        padding: 5px 0;
+    }
+
+    .tracking-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .tracking-info h3 {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .tracking-info p {
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .tracking-title {
+        gap: 5px;
+    }
+
+    .tracking-time {
+        font-size: 9px;
+        margin-top: -2px;
+    }
+
+    .tracking-line {
+        height: 20px;
+        margin-left: 14px;
+    }
+
+    .tracking-products {
+        margin-top: 16px;
+        padding-top: 13px;
+    }
+
+    .tracking-products-title {
+        gap: 6px;
+        margin-bottom: 9px;
+    }
+
+    .tracking-products-title h3 {
+        font-size: 12px;
+    }
+
+    .tracking-products-title h3 i {
+        font-size: 15px;
+        margin-right: 3px;
+    }
+
+    .tracking-product-count {
+        font-size: 10px;
+    }
+
+    .tracking-product-item {
+        gap: 6px;
+        padding: 7px;
+        border-radius: 8px;
+    }
+
+    .tracking-product-info {
+        gap: 6px;
+    }
+
+    .tracking-product-img {
+        width: 55px;
+        height: 45px;
+        border-radius: 6px;
+    }
+
+    .tracking-product-name {
+        font-size: 10px;
+        line-height: 1.25;
+        margin-bottom: 3px;
+    }
+
+    .tracking-product-qty {
+        font-size: 9px;
+    }
+
+    .tracking-product-price {
+        gap: 3px;
+        margin-top: 2px;
+    }
+
+    .tracking-product-price .price-old {
+        font-size: 8px;
+    }
+
+    .tracking-product-price .price-new,
+    .tracking-product-price .price-normal {
+        font-size: 9px;
+    }
+
+    .tracking-footer {
+        margin-top: 13px;
+        padding-top: 10px;
+    }
+
+    .tracking-footer-info {
+        gap: 5px;
+        font-size: 10px;
+    }
+
+    .tracking-footer-info i {
+        font-size: 15px;
+    }
 }
 
 
@@ -1808,16 +2954,18 @@ h1 {
 
     .xem,
     .huy,
-    .mua-lai {
-        padding: 4px 5px;
-        font-size: 7px;
+    .mua-lai,
+    .view-order,
+    .view-journey {
+        padding: 5px 7px;
+        font-size: 8px;
     }
 
     .invoice-box {
         width: 94%;
         max-width: 100%;
         height: auto;
-        max-height: 66vh;
+        max-height: 80vh;
         margin: 15px auto 8px;
         padding: 12px;
         box-sizing: border-box;
@@ -1998,5 +3146,158 @@ h1 {
 
     .promotion-total {
         font-size: 8px;
+    }
+
+    .tracking-form {
+        width: calc(95% - 10px);
+        padding: 9px;
+        border-radius: 9px;
+        max-height: 80vh;
+        margin: 15px auto 8px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .tracking-header {
+        padding-bottom: 8px;
+    }
+
+    .tracking-header h2 {
+        font-size: 16px;
+    }
+
+    .tracking-id {
+        font-size: 9px;
+        padding: 5px 9px;
+        border-radius: 15px;
+    }
+
+    .tracking-close {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .tracking-status {
+        margin-top: 8px;
+        gap: 6px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .tracking-status-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .tracking-status span {
+        font-size: 10px;
+    }
+
+    .tracking-status h3 {
+        font-size: 11px;
+    }
+
+    .tracking-timeline {
+        margin-top: 13px;
+    }
+
+    .tracking-step {
+        gap: 6px;
+        padding: 4px 0;
+    }
+
+    .tracking-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .tracking-info h3 {
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+
+    .tracking-info p {
+        font-size: 9px;
+    }
+
+    .tracking-time {
+        font-size: 8px;
+    }
+
+    .tracking-line {
+        height: 16px;
+        margin-left: 12px;
+    }
+
+    .tracking-products {
+        margin-top: 13px;
+        padding-top: 10px;
+    }
+
+    .tracking-products-title {
+        margin-bottom: 7px;
+    }
+
+    .tracking-products-title h3 {
+        font-size: 11px;
+    }
+
+    .tracking-products-title h3 i {
+        font-size: 13px;
+    }
+
+    .tracking-product-count {
+        font-size: 9px;
+    }
+
+    .tracking-product-item {
+        gap: 5px;
+        padding: 6px;
+    }
+
+    .tracking-product-info {
+        gap: 5px;
+    }
+
+    .tracking-product-img {
+        width: 45px;
+        height: 38px;
+    }
+
+    .tracking-product-name {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    .tracking-product-qty {
+        font-size: 8px;
+    }
+
+    .tracking-product-price {
+        gap: 2px;
+    }
+
+    .tracking-product-price .price-old {
+        font-size: 7px;
+    }
+
+    .tracking-product-price .price-new,
+    .tracking-product-price .price-normal {
+        font-size: 8px;
+    }
+
+    .tracking-footer {
+        margin-top: 10px;
+        padding-top: 8px;
+    }
+
+    .tracking-footer-info {
+        font-size: 9px;
+    }
+
+    .tracking-footer-info i {
+        font-size: 13px;
     }
 }

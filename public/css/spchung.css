@@ -222,11 +222,11 @@
 
 @media (max-width: 1400px) { 
     .sp { 
-        gap: 25px; 
+        gap: 30px; 
     } 
  
     .sp .tr { 
-        width: 18%; 
+        width: 19%; 
     } 
  
     .sp .kk .pro1 h5 { 

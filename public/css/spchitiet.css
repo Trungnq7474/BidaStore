@@ -673,267 +673,76 @@ button.pay {
     color: #ff3f3f;
 }
 
-@media (max-width: 1400px) {
-    section {
-        margin-top: 120px;
-        margin-bottom: 55px;
-    }
-
-    .sp .kk {
-        width: 92%;
-        padding: 15px;
-    }
-
-    .sp .pro1 {
-        margin-left: 60px;
-        min-width: 0;
-    }
-
-    .sp .kk .anh-chinh {
-        width: 52%;
-        min-width: 0;
-    }
-
-    .sp .kk .anh-chinh #image {
-        width: 100%;
-        height: 520px;
-    }
-
-    .sp .kk .anh-chinh .anh-phu {
-        justify-content: flex-start;
-        gap: 10px;
-    }
-
-    .sp .kk .anh-chinh .anh-phu img {
-        width: 100px;
-        height: 75px;
-    }
-
-    .sp .kk .pro1 h2 {
-        width: 100%;
-        margin-left: 0;
-        font-size: 25px;
-    }
-
-    .icon {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .sp .kk .pro1 h3 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .sp .price-box {
-        justify-content: center;
-        align-items: center;
-        gap: 9px;
-        margin-left: 0;
-        margin-bottom: 14px;
-    }
-
-    .sp .price-box #price {
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-
-    .sp .price-box.has-discount {
-        justify-content: center;
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-
-    .stock {
-        margin-left: 0;
-        text-align: center;
-        font-size: 19px;
-        margin-top: 7px;
-        margin-bottom: 10px;
-    }
-
-    .info {
-        width: 100%;
-    }
-
-    .info h1 {
-        margin-left: 0;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .info p {
-        margin-left: 0;
-        margin-right: 0;
-        height: auto;
-        font-size: 17px;
-        line-height: 28px;
-    }
-
-    .god {
-        margin-left: 0;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .sp .god .cart i {
-        font-size: 28px;
-        padding: 9px 12px;
-    }
-
-    button.pay {
-        width: 165px;
-        height: 50px;
-        font-size: 22px;
-        margin-top: 25px;
-    }
-
-    .sp .kk .discount-user {
-        top: 8px;
-        right: 46%;
-        font-size: 15px;
-        padding: 6px 7px;
-    }
-
-    .ud p {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-
-    .review-comment-section {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .related-list {
-        padding: 10px 20px;
-        gap: 22px;
-    }
-
-    .related-list .related-tr {
-        width: 21.5%;
-    }
-
-    .related-list .related-kk {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .related-list .related-kk .related-pro1 h5 {
-        font-size: 16px;
-        height: 34px;
-        line-height: 17px;
-        margin-top: 10px;
-        margin-bottom: 7px;
-    }
-
-    .related-list .related-kk .related-pro1 i {
-        font-size: 13px;
-    }
-
-    .related-list .related-kk .related-pro1 h4 {
-        font-size: 14px;
-        margin-top: 9px;
-        margin-bottom: 10px;
-    }
-
-    .price-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-    }
-
-    .related-list .related-kk .related-pro1 h4.price-old {
-        font-size: 12px;
-        margin-top: 8px;
-        margin-bottom: 6px;
-    }
-
-    .related-list .related-kk .related-pro1 h4.price-new {
-        font-size: 14px;
-        margin-top: 8px;
-        margin-bottom: 6px;
-    }
-
-    .discount-user {
-        top: 6px;
-        right: 6px;
-        padding: 5px;
-        font-size: 12px;
-        border-radius: 8px;
-    }
-
-    .stock-product {
-        font-size: 13px;
-        margin: 5px 0 7px;
-        letter-spacing: 0.2px;
-    }
-
-    .related-list .related-kk .related-pro .related-cart i {
-        font-size: 24px;
-        padding: 10px 12px;
-    }
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     section {
         margin-top: 120px;
         margin-bottom: 50px;
     }
 
     .sp .kk {
-        width: 92%;
+        width: 90%;
         padding: 15px;
-        box-sizing: border-box;
+        border-radius: 16px;
     }
 
-    .sp .pro1 {
-        margin-left: 40px;
-        min-width: 0;
+    .pro {
+        flex-direction: row;
+        align-items: flex-start;
     }
 
     .sp .kk .anh-chinh {
-        width: 52%;
+        width: 54%;
+        align-items: center;
     }
 
     .sp .kk .anh-chinh #image {
-        height: 480px;
+        width: 90%;
+        height: 500px;
+    }
+
+    .sp .kk .anh-chinh .anh-phu {
+        justify-content: center;
+        gap: 12px;
     }
 
     .sp .kk .anh-chinh .anh-phu img {
-        width: 90px;
-        height: 70px;
+        width: 95px;
+        height: 75px;
+    }
+
+    .sp .pro1 {
+        width: 42%;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .sp .kk .pro1 h2 {
         width: 100%;
-        margin-left: 0;
-        font-size: 24px;
+        margin: 15px 0 10px;
+        font-size: 25px;
+        text-align: center;
+        line-height: 1.3;
     }
 
     .icon {
-        margin-left: 0;
+        margin: 0;
         text-align: center;
     }
 
     .sp .kk .pro1 h3 {
-        margin-left: 0;
+        margin: 12px 0;
+        font-size: 21px;
         text-align: center;
-        font-size: 20px;
     }
 
     .sp .price-box {
+        width: 100%;
         justify-content: center;
         align-items: center;
         gap: 8px;
-        margin-left: 0;
-        margin-bottom: 15px;
+        margin: 5px 0 15px;
     }
 
     .sp .price-box #price {
@@ -948,19 +757,25 @@ button.pay {
     }
 
     .sp .price-box .price-old {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .sp .price-box #price.price-new {
-        font-size: 19px;
+        font-size: 20px;
+    }
+
+    .sp .kk .discount-user {
+        top: 8px;
+        right: 47%;
+        font-size: 16px;
+        padding: 7px;
     }
 
     .stock {
-        margin-left: 0;
-        text-align: center;
+        margin: 6px 0 9px;
         font-size: 20px;
-        margin-top: 6px;
-        margin-bottom: 9px;
+        text-align: center;
+        letter-spacing: 0.3px;
     }
 
     .info {
@@ -968,45 +783,77 @@ button.pay {
     }
 
     .info h1 {
-        margin-left: 0;
+        margin: 10px 0;
         font-size: 24px;
         text-align: center;
     }
 
     .info p {
-        margin-left: 0;
+        margin: 0;
         height: auto;
         font-size: 17px;
         line-height: 28px;
+        text-align: center;
     }
 
     .god {
-        margin-left: 0;
+        width: 100%;
+        margin: 10px 0 0;
         justify-content: center;
-        align-items: center;
         gap: 30px;
     }
 
     .sp .god .cart i {
-        font-size: 30px;
-        padding: 12px 15px;
+        font-size: 31px;
+        padding: 11px 14px;
     }
 
-    .sp .kk .discount-user {
-        top: 8px;
-        right: 45%;
-        font-size: 16px;
-        padding: 7px;
+    button.pay {
+        width: 160px;
+        height: 50px;
+        font-size: 21px;
+        margin-top: 28px;
+    }
+
+    .ud h2 {
+        font-size: 22px;
+        margin-top: 50px;
     }
 
     .ud p {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .ic {
+        width: 120px;
+        margin-bottom: 30px;
     }
 
     .review-comment-section {
         width: 100%;
+        padding: 18px;
         box-sizing: border-box;
+    }
+
+    .comment-form {
+        padding: 15px;
+    }
+
+    .comment-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .comment-date {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .name {
+        font-size: 18px;
     }
 
     .no-comment {
@@ -1036,12 +883,314 @@ button.pay {
         width: 23%;
     }
 
+    .related-list .related-kk {
+        width: 100%;
+        padding: 9px 10px;
+        border-radius: 16px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 15px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 16px;
+        height: 34px;
+        line-height: 17px;
+        margin-top: 11px;
+        margin-bottom: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 13px;
+    }
+
     .price-box {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 5px;
         flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-old {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 h4.price-new {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .discount-user {
+        top: 6px;
+        right: 6px;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
+    .related-list .related-kk .related-pro1 h4 {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .stock-product {
+        font-size: 13px;
+        margin: 6px 0 8px;
+        letter-spacing: 0.3px;
+    }
+
+    .related-list .related-kk .related-pro .related-cart i {
+        font-size: 24px;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    section {
+        margin-top: 120px;
+        margin-bottom: 50px;
+    }
+
+    .sp .kk {
+        width: 92%;
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .pro {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .sp .kk .anh-chinh {
+        width: 56%;
+        align-items: center;
+    }
+
+    .sp .kk .anh-chinh #image {
+        width: 90%;
+        height: 480px;
+    }
+
+    .sp .kk .anh-chinh .anh-phu {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .sp .kk .anh-chinh .anh-phu img {
+        width: 90px;
+        height: 70px;
+    }
+
+    .sp .pro1 {
+        width: 40%;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sp .kk .pro1 h2 {
+        width: 100%;
+        margin: 15px 0 10px;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .icon {
+        margin: 0;
+        text-align: center;
+    }
+
+    .sp .kk .pro1 h3 {
+        margin: 12px 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .sp .price-box {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin: 5px 0 15px;
+    }
+
+    .sp .price-box #price {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box.has-discount {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sp .price-box .price-old {
+        font-size: 17px;
+    }
+
+    .sp .price-box #price.price-new {
+        font-size: 19px;
+    }
+
+    .sp .kk .discount-user {
+        top: 8px;
+        right: 45%;
+        font-size: 16px;
+        padding: 7px;
+    }
+
+    .stock {
+        margin: 6px 0 9px;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0.3px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        margin: 10px 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .info p {
+        margin: 0;
+        height: auto;
+        font-size: 17px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .god {
+        width: 100%;
+        margin: 10px 0 0;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .sp .god .cart i {
+        font-size: 30px;
+        padding: 12px 15px;
+    }
+
+    button.pay {
+        width: 160px;
+        height: 50px;
+        font-size: 21px;
+        margin-top: 28px;
+    }
+
+    .ud h2 {
+        font-size: 22px;
+        margin-top: 50px;
+    }
+
+    .ud p {
+        margin-left: 60px;
+        margin-right: 60px;
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .ic {
+        width: 120px;
+        margin-bottom: 30px;
+    }
+
+    .review-comment-section {
+        width: 100%;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    .comment-form {
+        padding: 15px;
+    }
+
+    .comment-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .comment-date {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .no-comment {
+        font-size: 19px;
+        padding: 18px 10px;
+        white-space: nowrap;
+    }
+
+    .ok {
+        margin-top: -20px;
+    }
+
+    .ok h1 {
+        font-size: 28px;
+    }
+
+    .ok p {
+        font-size: 27px;
+    }
+
+    .related-list {
+        padding: 10px 16px;
+        gap: 20px;
+    }
+
+    .related-list .related-tr {
+        width: 23%;
+    }
+
+    .related-list .related-kk {
+        width: 100%;
+        padding: 9px 10px;
+        border-radius: 16px;
+    }
+
+    .related-list .related-kk img {
+        border-radius: 15px;
+    }
+
+    .related-list .related-kk .related-pro1 h5 {
+        font-size: 16px;
+        height: 34px;
+        line-height: 17px;
+        margin-top: 11px;
+        margin-bottom: 8px;
+    }
+
+    .related-list .related-kk .related-pro1 i {
+        font-size: 13px;
+    }
+
+    .price-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 
     .related-list .related-kk .related-pro1 h4.price-old {
@@ -1062,23 +1211,6 @@ button.pay {
         padding: 5px;
         font-size: 13px;
         border-radius: 9px;
-    }
-
-    .related-list .related-kk {
-        width: 100%;
-        padding: 9px 10px;
-    }
-
-    .related-list .related-kk .related-pro1 h5 {
-        font-size: 16px;
-        height: 34px;
-        line-height: 17px;
-        margin-top: 11px;
-        margin-bottom: 8px;
-    }
-
-    .related-list .related-kk .related-pro1 i {
-        font-size: 13px;
     }
 
     .related-list .related-kk .related-pro1 h4 {

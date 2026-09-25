@@ -190,6 +190,61 @@ i.trash{
     text-align: center;
 }
 
+@media (max-width: 1300px) {
+
+    main {
+        width: 92%;
+        padding: 10px 18px;
+    }
+
+    .cartt {
+        padding: 10px 15px;
+    }
+
+    span img {
+        width: 300px;
+        padding: 8px 35px;
+    }
+
+    .item {
+        width: 320px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 19px;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: -20px;
+        white-space: nowrap;
+    }
+
+    .item .price-old {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .item .price-new {
+        font-size: 17px;
+        white-space: nowrap;
+    }
+
+    .removeA,
+    .pay {
+        width: 175px;
+        font-size: 18px;
+    }
+}
+
+
 @media (max-width: 1200px) {
 
     main {

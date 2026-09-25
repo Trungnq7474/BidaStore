@@ -315,7 +315,26 @@ const updateStatus = async (req, res) => {
         }
 
         await sql.query`
-            UPDATE orders SET status = ${status} WHERE id = ${id}
+            UPDATE orders 
+            SET 
+                status = ${status},
+
+                shipping_at = CASE
+                    WHEN ${status} = 'dang' THEN GETDATE()
+                    ELSE shipping_at
+                END,
+
+                delivered_at = CASE
+                    WHEN ${status} = 'xong' THEN GETDATE()
+                    ELSE delivered_at
+                END,
+            
+                cancelled_at = CASE 
+                    WHEN ${status} = 'huy' THEN GETDATE()
+                    ELSE cancelled_at
+                END
+
+            WHERE id = ${id}
         `;
 
         await sql.query`

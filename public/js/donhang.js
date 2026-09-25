@@ -104,6 +104,10 @@ async function showOrders(data) {
 
                     ${order.status === "xong" || order.status === "huy" ? `<button class="mua-lai" data-id="${order.id}">Mua Lại</button>` : ""}
 
+                   <button class="view ${order.status === "cho" || order.status === "dang" ? "view-order" : "view-journey"}" data-id="${order.id}">
+                        ${order.status === "cho" || order.status === "dang" ? "Theo Dõi Đơn" : "Xem Hành Trình"}
+                   </button>
+
                     <button class="xem" data-id="${order.id}">Xem Chi Tiết</button>
                 </div>   
             </div>
@@ -426,6 +430,178 @@ tab4.addEventListener('click', () => {
     showOrders(
         orders.filter(order => order.status === "huy")
     );
+});
+
+const tracking = document.querySelector('.tracking-overlay');
+const trackingOrderId = document.querySelector('.tracking-order-id');
+const statusText = document.querySelector('.tracking-status-text');
+const statusIcon = document.querySelector('.tracking-status-icon i');
+const statusIconBox = document.querySelector('.tracking-status-icon');
+const trackingStatus = document.querySelector('.tracking-status');
+const trackingCount = document.querySelector('.tracking-count');
+const stepCho = document.querySelector('.tracking-step[data-status="cho"]');
+const stepDang = document.querySelector('.tracking-step[data-status="dang"]');
+const stepXong = document.querySelector('.tracking-step[data-status="xong"]');
+const stepHuy = document.querySelector('.tracking-step[data-status="huy"]');
+const cancelLine = document.querySelector('.cancel-line');
+const lineDang = document.querySelector('.line-dang');
+const lineCho = document.querySelector('.line-cho');
+const close = document.querySelector('.tracking-close');
+const trackingProductList = document.querySelector('.tracking-product-list');
+const timeCho = document.querySelector('.time-cho');
+const timeDang = document.querySelector('.time-dang');
+const timeXong = document.querySelector('.time-xong');
+const timeHuy = document.querySelector('.time-huy');
+
+close.addEventListener('click', () => {
+    tracking.style.display = "none";
+});
+
+
+document.addEventListener('click', async function(e) {
+    if(e.target.closest('.view')) {
+        const button = e.target.closest('.view');
+        const id = button.dataset.id;
+
+        trackingOrderId.innerText = id;
+
+        const res = await fetch(`/getorder/${id}`);
+        const order = await res.json();
+
+        timeCho.innerText = order.created_at.replace("T", " ").slice(0, 16);
+
+        timeDang.innerText = order.shipping_at
+            ? order.shipping_at.replace("T", " ").slice(0, 16) : "";
+
+        timeXong.innerText = order.delivered_at
+            ? order.delivered_at.replace("T", " ").slice(0, 16) : "";
+
+        timeHuy.innerText = order.cancelled_at
+            ? order.cancelled_at.replace("T", " ").slice(0, 16) : "";
+
+        const itemRes = await fetch(`/getorderitems/${id}`);
+        const items = await itemRes.json();
+
+        trackingProductList.innerHTML = "";
+
+        trackingCount.innerText = items.length;
+
+        items.forEach(item => {
+            trackingProductList.innerHTML += `
+                <div class="tracking-product-item">
+
+                    <div class="tracking-product-info">
+                        <img class="tracking-product-img" src="${getImageUrl(item.image)}" alt="Ảnh">
+
+                        <div class="tracking-product-detail">
+                            <h4 class="tracking-product-name">
+                                ${item.product_name}
+                            </h4>
+
+                            <p class="tracking-product-qty">
+                                Số lượng: x${item.quantity}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-product-price">
+                        ${item.discount > 0 && item.new_price
+                            ? `
+                                <span class="price-old">
+                                    ${item.old_price.toLocaleString('vi-VN')} VNĐ
+                                </span>
+
+                                <span class="price-new">
+                                    ${item.price.toLocaleString('vi-VN')} VNĐ
+                                </span>
+                            `
+                            : `
+                                <span class="price-normal">
+                                    ${item.price.toLocaleString('vi-VN')} VNĐ
+                                </span>
+                            `
+                        }
+                    </div>
+
+                </div>
+            `;
+        });
+
+        stepCho.classList.remove("active");
+        stepDang.classList.remove("active");
+        stepXong.classList.remove("active");
+        stepHuy.classList.remove("active");
+        cancelLine.classList.remove("active");
+        lineDang.classList.remove("active");
+        statusText.classList.remove("status-cho", "status-dang", "status-xong", "status-huy");
+        trackingStatus.classList.remove("status-cho", "status-dang", "status-xong", "status-huy");
+        statusIconBox.classList.remove("status-cho", "status-dang", "status-xong", "status-huy");
+
+        if(order.status === "cho") {
+            stepCho.classList.add("active");
+            lineCho.classList.add("active");
+        }
+
+        if(order.status === "dang") {
+            stepCho.classList.add("active");
+            stepDang.classList.add("active");
+            lineCho.classList.add("active");
+            lineDang.classList.add("active");
+        }
+
+        if(order.status === "xong") {
+            stepCho.classList.add("active");
+            stepDang.classList.add("active");
+            stepXong.classList.add("active");
+            lineCho.classList.add("active");
+            lineDang.classList.add("active");
+        }
+
+        if(order.status === "huy") {
+            stepCho.classList.add("active");
+            stepHuy.classList.add("active");
+            cancelLine.classList.add("active");
+        }
+
+        let currentStatus = "";
+
+        if(order.status === "cho") {
+            currentStatus = "Đã Đặt";
+            statusText.classList.add("status-cho");
+            statusIcon.className = "fa-solid fa-check";
+            trackingStatus.classList.add("status-cho");
+            statusIconBox.classList.add("status-cho");
+        }
+
+        if(order.status === "dang") {
+            currentStatus = "Đang Giao";
+            statusText.classList.add("status-dang");
+            statusIcon.className = "fa-solid fa-truck-fast";
+            trackingStatus.classList.add("status-dang");
+            statusIconBox.classList.add("status-dang");
+        }
+
+        if(order.status === "xong") {
+            currentStatus = "Đã Giao";
+            statusText.classList.add("status-xong");
+            statusIcon.className = "fa-solid fa-house-circle-check";
+            trackingStatus.classList.add("status-xong");
+            statusIconBox.classList.add("status-xong");
+        }
+
+        if(order.status === "huy") {
+            statusText.classList.add("status-huy");
+            currentStatus = "Đã Hủy";
+            statusIcon.className = "fa-solid fa-xmark";
+            trackingStatus.classList.add("status-huy");
+            statusIconBox.classList.add("status-huy");
+        }
+
+        statusText.innerText = currentStatus;
+
+        tracking.style.display = "block";
+        
+    }
 });
 
 function show(text) {
